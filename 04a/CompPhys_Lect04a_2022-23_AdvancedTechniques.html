@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Everything in one notebook - Advanced Techniques &#8212; Computational Physics U24568</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Summary Exercises" href="Summary_exercises.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03b/overview.html">
+   Lecture 3b: Class Conundrums
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_2020_2021_ClassConundrums.html">
+     Everything in one Notebook - Class Conundrums
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="List_comprehensions_overview.html">
+     List comprehensions - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="List_comprehensions_exercises1.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="List_comprehensions_conditionals.html">
+     List Comprehensions - Including conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="List_comprehensions_exercises2.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Set_dictionary_comprehensions.html">
+     Set and Dictionary Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Generators_overview.html">
+     Generators - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Generators_exercises1.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Generators_more_detail.html">
+     Generators - A bit more complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Generators_exercises2.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Recursion_overview.html">
+     Recursion - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Recursion_exercises.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lambda_overview.html">
+     Function as a value and the lambda operator - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lambda_exercises.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Summary_exercises.html">
+     Summary Exercises
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Everything in one notebook - Advanced Techniques
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/master?urlpath=lab/tree/04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/master/04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-4a-advanced-techniques">
+   Lecture 4a - Advanced Techniques
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehensions">
+   List comprehensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generators">
+   Generators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursion">
+   Recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-as-a-value-and-the-lambda-operator">
+   Function as a value and the lambda operator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     EXERCISE 4
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Everything in one notebook - Advanced Techniques</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-4a-advanced-techniques">
+   Lecture 4a - Advanced Techniques
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehensions">
+   List comprehensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generators">
+   Generators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recursion">
+   Recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-as-a-value-and-the-lambda-operator">
+   Function as a value and the lambda operator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     EXERCISE 4
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="everything-in-one-notebook-advanced-techniques">
+<h1>Everything in one notebook - Advanced Techniques<a class="headerlink" href="#everything-in-one-notebook-advanced-techniques" title="Permalink to this headline">#</a></h1>
+<section id="lecture-4a-advanced-techniques">
+<h2>Lecture 4a - Advanced Techniques<a class="headerlink" href="#lecture-4a-advanced-techniques" title="Permalink to this headline">#</a></h2>
+<p>In this lecture we will introduce a number of advanced techniques in Python, which can be useful in a variety of situations. Some of these are particular to Python, and its syntax, others are more general techniques. In particular we will cover:</p>
+<ul class="simple">
+<li><p>List comprehensions</p></li>
+<li><p>Generators</p></li>
+<li><p>Recursion</p></li>
+<li><p>Functions as objects, and the Lambda operator</p></li>
+</ul>
+<p>Please do ask if you find any of this confusing. We’re more than happy to go over this (whether today, or in a future lecture). This topics are largely separate from each other, so you could go over this in whatever order makes sense to you.</p>
+</section>
+<section id="list-comprehensions">
+<h2>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h2>
+<p>“List comprehensions” is a fancy way of describing a syntax feature in Python, which lets you write simple for loops in a condensed form. Let’s consider a for loop which collects the first 100 cubic numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">cube_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is 3 lines of code. This can be written in one line as a list comprehension with the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cube_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cube_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728, 2197, 2744, 3375, 4096, 4913, 5832, 6859, 8000, 9261, 10648, 12167, 13824, 15625, 17576, 19683, 21952, 24389, 27000, 29791, 32768, 35937, 39304, 42875, 46656, 50653, 54872, 59319, 64000, 68921, 74088, 79507, 85184, 91125, 97336, 103823, 110592, 117649, 125000, 132651, 140608, 148877, 157464, 166375, 175616, 185193, 195112, 205379, 216000, 226981, 238328, 250047, 262144, 274625, 287496, 300763, 314432, 328509, 343000, 357911, 373248, 389017, 405224, 421875, 438976, 456533, 474552, 493039, 512000, 531441, 551368, 571787, 592704, 614125, 636056, 658503, 681472, 704969, 729000, 753571, 778688, 804357, 830584, 857375, 884736, 912673, 941192, 970299, 1000000]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can see that exactly the same variables (<code class="docutils literal notranslate"><span class="pre">i</span></code> and <code class="docutils literal notranslate"><span class="pre">cube_numbers</span></code>) are used, and both use the same <code class="docutils literal notranslate"><span class="pre">range</span></code> function. In fact these are identical, python will internally do exactly the same thing in these two instances.</p>
+<p>One more example, and then it’s over to you. Here we have as input a list of names, as strings in the format “FIRST_NAME LAST_NAME” (for e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;Ian</span> <span class="pre">Harry&quot;,</span> <span class="pre">&quot;Becky</span> <span class="pre">Canning&quot;,</span> <span class="pre">&quot;Andrew</span> <span class="pre">Lundgren&quot;]</span></code>). We want to create two lists, one list of the first names, and one of the last names. This can be done using:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Boris Johnson&quot;</span><span class="p">,</span> <span class="s2">&quot;Theresa May&quot;</span><span class="p">,</span> <span class="s2">&quot;David Cameron&quot;</span><span class="p">,</span> <span class="s2">&quot;Gordon Brown&quot;</span><span class="p">,</span> <span class="s2">&quot;Tony Blair&quot;</span><span class="p">,</span> <span class="s2">&quot;John Major&quot;</span><span class="p">,</span> <span class="s2">&quot;Margaret Thatcher&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;James Callaghan&quot;</span><span class="p">,</span> <span class="s2">&quot;Harold Wilson&quot;</span><span class="p">,</span> <span class="s2">&quot;Edward Heath&quot;</span><span class="p">,</span> <span class="s2">&quot;Harold Wilson&quot;</span><span class="p">,</span> <span class="s2">&quot;Alec Douglas-Home&quot;</span><span class="p">,</span> <span class="s2">&quot;Harold Macmillan&quot;</span><span class="p">]</span> <span class="c1"># Turns out this list dated a lot in a year!</span>
+
+<span class="n">first_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">last_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="n">first_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first_name</span><span class="p">)</span>
+    <span class="n">last_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">first_names</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">last_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Boris&#39;, &#39;Theresa&#39;, &#39;David&#39;, &#39;Gordon&#39;, &#39;Tony&#39;, &#39;John&#39;, &#39;Margaret&#39;, &#39;James&#39;, &#39;Harold&#39;, &#39;Edward&#39;, &#39;Harold&#39;, &#39;Alec&#39;, &#39;Harold&#39;]
+[&#39;Johnson&#39;, &#39;May&#39;, &#39;Cameron&#39;, &#39;Brown&#39;, &#39;Blair&#39;, &#39;Major&#39;, &#39;Thatcher&#39;, &#39;Callaghan&#39;, &#39;Wilson&#39;, &#39;Heath&#39;, &#39;Wilson&#39;, &#39;Douglas-Home&#39;, &#39;Macmillan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be written more simply as <em>two</em> list comprehensions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+<span class="n">last_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">first_names</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">last_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Boris&#39;, &#39;Theresa&#39;, &#39;David&#39;, &#39;Gordon&#39;, &#39;Tony&#39;, &#39;John&#39;, &#39;Margaret&#39;, &#39;James&#39;, &#39;Harold&#39;, &#39;Edward&#39;, &#39;Harold&#39;, &#39;Alec&#39;, &#39;Harold&#39;]
+[&#39;Johnson&#39;, &#39;May&#39;, &#39;Cameron&#39;, &#39;Brown&#39;, &#39;Blair&#39;, &#39;Major&#39;, &#39;Thatcher&#39;, &#39;Callaghan&#39;, &#39;Wilson&#39;, &#39;Heath&#39;, &#39;Wilson&#39;, &#39;Douglas-Home&#39;, &#39;Macmillan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, the list comprehensions, while less code, are actually slower, as we need to loop and do the split twice. However, as the “Zen of Python” states:</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">https://www.python.org/dev/peps/pep-0020/</a></p>
+<p>“Readability counts”, so if you can make code more readable (even if it’s slower) it might be worth doing if you don’t need that speed difference. I note that it is possible to reduce this into a single line command, but then it is still only as fast as the two list comprehensions, and almost unreadable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># AVOID CODE LIKE THIS, IF YOU DON&#39;T KNOW WHAT IT DOES, HOW WILL ANYONE ELSE?</span>
+<span class="c1"># .... But this does demonstrate that you can nest list comprehensions in list comprehensions</span>
+<span class="n">first_names</span><span class="p">,</span> <span class="n">last_names</span> <span class="o">=</span> <span class="p">[[</span><span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">first_names</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">last_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Boris&#39;, &#39;Theresa&#39;, &#39;David&#39;, &#39;Gordon&#39;, &#39;Tony&#39;, &#39;John&#39;, &#39;Margaret&#39;, &#39;James&#39;, &#39;Harold&#39;, &#39;Edward&#39;, &#39;Harold&#39;, &#39;Alec&#39;, &#39;Harold&#39;]
+[&#39;Johnson&#39;, &#39;May&#39;, &#39;Cameron&#39;, &#39;Brown&#39;, &#39;Blair&#39;, &#39;Major&#39;, &#39;Thatcher&#39;, &#39;Callaghan&#39;, &#39;Wilson&#39;, &#39;Heath&#39;, &#39;Wilson&#39;, &#39;Douglas-Home&#39;, &#39;Macmillan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>EXERCISE</strong></p>
+<ol class="simple">
+<li><p>Compute <span class="math notranslate nohighlight">\(x^{0.5}\)</span> for all integer values of <span class="math notranslate nohighlight">\(x\)</span> between 15 and 105 using a list comprehension.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(\sin(x)^2 - \cos(x)^2\)</span> for 1000 values of x, uniformly distributed between 0 and <span class="math notranslate nohighlight">\(2 \pi\)</span> using a list comprehension.</p></li>
+</ol>
+<p>There’s one more level of complexity that we can unlock with list comprehensions. That is that they can also contain a single conditional statement. So for example if we wanted to store all values of <span class="math notranslate nohighlight">\(x^3\)</span> for x between 1 and 100 (inclusive) where <span class="math notranslate nohighlight">\(x^3\)</span> does not end with the digit 8, we can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubic_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">x3</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">x3</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">cubic_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">cubic_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 2197, 2744, 3375, 4096, 4913, 5832, 6859, 8000, 9261, 12167, 13824, 15625, 17576, 19683, 21952, 24389, 27000, 29791, 35937, 39304, 42875, 46656, 50653, 54872, 59319, 64000, 68921, 79507, 85184, 91125, 97336, 103823, 110592, 117649, 125000, 132651, 148877, 157464, 166375, 175616, 185193, 195112, 205379, 216000, 226981, 250047, 262144, 274625, 287496, 300763, 314432, 328509, 343000, 357911, 389017, 405224, 421875, 438976, 456533, 474552, 493039, 512000, 531441, 571787, 592704, 614125, 636056, 658503, 681472, 704969, 729000, 753571, 804357, 830584, 857375, 884736, 912673, 941192, 970299, 1000000]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be written as a single list comprehension with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubic_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again though, list comprehensions should be used to help with code readability by making things more concise. Things that become so concise that they are unreadable are not good!</p>
+<p><strong>EXERCISE</strong></p>
+<ol class="simple">
+<li><p>Compute <span class="math notranslate nohighlight">\(x^{0.5}\)</span> for all integer values of <span class="math notranslate nohighlight">\(x\)</span> between 15 and 105 <em>excluding</em> all values of <span class="math notranslate nohighlight">\(x\)</span> where <span class="math notranslate nohighlight">\(x\)</span> is a multiple of 7, using a list comprehension.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(\sin(x)^2 - \cos(x)^2\)</span> for 1000 values of <span class="math notranslate nohighlight">\(x\)</span>, uniformly distributed between 0 and <span class="math notranslate nohighlight">\(2 \pi\)</span>. Include only values of <span class="math notranslate nohighlight">\(x\)</span> where <span class="math notranslate nohighlight">\(\cos(x)\)</span> is greater than 0 <em>or</em> <span class="math notranslate nohighlight">\(\sin(x)\)</span> is less than -0.5. Use a single-line list comprehension.</p></li>
+</ol>
+<p>As well as list comprehensions, we can also consider dictionary and even set comprehensions. These are simple enough to write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubic_numbers_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)}</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">cubic_numbers_dict</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cubic_numbers_dict</span><span class="p">))</span>
+
+<span class="c1"># I avoid this because the syntax is too similar (in my mind) to dictionaries.</span>
+<span class="c1">#I would just do a list comprehension and wrap set() around it.</span>
+<span class="n">cubic_numbers_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)}</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">cubic_numbers_set</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cubic_numbers_set</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 1, 3: 27, 4: 64, 5: 125, 6: 216, 7: 343, 8: 512, 9: 729, 10: 1000, 11: 1331, 13: 2197, 14: 2744, 15: 3375, 16: 4096, 17: 4913, 18: 5832, 19: 6859, 20: 8000, 21: 9261, 23: 12167, 24: 13824, 25: 15625, 26: 17576, 27: 19683, 28: 21952, 29: 24389, 30: 27000, 31: 29791, 33: 35937, 34: 39304, 35: 42875, 36: 46656, 37: 50653, 38: 54872, 39: 59319, 40: 64000, 41: 68921, 43: 79507, 44: 85184, 45: 91125, 46: 97336, 47: 103823, 48: 110592, 49: 117649, 50: 125000, 51: 132651, 53: 148877, 54: 157464, 55: 166375, 56: 175616, 57: 185193, 58: 195112, 59: 205379, 60: 216000, 61: 226981, 63: 250047, 64: 262144, 65: 274625, 66: 287496, 67: 300763, 68: 314432, 69: 328509, 70: 343000, 71: 357911, 73: 389017, 74: 405224, 75: 421875, 76: 438976, 77: 456533, 78: 474552, 79: 493039, 80: 512000, 81: 531441, 83: 571787, 84: 592704, 85: 614125, 86: 636056, 87: 658503, 88: 681472, 89: 704969, 90: 729000, 91: 753571, 93: 804357, 94: 830584, 95: 857375, 96: 884736, 97: 912673, 98: 941192, 99: 970299, 100: 1000000}
+&lt;class &#39;dict&#39;&gt;
+{512, 1, 4096, 13824, 64000, 110592, 175616, 262144, 512000, 681472, 804357, 357911, 27, 195112, 132651, 9261, 97336, 970299, 314432, 64, 46656, 205379, 1000000, 658503, 125000, 54872, 29791, 35937, 830584, 125, 941192, 79507, 2197, 636056, 226981, 17576, 2744, 250047, 85184, 274625, 438976, 5832, 6859, 216, 729, 300763, 19683, 405224, 614125, 287496, 15625, 157464, 857375, 912673, 3375, 4913, 1331, 68921, 328509, 592704, 8000, 24389, 456533, 343, 884736, 185193, 27000, 42875, 12167, 39304, 571787, 148877, 103823, 117649, 389017, 753571, 729000, 59319, 474552, 21952, 216000, 704969, 343000, 50653, 166375, 1000, 493039, 531441, 421875, 91125}
+&lt;class &#39;set&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also do this (using circular brackets), but we do <em>not</em> get a tuple, instead we get …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubic_numbers_gen</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">cubic_numbers_gen</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cubic_numbers_gen</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x103e2a510&gt;
+&lt;class &#39;generator&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A “generator” object?! What’s that? This leads nicely into our next section!</p>
+</section>
+<section id="generators">
+<h2>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">#</a></h2>
+<p>What is a generator? A generator is a specific type of function in Python, which has some special properties allowing it to be used as an iterator (ie. in a for loop). Let me quote from the nice reference <a class="reference external" href="https://realpython.com/introduction-to-python-generators/">https://realpython.com/introduction-to-python-generators/</a> here:</p>
+<p>“
+Introduced with PEP 255, generator functions are a special kind of function that return a lazy iterator. These are objects that you can loop over like a list. However, unlike lists, lazy iterators do not store their contents in memory.
+“</p>
+<p>Why would you need this?</p>
+<p>“
+Have you ever had to work with a dataset so large that it overwhelmed your machine’s memory? Or maybe you have a complex function that needs to maintain an internal state every time it’s called, but the function is too small to justify creating its own class. In these cases and more, generators and the Python yield statement are here to help.
+“</p>
+<p>Still not making sense? Let’s try to explain with some examples.</p>
+<p>As an example of this (following closely <a class="reference external" href="https://realpython.com/introduction-to-python-generators/">https://realpython.com/introduction-to-python-generators/</a>), let’s look at reading in our <code class="docutils literal notranslate"><span class="pre">stm.txt</span></code> file, which we’ve used in previous lectures (you can download it from Moodle). Let’s first start by writing a function to read this in line-by-line using stuff we’ve already seen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">txt_reader</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+    <span class="c1"># Result will be a list of lists. result[i] will refer to the ith row, result[i][j] will refer to the jth column</span>
+    <span class="c1"># in the ith row.</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">txt_gen</span> <span class="o">=</span> <span class="n">txt_reader</span><span class="p">(</span><span class="s2">&quot;stm.txt&quot;</span><span class="p">)</span>
+<span class="n">row_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">txt_gen</span><span class="p">:</span>
+    <span class="n">row_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># This uses a cool feature called fstrings. It lets us refer to specific variables, and print them, directly!</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Row count is </span><span class="si">{</span><span class="n">row_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Note that the entire file is stored in memory, so we can do:</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">txt_gen</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">10</span><span class="p">])</span>
+<span class="c1"># To quickly get a specific value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Row count is 1001
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Row count is </span><span class="si">{</span><span class="n">row_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># Note that the entire file is stored in memory, so we can do:</span>
+<span class="ne">---&gt; </span><span class="mi">19</span> <span class="nb">print</span> <span class="p">(</span><span class="n">txt_gen</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">10</span><span class="p">])</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, if this file was extremely long, then it might not be possible to hold the whole thing in memory (or you just might not want to be so inefficient with memory usage). So if we just wanted to do something that involves reading the file in a linear order (for example counting the number of entries, or lines, in the file, or counting how often 123 occurs in the file), we can instead use a generator. This looks something like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">txt_reader</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">row</span>
+
+<span class="n">txt_gen</span> <span class="o">=</span> <span class="n">txt_reader</span><span class="p">(</span><span class="s2">&quot;stm.txt&quot;</span><span class="p">)</span>
+<span class="n">row_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">txt_gen</span><span class="p">:</span>
+    <span class="n">row_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Row count is </span><span class="si">{</span><span class="n">row_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Note that the entire file is NOT stored in memory, so we CANNOT do:</span>
+<span class="c1"># print (txt_gen[2][10])</span>
+<span class="c1"># To quickly get a specific value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So let’s try and break down how this works. The magic here is the <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement. If you run a function that evaluates a yield statement, it will be interpreted as a <em>generator</em>, and a generator object will be returned. Then if used as an iterator (ie. in a for loop) the first value of the iterator will be the value after <code class="docutils literal notranslate"><span class="pre">yield</span></code>, then it will continue until <code class="docutils literal notranslate"><span class="pre">yield</span></code> is reached again and this will be the second value of the iterator. When the function stops reaching <code class="docutils literal notranslate"><span class="pre">yield</span></code> (ie. when it stops) the iteration will stop. So as a simple example of generating integers between 1 and 1000 you can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integer_generator</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">gen</span> <span class="o">=</span> <span class="n">integer_generator</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">curr_int</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">curr_int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I emphasize that this is just a simple example, for such a case the <code class="docutils literal notranslate"><span class="pre">range</span></code> function (which is actually a generator!) should be used. But you can make this an infinite integer generator. The following will just keep generating integers until you terminate the process (kernel-&gt;interrupt will stop this):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integer_generator</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">gen</span> <span class="o">=</span> <span class="n">integer_generator</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">curr_int</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">curr_int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use the <code class="docutils literal notranslate"><span class="pre">next</span></code> command, which will simply obtain the next value from the generator. So in the previous case we can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">integer_generator</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">gen</span> <span class="o">=</span> <span class="n">integer_generator</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">gen</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>EXERCISES</strong> Let’s try a couple of exercises at this stage.</p>
+<ul class="simple">
+<li><p>Write a generator that returns <span class="math notranslate nohighlight">\(x !\)</span> (x-factorial) for x between 1 and 40.</p></li>
+<li><p>Write a generator that loops over values of <span class="math notranslate nohighlight">\(x^2\)</span> while <span class="math notranslate nohighlight">\(x^2\)</span> is smaller than 10000.</p></li>
+</ul>
+<p>Let’s add a bit more complexity to the problem now. Here’s an example which will generate <span class="math notranslate nohighlight">\(N\)</span> numbers between 0 and <span class="math notranslate nohighlight">\(\pi\)</span>. <span class="math notranslate nohighlight">\(N\)</span> is supplied as an argument when creating the generator</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">gen_N_numbers</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">i</span> <span class="o">*</span> <span class="n">diff</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">gen_N_numbers</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">gen_N_numbers</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here’s a more complex example, which is really one of the main examples for why a generator would be used. In this case we consider the motion of some particle in the x direction. With each iteration the particle moves by 1 unit in the x direction <em>either</em> forwards or backwards, with a 50% chance of doing either. The iteration should stop when the particle has reached an x position of either +50 or -50.</p>
+<p>This is a special example because it’s an <em>evolving</em> system. The next point depends on the previous point and this information can be stored inside the generator. This is great if doing some quite complex random evolution problems (we’ll explore one example at the end!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The random module is great for random problems. We explored random processes already</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">moving_particle</span><span class="p">():</span>
+    <span class="n">particle_position</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">forward_or_backwards</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">particle_position</span> <span class="o">=</span> <span class="n">particle_position</span> <span class="o">+</span> <span class="n">forward_or_backwards</span>
+        <span class="k">yield</span> <span class="n">particle_position</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">particle_position</span><span class="p">)</span> <span class="o">==</span> <span class="mi">50</span><span class="p">:</span>
+            <span class="k">break</span>
+
+<span class="n">particle_moves</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">moving_particle</span><span class="p">():</span>
+    <span class="n">particle_moves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">particle_moves</span><span class="p">),</span> <span class="n">particle_moves</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>EXERCISES</strong></p>
+<ul class="simple">
+<li><p>Write a generator to return N random numbers (uniformly distributed between 0 and 1). N should be supplied to the generator.</p></li>
+<li><p>Write a generator to return the first N numbers in the Fibonacci sequence.</p></li>
+</ul>
+<p>For a bit more detail in generators, and some more advanced functionality, I refer you again to this article:</p>
+<p><a class="reference external" href="https://realpython.com/introduction-to-python-generators/">https://realpython.com/introduction-to-python-generators/</a></p>
+</section>
+<section id="recursion">
+<h2>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">#</a></h2>
+<p>Recursion is an important idea in many computing languages. This basically boils down to “some function that calls itself”. A standard use case would be where the problem can be repeatedly reduced to a simpler problem of the same form. Some of the examples below might seem more natural using iteration (a for loop or generator), but they’re useful practice for building to problems where recursion is more natural. As always, the idea here is to provide you with a toolkit and which tool to use for any given problem is something that should be considered when attempting the problem!</p>
+<p>As an example of a recursive function (following <a class="reference external" href="https://www.programiz.com/python-programming/recursion">https://www.programiz.com/python-programming/recursion</a>) let’s consider the case of generating X factorial. This can be defined, using a function that calls itself, as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_factorial</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This is a recursive function</span>
+<span class="sd">    to find the factorial of an integer&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">calc_factorial</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The factorial of&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">calc_factorial</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>According to the page above, this form has a number of advantages, and disadvantages:</p>
+<p>ADVANTAGES:</p>
+<ul class="simple">
+<li><p>Recursive functions make the code look clean and elegant.</p></li>
+<li><p>A complex task can be broken down into simpler sub-problems using recursion.</p></li>
+<li><p>Sequence generation is easier with recursion than using some nested iteration.</p></li>
+</ul>
+<p>DISADVANTAGES</p>
+<ul class="simple">
+<li><p>Sometimes the logic behind recursion is hard to follow through.</p></li>
+<li><p>Recursive calls can be expensive (inefficient) as they take up a lot of memory and time.</p></li>
+<li><p>Recursive functions are hard to debug.</p></li>
+</ul>
+<p>Here’s another example for computing the sum of numbers between 1 and N (thanks to <a class="reference external" href="https://realpython.com/python-thinking-recursively/">https://realpython.com/python-thinking-recursively/</a>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_recursive</span><span class="p">(</span><span class="n">current_number</span><span class="p">,</span> <span class="n">highest_number</span><span class="p">,</span> <span class="n">accumulated_sum</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="c1"># Base case</span>
+    <span class="c1"># Return the final state</span>
+    <span class="k">if</span> <span class="n">current_number</span> <span class="o">==</span> <span class="n">highest_number</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">accumulated_sum</span>
+
+    <span class="c1"># Recursive case</span>
+    <span class="c1"># Thread the state through the recursive call</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#return current_number + sum_recursive(current_number + 1, highest_number)</span>
+        <span class="k">return</span> <span class="n">sum_recursive</span><span class="p">(</span><span class="n">current_number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">highest_number</span><span class="p">,</span> <span class="n">accumulated_sum</span><span class="o">=</span><span class="p">(</span><span class="n">accumulated_sum</span> <span class="o">+</span> <span class="n">current_number</span><span class="p">))</span>
+
+<span class="c1"># Sum of numbers between 1 and 10</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">sum_recursive</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
+
+<span class="c1"># Sum of numbers between 1 and 10</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">sum_recursive</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">60</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sum_recursive</span></code> function tracks the current sum in the <code class="docutils literal notranslate"><span class="pre">accumulated_sum</span></code> variable. In this example this wasn’t needed (it could have been done as with the previous example, see the commented out code), but in many cases this is the kind of approach that is needed to deal with a recursion problem. Brute-force path-finding is one example where you might want to do something like this.</p>
+<p><strong>EXERCISES</strong></p>
+<ul class="simple">
+<li><p>Write a program to compute f(n)=f(n-1)+100 when n&gt;0 and f(0)=1 with a given n input by console (n&gt;0).</p></li>
+<li><p>Write a function to return the Nth Fibonacci number using recursion.</p></li>
+</ul>
+</section>
+<section id="function-as-a-value-and-the-lambda-operator">
+<h2>Function as a value and the lambda operator<a class="headerlink" href="#function-as-a-value-and-the-lambda-operator" title="Permalink to this headline">#</a></h2>
+<p>In our last topic of this lecture, let’s explore the idea of functions as a value themselves, and the lambda operator in python.</p>
+<p>Let’s take a closer look at the <code class="docutils literal notranslate"><span class="pre">math.sin</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The meaning of <code class="docutils literal notranslate"><span class="pre">b</span></code> is (I hope!) clear. It’s a float storing the sin of 3.0 …. Or it’s the result of <em>operating</em> the function <code class="docutils literal notranslate"><span class="pre">math.sin</span></code> on the float <code class="docutils literal notranslate"><span class="pre">3.0</span></code>. However, <code class="docutils literal notranslate"><span class="pre">a</span></code> is the function itself. So we can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be useful if want to write a function that will take as input a value (<code class="docutils literal notranslate"><span class="pre">x</span></code>), and a function (<code class="docutils literal notranslate"><span class="pre">F</span></code>), and returns <code class="docutils literal notranslate"><span class="pre">F(x)</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">F_of_x</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">F_of_x</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F_of_x</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F_of_x</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">2.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One example of a function taking another (which we briefly touched on earlier in the course) is the sorted function. This takes a function which can determine a sort order. For example if I wanted to sort values between 0 and 10 according to the sin of that value I could do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sorted_inps</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_inps</span><span class="p">)</span>
+<span class="c1"># Checking that this worked as intended.</span>
+<span class="nb">print</span> <span class="p">([</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">sorted_inps</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function can be used to quickly define simple functions. For example if we wanted to define a function that returns <span class="math notranslate nohighlight">\(x^2\)</span>, we could do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">x_squared</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Or this could be written as a single line function according to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_squared_alt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x_squared</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">x_squared_alt</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A standard usecase for this is being able to write <code class="docutils literal notranslate"><span class="pre">sorted</span></code> commands which do not extend over multiple lines, for example we could do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">9.5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">51</span><span class="p">)</span>
+<span class="n">sorted_inps</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_inps</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>EXERCISE</strong></p>
+<ul class="simple">
+<li><p>Generate 100 numbers uniformly distributed between 5 and 50. Then sort the numbers by using the function <span class="math notranslate nohighlight">\(F(x) = x^3 - 50.5 x^2 - 34\)</span>. This means that after sorting the numbers into <code class="docutils literal notranslate"><span class="pre">array</span></code> if I did <code class="docutils literal notranslate"><span class="pre">array**3</span> <span class="pre">-</span> <span class="pre">50.5</span> <span class="pre">*</span> <span class="pre">array**2</span> <span class="pre">-</span> <span class="pre">34</span></code> the output would be in ascending order. Do <em>not</em> store the values of F(x).</p></li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>We’ve introduced a number of different concepts at this point. Let me try and set some summary exercises to close things out, these will probably be quite challenging.</p>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<p>Write a generator with the following properties:</p>
+<ul class="simple">
+<li><p>The generator should model the motion of a particle in two directions (call them x and y).</p></li>
+<li><p>The initial position of the particle should be (0,0) (corresponding to the positions in x and y). This should be the first <code class="docutils literal notranslate"><span class="pre">yield</span></code> of this generator.</p></li>
+<li><p>Every subsequent <code class="docutils literal notranslate"><span class="pre">yield</span></code> should move the particle by a random amount in x and y. The magnitude moved should be drawn from a uniform distribution between 0 and 1 and the direction of this moving should be drawn from a uniform angle between 0 and 2pi.</p></li>
+<li><p>The generator should stop when the distance between the particle and the origin is at least 10.</p></li>
+</ul>
+<p>Run this generator (use a list comprehension to run the generator and store the x,y positions of the particle over time).</p>
+<p>Plot these positions in a 2D plot.</p>
+<p>Run the generator some additional times and show these evolutions on the same plot.</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<p>(Courtesy of <a class="reference external" href="http://codesignal.com">codesignal.com</a>, <a class="reference external" href="https://app.codesignal.com/arcade/python-arcade/lambda-illusions/eP7hJDmLdZym2Kdo3">https://app.codesignal.com/arcade/python-arcade/lambda-illusions/eP7hJDmLdZym2Kdo3</a>)</p>
+<p>“””
+You’ve been preparing all night for the upcoming test and entered the class certain that you will ace it. Now that you received the test questions, you died inside a little: looks like you prepared for the test on a completely different topic.</p>
+<p>You’re not even sure if you should bother to answer the questions. You still have some hope though: it is known that there’s a glitch in the test preparing system, so that if the sum of digits of question ids is divisible by k, the answer to each question has a 90% probability to be an A.</p>
+<p>Given the list of question ids, determine if the sum of their digits is divisible by k to see if it’s worth trying to pass the test.
+“””</p>
+<p>To solve this problem you must write a lambda function in the space indicated. You <em>must not</em> add any additional lines to solve this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">isTestSolvable</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">digitSum</span> <span class="o">=</span> <span class="c1"># Add lambda function here. MAKE NO OTHER CHANGES!!</span>
+
+    <span class="n">sm</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">questionId</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">:</span>
+        <span class="n">sm</span> <span class="o">+=</span> <span class="n">digitSum</span><span class="p">(</span><span class="n">questionId</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sm</span> <span class="o">%</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">529665</span><span class="p">,</span> <span class="mi">909767</span><span class="p">,</span> <span class="mi">644200</span><span class="p">]</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">isTestSolvable</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span><span class="n">k</span><span class="p">),</span> <span class="s2">&quot;Should be True&quot;</span><span class="p">)</span>
+
+<span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">882144</span><span class="p">,</span> <span class="mi">993441</span><span class="p">,</span> <span class="mi">460418</span><span class="p">,</span> <span class="mi">325830</span><span class="p">,</span> <span class="mi">404529</span><span class="p">,</span> <span class="mi">912233</span><span class="p">,</span> <span class="mi">255818</span><span class="p">,</span> <span class="mi">68407</span><span class="p">,</span> <span class="mi">94032</span><span class="p">,</span> <span class="mi">6801</span><span class="p">,</span> <span class="mi">38227</span><span class="p">,</span> <span class="mi">997782</span><span class="p">,</span> <span class="mi">747063</span><span class="p">,</span> <span class="mi">754688</span><span class="p">,</span> <span class="mi">725338</span><span class="p">,</span> <span class="mi">802267</span><span class="p">,</span> <span class="mi">673468</span><span class="p">,</span> <span class="mi">271162</span><span class="p">,</span> <span class="mi">478014</span><span class="p">,</span> <span class="mi">21599</span><span class="p">]</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">isTestSolvable</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span><span class="n">k</span><span class="p">),</span> <span class="s2">&quot;Should be False&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<p>(From <a class="reference external" href="https://www.w3resource.com/">https://www.w3resource.com/</a>)</p>
+<p>Write a Python program to calculate the value of ‘a’ to the power ‘b’. Do not use the <code class="docutils literal notranslate"><span class="pre">**</span></code> operator, the <code class="docutils literal notranslate"><span class="pre">pow</span></code> function <code class="docutils literal notranslate"><span class="pre">math.pow</span></code>, equivalent numpy functions or anything else that already does this for you.</p>
+<p>Assume that b is an integer, and implement this using only the multiply <code class="docutils literal notranslate"><span class="pre">*</span></code> operator. Can you write a solution:</p>
+<ol class="simple">
+<li><p>Using recursion</p></li>
+<li><p>Not using recursion</p></li>
+</ol>
+<p>Which do you prefer?</p>
+</section>
+<section id="exercise-4">
+<h3>EXERCISE 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<p>Given a string, write a function to return all unique palindromic (<a class="reference external" href="https://en.wikipedia.org/wiki/Palindrome">https://en.wikipedia.org/wiki/Palindrome</a>) subtrings (<a class="reference external" href="https://en.wikipedia.org/wiki/Substring">https://en.wikipedia.org/wiki/Substring</a>) sorted according to the scrabble value of each of the substrings (if the scrabble score is equal, it should be alphabetically sorted). By this we mean if the string is “arsfgfsgh”, the output should be <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'r',</span> <span class="pre">'s',</span> <span class="pre">'g',</span> <span class="pre">'f',</span> <span class="pre">'fgf',</span> <span class="pre">'sfgfs']</span></code>. These are all the possible substrings of the input which are palindromes and they ordered in increasing values of the scrabble score (a = 1, r = 1, s = 1, g = 2, f = 4, fgf = 10, sfgfs = 12).</p>
+<p>Some other examples and outputs:</p>
+<ul class="simple">
+<li><p>Input: ‘cabca’; Output: <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></code></p></li>
+<li><p>Input: ‘ccccccccccc’; Output: <code class="docutils literal notranslate"><span class="pre">['c',</span> <span class="pre">'cc',</span> <span class="pre">'ccc',</span> <span class="pre">'cccc',</span> <span class="pre">'ccccc',</span> <span class="pre">'cccccc',</span> <span class="pre">'ccccccc',</span> <span class="pre">'cccccccc',</span> <span class="pre">'ccccccccc',</span> <span class="pre">'cccccccccc']</span></code></p></li>
+<li><p>Input: ‘abacabaabacab’; Output: <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'aa',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'aba',</span> <span class="pre">'aca',</span> <span class="pre">'baab',</span> <span class="pre">'abaaba',</span> <span class="pre">'bacab',</span> <span class="pre">'abacaba',</span> <span class="pre">'cabaabac',</span> <span class="pre">'acabaabaca']</span></code></p></li>
+<li><p>Input: ‘zazazaza’; Output: <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'z',</span> <span class="pre">'aza',</span> <span class="pre">'zaz',</span> <span class="pre">'azaza',</span> <span class="pre">'zazaz',</span> <span class="pre">'zazazaz']</span></code></p></li>
+<li><p>Input: ‘shjzzovuzvabrcrfxemkhbiguanipxaxrnybexth’; Output: <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'e',</span> <span class="pre">'i',</span> <span class="pre">'n',</span> <span class="pre">'o',</span> <span class="pre">'r',</span> <span class="pre">'s',</span> <span class="pre">'t',</span> <span class="pre">'u',</span> <span class="pre">'g',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'m',</span> <span class="pre">'p',</span> <span class="pre">'f',</span> <span class="pre">'h',</span> <span class="pre">'v',</span> <span class="pre">'y',</span> <span class="pre">'k',</span> <span class="pre">'rcr',</span> <span class="pre">'j',</span> <span class="pre">'x',</span> <span class="pre">'z',</span> <span class="pre">'xax',</span> <span class="pre">'zz']</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scrabble_score</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">3</span> <span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span> <span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="p">,</span>
+         <span class="s2">&quot;e&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">,</span>
+         <span class="s2">&quot;i&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;j&quot;</span><span class="p">:</span> <span class="mi">8</span> <span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">:</span> <span class="mi">5</span> <span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span>
+         <span class="s2">&quot;m&quot;</span><span class="p">:</span> <span class="mi">3</span> <span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">:</span> <span class="mi">3</span> <span class="p">,</span>
+         <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span>
+         <span class="s2">&quot;u&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">8</span> <span class="p">,</span>
+         <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "icg-gravwaves/U24568_Computational_Physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Summary_exercises.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Summary Exercises</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Becky Canning, Ian Harry and Andrew Lundgren<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

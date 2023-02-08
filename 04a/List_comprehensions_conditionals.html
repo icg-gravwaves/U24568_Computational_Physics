@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>EXERCISE: Class attributes and inheritence &#8212; Computational Physics U24568</title>
+    <title>List Comprehensions - Including conditionals &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recap" href="Recap.html" />
-    <link rel="prev" title="Class attributes and inheritence" href="Attributes_and_inheritance.html" />
+    <link rel="next" title="List Comprehensions - Exercises 2" href="List_comprehensions_exercises2.html" />
+    <link rel="prev" title="List comprehensions - Exercises 1" href="List_comprehensions_exercises1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,12 +116,79 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="overview.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03b/overview.html">
    Lecture 3b: Class Conundrums
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_2020_2021_ClassConundrums.html">
+     Everything in one Notebook - Class Conundrums
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -130,144 +199,77 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Initializing_a_class.html">
-     Initializing a class
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Initializing_a_class_exercise.html">
-     EXERCISE - Initializing a class
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Optional_arguments.html">
-     Optional arguments
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Class_defining_practice.html">
-     EXERCISES - Practicing defining classes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Attributes_and_inheritance.html">
-     Class attributes and inheritence
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     EXERCISE: Class attributes and inheritence
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Recap.html">
-     Recap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Summary_exercises.html">
-     SUMMARY EXERCISES
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Acknowledgements.html">
-     Acknowledgements
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect03b_2020_2021_ClassConundrums.html">
-     Everything in one Notebook - Class Conundrums
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04a/overview.html">
-   Lecture 4a: Advanced Techniques
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Introduction.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/List_comprehensions_overview.html">
+    <a class="reference internal" href="List_comprehensions_overview.html">
      List comprehensions - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/List_comprehensions_exercises1.html">
+    <a class="reference internal" href="List_comprehensions_exercises1.html">
      List comprehensions - Exercises 1
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/List_comprehensions_conditionals.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      List Comprehensions - Including conditionals
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/List_comprehensions_exercises2.html">
+    <a class="reference internal" href="List_comprehensions_exercises2.html">
      List Comprehensions - Exercises 2
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Set_dictionary_comprehensions.html">
+    <a class="reference internal" href="Set_dictionary_comprehensions.html">
      Set and Dictionary Comprehensions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Generators_overview.html">
+    <a class="reference internal" href="Generators_overview.html">
      Generators - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Generators_exercises1.html">
+    <a class="reference internal" href="Generators_exercises1.html">
      Generators - Exercises 1
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Generators_more_detail.html">
+    <a class="reference internal" href="Generators_more_detail.html">
      Generators - A bit more complexity
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Generators_exercises2.html">
+    <a class="reference internal" href="Generators_exercises2.html">
      Generators - Exercises 2
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Recursion_overview.html">
+    <a class="reference internal" href="Recursion_overview.html">
      Recursion - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Recursion_exercises.html">
+    <a class="reference internal" href="Recursion_exercises.html">
      Recursion - Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Lambda_overview.html">
+    <a class="reference internal" href="Lambda_overview.html">
      Function as a value and the lambda operator - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Lambda_exercises.html">
+    <a class="reference internal" href="Lambda_exercises.html">
      Function as a value and the lambda operator - Exercise
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/Summary_exercises.html">
+    <a class="reference internal" href="Summary_exercises.html">
      Summary Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.html">
+    <a class="reference internal" href="CompPhys_Lect04a_2022-23_AdvancedTechniques.html">
      Everything in one notebook - Advanced Techniques
     </a>
    </li>
@@ -332,7 +334,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/master?urlpath=lab/tree/03b/Attributes_and_inheritance_exercise.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/master?urlpath=lab/tree/04a/List_comprehensions_conditionals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -350,7 +352,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/master/03b/Attributes_and_inheritance_exercise.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/master/04a/List_comprehensions_conditionals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -428,7 +430,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F03b/Attributes_and_inheritance_exercise.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F04a/List_comprehensions_conditionals.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -456,7 +458,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/03b/Attributes_and_inheritance_exercise.ipynb"
+        <a href="../_sources/04a/List_comprehensions_conditionals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -505,7 +507,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>EXERCISE: Class attributes and inheritence</h1>
+                <h1>List Comprehensions - Including conditionals</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -517,16 +519,35 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-class-attributes-and-inheritence">
-<h1>EXERCISE: Class attributes and inheritence<a class="headerlink" href="#exercise-class-attributes-and-inheritence" title="Permalink to this headline">#</a></h1>
-<p>Create a Cat class in the same manner as the Dog class in the previous section. Define some class attributes specific to a cat. Use a Feline (or Felid) class which is a parent to Cat but a child of Mammal. Again choose some class attributes appropriate in each case.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="list-comprehensions-including-conditionals">
+<h1>List Comprehensions - Including conditionals<a class="headerlink" href="#list-comprehensions-including-conditionals" title="Permalink to this headline">#</a></h1>
+<p>There’s one more level of complexity that we can unlock with list comprehensions. That is that they can also contain a single conditional statement. So for example if we wanted to store all values of <span class="math notranslate nohighlight">\(x^3\)</span> for x between 1 and 100 (inclusive) where <span class="math notranslate nohighlight">\(x^3\)</span> does not end with the digit 8, we can do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubic_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="n">x3</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">x3</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">cubic_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">cubic_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 2197, 2744, 3375, 4096, 4913, 5832, 6859, 8000, 9261, 12167, 13824, 15625, 17576, 19683, 21952, 24389, 27000, 29791, 35937, 39304, 42875, 46656, 50653, 54872, 59319, 64000, 68921, 79507, 85184, 91125, 97336, 103823, 110592, 117649, 125000, 132651, 148877, 157464, 166375, 175616, 185193, 195112, 205379, 216000, 226981, 250047, 262144, 274625, 287496, 300763, 314432, 328509, 343000, 357911, 389017, 405224, 421875, 438976, 456533, 474552, 493039, 512000, 531441, 571787, 592704, 614125, 636056, 658503, 681472, 704969, 729000, 753571, 804357, 830584, 857375, 884736, 912673, 941192, 970299, 1000000]
 </pre></div>
 </div>
 </div>
 </div>
+<p>This can be written as a single list comprehension with</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cubic_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again though, list comprehensions should be used to help with code readability by making things more concise. Things that become so concise that they are unreadable are not good!</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -542,7 +563,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./03b"
+            path: "./04a"
         },
         predefinedOutput: true
     }
@@ -556,17 +577,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Attributes_and_inheritance.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="List_comprehensions_exercises1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Class attributes and inheritence</p>
+            <p class="prev-next-title">List comprehensions - Exercises 1</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Recap.html" title="next page">
+    <a class='right-next' id="next-link" href="List_comprehensions_exercises2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Recap</p>
+        <p class="prev-next-title">List Comprehensions - Exercises 2</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
