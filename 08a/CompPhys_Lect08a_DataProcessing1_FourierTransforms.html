@@ -1,0 +1,1330 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data processing and manipulation techniques &#8212; Computational Physics U24568</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Aliasing Summary" href="Aliasing_summary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03b/overview.html">
+   Lecture 3b: Class Conundrums
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_2020_2021_ClassConundrums.html">
+     Everything in one Notebook - Class Conundrums
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04a/overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_overview.html">
+     List comprehensions - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_exercises1.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_conditionals.html">
+     List Comprehensions - Including conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_exercises2.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Set_dictionary_comprehensions.html">
+     Set and Dictionary Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_overview.html">
+     Generators - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_exercises1.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_more_detail.html">
+     Generators - A bit more complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_exercises2.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Recursion_overview.html">
+     Recursion - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Recursion_exercises.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Lambda_overview.html">
+     Function as a value and the lambda operator - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Lambda_exercises.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Summary_exercises.html">
+     Summary Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.html">
+     Everything in one notebook - Advanced Techniques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Lecture 8a: Signal processing 1, Discrete Fourier Transforms
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="DFT_overview.html">
+     Discrete Fourier Transforms - What is a Fourier transform?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DFT_coding_help.html">
+     Discrete Fourier Transforms - What we need to remember for coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DFT_Coding_Easy.html">
+     Coding up a Fourier transform - EASY(IER) VERSION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DFT_coding_hard.html">
+     Coding up a Fourier transform - HARD VERSION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DFT_more_exercises.html">
+     Discrete Fourier Transforms - Further Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DFT_summary.html">
+     Discrete Fourier Transforms - SUMMARY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Aliasing_introduction.html">
+     Aliasing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Aliasing_exercises.html">
+     Aliasing exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Aliasing_summary.html">
+     Aliasing Summary
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Data processing and manipulation techniques
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/master?urlpath=lab/tree/08a/CompPhys_Lect08a_DataProcessing1_FourierTransforms.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/master/08a/CompPhys_Lect08a_DataProcessing1_FourierTransforms.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F08a/CompPhys_Lect08a_DataProcessing1_FourierTransforms.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/08a/CompPhys_Lect08a_DataProcessing1_FourierTransforms.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-fourier-transforms-what-is-a-fourier-transform">
+   Discrete Fourier Transforms - What is a Fourier transform?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-fourier-transforms-what-we-need-to-remember-for-coding">
+   Discrete Fourier Transforms - What we need to remember for coding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-1-constructing-a-fourier-transform-a-hard-first-exercise-here-but-an-important-one-this-notebook-is-shorter-than-some-previous-ones">
+   Exercise 1.1: Constructing a Fourier transform (a hard first exercise here, but an important one …. this notebook is shorter than some previous ones)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hard-version">
+     HARD VERSION
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#easy-ier-version">
+     EASY(IER) VERSION
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-1">
+       PART 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-2">
+       PART 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-3">
+       PART 3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-4">
+       PART 4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1-2-repeat-the-process-with-the-following-data">
+       Exercise 1.2: Repeat the process with the following data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1-3">
+       Exercise 1.3:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1-4">
+       Exercise 1.4:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-summary">
+   Part 1: Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-aliasing">
+   Part 2: Aliasing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises-2">
+     Exercises 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-summary">
+   Part 2: Summary
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data processing and manipulation techniques</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-fourier-transforms-what-is-a-fourier-transform">
+   Discrete Fourier Transforms - What is a Fourier transform?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-fourier-transforms-what-we-need-to-remember-for-coding">
+   Discrete Fourier Transforms - What we need to remember for coding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-1-constructing-a-fourier-transform-a-hard-first-exercise-here-but-an-important-one-this-notebook-is-shorter-than-some-previous-ones">
+   Exercise 1.1: Constructing a Fourier transform (a hard first exercise here, but an important one …. this notebook is shorter than some previous ones)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hard-version">
+     HARD VERSION
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#easy-ier-version">
+     EASY(IER) VERSION
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-1">
+       PART 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-2">
+       PART 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-3">
+       PART 3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#part-4">
+       PART 4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1-2-repeat-the-process-with-the-following-data">
+       Exercise 1.2: Repeat the process with the following data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1-3">
+       Exercise 1.3:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1-4">
+       Exercise 1.4:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-summary">
+   Part 1: Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-aliasing">
+   Part 2: Aliasing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises-2">
+     Exercises 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-summary">
+   Part 2: Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.signal</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="data-processing-and-manipulation-techniques">
+<h1>Data processing and manipulation techniques<a class="headerlink" href="#data-processing-and-manipulation-techniques" title="Permalink to this headline">#</a></h1>
+<section id="discrete-fourier-transforms-what-is-a-fourier-transform">
+<h2>Discrete Fourier Transforms - What is a Fourier transform?<a class="headerlink" href="#discrete-fourier-transforms-what-is-a-fourier-transform" title="Permalink to this headline">#</a></h2>
+<p>In this notebook we will be using Fourier transforms, exploring how we would code a Fourier transform and exploring how these can often provide a better way of visualizing data, in this case time-series data. In the field of signal-processing (which we will be exploring for coursework 2!) these can be incredibly powerful tool for being able to see signals buried in noise.</p>
+<p>We will demonstrate all of this with code, and provide our own brief introduction here, but it is very beneficial to understand the theory behind this. In other modules (though this may depend on option choices) you should have already encountered Fourier transforms. However, to give an introduction to what these are there is some background watching for this notebook:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=spUNpyF58BY&amp;ab_channel=3Blue1Brown">https://www.youtube.com/watch?v=spUNpyF58BY&amp;ab_channel=3Blue1Brown</a> &lt; An Introduction to Fourier transforms by YouTuber 3Blue1Brown</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=kP02nBNtjrU&amp;ab_channel=LookingGlassUniverse">https://www.youtube.com/watch?v=kP02nBNtjrU&amp;ab_channel=LookingGlassUniverse</a> &lt; An introduction to Fourier series by YouTuber LookingGlassUniverse (part 1 of 2)</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Xxut2PN-V8Q&amp;ab_channel=LookingGlassUniverse">https://www.youtube.com/watch?v=Xxut2PN-V8Q&amp;ab_channel=LookingGlassUniverse</a> &lt; An introduction to Fourier series by YouTuber LookingGlassUniverse (part 2 of 2)</p></li>
+<li><p><a class="reference external" href="https://moodle.port.ac.uk/mod/lti/view.php?id=2166844">https://moodle.port.ac.uk/mod/lti/view.php?id=2166844</a> &lt; An Introduction to Fourier series by Ian.</p></li>
+</ul>
+<p>Please do watch over these in advance of the lecture! I will briefly recap the bottom video in the lecture.</p>
+</section>
+<section id="discrete-fourier-transforms-what-we-need-to-remember-for-coding">
+<h2>Discrete Fourier Transforms - What we need to remember for coding<a class="headerlink" href="#discrete-fourier-transforms-what-we-need-to-remember-for-coding" title="Permalink to this headline">#</a></h2>
+<p>Here we again introduce what a discrete Fourier transform is. This is <em>not</em> a replacement for the videos above, but a supplement to it.</p>
+<p>Any time series <span class="math notranslate nohighlight">\(x(t)\)</span> can be sampled as a set of discrete points <span class="math notranslate nohighlight">\(x[t_n]\)</span> or <span class="math notranslate nohighlight">\(x_n\)</span> for short. This is often necessary in the real world where, for example, we are measuring a quantity 100 times every second obtaining a discretely sampled representation of the thing being measured.</p>
+<p>Like Fourier transforms of continuous data, a discretely sample times series <span class="math notranslate nohighlight">\(x_n\)</span> can be represented as the sum of a set of sine waves with different frequencies and amplitudes. <span class="math notranslate nohighlight">\(X[f_k]\)</span> or <span class="math notranslate nohighlight">\(X_k\)</span> for short represents the amplitudes and phases as a function of the sine wave frequency (denoted k). To represent a time series of length N we need N independent variables.</p>
+<p>The Fourier transform is used to express <span class="math notranslate nohighlight">\(X_k\)</span> in terms of <span class="math notranslate nohighlight">\(x_n\)</span>. It is given by:</p>
+<p><span class="math notranslate nohighlight">\(X_k = \sum_{n=0}^{N-1} x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
+<p>Likewise the inverse Fourier transform is used to obtain <span class="math notranslate nohighlight">\(x_n\)</span> from <span class="math notranslate nohighlight">\(X_k\)</span>. It is given by:</p>
+<p><span class="math notranslate nohighlight">\(x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k \left[ \cos({2 \pi k n / N}) + i \sin({2 \pi k n / N}) \right]\)</span></p>
+<p>In the general case both <span class="math notranslate nohighlight">\(x[t_n]\)</span> and <span class="math notranslate nohighlight">\(X[f_k]\)</span> are sequences of complex numbers <strong>with the same length</strong>. However, often we will be dealing with time series of real data. In this case there is symmetry in the Frequency-domain representation such that</p>
+<p><span class="math notranslate nohighlight">\(X_{N-j} = X_J^{*}\)</span></p>
+<p>In this case, because of the symmetry, you only need the values up to <span class="math notranslate nohighlight">\(X_{N/2}\)</span> to fully define the Fourier transform of <span class="math notranslate nohighlight">\(x_n\)</span>. The frequency corresponding to <span class="math notranslate nohighlight">\(k=N/2\)</span> is the “Nyquist frequency”.</p>
+<p>Enough math, let’s demonstrate this.</p>
+</section>
+<section id="exercise-1-1-constructing-a-fourier-transform-a-hard-first-exercise-here-but-an-important-one-this-notebook-is-shorter-than-some-previous-ones">
+<h2>Exercise 1.1: Constructing a Fourier transform (a hard first exercise here, but an important one …. this notebook is shorter than some previous ones)<a class="headerlink" href="#exercise-1-1-constructing-a-fourier-transform-a-hard-first-exercise-here-but-an-important-one-this-notebook-is-shorter-than-some-previous-ones" title="Permalink to this headline">#</a></h2>
+<p>Let’s consider a stretch of data 16 seconds long, sampled 16 times a second (so 256 samples, or <code class="docutils literal notranslate"><span class="pre">len(data_time_domain)</span> <span class="pre">=</span> <span class="pre">256</span></code>). This data is given by a sinusoid. Using the equations above, write a function to compute the Fourier transform of this data. Then inverse Fourier transform the data and verify that you get the original time series. Here we’ve written the relevant plotting codes, but we have not written the Fourier transform and inverse Fourier transform. That’s your task!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">data_length</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mf">16.</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data_length</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample_rate</span>
+<span class="n">data_time_domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Amplitude&#39;)
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_4_1.png" src="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_4_1.png" />
+</div>
+</div>
+<section id="hard-version">
+<h3>HARD VERSION<a class="headerlink" href="#hard-version" title="Permalink to this headline">#</a></h3>
+<p>If you are happy coding up the equations given above, let’s just plug them in here and run the code on the cell below to check if it works. If you don’t know where to start with this, scroll down to the easier version and we will guide you through it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_fourier_transform</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">):</span>
+    <span class="c1"># FILL IN THE MISSING CODE</span>
+    <span class="k">return</span> <span class="n">data_frequency_domain</span>
+
+<span class="k">def</span> <span class="nf">compute_inverse_fourier_transform</span><span class="p">(</span><span class="n">data_frequency_domain</span><span class="p">):</span>
+    <span class="c1"># FILL IN THE MISSING CODE</span>
+    <span class="k">return</span> <span class="n">data_time_domain</span> <span class="o">/</span> <span class="n">N</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s how you would plot the Fourier transformed data. </span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">data_length</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">))</span>
+<span class="n">data_frequency_domain</span> <span class="o">=</span> <span class="n">compute_fourier_transform</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_frequency_domain</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_frequency_domain</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="c1"># This is complex, so need two lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fourier Transform&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Real component&#39;</span><span class="p">,</span><span class="s1">&#39;Imag component&#39;</span><span class="p">])</span>
+
+<span class="c1"># Make sure that the inverted data is equal to the original data!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">data_time_domain_inverted</span> <span class="o">=</span> <span class="n">compute_inverse_fourier_transform</span><span class="p">(</span><span class="n">data_frequency_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_inverted</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s1">&#39;k-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_inverted</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span> <span class="c1"># This is complex, so need two lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain</span><span class="p">,</span> <span class="s1">&#39;r:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original data (hopefully)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Real component&#39;</span><span class="p">,</span><span class="s1">&#39;Imag component&#39;</span><span class="p">,</span> <span class="s1">&#39;Original data&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Here&#39;s how you would plot the Fourier transformed data. </span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">data_length</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">data_frequency_domain</span> <span class="o">=</span> <span class="n">compute_fourier_transform</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_frequency_domain</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_frequency_domain</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="c1"># This is complex, so need two lines</span>
+
+<span class="nn">Input In [3],</span> in <span class="ni">compute_fourier_transform</span><span class="nt">(data_time_domain)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">compute_fourier_transform</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="c1"># FILL IN THE MISSING CODE</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">return</span> <span class="n">data_frequency_domain</span>
+
+<span class="ne">NameError</span>: name &#39;data_frequency_domain&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="easy-ier-version">
+<h3>EASY(IER) VERSION<a class="headerlink" href="#easy-ier-version" title="Permalink to this headline">#</a></h3>
+<p>Okay, let’s break this down into stages. We need to compute</p>
+<p><span class="math notranslate nohighlight">\(X_k = \sum_{n=0}^{N-1} x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
+<p>but this has a bunch of stages, and a summation, and needs to produce a vector of outputs. Let’s break this down.</p>
+<section id="part-1">
+<h4>PART 1<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h4>
+<p>The bulk of this will be computing the bit inside the sum:</p>
+<p><span class="math notranslate nohighlight">\(x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
+<p>This contains 4 things that will vary: <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(x_n\)</span>. So first write a function that takes these 4 inputs and computes</p>
+<p><span class="math notranslate nohighlight">\(x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fourier_transform_inner_bit</span><span class="p">(</span><span class="n">x_n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="c1"># ADD CODE HERE. Note that x_n, k, n, N are *not* numpy arrays, but are floats, this should return a complex number (one number)</span>
+    <span class="c1"># We&#39;re just going to call this *lots* of times!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this to validate the function above</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your code gives&quot;</span><span class="p">,</span> <span class="n">fourier_transform_inner_bit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s2">&quot;it should say (-0.6180339887498947-1.9021130325903073j)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your code gives&quot;</span><span class="p">,</span> <span class="n">fourier_transform_inner_bit</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="s2">&quot;it should say (2.0000000000000004+3.4641016151377544j)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your code gives (-0.6180339887498947-1.9021130325903073j) it should say (-0.6180339887498947-1.9021130325903073j)
+Your code gives (2.0000000000000004+3.4641016151377544j) it should say (2.0000000000000004+3.4641016151377544j)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-2">
+<h4>PART 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h4>
+<p>Okay we wrote a function to compute that inner part. Let’s call this <span class="math notranslate nohighlight">\(F_1(x_n, k, n, N)\)</span> where</p>
+<p><span class="math notranslate nohighlight">\(F_1(x_n, k, n, N) = x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
+<p>then our original equation</p>
+<p><span class="math notranslate nohighlight">\(X_k = \sum_{n=0}^{N-1} x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
+<p>becomes</p>
+<p><span class="math notranslate nohighlight">\(X_k = \sum_{n=0}^{N-1} F_1(x_n, k, n, N)\)</span></p>
+<p>so now let’s compute</p>
+<p>\sum_{n=0}^{N-1} F_1(x_n, k, n, N)$</p>
+<p>To do this write a function, which will take <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(N\)</span> as inputs and should return the sum.</p>
+<p><strong>NOTE</strong> <span class="math notranslate nohighlight">\(x\)</span> is now a numpy array! When calling <span class="math notranslate nohighlight">\(F_1\)</span> we should use <span class="math notranslate nohighlight">\(x_n\)</span>, which is the nth element of <span class="math notranslate nohighlight">\(x\)</span> or <code class="docutils literal notranslate"><span class="pre">x[n]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fourier_transform_first_sum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="c1"># ADD CODE HERE. Note that k and N are floats. x is a numpy array.</span>
+    <span class="c1"># This should contain a for loop where you loop over n, choose x_n from x and then call F_1</span>
+    <span class="c1"># This should return a complex number</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this to verify your codde</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your code gives&quot;</span><span class="p">,</span> <span class="n">fourier_transform_first_sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s2">&quot;it should say (-5.000000000000003+3.632712640026803j)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your code gives&quot;</span><span class="p">,</span> <span class="n">fourier_transform_first_sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="s2">&quot;it should say (-3.1900677019085393+0.8739794353193151j)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your code gives (-5.000000000000003+3.632712640026803j) it should say (-5.000000000000003+3.632712640026803j)
+Your code gives (-3.1900677019085393+0.8739794353193151j) it should say (-3.1900677019085393+0.8739794353193151j)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-3">
+<h4>PART 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h4>
+<p>Now we have a function <span class="math notranslate nohighlight">\(F_2(x, k, N)\)</span> so we can write</p>
+<p><span class="math notranslate nohighlight">\(X_k = F_2(x, k, N)\)</span></p>
+<p>However, we want to compute <span class="math notranslate nohighlight">\(X_k\)</span> for all possible values of k such that <span class="math notranslate nohighlight">\(X\)</span> is also a numpy array of complex numbers). We’ll do this in the following steps:</p>
+<ul class="simple">
+<li><p>Our function should take as input <span class="math notranslate nohighlight">\(x\)</span>; the data in the time domain (<code class="docutils literal notranslate"><span class="pre">data_time_domain</span></code> in the example above). This is a numpy array.</p></li>
+<li><p>Our function should output <span class="math notranslate nohighlight">\(X\)</span> the Fourier transform, which is an array of complex numbers. Considering the stuff written above, we’ll make <span class="math notranslate nohighlight">\(X\)</span> the same length as <span class="math notranslate nohighlight">\(x\)</span> (which will result in some symmetry in the output, as we’ll explore later).</p></li>
+<li><p>Define N to be the length of <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p>Create an empty array of complex numbers <span class="math notranslate nohighlight">\(X\)</span>, which should be the same length as <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>Loop over k (from 0 to N-1 (inclusive)). For each value of k set <code class="docutils literal notranslate"><span class="pre">X[k]</span> <span class="pre">=</span> <span class="pre">F_2(x,</span> <span class="pre">k,</span> <span class="pre">N)</span></code></p></li>
+<li><p>Return output</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># FILL IN THE MISSING CODE</span>
+
+    <span class="k">return</span> <span class="n">X</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this to verify your code</span>
+
+<span class="n">your_output_1</span> <span class="o">=</span> <span class="n">compute_fourier_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">stock_output_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">45.</span><span class="o">+</span><span class="mf">0.00000000e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="o">+</span><span class="mf">1.53884177e+01</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="o">+</span><span class="mf">6.88190960e+00</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">5.</span><span class="o">+</span><span class="mf">3.63271264e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="o">+</span><span class="mf">1.62459848e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="o">-</span><span class="mf">5.51091060e-15</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">5.</span><span class="o">-</span><span class="mf">1.62459848e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="o">-</span><span class="mf">3.63271264e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="o">-</span><span class="mf">6.88190960e+00</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">5.</span><span class="o">-</span><span class="mf">1.53884177e+01</span><span class="n">j</span><span class="p">])</span>
+<span class="c1"># YOU NEED TO CHECK THAT stock_output_1 and your_output_1 are the same!!!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">your_output_1</span><span class="p">)</span>
+<span class="n">your_output_2</span> <span class="o">=</span> <span class="n">compute_fourier_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">your_output_2</span><span class="p">)</span>
+<span class="n">stock_output_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">152.65360821</span><span class="o">+</span><span class="mf">0.00000000e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.2498741</span> <span class="o">+</span><span class="mf">1.20995246e+01</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">2.99043154</span><span class="o">+</span><span class="mf">5.64225487e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.12673016</span><span class="o">+</span><span class="mf">3.26041003e+00</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">3.17221609</span><span class="o">+</span><span class="mf">1.88294825e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.1900677</span> <span class="o">+</span><span class="mf">8.73979435e-01</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">3.19496902</span><span class="o">+</span><span class="mf">7.67154354e-14</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.1900677</span> <span class="o">-</span><span class="mf">8.73979435e-01</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">3.17221609</span><span class="o">-</span><span class="mf">1.88294825e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.12673016</span><span class="o">-</span><span class="mf">3.26041003e+00</span><span class="n">j</span><span class="p">,</span>
+                           <span class="o">-</span><span class="mf">2.99043154</span><span class="o">-</span><span class="mf">5.64225487e+00</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.2498741</span> <span class="o">-</span><span class="mf">1.20995246e+01</span><span class="n">j</span><span class="p">])</span>
+<span class="c1"># YOU NEED TO CHECK THAT stock_output_2 and your_output_2 are the same!!!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45.+0.00000000e+00j -5.+1.53884177e+01j -5.+6.88190960e+00j
+ -5.+3.63271264e+00j -5.+1.62459848e+00j -5.-5.51091060e-15j
+ -5.-1.62459848e+00j -5.-3.63271264e+00j -5.-6.88190960e+00j
+ -5.-1.53884177e+01j]
+[152.65360821+0.00000000e+00j  -2.2498741 +1.20995246e+01j
+  -2.99043154+5.64225487e+00j  -3.12673016+3.26041003e+00j
+  -3.17221609+1.88294825e+00j  -3.1900677 +8.73979435e-01j
+  -3.19496902+7.67154354e-14j  -3.1900677 -8.73979435e-01j
+  -3.17221609-1.88294825e+00j  -3.12673016-3.26041003e+00j
+  -2.99043154-5.64225487e+00j  -2.2498741 -1.20995246e+01j]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-4">
+<h4>PART 4<a class="headerlink" href="#part-4" title="Permalink to this headline">#</a></h4>
+<p>Now we need to define the <em>inverse</em> Fourier transform. Compare the equations. This is basically the same as the Fourier transform. So repeat parts 1 - 3, with the necessary small modification, and write an inverse Fourier transform</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_inverse_fourier_transform</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="c1"># FILL IN THE MISSING CODE ... You will need some additional functions as well if following the form above!</span>
+
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If your code above is working, the following should plot the data, it&#39;s Fourier transform, </span>
+<span class="c1"># and then the inverse of that (which should be identical to the original data)</span>
+
+<span class="c1"># Create data</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">data_length</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mf">16.</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data_length</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample_rate</span>
+<span class="n">data_time_domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+
+<span class="c1"># Here&#39;s how you would plot the Fourier transformed data.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">data_length</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">))</span>
+<span class="n">data_frequency_domain</span> <span class="o">=</span> <span class="n">compute_fourier_transform</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_frequency_domain</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_frequency_domain</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="c1"># This is complex, so need two lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fourier Transform&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Real component&#39;</span><span class="p">,</span><span class="s1">&#39;Imag component&#39;</span><span class="p">])</span>
+
+<span class="c1"># Make sure that the inverted data is equal to the original data!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">data_time_domain_inverted</span> <span class="o">=</span> <span class="n">compute_inverse_fourier_transform</span><span class="p">(</span><span class="n">data_frequency_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_inverted</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s1">&#39;k-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_inverted</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span> <span class="c1"># This is complex, so need two lines</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain</span><span class="p">,</span> <span class="s1">&#39;r:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original data (hopefully)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Real component&#39;</span><span class="p">,</span><span class="s1">&#39;Imag component&#39;</span><span class="p">,</span> <span class="s1">&#39;Original data&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f233e146b80&gt;
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_19_1.png" src="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_19_1.png" />
+<img alt="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_19_2.png" src="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_19_2.png" />
+<img alt="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_19_3.png" src="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_19_3.png" />
+</div>
+</div>
+</section>
+<section id="exercise-1-2-repeat-the-process-with-the-following-data">
+<h4>Exercise 1.2: Repeat the process with the following data<a class="headerlink" href="#exercise-1-2-repeat-the-process-with-the-following-data" title="Permalink to this headline">#</a></h4>
+<p>Repeat the process, but with the following 4 datasets (<code class="docutils literal notranslate"><span class="pre">data_time_domain_CASE_1</span></code>, <code class="docutils literal notranslate"><span class="pre">data_time_domain_CASE_2</span></code>, <code class="docutils literal notranslate"><span class="pre">data_time_domain_CASE_3</span></code> and <code class="docutils literal notranslate"><span class="pre">data_time_domain_CASE_4</span></code>)? What do you notice about the Fourier transforms in each case? For each case you should</p>
+<ul class="simple">
+<li><p>Plot the original data</p></li>
+<li><p>Fourier transform the data, using your hand-written routine, and plot that.</p></li>
+<li><p>Inverse Fourier transform, using your routine, and plot that.</p></li>
+<li><p>Comment in-line what you notice about each case. Discuss with classmates and/or TAs and the lecturer.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mf">16.</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample_rate</span>
+<span class="n">data_time_domain_CASE_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span>
+
+<span class="n">data_time_domain_CASE_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="n">omega</span><span class="p">)</span>
+
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+
+<span class="n">data_time_domain_CASE_4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span>
+<span class="n">data_time_domain_CASE_4</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1-3">
+<h4>Exercise 1.3:<a class="headerlink" href="#exercise-1-3" title="Permalink to this headline">#</a></h4>
+<p>What is the computational complexity of your algorithm? This means, if I make the input vector twice as big (or three times as big or …) and plot how long the algorithm takes to run what shape does it follow. We can use the build in ipython function <code class="docutils literal notranslate"><span class="pre">timeit</span></code> to evaluate this.</p>
+<p><em>Plot the output from the timeit commands below, how does the speed of your code scale as the length of the input increases?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will time your function for a set of lengths. You need to run this, plot the data that comes out and</span>
+<span class="c1"># examine the resulting curve. Does it follow a y = a * x**2 + b * x + c curve?</span>
+
+<span class="c1"># WARNING: These data sets are longer than 256 samples. Make sure your Fourier transform function can handle that! </span>
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+<span class="n">data_time_domain_CASE_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">256</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> -n 2 -r 2 compute_fourier_transform(data_time_domain_CASE_3)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1-4">
+<h4>Exercise 1.4:<a class="headerlink" href="#exercise-1-4" title="Permalink to this headline">#</a></h4>
+<p>Use library functions to perform a Fourier transform. There are a few ways of doing this, but the simplest (IMO) is to use numpy to call into the FFTW algorithm. The FFTW algorithm has N log N complexity, so much faster for large Fourier transforms (FFT = Fast Fourier Transform, FFTW is a specific algorithm and stands for “Fastest Fourier Transform in the West”). Here you must first demonstrate this on the original data stream.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_fourier_transform_numpy</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">):</span>
+    <span class="c1"># FILL IN THE MISSING CODE, using the numpy library to perform an FFT. Google how to use it!</span>
+    <span class="k">return</span> <span class="n">data_frequency_domain</span>
+
+<span class="k">def</span> <span class="nf">compute_inverse_fourier_transform_numpy</span><span class="p">(</span><span class="n">data_frequency_domain</span><span class="p">):</span>
+    <span class="c1"># FILL IN THE MISSING CODE, using the numpy library to perform an IFFT. Google how to use it!</span>
+    <span class="k">return</span> <span class="n">data_time_domain</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s an example of using your functions to call numpy&#39;s FFT on the first example.</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">data_length</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mf">16.</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample_rate</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">data_length</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">))</span>
+<span class="n">data_time_domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+
+<span class="n">data_fourier_domain</span> <span class="o">=</span> <span class="n">compute_fourier_transform_numpy</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_fourier_domain</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies</span><span class="p">,</span> <span class="n">data_fourier_domain</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fourier Transform&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Real component&#39;</span><span class="p">,</span><span class="s1">&#39;Imag component&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">data_time_domain_inv</span> <span class="o">=</span> <span class="n">compute_inverse_fourier_transform_numpy</span><span class="p">(</span><span class="n">data_fourier_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_inv</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_inv</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Original data (hopefully)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Real component&#39;</span><span class="p">,</span><span class="s1">&#39;Imag component&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>More tasks for you:</strong></p>
+<ul class="simple">
+<li><p>Use numpy’s FFT algorithm on the other data streams.</p></li>
+<li><p>Time numpy’s FFT algorithm and compare to your algorithm</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="part-1-summary">
+<h2>Part 1: Summary<a class="headerlink" href="#part-1-summary" title="Permalink to this headline">#</a></h2>
+<p>Main points from these exercises:</p>
+<ul class="simple">
+<li><p>The Fourier transform is a highly useful tool for data analysis. Sometimes features that are not obvious in the time domain, can be clearly seen in the frequency domain.</p></li>
+<li><p>It is possible to code our own Fourier transform routine, but library codes are <em>very</em> fast at doing this. As long as we understand the principles, let’s just use the library codes!</p></li>
+<li><p>Features in the time-domain that are very narrow will be very broad in the frequency domain, and vice-versa.</p></li>
+</ul>
+<p><strong>NOTE</strong>: As a lot of this (and future classes) can be directly used in the coursework we will be releasing partial solutions to these classes. Example plots will be shown, but the important code will be removed. Please do let us know if you need help getting solutions to any of this.</p>
+</section>
+<section id="part-2-aliasing">
+<h2>Part 2: Aliasing<a class="headerlink" href="#part-2-aliasing" title="Permalink to this headline">#</a></h2>
+<p>We generated a data stream 16 seconds long, sampled 16 times a second …. This means that we had 256 data points, and 16 samples are taken every second, so sample 0 is at t=0s, sample 1 as at t=1/16.s, sample 2 is at t=2/16.s, sample 16 is at t=16/16=1s.</p>
+<p>The maximum frequency in our Fourier transform was 15.9375 Hz. Can we really measure frequencies that high if only taking one data reading every 1/16 of a second? Let’s see what happens if we consider a sine-wave with a frequency of 15.9375 (so it should have almost 16 cycles in a second), and we take a point from this sine wave once every 1/16 of a second</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="p">(</span><span class="mf">255.</span><span class="o">/</span><span class="mf">16.</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">sine_wave</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">times</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">sine_wave</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fec07281e10&gt;]
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_33_1.png" src="../_images/CompPhys_Lect08a_DataProcessing1_FourierTransforms_33_1.png" />
+</div>
+</div>
+<p>Clearly this is not a sine wave oscillating almost 16 times a second! This is aliasing. If you try to sample a time series with frequency content above the Nyquist frequency (8Hz in this case), that content will appear reduced in frequency. This is important with music (for example) where you want the sounds to sound like they should when played back!</p>
+<p>In fact a sine wave of 31.9735 Hz or 47.9725 Hz or … will all appear the same as this one when sampled at 16Hz. This is why sometimes Fourier transforms, instead of quoting frequencies above the Nyquist (8Hz to 16Hz in our case), quote negative frequencies (-8Hz to 8Hz). The content at -7Hz is <em>identical</em> to content at 15Hz according to this aliasing (and 15Hz content will appear as 1Hz content unless you are considering complex input).</p>
+<section id="exercises-2">
+<h3>Exercises 2<a class="headerlink" href="#exercises-2" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Sample a 4000Hz sine wave at 300Hz. What frequency does it have now? Fourier transform this data to confirm.</p></li>
+<li><p>Sample a 4000Hz sine wave at 250Hz. What frequency does it have now? Fourier transform this data to confirm.</p></li>
+<li><p>Create a dataset consisting of sine waves at 150Hz, 250Hz, 350 Hz, and 450Hz (randomly choose the phase). Sample this data at 65Hz. What is the frequency content of this aliased output?</p></li>
+</ul>
+</section>
+</section>
+<section id="part-2-summary">
+<h2>Part 2: Summary<a class="headerlink" href="#part-2-summary" title="Permalink to this headline">#</a></h2>
+<p>Aliasing is a problem when discretely sampling data. If possible it is better to sample the data at a higher rate, <em>remove</em> the high frequency content (see the next notebook), and then downsample the data.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "icg-gravwaves/U24568_Computational_Physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./08a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Aliasing_summary.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Aliasing Summary</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Becky Canning, Ian Harry and Andrew Lundgren<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
