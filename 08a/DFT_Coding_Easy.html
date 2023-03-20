@@ -579,32 +579,25 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Coding up a Fourier transform - EASY(IER) VERSION
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-1">
    PART 1
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-2">
    PART 2
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-3">
-     PART 3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-4">
-     PART 4
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   PART 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   PART 4
+  </a>
  </li>
 </ul>
 
@@ -625,32 +618,25 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Coding up a Fourier transform - EASY(IER) VERSION
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-1">
    PART 1
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-2">
    PART 2
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-3">
-     PART 3
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-4">
-     PART 4
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   PART 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4">
+   PART 4
+  </a>
  </li>
 </ul>
 
@@ -700,9 +686,8 @@ title="Print to PDF"
 <p>Okay, let’s break this down into stages. We need to compute</p>
 <p><span class="math notranslate nohighlight">\(X_k = \sum_{n=0}^{N-1} x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
 <p>but this has a bunch of stages, and a summation, and needs to produce a vector of outputs. Let’s break this down.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="part-1">
-<h1>PART 1<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h1>
+<section id="part-1">
+<h2>PART 1<a class="headerlink" href="#part-1" title="Permalink to this headline">#</a></h2>
 <p>The bulk of this will be computing the bit inside the sum:</p>
 <p><span class="math notranslate nohighlight">\(x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
 <p>This contains 4 things that will vary: <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(x_n\)</span>. So first write a function that takes these 4 inputs and computes</p>
@@ -734,8 +719,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="part-2">
-<h1>PART 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h1>
+<section id="part-2">
+<h2>PART 2<a class="headerlink" href="#part-2" title="Permalink to this headline">#</a></h2>
 <p>Okay we wrote a function to compute that inner part. Let’s call this <span class="math notranslate nohighlight">\(F_1(x_n, k, n, N)\)</span> where</p>
 <p><span class="math notranslate nohighlight">\(F_1(x_n, k, n, N) = x_n \left[ \cos({2 \pi k n / N}) - i \sin({2 \pi k n / N}) \right]\)</span></p>
 <p>then our original equation</p>
@@ -765,6 +750,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
 <section id="part-3">
 <h2>PART 3<a class="headerlink" href="#part-3" title="Permalink to this headline">#</a></h2>
 <p>Now we have a function <span class="math notranslate nohighlight">\(F_2(x, k, N)\)</span> so we can write</p>
