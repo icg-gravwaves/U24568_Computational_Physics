@@ -1,0 +1,1250 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>A long(ish) example showing how to optimize a numerical integration code &#8212; Computational Physics U24568</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Some code optimization exercises - Removing for loops!" href="optimization_exercises.html" />
+    <link rel="prev" title="Importing necessary backends" href="installing_profilers.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03b/overview.html">
+   Lecture 3b: Class Conundrums
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_2020_2021_ClassConundrums.html">
+     Everything in one Notebook - Class Conundrums
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04a/overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_overview.html">
+     List comprehensions - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_exercises1.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_conditionals.html">
+     List Comprehensions - Including conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/List_comprehensions_exercises2.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Set_dictionary_comprehensions.html">
+     Set and Dictionary Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_overview.html">
+     Generators - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_exercises1.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_more_detail.html">
+     Generators - A bit more complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Generators_exercises2.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Recursion_overview.html">
+     Recursion - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Recursion_exercises.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Lambda_overview.html">
+     Function as a value and the lambda operator - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Lambda_exercises.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/Summary_exercises.html">
+     Summary Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.html">
+     Everything in one notebook - Advanced Techniques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08a/overview.html">
+   Lecture 8a: Signal processing 1, Discrete Fourier Transforms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/DFT_overview.html">
+     Discrete Fourier Transforms - What is a Fourier transform?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/DFT_coding_help.html">
+     Discrete Fourier Transforms - What we need to remember for coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/DFT_Coding_Easy.html">
+     Coding up a Fourier transform - EASY(IER) VERSION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/DFT_coding_hard.html">
+     Coding up a Fourier transform - HARD VERSION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/DFT_more_exercises.html">
+     Discrete Fourier Transforms - Further Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/DFT_summary.html">
+     Discrete Fourier Transforms - SUMMARY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/Aliasing_introduction.html">
+     Aliasing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/Aliasing_exercises.html">
+     Aliasing exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/Aliasing_summary.html">
+     Aliasing Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_DataProcessing1_FourierTransforms.html">
+     Data processing and manipulation techniques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Lecture 9b: Code Optimization in Python (I)
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="introduction.html">
+     Techniques to profile and optimise python code - I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="installing_profilers.html">
+     Importing necessary backends
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     A long(ish) example showing how to optimize a numerical integration code
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="optimization_exercises.html">
+     Some code optimization exercises - Removing for loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="square_digits_opt.html">
+     Interactive example of non numpy-able code optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="using_the_right_tool.html">
+     Identifying common elements in two large lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sort_function.html">
+     Writing a function to sort an array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_sort_functions.html">
+     Some sort methods to compare against
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect09b_2022_2023_OptimisingCode.html">
+     Techniques to profile and optimise python code
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/master?urlpath=lab/tree/09b/optimization_example.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/master/09b/optimization_example.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F09b/optimization_example.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/09b/optimization_example.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting-to-understand-the-speed-optimality-of-the-code">
+   Starting to understand the speed/optimality of the code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#profiling-code">
+   Profiling code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-these-tools-and-information-to-speed-things-up">
+   Using these tools and information to speed things up
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>A long(ish) example showing how to optimize a numerical integration code</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting-to-understand-the-speed-optimality-of-the-code">
+   Starting to understand the speed/optimality of the code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#profiling-code">
+   Profiling code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-these-tools-and-information-to-speed-things-up">
+   Using these tools and information to speed things up
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="a-long-ish-example-showing-how-to-optimize-a-numerical-integration-code">
+<h1>A long(ish) example showing how to optimize a numerical integration code<a class="headerlink" href="#a-long-ish-example-showing-how-to-optimize-a-numerical-integration-code" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install line_profiler
+<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip install memory_profiler
+
+<span class="o">%</span><span class="k">load_ext</span> line_profiler
+<span class="o">%</span><span class="k">load_ext</span> memory_profiler
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting line_profiler
+  Using cached line_profiler-4.0.3.tar.gz (151 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Installing backend dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Preparing metadata (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hBuilding wheels for collected packages: line-profiler
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for line-profiler (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25h  Created wheel for line-profiler: filename=line_profiler-4.0.3-cp39-cp39-macosx_11_0_arm64.whl size=90437 sha256=aeef5e7a5910cecadf32d904102687ddf2f55188c4a0752bd3728a81e055481c
+  Stored in directory: /Users/iwharry/Library/Caches/pip/wheels/5e/f9/e4/51d4cec1d9283c683a7edea0aad7c5bf1bad70c1d886de3cb1
+Successfully built line-profiler
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: line-profiler
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed line-profiler-4.0.3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: memory_profiler in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (0.61.0)
+Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (from memory_profiler) (5.9.4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s some example code which integrates</p>
+<p><span class="math notranslate nohighlight">\(cos(x) \times \frac{1}{x} \)</span></p>
+<p>from <span class="math notranslate nohighlight">\(x = 1\)</span> to <span class="math notranslate nohighlight">\(x=1000\)</span>.</p>
+<p>We will do this by using the simple rectangular method for numerically integrating. <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_sum">https://en.wikipedia.org/wiki/Riemann_sum</a> …. I know you all know the theory behind this, and how to code up such an example, as I taught it to you all in MATLAB last year!!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOTE: We write this as a set of functions. Functions are better to isolate different parts of</span>
+<span class="c1">#       the code and to be able to check each component individually. Using a class and class methods</span>
+<span class="c1">#       to do this is also fine, and we mix both here to show this ... Might not be the most aesthetic</span>
+<span class="c1">#       way of doing this, though! However, this does serve as a reminder: Don&#39;t write long blocks of code</span>
+<span class="c1">#       split up into functions!</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">compute_cosx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes cos(t) for all values in tseries</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cosx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tseries</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tval</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+        <span class="n">cosx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">tseries</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">cosx</span>
+
+<span class="k">def</span> <span class="nf">compute_invx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes 1/x for all values in tseries</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">invx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tseries</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tval</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+        <span class="n">invx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">tseries</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">invx</span>
+
+<span class="k">def</span> <span class="nf">compute_seriesproduct</span><span class="p">(</span><span class="n">series1</span><span class="p">,</span> <span class="n">series2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Multiplies each element in series1 with the corresponding element in series2.</span>
+<span class="sd">    This returns an array of the multiplied elements.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Ensure the two arrays are the same length</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">series2</span><span class="p">))</span>
+    <span class="n">seriessum</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)):</span>
+        <span class="n">seriessum</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">series1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">*</span> <span class="n">series2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">seriessum</span>
+
+<span class="k">def</span> <span class="nf">compute_seriessum</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the sum of all values in series</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sumvals</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)):</span>
+        <span class="n">sumvals</span> <span class="o">=</span> <span class="n">sumvals</span> <span class="o">+</span> <span class="n">series</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">sumvals</span>
+
+
+<span class="k">class</span> <span class="nc">Integrator</span><span class="p">():</span>  
+    <span class="k">def</span> <span class="nf">generate_integral</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Integral function goes here</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cosx</span> <span class="o">=</span> <span class="n">compute_cosx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tseries</span><span class="p">)</span>
+        <span class="n">invx</span> <span class="o">=</span> <span class="n">compute_invx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tseries</span><span class="p">)</span>
+        <span class="n">prod</span> <span class="o">=</span> <span class="n">compute_seriesproduct</span><span class="p">(</span><span class="n">cosx</span><span class="p">,</span> <span class="n">invx</span><span class="p">)</span>
+        <span class="n">summed_prod</span> <span class="o">=</span> <span class="n">compute_seriessum</span><span class="p">(</span><span class="n">prod</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">summed_prod</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_t</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes the class and timeseries</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tmin</span> <span class="o">=</span> <span class="n">tmin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tmax</span> <span class="o">=</span> <span class="n">tmax</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delta_t</span> <span class="o">=</span> <span class="n">delta_t</span>
+        <span class="n">tseries</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tmax</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="c1"># We shift tseries by delta_t / 2 to ensure that we are using the midpoint rule (see wikipedia page)</span>
+        <span class="n">tseries</span> <span class="o">=</span> <span class="n">tseries</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_t</span> <span class="o">/</span> <span class="mf">2.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tseries</span> <span class="o">=</span> <span class="n">tseries</span>
+
+
+<span class="k">def</span> <span class="nf">main_function</span><span class="p">():</span>
+    <span class="n">intgr</span> <span class="o">=</span> <span class="n">Integrator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">300.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">intgr</span><span class="o">.</span><span class="n">generate_integral</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">main_function</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.33743511454087033
+</pre></div>
+</div>
+</div>
+</div>
+<section id="starting-to-understand-the-speed-optimality-of-the-code">
+<h2>Starting to understand the speed/optimality of the code<a class="headerlink" href="#starting-to-understand-the-speed-optimality-of-the-code" title="Permalink to this headline">#</a></h2>
+<p>Our first step in understanding the code is to time it. This can be done in the following way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> main_function()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.83 s ± 19.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Timeit will run the code a number of times and take an average. How many times it runs the code depends on how long the code takes (though you can override these values). Here we can see that our code took approximately a second to run. If running this only once then this is of course trivial.</p>
+<p><strong>Important rule of optimising: Don’t waste time optimising a block of code, unless it is slowing down your work … If others are using your code, you must think about how they might use your code though, might it be a problem in the future? There are certainly some things in the code above that are unnecessarily slow, which can be made faster just by writing the code better in the first place</strong></p>
+<p>Let’s assume though that we might need to run this code thousands of times (or hundreds of thousands of times). In that case let’s see what we can do to make it faster.</p>
+</section>
+<section id="profiling-code">
+<h2>Profiling code<a class="headerlink" href="#profiling-code" title="Permalink to this headline">#</a></h2>
+<p>Python and Jupyter notebooks have some neat tools for profiling code. Profiling means measuring how long the code takes to run individual blocks of code. Most profilers measure the fraction of time spent inside each individual <em>function</em>. Therefore splitting your code up into a number of different functions can help both in terms of making it easier to read and understand the code, but also in terms of understanding any bottlenecks.</p>
+<p>Below we run a built-in profiler on our code above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">prun</span> -l 10 -q -T prun0 main_function()
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prun0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+*** Profile printout saved to text file &#39;prun0&#39;.
+         2999721 function calls in 1.934 seconds
+
+   Ordered by: internal time
+   List reduced from 14 to 10 due to restriction &lt;10&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.593    0.593    0.595    0.595 3642284310.py:18(compute_invx)
+        1    0.487    0.487    0.489    0.489 3642284310.py:27(compute_seriesproduct)
+        1    0.464    0.464    0.614    0.614 3642284310.py:9(compute_cosx)
+        1    0.230    0.230    0.230    0.230 3642284310.py:39(compute_seriessum)
+  2999700    0.149    0.000    0.149    0.000 {built-in method math.cos}
+        3    0.005    0.002    0.005    0.002 {built-in method numpy.zeros}
+        1    0.003    0.003    0.005    0.005 3642284310.py:61(__init__)
+        1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
+        1    0.001    0.001    1.934    1.934 3642284310.py:74(main_function)
+        1    0.000    0.000    1.934    1.934 &lt;string&gt;:1(&lt;module&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">tottime</span></code> entry is the amount of time spent within each function. We can see that the majority of time is spent computing <code class="docutils literal notranslate"><span class="pre">cos(x)</span></code>, <code class="docutils literal notranslate"><span class="pre">inv(x)</span></code> and doing the series product and sum.</p>
+<p>To introduce all of our profiling tools in one place, let’s also look at line-by-line and memory profiling. We can use the following to run the code to produce line-by-line profiling information</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeseries</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1000.</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="c1">#compute_cosx(timeseries)</span>
+
+<span class="o">%</span><span class="k">lprun</span> -T lprof0 -f main_function main_function()
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lprof0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="c1"># And we can also profile the sub-functions, such as compute_cosx</span>
+
+<span class="o">%</span><span class="k">lprun</span> -T lprof0 -f compute_cosx compute_cosx(timeseries)
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lprof0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Profile printout saved to text file &#39;lprof0&#39;. 
+Timer unit: 1e-09 s
+
+Total time: 2.63065 s
+File: /var/folders/67/1t4_rwdj441c8g3j147_fwrh0000gs/T/ipykernel_2253/3642284310.py
+Function: main_function at line 74
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    74                                           def main_function():
+    75         1    6305000.0 6305000.0      0.2      intgr = Integrator(1, 10000, 1./300.)
+    76         1 2624349000.0 2624349000.0     99.8      return intgr.generate_integral()
+
+*** Profile printout saved to text file &#39;lprof0&#39;. 
+Timer unit: 1e-09 s
+
+Total time: 0.035137 s
+File: /var/folders/67/1t4_rwdj441c8g3j147_fwrh0000gs/T/ipykernel_2253/3642284310.py
+Function: compute_cosx at line 9
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     9                                           def compute_cosx(tseries):
+    10                                               &quot;&quot;&quot;
+    11                                               Computes cos(t) for all values in tseries
+    12                                               &quot;&quot;&quot;
+    13         1     114000.0 114000.0      0.3      cosx = numpy.zeros(len(tseries))
+    14     99900   12812000.0    128.2     36.5      for idx, tval in enumerate(tseries):
+    15     99900   22211000.0    222.3     63.2          cosx[idx] = math.cos(tseries[idx])
+    16         1          0.0      0.0      0.0      return cosx
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, although we will not use it in this class, we can also profile the <em>memory usage</em> of a function in the same way. Unfortunately this only works for functions written in an external file, so we need to dump our code to a file and then run it from the file. Here’s an example of that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> mprun_demo.py
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="k">def</span> <span class="nf">invx_demo</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes 1/x for all values in tseries</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">invx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">tseries</span>
+    <span class="k">return</span> <span class="n">invx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing mprun_demo.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mprun_demo</span> <span class="kn">import</span> <span class="n">invx_demo</span>
+<span class="n">timeseries</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">10000.</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="o">%</span><span class="k">mprun</span> -f invx_demo invx_demo(timeseries)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-these-tools-and-information-to-speed-things-up">
+<h2>Using these tools and information to speed things up<a class="headerlink" href="#using-these-tools-and-information-to-speed-things-up" title="Permalink to this headline">#</a></h2>
+<p>Okay, now that we’ve understood the tools available to us. Let’s try to see if we can’t improve things. The first place where the code is slow is in the <code class="docutils literal notranslate"><span class="pre">compute_cosx</span></code> function. Here’s a major rule in python optimization:</p>
+<ul class="simple">
+<li><p>Avoid for loops wherever possible</p></li>
+</ul>
+<p>In this case rather than using a python for loop to compute <code class="docutils literal notranslate"><span class="pre">cos(x)</span></code> at every index, let’s use numpy to compute it at all indexes in one call. Yes, internally it will still need to loop over all values of <code class="docutils literal notranslate"><span class="pre">x</span></code> at some point and compute <code class="docutils literal notranslate"><span class="pre">cos(x)</span></code> for each point, but this will happen deep in some compiled numpy routine. In short</p>
+<ul class="simple">
+<li><p>Use numpy routines on vectors to avoid for loops where possible.</p></li>
+</ul>
+<p>So we can replace our <code class="docutils literal notranslate"><span class="pre">compute_cosx</span></code> function with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_cosx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes cos(t) for all values in tseries</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">tseries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that running this <em>after</em> the block above just replaces this function, so we can just run our profiler again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">prun</span> -l 10 -q -T prun0 main_function()
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prun0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+*** Profile printout saved to text file &#39;prun0&#39;.
+         19 function calls in 1.362 seconds
+
+   Ordered by: internal time
+   List reduced from 13 to 10 due to restriction &lt;10&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.591    0.591    0.593    0.593 3642284310.py:18(compute_invx)
+        1    0.483    0.483    0.484    0.484 3642284310.py:27(compute_seriesproduct)
+        1    0.229    0.229    0.229    0.229 3642284310.py:39(compute_seriessum)
+        1    0.048    0.048    0.048    0.048 1481541755.py:1(compute_cosx)
+        2    0.003    0.002    0.003    0.002 {built-in method numpy.zeros}
+        1    0.003    0.003    0.005    0.005 3642284310.py:61(__init__)
+        1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
+        1    0.002    0.002    1.362    1.362 3642284310.py:74(main_function)
+        1    0.000    0.000    1.362    1.362 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000    1.355    1.355 3642284310.py:50(generate_integral)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can see that quite a bit of time is being spent in the remaining 3 <code class="docutils literal notranslate"><span class="pre">compute_x</span></code> functions. Let’s try optimizing these as well by replacing the for loops with numpy vectorized calls</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_invx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes 1/x for all values in tseries</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">tseries</span>
+
+<span class="k">def</span> <span class="nf">compute_seriesproduct</span><span class="p">(</span><span class="n">series1</span><span class="p">,</span> <span class="n">series2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Multiplies each element in series1 with the corresponding element in series2.</span>
+<span class="sd">    This returns an array of the multiplied elements.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Ensure the two arrays are the same length</span>
+    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">series2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">series1</span> <span class="o">*</span> <span class="n">series2</span>
+
+<span class="k">def</span> <span class="nf">compute_seriessum</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the sum of all values in series</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="o">%</span><span class="k">prun</span> -l 10 -q -T prun0 main_function()
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prun0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+*** Profile printout saved to text file &#39;prun0&#39;.
+         16 function calls in 0.060 seconds
+
+   Ordered by: internal time
+   List reduced from 15 to 10 due to restriction &lt;10&gt;
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.047    0.047    0.047    0.047 1481541755.py:1(compute_cosx)
+        1    0.003    0.003    0.005    0.005 3642284310.py:61(__init__)
+        1    0.003    0.003    0.003    0.003 1855454630.py:7(compute_seriesproduct)
+        1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
+        1    0.002    0.002    0.002    0.002 1855454630.py:1(compute_invx)
+        1    0.001    0.001    0.059    0.059 3642284310.py:74(main_function)
+        1    0.001    0.001    0.001    0.001 {method &#39;reduce&#39; of &#39;numpy.ufunc&#39; objects}
+        1    0.000    0.000    0.060    0.060 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000    0.001    0.001 {method &#39;sum&#39; of &#39;numpy.ndarray&#39; objects}
+        1    0.000    0.000    0.053    0.053 3642284310.py:50(generate_integral)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code is now limited be a vectorized computation of cos(x). Not easy to make that much faster! Now with these optimizations let’s see how fast our code runs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please note: The times shown here, and on the functions above are based on Ian&#39;s ARM macbook.</span>
+<span class="c1"># That is a very different machine to the standard Colab/SciServer virtualmachines you will be running on.</span>
+<span class="c1"># Expect my macbook to be faster, and to perhaps have different performance gains!!</span>
+
+<span class="o">%</span><span class="k">timeit</span> main_function()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58.4 ms ± 621 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "icg-gravwaves/U24568_Computational_Physics",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./09b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="installing_profilers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Importing necessary backends</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="optimization_exercises.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Some code optimization exercises - Removing for loops!</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Becky Canning, Ian Harry and Andrew Lundgren<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

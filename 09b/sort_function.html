@@ -6,53 +6,54 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to your Jupyter Book &#8212; Computational Physics U24568</title>
+    <title>Writing a function to sort an array &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lecture 3b: Class Conundrums" href="03b/overview.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Some sort methods to compare against" href="example_sort_functions.html" />
+    <link rel="prev" title="Identifying common elements in two large lists" href="using_the_right_tool.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,34 +88,34 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
                     Welcome to your Jupyter Book
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="03b/overview.html">
+  <a class="reference internal" href="../03b/overview.html">
    Lecture 3b: Class Conundrums
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -124,64 +125,64 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Introduction.html">
+    <a class="reference internal" href="../03b/Introduction.html">
      Introduction
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Initializing_a_class.html">
+    <a class="reference internal" href="../03b/Initializing_a_class.html">
      Initializing a class
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Initializing_a_class_exercise.html">
+    <a class="reference internal" href="../03b/Initializing_a_class_exercise.html">
      EXERCISE - Initializing a class
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Optional_arguments.html">
+    <a class="reference internal" href="../03b/Optional_arguments.html">
      Optional arguments
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Class_defining_practice.html">
+    <a class="reference internal" href="../03b/Class_defining_practice.html">
      EXERCISES - Practicing defining classes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Attributes_and_inheritance.html">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance.html">
      Class attributes and inheritence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Attributes_and_inheritance_exercise.html">
+    <a class="reference internal" href="../03b/Attributes_and_inheritance_exercise.html">
      EXERCISE: Class attributes and inheritence
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Recap.html">
+    <a class="reference internal" href="../03b/Recap.html">
      Recap
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Summary_exercises.html">
+    <a class="reference internal" href="../03b/Summary_exercises.html">
      SUMMARY EXERCISES
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/Acknowledgements.html">
+    <a class="reference internal" href="../03b/Acknowledgements.html">
      Acknowledgements
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="03b/CompPhys_Lect03b_2020_2021_ClassConundrums.html">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_2020_2021_ClassConundrums.html">
      Everything in one Notebook - Class Conundrums
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="04a/overview.html">
+  <a class="reference internal" href="../04a/overview.html">
    Lecture 4a: Advanced Techniques
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -191,89 +192,89 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Introduction.html">
+    <a class="reference internal" href="../04a/Introduction.html">
      Introduction
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/List_comprehensions_overview.html">
+    <a class="reference internal" href="../04a/List_comprehensions_overview.html">
      List comprehensions - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/List_comprehensions_exercises1.html">
+    <a class="reference internal" href="../04a/List_comprehensions_exercises1.html">
      List comprehensions - Exercises 1
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/List_comprehensions_conditionals.html">
+    <a class="reference internal" href="../04a/List_comprehensions_conditionals.html">
      List Comprehensions - Including conditionals
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/List_comprehensions_exercises2.html">
+    <a class="reference internal" href="../04a/List_comprehensions_exercises2.html">
      List Comprehensions - Exercises 2
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Set_dictionary_comprehensions.html">
+    <a class="reference internal" href="../04a/Set_dictionary_comprehensions.html">
      Set and Dictionary Comprehensions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Generators_overview.html">
+    <a class="reference internal" href="../04a/Generators_overview.html">
      Generators - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Generators_exercises1.html">
+    <a class="reference internal" href="../04a/Generators_exercises1.html">
      Generators - Exercises 1
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Generators_more_detail.html">
+    <a class="reference internal" href="../04a/Generators_more_detail.html">
      Generators - A bit more complexity
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Generators_exercises2.html">
+    <a class="reference internal" href="../04a/Generators_exercises2.html">
      Generators - Exercises 2
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Recursion_overview.html">
+    <a class="reference internal" href="../04a/Recursion_overview.html">
      Recursion - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Recursion_exercises.html">
+    <a class="reference internal" href="../04a/Recursion_exercises.html">
      Recursion - Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Lambda_overview.html">
+    <a class="reference internal" href="../04a/Lambda_overview.html">
      Function as a value and the lambda operator - Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Lambda_exercises.html">
+    <a class="reference internal" href="../04a/Lambda_exercises.html">
      Function as a value and the lambda operator - Exercise
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/Summary_exercises.html">
+    <a class="reference internal" href="../04a/Summary_exercises.html">
      Summary Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.html">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_2022-23_AdvancedTechniques.html">
      Everything in one notebook - Advanced Techniques
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="08a/overview.html">
+  <a class="reference internal" href="../08a/overview.html">
    Lecture 8a: Signal processing 1, Discrete Fourier Transforms
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -283,114 +284,114 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/DFT_overview.html">
+    <a class="reference internal" href="../08a/DFT_overview.html">
      Discrete Fourier Transforms - What is a Fourier transform?
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/DFT_coding_help.html">
+    <a class="reference internal" href="../08a/DFT_coding_help.html">
      Discrete Fourier Transforms - What we need to remember for coding
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/DFT_Coding_Easy.html">
+    <a class="reference internal" href="../08a/DFT_Coding_Easy.html">
      Coding up a Fourier transform - EASY(IER) VERSION
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/DFT_coding_hard.html">
+    <a class="reference internal" href="../08a/DFT_coding_hard.html">
      Coding up a Fourier transform - HARD VERSION
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/DFT_more_exercises.html">
+    <a class="reference internal" href="../08a/DFT_more_exercises.html">
      Discrete Fourier Transforms - Further Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/DFT_summary.html">
+    <a class="reference internal" href="../08a/DFT_summary.html">
      Discrete Fourier Transforms - SUMMARY
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/Aliasing_introduction.html">
+    <a class="reference internal" href="../08a/Aliasing_introduction.html">
      Aliasing
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/Aliasing_exercises.html">
+    <a class="reference internal" href="../08a/Aliasing_exercises.html">
      Aliasing exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/Aliasing_summary.html">
+    <a class="reference internal" href="../08a/Aliasing_summary.html">
      Aliasing Summary
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="08a/CompPhys_Lect08a_DataProcessing1_FourierTransforms.html">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_DataProcessing1_FourierTransforms.html">
      Data processing and manipulation techniques
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="09b/overview.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
    Lecture 9b: Code Optimization in Python (I)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/introduction.html">
+    <a class="reference internal" href="introduction.html">
      Techniques to profile and optimise python code - I
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/installing_profilers.html">
+    <a class="reference internal" href="installing_profilers.html">
      Importing necessary backends
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/optimization_example.html">
+    <a class="reference internal" href="optimization_example.html">
      A long(ish) example showing how to optimize a numerical integration code
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/optimization_exercises.html">
+    <a class="reference internal" href="optimization_exercises.html">
      Some code optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/square_digits_opt.html">
+    <a class="reference internal" href="square_digits_opt.html">
      Interactive example of non numpy-able code optimization
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/using_the_right_tool.html">
+    <a class="reference internal" href="using_the_right_tool.html">
      Identifying common elements in two large lists
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="09b/sort_function.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Writing a function to sort an array
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/example_sort_functions.html">
+    <a class="reference internal" href="example_sort_functions.html">
      Some sort methods to compare against
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/acknowledgements.html">
+    <a class="reference internal" href="acknowledgements.html">
      Acknowledgements
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="09b/CompPhys_Lect09b_2022_2023_OptimisingCode.html">
+    <a class="reference internal" href="CompPhys_Lect09b_2022_2023_OptimisingCode.html">
      Techniques to profile and optimise python code
     </a>
    </li>
@@ -447,6 +448,71 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/master?urlpath=lab/tree/09b/sort_function.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/master/09b/sort_function.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -486,7 +552,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F09b/sort_function.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -514,7 +580,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="../_sources/09b/sort_function.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -525,7 +591,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -563,7 +629,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome to your Jupyter Book</h1>
+                <h1>Writing a function to sort an array</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -575,16 +641,37 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this headline">#</a></h1>
-<p>Welcome to U24568: Computational Physics at the University of Portsmouth. In this course we will expand upon content in the first year “Introduction to Computational Physics” class and give you more practice and experience using python. We will begin with a recap of python and what we learned in the first year. We will then cover numerical statistics in python, introduce some advanced features of the language and demonstrate the use of python to solve ODEs (ordinary differential equations) before we have Coursework 1. We will then introduce you to a series of tools used for time-domain data analysis and set the second coursework as a practical application of these tools. We will also introduce you to LaTeX for preparing your coursework submission, discuss how to efficiently optimize code (including with Cython) and consider how to interactively visualise data.</p>
-<p>Follow the links below, or the links on the side, to access individual lectures’ material!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="writing-a-function-to-sort-an-array">
+<h1>Writing a function to sort an array<a class="headerlink" href="#writing-a-function-to-sort-an-array" title="Permalink to this headline">#</a></h1>
+<p>Sorting arrays is a common operation. Making a sorting algorithm that is <em>fast</em> is very important and there are many different approaches to the problem (python, for example uses “Timsort”):</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Sorting_algorithm">https://en.wikipedia.org/wiki/Sorting_algorithm</a></p>
+<p>There is a rule though: If you have an array that contains random input, then you will require an average of <code class="docutils literal notranslate"><span class="pre">O(N</span> <span class="pre">log(N))</span></code> operations to sort the array. If the array is <em>not</em> random though, this can be shorter (e.g. if the array is already sorted, this can be done in <code class="docutils literal notranslate"><span class="pre">O(N)</span></code>, which is the cost required to identify that the array <em>is</em> sorted.</p>
+<p>As this is the last exercise, let’s make this challenging:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="03b/overview.html"><span class="doc std std-doc">Lecture 03b: Class Conundrums</span></a></p></li>
-<li><p><a class="reference internal" href="04a/overview.html"><span class="doc std std-doc">Lecture 04a: Advanced Techniques</span></a></p></li>
-<li><p><a class="reference internal" href="08a/overview.html"><span class="doc std std-doc">Lecture 08a: Discrete Fourier Transforms</span></a></p></li>
+<li><p>Write your own code that will take as input an array of numbers. Return a sorted <em>copy</em> of the array (the original array should be unchanged). Don’t worry too much about making the code fast until you have something that works. When you have something that works, see how you can use the tools presented above to make it as fast as possible.</p></li>
 </ul>
-<div class="toctree-wrapper compound">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="k">def</span> <span class="nf">sort_array</span><span class="p">(</span><span class="n">unsorted_array</span><span class="p">):</span>
+    <span class="c1"># This line will copy the array so that the input will be preserved.</span>
+    <span class="c1"># After this you can do what you want to unsorted_array</span>
+    <span class="n">unsorted_array</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">unsorted_array</span><span class="p">)</span>
+    
+    <span class="c1"># FIXME: You need to fill this with code DO NOT use python&#39;s built-in sort/sorted routines (or any link to</span>
+    <span class="c1"># that e.g. numpy.sorted). The problem is to think about how you would do this!</span>
+    
+    <span class="k">return</span> <span class="n">sorted_array</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use this cell to profile your code.</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 
@@ -601,7 +688,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./09b"
         },
         predefinedOutput: true
     }
@@ -615,10 +702,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="03b/overview.html" title="next page">
+    <a class='left-prev' id="prev-link" href="using_the_right_tool.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Identifying common elements in two large lists</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="example_sort_functions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 3b: Class Conundrums</p>
+        <p class="prev-next-title">Some sort methods to compare against</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -643,7 +737,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
