@@ -7,16 +7,25 @@ chapters:
 - file: 01a/overview
   sections:
     - file: 01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors
+    - file: 01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS
     - file: 01a/CompPhys_Lect01a_03_Loops_Conditionals
+    - file: 01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS
     - file: 01a/CompPhys_Lect01a_04_Functions
+    - file: 01a/CompPhys_Lect01a_04_Functions_SOLUTIONS
     - file: 01a/CompPhys_Lect01a_05_Numpy
+    - file: 01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS
     - file: 01a/CompPhys_Lect01a_06_Plotting
+    - file: 01a/CompPhys_Lect01a_06_Plotting_SOLUTIONS
 - file: 01b/overview
   sections:
     - file: 01b/CompPhys_Lect01b_02_Problem_A
-    - file: 01b/CompPhys_Lect01b_03_Problem_B    
+    - file: 01b/CompPhys_Lect01b_03_Problem_A_SOLUTIONS
+    - file: 01b/CompPhys_Lect01b_03_Problem_B
+    - file: 01b/CompPhys_Lect01b_04_Problem_B_SOLUTIONS
     - file: 01b/CompPhys_Lect01b_04_Problem_C
+    - file: 01b/CompPhys_Lect01b_05_Problem_C_SOLUTIONS
     - file: 01b/CompPhys_Lect01b_05_Problem_D
+    - file: 01b/CompPhys_Lect01b_06_Problem_D_SOLUTIONS
 #- file: 02a/overview
 #  sections:
 #    - file: 02a/CompPhys_Lect02a_01_Review
