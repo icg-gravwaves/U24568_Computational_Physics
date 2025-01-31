@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem C &#8212; Computational Physics U24568</title>
+    <title>Problem C - SOLUTIONS &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem C - SOLUTIONS" href="CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html" />
-    <link rel="prev" title="Problem B - SOLUTIONS" href="CompPhys_Lect01b_03_Problem_B_SOLUTIONS.html" />
+    <link rel="next" title="Problem D - challenging" href="CompPhys_Lect01b_05_Problem_D.html" />
+    <link rel="prev" title="Problem C" href="CompPhys_Lect01b_04_Problem_C.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -208,13 +208,13 @@ const thebe_selector_output = ".output, .cell_output"
      Problem B - SOLUTIONS
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect01b_04_Problem_C.html">
      Problem C
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Problem C - SOLUTIONS
     </a>
    </li>
@@ -358,7 +358,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01b/CompPhys_Lect01b_04_Problem_C.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -376,7 +376,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01b/CompPhys_Lect01b_04_Problem_C.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -454,7 +454,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01b/CompPhys_Lect01b_04_Problem_C.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -482,7 +482,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01b/CompPhys_Lect01b_04_Problem_C.ipynb"
+        <a href="../_sources/01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -555,7 +555,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Problem C</h1>
+                <h1>Problem C - SOLUTIONS</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -580,8 +580,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-c">
-<h1>Problem C<a class="headerlink" href="#problem-c" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-c-solutions">
+<h1>Problem C - SOLUTIONS<a class="headerlink" href="#problem-c-solutions" title="Permalink to this headline">#</a></h1>
 <p>For the third problem we will compare two words to identify if they are anagrams.</p>
 <p>Consider the three sets of words:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>EARTH - HEART
@@ -608,6 +608,31 @@ DORMITORY - DIRTY ROOM
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here - method 1</span>
+<span class="k">def</span> <span class="nf">solution1</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">):</span>
+
+    <span class="c1"># remove any spaces and lower the case of s1 and s2</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># loop over letters in s1 and check if it is in s2. If True then add 1 to the count</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">s2</span><span class="p">:</span>
+            <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="c1"># Check s1 and s2 are the same length</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">):</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">matches</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">solution1</span><span class="p">(</span><span class="s1">&#39;earth&#39;</span><span class="p">,</span> <span class="s1">&#39;heart&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -615,6 +640,30 @@ DORMITORY - DIRTY ROOM
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here - method 2</span>
+<span class="k">def</span> <span class="nf">solution2</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+
+    <span class="c1"># remove any spaces and lower the case of s1 and s2</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Sort s1 and s2</span>
+    <span class="n">sorted_s1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+    <span class="n">sorted_s2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+    <span class="c1"># test if the two words are the same</span>
+    <span class="k">if</span> <span class="n">sorted_s1</span> <span class="o">==</span> <span class="n">sorted_s2</span><span class="p">:</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">matches</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">solution2</span><span class="p">(</span><span class="s1">&#39;DORMITORY&#39;</span><span class="p">,</span> <span class="s1">&#39;dirty room&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -669,7 +718,41 @@ False
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here - method 4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here - method 4  Count the number of times each character occurs in each word and then compare the result.</span>
+<span class="k">def</span> <span class="nf">solution4</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+
+    <span class="c1"># remove any spaces and lower the case of s1 and s2</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># create numpy array of zeros to store number of times a letter appears</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
+
+    <span class="c1"># if the two words are not of the same length they cannot be anagrams</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">matches</span>
+
+    <span class="c1"># loop over each word in s1 and count the number of times it appears in s1 and s2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)):</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># Check that a and b are the same to return true</span>
+    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="o">==</span> <span class="n">b</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">solution4</span><span class="p">(</span><span class="s1">&#39;dirty room&#39;</span><span class="p">,</span> <span class="s1">&#39;dormitory&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -718,17 +801,17 @@ False
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="CompPhys_Lect01b_03_Problem_B_SOLUTIONS.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect01b_04_Problem_C.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Problem B - SOLUTIONS</p>
+            <p class="prev-next-title">Problem C</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect01b_05_Problem_D.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem C - SOLUTIONS</p>
+        <p class="prev-next-title">Problem D - challenging</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

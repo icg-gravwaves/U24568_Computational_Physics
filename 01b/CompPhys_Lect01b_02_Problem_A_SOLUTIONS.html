@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem A &#8212; Computational Physics U24568</title>
+    <title>Problem A - SOLUTIONS &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem A - SOLUTIONS" href="CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html" />
-    <link rel="prev" title="Lecture 1b - Problem solving (in python)" href="overview.html" />
+    <link rel="next" title="Problem B" href="CompPhys_Lect01b_03_Problem_B.html" />
+    <link rel="prev" title="Problem A" href="CompPhys_Lect01b_02_Problem_A.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -186,13 +186,13 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect01b_02_Problem_A.html">
      Problem A
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Problem A - SOLUTIONS
     </a>
    </li>
@@ -356,7 +356,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01b/CompPhys_Lect01b_02_Problem_A.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -374,7 +374,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01b/CompPhys_Lect01b_02_Problem_A.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -452,7 +452,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01b/CompPhys_Lect01b_02_Problem_A.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -480,7 +480,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01b/CompPhys_Lect01b_02_Problem_A.ipynb"
+        <a href="../_sources/01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -563,7 +563,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Problem A</h1>
+                <h1>Problem A - SOLUTIONS</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -598,8 +598,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-a">
-<h1>Problem A<a class="headerlink" href="#problem-a" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-a-solutions">
+<h1>Problem A - SOLUTIONS<a class="headerlink" href="#problem-a-solutions" title="Permalink to this headline">#</a></h1>
 <p>For our first problem we will think about how to sort an array. This seems easy but is actually a fundamental and difficult coding problem with many solutions. We will try today to think of as many solutions as we can. Sure, many of these solutions are available to you (e.g. the built-in function <code class="docutils literal notranslate"><span class="pre">sorted</span></code>), but someone had to code that up, and there are some cases where it may not be the “optimal” solution …. Sorting arrays is also a <em>really</em> common coding interview question so it’s good to try coding sorting algorithms and will get us back into the practice of coding problem solving</p>
 <p><strong>PLEASE NOTE: We are well aware that you can copy and paste a sorting algorithm from the internet. You will not learn anything from doing so (and it will not help you in the assessments that will follow). Although a professional coder will use the internet often, they do so from having a lot of experience and can quickly understand and discard “bad” options. Please turn off the ChatGPTs/Colab-AI and avoid the search bar for this problem … It <em>will</em> help you more.</strong></p>
 <div class="cell docutils container">
@@ -632,6 +632,17 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">array1a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">array1a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2]
 </pre></div>
 </div>
 </div>
@@ -650,6 +661,17 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">array1a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">array1a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 3 1]
 </pre></div>
 </div>
 </div>
@@ -706,33 +728,106 @@ if i is greater than j
 <li><p>Final array:</p></li>
 </ul>
 <p>[ 1 2 3 4 ]</p>
+<p>Write out the steps for doing this (maybe convert to a markdown cell for this)</p>
+<p>EXAMPLE SOLUTION:</p>
+<ul class="simple">
+<li><p>Initial array:</p></li>
+</ul>
+<p>[ 4 2 3 1 ]</p>
+<ul class="simple">
+<li><p>Compare first two elements and swap if necessary
+[ 4 2 3 1 ]
+[ 2 4 3 1 ]</p></li>
+<li><p>Compare next two elements (4 3) and swap if necessary
+[ 2 4 3 1 ]
+[ 2 3 4 1 ]</p></li>
+<li><p>Compare next two elements (4 1) and swap if necessary
+[ 2 3 4 1 ]
+[ 2 3 1 4 ]</p></li>
+<li><p>Go back to beginning and compare first two elements ( 2 3 ) again and swap if necessary
+[ 2 3 1 4 ]
+[ 2 3 1 4 ]</p></li>
+<li><p>Compare next two elements (3 1) and swap if necessary
+[ 2 3 1 4 ]
+[ 2 1 3 4 ]</p></li>
+<li><p>Compare next two elements (3 4) and swap if necessary
+[ 2 1 3 4 ]
+[ 2 1 3 4 ]</p></li>
+<li><p>Go back to beginning and compare first two elements (2 1) again and swap if necessary
+[ 2 1 3 4 ]
+[ 1 2 3 4 ]</p></li>
+<li><p>Compare next two elements (2 3) and swap if necessary</p></li>
+<li><p>Compare next two elements (3 4) and swap if necessary</p></li>
+<li><p>Final array:</p></li>
+</ul>
+<p>[ 1 2 3 4 ]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write out the steps for doing this (maybe convert to a markdown cell for this)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write pseudocode for sorting an array of *any* length below</span>
+<span class="c1"># Pseudocode space</span>
+<span class="n">Loop</span> <span class="n">over</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">array</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">first</span> <span class="n">element</span>
+  <span class="n">j</span> <span class="o">=</span> <span class="n">second</span> <span class="n">element</span>
+  <span class="n">compare</span> <span class="n">i</span> <span class="n">to</span> <span class="n">j</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">j</span>
+      <span class="n">swap</span> <span class="n">elements</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">second</span> <span class="n">element</span>
+  <span class="n">j</span> <span class="o">=</span> <span class="n">third</span> <span class="n">element</span>
+  <span class="n">compare</span> <span class="n">i</span> <span class="n">to</span> <span class="n">j</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">j</span>
+      <span class="n">swap</span> <span class="n">elements</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">third</span> <span class="n">element</span>
+  <span class="n">j</span> <span class="o">=</span> <span class="n">fourth</span> <span class="n">element</span>
+  <span class="n">compare</span> <span class="n">i</span> <span class="n">to</span> <span class="n">j</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">is</span> <span class="n">greater</span> <span class="n">than</span> <span class="n">j</span>
+      <span class="n">swap</span> <span class="n">elements</span>
+<span class="n">Check</span> <span class="k">if</span> <span class="n">the</span> <span class="n">array</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">right</span> <span class="n">order</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">loop</span> <span class="n">through</span> <span class="n">again</span> <span class="ow">and</span> <span class="n">repeat</span> <span class="n">same</span> <span class="n">steps</span> <span class="k">as</span> <span class="n">above</span><span class="p">,</span> <span class="n">then</span> <span class="n">do</span> <span class="n">the</span> <span class="n">same</span> <span class="n">sort</span> <span class="n">check</span>
+  <span class="k">else</span> <span class="n">end</span> <span class="n">the</span> <span class="n">loop</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write pseudocode for sorting an array of *any* length below (again maybe convert to a markdown cell)</span>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">Loop</span> <span class="n">over</span> <span class="n">elements</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">array</span>
+         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
 <p>For an array with 5 elements ([5,4,3,2,1]) how many times did you need to compare numbers to get the array to be sorted?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Now convert your pseudocode into python and write our your sorting algorithm.  Print the array at each step in your sorting algorithm.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array1a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array1a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial array :&quot;</span><span class="p">,</span> <span class="n">array1a</span><span class="p">)</span>
 
-<span class="c1"># Answer here </span>
+<span class="c1"># Answer here</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+            <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+            <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial array : [5 4 3 2 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial array : [3 2 1]
+[2 3 1]
+[2 1 3]
+[1 2 3]
+[1 2 3]
 </pre></div>
 </div>
 </div>
@@ -743,12 +838,31 @@ if i is greater than j
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array1a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial array :&quot;</span><span class="p">,</span> <span class="n">array1a</span><span class="p">)</span>
 
-<span class="c1"># Answer here </span>
+<span class="c1"># Answer here</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">array1a</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">have_swapped_this_pass</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+            <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+            <span class="n">array1a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+            <span class="n">have_swapped_this_pass</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">array1a</span><span class="p">)</span>
+    <span class="c1"># If I didn&#39;t make any swaps this pass the array is in order so stop</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">have_swapped_this_pass</span><span class="p">:</span>
+        <span class="k">break</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial array : [3 2 1]
+[2 3 1]
+[2 1 3]
+[1 2 3]
+[1 2 3]
 </pre></div>
 </div>
 </div>
@@ -792,17 +906,17 @@ if i is greater than j
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect01b_02_Problem_A.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lecture 1b - Problem solving (in python)</p>
+            <p class="prev-next-title">Problem A</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect01b_03_Problem_B.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem A - SOLUTIONS</p>
+        <p class="prev-next-title">Problem B</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
