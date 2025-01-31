@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numpy" href="CompPhys_Lect01a_05_Numpy_SOLUTIONS.html" />
-    <link rel="prev" title="Writing functions" href="CompPhys_Lect01a_04_Functions_SOLUTIONS.html" />
+    <link rel="next" title="Plotting" href="CompPhys_Lect01a_06_Plotting.html" />
+    <link rel="prev" title="Numpy" href="CompPhys_Lect01a_05_Numpy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -154,13 +154,13 @@ const thebe_selector_output = ".output, .cell_output"
      Writing functions
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect01a_05_Numpy.html">
      Numpy
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect01a_05_Numpy_SOLUTIONS.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Numpy
     </a>
    </li>
@@ -267,7 +267,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_05_Numpy.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -285,7 +285,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_05_Numpy.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -363,7 +363,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_05_Numpy.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -391,7 +391,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01a/CompPhys_Lect01a_05_Numpy.ipynb"
+        <a href="../_sources/01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -766,8 +766,55 @@ title="Print to PDF"
 </div>
 <p><em><strong>Slicing is vital!! You need to be comfortable doing this</strong></em></p>
 <p><strong>Exercise</strong>: Get all values in column 4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr10</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.4, 1.4, 2.4, 3.4, 4.4, 5.4, 6.4, 7.4, 8.4, 9.4])
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Exercise</strong>: Get all values in columns 4 and 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr10</span><span class="p">[:,</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.4, 0.5],
+       [1.4, 1.5],
+       [2.4, 2.5],
+       [3.4, 3.5],
+       [4.4, 4.5],
+       [5.4, 5.5],
+       [6.4, 6.5],
+       [7.4, 7.5],
+       [8.4, 8.5],
+       [9.4, 9.5]])
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Exercise</strong>: Get values in row 1,3,and 5, columns 4 through 7.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr10</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.4, 1.5, 1.6, 1.7],
+       [3.4, 3.5, 3.6, 3.7],
+       [5.4, 5.5, 5.6, 5.7]])
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="other-operations">
 <h2>Other operations<a class="headerlink" href="#other-operations" title="Permalink to this headline">#</a></h2>
@@ -823,17 +870,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="CompPhys_Lect01a_04_Functions_SOLUTIONS.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect01a_05_Numpy.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Writing functions</p>
+            <p class="prev-next-title">Numpy</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect01a_05_Numpy_SOLUTIONS.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect01a_06_Plotting.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numpy</p>
+        <p class="prev-next-title">Plotting</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Expressions, data types and Errors" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html" />
-    <link rel="prev" title="Lecture 1a - Introduction and recap" href="overview.html" />
+    <link rel="next" title="Loops, Lists and Conditionals" href="CompPhys_Lect01a_03_Loops_Conditionals.html" />
+    <link rel="prev" title="Expressions, data types and Errors" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -126,13 +126,13 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html">
      Expressions, data types and Errors
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Expressions, data types and Errors
     </a>
    </li>
@@ -269,7 +269,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -287,7 +287,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -365,7 +365,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -393,7 +393,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.ipynb"
+        <a href="../_sources/01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -546,21 +546,168 @@ title="Print to PDF"
 <section id="simple-expressions-maths">
 <h2>Simple Expressions - Maths<a class="headerlink" href="#simple-expressions-maths" title="Permalink to this headline">#</a></h2>
 <p>Everything in a notebook is in cells. Text like what you’re reading right now goes in a ‘Markdown’ cell. Code goes in a code cell, like the one below. Try doing a simple math calculation like <span class="math notranslate nohighlight">\(2+2\)</span>, and push <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> or click ‘Run’ in the top bar to evaluate it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
 <p>When you evaluate a Python command in a code cell, the result is printed below the cell. You can put multiple lines in a cell by using <code class="docutils literal notranslate"><span class="pre">Enter</span></code> between them. When you evaluate the cell, the output is only the last value calculated. Try it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
 <p>Most math expressions are straightforward (<strong>and you have a reference guide from week 1 of the 1st year module</strong>). One slightly unusual thing is the power operator. We code <span class="math notranslate nohighlight">\(x^y\)</span> as <code class="docutils literal notranslate"><span class="pre">x**y</span></code>. Try using this to:</p>
 <ol class="simple">
 <li><p>Find <span class="math notranslate nohighlight">\(2^{10}\)</span>.</p></li>
 <li><p>Find the square root of a million.</p></li>
 <li><p>Find the cube root of <span class="math notranslate nohighlight">\(4913\)</span>.</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1024
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1000</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.622776601683793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.622776601683793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4913</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.999999999999996
+</pre></div>
+</div>
+</div>
+</div>
 <p>The standard division operator is <code class="docutils literal notranslate"><span class="pre">/</span></code>, for instance <span class="math notranslate nohighlight">\(1/4 = 0.25\)</span>. There is also the integer division operator <code class="docutils literal notranslate"><span class="pre">//</span></code> and the remainder operator <code class="docutils literal notranslate"><span class="pre">%</span></code>. Try a few things like <code class="docutils literal notranslate"><span class="pre">7//3</span></code> and <code class="docutils literal notranslate"><span class="pre">7%3</span></code> to remind yourself how they work. Which would you use to find out if a number is even? Demonstrate this below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">//</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="o">%</span><span class="k">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 1)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
 <p>Variables are used to store values and other objects. To create a variable, you use the assignment operator, like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code>. Let’s try it. Set x to 1, y to 2, and then calculate something with them, like x*y.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x</span><span class="o">*</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
 <p>What happens if we set a variable to another one? Try doing <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code>. Think about what x and y should be, <em>then</em> test whether you’re correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 2)
+</pre></div>
+</div>
+</div>
+</div>
 <p>Now set y to something else, like <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">3</span></code>. What will x be after doing that? There are two possibilities. Think about them both, then test it. Try to explain to someone else the two possibilities, and what you’ve just learned about how Python treats variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3)
+</pre></div>
+</div>
+</div>
+</div>
 <p>Variable names should be descriptive but not too long. Any name made with letters, numbers, and underscores will work if it’s not a reserved Python keyword. Examples are <code class="docutils literal notranslate"><span class="pre">Energy</span></code>, <code class="docutils literal notranslate"><span class="pre">variable7</span></code>, and <code class="docutils literal notranslate"><span class="pre">very_long_variable_name</span></code>. Try assigning to a few of your own.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good_variable_name</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">kinetic_energy_J</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">mass_kg</span> <span class="o">=</span> <span class="mi">23</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>You can make your code clear by choosing good variable names, and also by writing comments. A comment is made by putting text after a hash sign.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,12 +732,29 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">type(1)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">type(0.5)</span></code></p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(int, float)
+</pre></div>
+</div>
+</div>
+</div>
 <p>Think about what will happen if you do <code class="docutils literal notranslate"><span class="pre">type(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">type(y)</span></code>, based on your earlier experiment of assigning <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code>? Will the type be something like ‘variable’ or will it be ‘int’? Discuss with someone, and once you have a prediction, try it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill in the comment, then evaluate</span>
 <span class="c1"># I expect the result to be ...</span>
-<span class="c1"># type(x) UNCOMMENT THIS</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
 </pre></div>
 </div>
 </div>
@@ -609,7 +773,43 @@ title="Print to PDF"
 </div>
 </div>
 <p>When you combine types in an expression, Python will do the most sensible thing. What is the type of <code class="docutils literal notranslate"><span class="pre">1/2</span></code>? What about <code class="docutils literal notranslate"><span class="pre">5.*2</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">5.0</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
 <p>There are also complex numbers, which are made in the form <code class="docutils literal notranslate"><span class="pre">1+2j</span></code> or <code class="docutils literal notranslate"><span class="pre">0.5-0.3j</span></code>. What is their type?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">),</span> <span class="nb">type</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(complex, complex)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="the-string-type">
 <h2>The string type<a class="headerlink" href="#the-string-type" title="Permalink to this headline">#</a></h2>
@@ -631,6 +831,59 @@ title="Print to PDF"
 <li><p>Can you multiply two strings?</p></li>
 <li><p>Can you multiply a string by an integer?</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">+</span> <span class="n">string2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;string1string2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;string11.0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">*</span> <span class="n">string2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">string1</span> <span class="o">*</span> <span class="n">string2</span>
+
+<span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;string1string1string1&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="type-conversion">
 <h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this headline">#</a></h2>
@@ -639,6 +892,47 @@ title="Print to PDF"
 <li><p>Convert a float to an integer. What does it do with the decimal part? (Try a few to be sure)</p></li>
 <li><p>What kind of strings can be converted to int or float?</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">5.8</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="mf">5.999</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="mf">5.1</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="mf">4.99</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 5, 5, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;5.0&#39;</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 5.0, 5.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;five&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;five&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;five&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="errors">
 <h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">#</a></h2>
@@ -654,7 +948,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">an_undefined_variable</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="mi">2</span><span class="o">*</span><span class="n">z</span>
@@ -665,6 +959,40 @@ title="Print to PDF"
 </div>
 </div>
 <p>Try going back and looking at other errors from before. Do they make sense? See how many other different error types you can discover below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asdjhkasd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">asdjhkasd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;asdjhkasd&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -695,17 +1023,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lecture 1a - Introduction and recap</p>
+            <p class="prev-next-title">Expressions, data types and Errors</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect01a_03_Loops_Conditionals.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Expressions, data types and Errors</p>
+        <p class="prev-next-title">Loops, Lists and Conditionals</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

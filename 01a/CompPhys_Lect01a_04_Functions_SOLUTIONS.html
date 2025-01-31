@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Writing functions" href="CompPhys_Lect01a_04_Functions_SOLUTIONS.html" />
-    <link rel="prev" title="Loops, Lists and Conditionals" href="CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html" />
+    <link rel="next" title="Numpy" href="CompPhys_Lect01a_05_Numpy.html" />
+    <link rel="prev" title="Writing functions" href="CompPhys_Lect01a_04_Functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -146,13 +146,13 @@ const thebe_selector_output = ".output, .cell_output"
      Loops, Lists and Conditionals
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect01a_04_Functions.html">
      Writing functions
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect01a_04_Functions_SOLUTIONS.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Writing functions
     </a>
    </li>
@@ -269,7 +269,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_04_Functions.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -287,7 +287,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_04_Functions.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -365,7 +365,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_04_Functions.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -393,7 +393,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01a/CompPhys_Lect01a_04_Functions.ipynb"
+        <a href="../_sources/01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -547,14 +547,216 @@ square(x)
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mystery</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3628800
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3628800
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Exercise</strong></p>
 <p>Write a function which sums the numbers up to n, and returns the result. Test it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This function is a mystery&quot;&quot;&quot;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summation</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Exercise (difficult)</strong></p>
 <p>Write a function which determines if an integer is prime (meaning it has no number other than one that divides it without a remainder). Remember the remainder operator is <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code>. This function will need a loop and a conditional.</p>
 <p>You can check if two things are not equal either with</p>
 <p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">!=</span> <span class="pre">y:</span></code></p>
 <p>or</p>
 <p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span> <span class="ow">or</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must be a positive integer&quot;</span><span class="p">)</span>
+        
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 False
+1 False
+2 True
+3 True
+4 False
+5 True
+6 False
+7 True
+8 False
+9 False
+10 False
+11 True
+12 False
+13 True
+14 False
+15 False
+16 False
+17 True
+18 False
+19 True
+20 False
+21 False
+22 False
+23 True
+24 False
+25 False
+26 False
+27 False
+28 False
+29 True
+30 False
+31 True
+32 False
+33 False
+34 False
+35 False
+36 False
+37 True
+38 False
+39 False
+40 False
+41 True
+42 False
+43 True
+44 False
+45 False
+46 False
+47 True
+48 False
+49 False
+50 False
+51 False
+52 False
+53 True
+54 False
+55 False
+56 False
+57 False
+58 False
+59 True
+60 False
+61 True
+62 False
+63 False
+64 False
+65 False
+66 False
+67 True
+68 False
+69 False
+70 False
+71 True
+72 False
+73 True
+74 False
+75 False
+76 False
+77 False
+78 False
+79 True
+80 False
+81 False
+82 False
+83 True
+84 False
+85 False
+86 False
+87 False
+88 False
+89 True
+90 False
+91 False
+92 False
+93 False
+94 False
+95 False
+96 False
+97 True
+98 False
+99 False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_prime</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">is_prime</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nn">Input In [9],</span> in <span class="ni">is_prime</span><span class="nt">(number)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">return</span> <span class="kc">False</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span> <span class="ow">or</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must be a positive integer&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="ne">ValueError</span>: Must be a positive integer
+</pre></div>
+</div>
+</div>
+</div>
 <section id="importing-a-function">
 <h2>Importing a function<a class="headerlink" href="#importing-a-function" title="Permalink to this headline">#</a></h2>
 <p>There’s only a few functions built into Python. You may notice that there’s no trigonometry functions. Python’s capabilities can be massively extended by importing a module. Many very powerful modules are available, but for an example we’ll use the math module. Functions in the module are accessed with a similar syntax to methods. We’ll see ways of shortening this later.</p>
@@ -579,6 +781,119 @@ square(x)
 </div>
 <p><strong>Exercise</strong></p>
 <p>Write a loop to test the identity <span class="math notranslate nohighlight">\(\cos^2 \theta + \sin^2 \theta = 1\)</span> for many values of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">idx</span><span class="o">/</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0 1.0
+0.06283185307179587 1.0
+0.12566370614359174 1.0
+0.18849555921538758 1.0
+0.25132741228718347 1.0
+0.3141592653589793 0.9999999999999999
+0.37699111843077515 1.0
+0.4398229715025711 1.0
+0.5026548245743669 1.0
+0.5654866776461628 1.0
+0.6283185307179586 1.0
+0.6911503837897545 0.9999999999999999
+0.7539822368615503 1.0
+0.8168140899333463 1.0
+0.8796459430051422 0.9999999999999999
+0.9424777960769379 1.0
+1.0053096491487339 1.0
+1.0681415022205298 1.0
+1.1309733552923256 1.0000000000000002
+1.1938052083641213 1.0
+1.2566370614359172 0.9999999999999999
+1.319468914507713 1.0
+1.382300767579509 0.9999999999999999
+1.4451326206513049 1.0
+1.5079644737231006 1.0
+1.5707963267948966 1.0
+1.6336281798666925 1.0
+1.6964600329384885 0.9999999999999999
+1.7592918860102844 0.9999999999999999
+1.82212373908208 1.0
+1.8849555921538759 1.0
+1.9477874452256718 0.9999999999999999
+2.0106192982974678 1.0
+2.0734511513692637 1.0
+2.1362830044410597 1.0
+2.199114857512855 0.9999999999999999
+2.261946710584651 1.0
+2.324778563656447 0.9999999999999999
+2.3876104167282426 1.0
+2.4504422698000385 1.0
+2.5132741228718345 1.0
+2.57610597594363 1.0
+2.638937829015426 1.0
+2.701769682087222 0.9999999999999999
+2.764601535159018 1.0
+2.827433388230814 1.0
+2.8902652413026098 1.0
+2.9530970943744053 1.0
+3.015928947446201 0.9999999999999999
+3.078760800517997 1.0
+3.141592653589793 1.0
+3.204424506661589 1.0
+3.267256359733385 1.0
+3.330088212805181 0.9999999999999999
+3.392920065876977 1.0
+3.455751918948773 1.0
+3.518583772020569 1.0
+3.581415625092364 0.9999999999999999
+3.64424747816416 0.9999999999999999
+3.707079331235956 1.0
+3.7699111843077517 0.9999999999999999
+3.8327430373795477 0.9999999999999999
+3.8955748904513436 1.0
+3.958406743523139 1.0
+4.0212385965949355 1.0
+4.084070449666731 1.0
+4.1469023027385274 1.0
+4.209734155810323 1.0
+4.272566008882119 1.0
+4.335397861953914 0.9999999999999999
+4.39822971502571 1.0
+4.461061568097506 1.0
+4.523893421169302 1.0
+4.586725274241098 1.0
+4.649557127312894 1.0
+4.71238898038469 1.0
+4.775220833456485 0.9999999999999999
+4.838052686528282 1.0
+4.900884539600077 1.0
+4.9637163926718735 1.0
+5.026548245743669 1.0
+5.089380098815465 0.9999999999999999
+5.15221195188726 1.0
+5.215043804959056 1.0
+5.277875658030852 1.0
+5.340707511102648 1.0
+5.403539364174444 1.0
+5.46637121724624 1.0
+5.529203070318036 1.0
+5.592034923389832 0.9999999999999999
+5.654866776461628 1.0000000000000002
+5.717698629533424 1.0
+5.7805304826052195 1.0
+5.843362335677016 0.9999999999999999
+5.9061941887488105 1.0
+5.969026041820607 1.0
+6.031857894892402 1.0
+6.094689747964199 1.0
+6.157521601035994 1.0
+6.220353454107791 1.0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -609,17 +924,17 @@ square(x)
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect01a_04_Functions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Loops, Lists and Conditionals</p>
+            <p class="prev-next-title">Writing functions</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect01a_04_Functions_SOLUTIONS.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect01a_05_Numpy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Writing functions</p>
+        <p class="prev-next-title">Numpy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

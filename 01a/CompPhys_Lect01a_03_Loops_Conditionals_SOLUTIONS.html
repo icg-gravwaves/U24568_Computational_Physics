@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Loops, Lists and Conditionals" href="CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html" />
-    <link rel="prev" title="Expressions, data types and Errors" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html" />
+    <link rel="next" title="Writing functions" href="CompPhys_Lect01a_04_Functions.html" />
+    <link rel="prev" title="Loops, Lists and Conditionals" href="CompPhys_Lect01a_03_Loops_Conditionals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -136,13 +136,13 @@ const thebe_selector_output = ".output, .cell_output"
      Expressions, data types and Errors
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect01a_03_Loops_Conditionals.html">
      Loops, Lists and Conditionals
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Loops, Lists and Conditionals
     </a>
    </li>
@@ -269,7 +269,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_03_Loops_Conditionals.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -287,7 +287,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_03_Loops_Conditionals.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -365,7 +365,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_03_Loops_Conditionals.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -393,7 +393,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/01a/CompPhys_Lect01a_03_Loops_Conditionals.ipynb"
+        <a href="../_sources/01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -555,16 +555,128 @@ title="Print to PDF"
 <p>If we want to know the length of a list, we use one of Python’s built-in functions:</p>
 <p><code class="docutils literal notranslate"><span class="pre">len(lst)</span></code></p>
 <p>Try this, and also check the type of the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
 <p>Does a list have to contain only integers? Try putting other things in a list, like floats, strings, and other lists. Does the length count the lists inside a list?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;sdg&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Now make an empty list. What do you expect its length to be? Are you right?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
 <p>Some things can be converted to lists. We do it the same way as converting to an integer or string, by using the name of the type:</p>
 <p><code class="docutils literal notranslate"><span class="pre">list(&quot;a&quot;)</span></code></p>
 <p>Try this, and try a longer string. Does it work with an integer or float? What if you call <code class="docutils literal notranslate"><span class="pre">list</span></code> on something that’s already a list?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bb</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;asdsad&#39;</span><span class="p">)</span>
+<span class="n">bb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;s&#39;, &#39;d&#39;, &#39;s&#39;, &#39;a&#39;, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;s&#39;, &#39;d&#39;, &#39;s&#39;, &#39;a&#39;, &#39;d&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="built-in-functions">
 <h2>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">#</a></h2>
 <p>Python has several useful built-in functions. We’ve seen the <code class="docutils literal notranslate"><span class="pre">len</span></code> function. Another example is <code class="docutils literal notranslate"><span class="pre">abs</span></code>, which gives the absolute value of a number, or the magnitude of a complex number. Give that a try.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.23606797749979
+</pre></div>
+</div>
+</div>
+</div>
 <p>Another useful function is <code class="docutils literal notranslate"><span class="pre">print</span></code>. It prints one or more values. Try doing <code class="docutils literal notranslate"><span class="pre">print(1,2,3)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2 3
+</pre></div>
+</div>
+</div>
+</div>
 <p>We will recap how to define our own functions later, and how to import functions from modules. But there are also functions that are attached to objects - these are called <em>methods</em>. Here’s an example with a complex number:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -580,11 +692,43 @@ title="Print to PDF"
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">.conjugate</span></code> is a method of the complex object. It doesn’t take any arguments (arguments are the things in the parentheses, which the function acts on). This function returns the conjugate of the complex number. Check below whether the original number is modified.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1+2j)
+</pre></div>
+</div>
+</div>
+</div>
 <p>We’ll learn about a lot of methods, but right now let’s try <code class="docutils literal notranslate"><span class="pre">.append</span></code> on a list. Make a list, assigned to a variable, and use append to add a new element to the end of the list. Check the following:</p>
 <ol class="simple">
 <li><p>Does the .append method return any value?</p></li>
 <li><p>Does the list change afterward?</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span>
+<span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.0, (1+2j), &#39;sdg&#39;, None, &#39;123&#39;]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="loops">
 <h2>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h2>
@@ -629,6 +773,48 @@ Done
 <p>There’s several things we note here. The <code class="docutils literal notranslate"><span class="pre">for</span></code> line ends with a colon. Python, when told to count ten numbers, by default will count from 0 to 9. The last line of code is not indented, so it happens once, outside the loop.</p>
 <p><strong>EXERCISE</strong></p>
 <p>Use a loop to print the numbers from 0 to 5, and from 1 to 12.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="conditionals">
 <h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">#</a></h2>
@@ -678,6 +864,70 @@ This number is too big.
 </div>
 <p><strong>Exercise</strong></p>
 <p>Make a loop with a conditional that prints the even numbers up to 100.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+92
+94
+96
+98
+100
+</pre></div>
+</div>
+</div>
+</div>
 <section id="booleans">
 <h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">#</a></h3>
 <p>The expression inside the conditional demonstrates a new type, a Boolean (which Python abbreviates as ‘bool’). Booleans can have only two values, True or False. One way to get a Boolean result is with comparisons like <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>. The test for equality is a double equal, <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
@@ -740,10 +990,364 @@ This number is too big.
 </div>
 <p><strong>Exercise</strong></p>
 <p>Make a list of the first 7 powers of 3 (<span class="math notranslate nohighlight">\(3^1\)</span>, <span class="math notranslate nohighlight">\(3^2\)</span>, etc.).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">powers_of_three</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">powers_of_three</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+<span class="n">powers_of_three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 9, 27, 81, 243, 729, 2187]
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Exercise</strong></p>
 <p>Make a list of the first 100 odd numbers. Check that it’s 100 long.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">odd_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">201</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">odd_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">odd_numbers</span><span class="p">),</span> <span class="n">odd_numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100,
+ [1,
+  3,
+  5,
+  7,
+  9,
+  11,
+  13,
+  15,
+  17,
+  19,
+  21,
+  23,
+  25,
+  27,
+  29,
+  31,
+  33,
+  35,
+  37,
+  39,
+  41,
+  43,
+  45,
+  47,
+  49,
+  51,
+  53,
+  55,
+  57,
+  59,
+  61,
+  63,
+  65,
+  67,
+  69,
+  71,
+  73,
+  75,
+  77,
+  79,
+  81,
+  83,
+  85,
+  87,
+  89,
+  91,
+  93,
+  95,
+  97,
+  99,
+  101,
+  103,
+  105,
+  107,
+  109,
+  111,
+  113,
+  115,
+  117,
+  119,
+  121,
+  123,
+  125,
+  127,
+  129,
+  131,
+  133,
+  135,
+  137,
+  139,
+  141,
+  143,
+  145,
+  147,
+  149,
+  151,
+  153,
+  155,
+  157,
+  159,
+  161,
+  163,
+  165,
+  167,
+  169,
+  171,
+  173,
+  175,
+  177,
+  179,
+  181,
+  183,
+  185,
+  187,
+  189,
+  191,
+  193,
+  195,
+  197,
+  199])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">odd_numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">odd_numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">odd_numbers</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">odd_numbers</span><span class="p">),</span> <span class="n">odd_numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100,
+ [1,
+  3,
+  5,
+  7,
+  9,
+  11,
+  13,
+  15,
+  17,
+  19,
+  21,
+  23,
+  25,
+  27,
+  29,
+  31,
+  33,
+  35,
+  37,
+  39,
+  41,
+  43,
+  45,
+  47,
+  49,
+  51,
+  53,
+  55,
+  57,
+  59,
+  61,
+  63,
+  65,
+  67,
+  69,
+  71,
+  73,
+  75,
+  77,
+  79,
+  81,
+  83,
+  85,
+  87,
+  89,
+  91,
+  93,
+  95,
+  97,
+  99,
+  101,
+  103,
+  105,
+  107,
+  109,
+  111,
+  113,
+  115,
+  117,
+  119,
+  121,
+  123,
+  125,
+  127,
+  129,
+  131,
+  133,
+  135,
+  137,
+  139,
+  141,
+  143,
+  145,
+  147,
+  149,
+  151,
+  153,
+  155,
+  157,
+  159,
+  161,
+  163,
+  165,
+  167,
+  169,
+  171,
+  173,
+  175,
+  177,
+  179,
+  181,
+  183,
+  185,
+  187,
+  189,
+  191,
+  193,
+  195,
+  197,
+  199])
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Exercise</strong></p>
 <p>Take the previous list and square all the numbers in it which are not divisible by 7. Remember that ‘divide and give remainder’ is the % operator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">odd_numbers</span>
+<span class="n">odd_numbers_not_div_by_7</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">odd_numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">odd_numbers_not_div_by_7</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="n">odd_numbers_not_div_by_7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1,
+ 3,
+ 5,
+ 9,
+ 11,
+ 13,
+ 15,
+ 17,
+ 19,
+ 23,
+ 25,
+ 27,
+ 29,
+ 31,
+ 33,
+ 37,
+ 39,
+ 41,
+ 43,
+ 45,
+ 47,
+ 51,
+ 53,
+ 55,
+ 57,
+ 59,
+ 61,
+ 65,
+ 67,
+ 69,
+ 71,
+ 73,
+ 75,
+ 79,
+ 81,
+ 83,
+ 85,
+ 87,
+ 89,
+ 93,
+ 95,
+ 97,
+ 99,
+ 101,
+ 103,
+ 107,
+ 109,
+ 111,
+ 113,
+ 115,
+ 117,
+ 121,
+ 123,
+ 125,
+ 127,
+ 129,
+ 131,
+ 135,
+ 137,
+ 139,
+ 141,
+ 143,
+ 145,
+ 149,
+ 151,
+ 153,
+ 155,
+ 157,
+ 159,
+ 163,
+ 165,
+ 167,
+ 169,
+ 171,
+ 173,
+ 177,
+ 179,
+ 181,
+ 183,
+ 185,
+ 187,
+ 191,
+ 193,
+ 195,
+ 197,
+ 199]
+</pre></div>
+</div>
+</div>
+</div>
 <p>A for loop doesn’t have to just use <code class="docutils literal notranslate"><span class="pre">range</span></code>. It can also iterate through a list that you provide. Here’s an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -769,6 +1373,25 @@ False True =&gt; True
 False False =&gt; False
 </pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a b =&gt; (a or b)&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1"> =&gt; </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a b =&gt; (a or b)
+True True =&gt; True
+True False =&gt; True
+False True =&gt; True
+False False =&gt; False
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Exercise</strong></p>
 <p>Build and test an expression for ‘exclusive or’. That means that it’s true only if one of a or b is true.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a b =&gt; (a xor b)
@@ -777,6 +1400,25 @@ True False =&gt; True
 False True =&gt; True
 False False =&gt; False
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a b =&gt; (a xor b)&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1"> =&gt; </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a b =&gt; (a xor b)
+True True =&gt; False
+True False =&gt; True
+False True =&gt; True
+False False =&gt; False
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -808,17 +1450,17 @@ False False =&gt; False
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect01a_03_Loops_Conditionals.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Expressions, data types and Errors</p>
+            <p class="prev-next-title">Loops, Lists and Conditionals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect01a_04_Functions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Loops, Lists and Conditionals</p>
+        <p class="prev-next-title">Writing functions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
