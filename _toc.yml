@@ -29,16 +29,25 @@ chapters:
 - file: 02a/overview
   sections:
     - file: 02a/CompPhys_Lect02a_01_Review
+    - file: 02a/CompPhys_Lect02a_01_Review_SOLUTION
     - file: 02a/CompPhys_Lect02a_02_BooleanIndexing
+    - file: 02a/CompPhys_Lect02a_02_BooleanIndexing_SOLUTION
     - file: 02a/CompPhys_Lect02a_03_NumpyMethods
+    - file: 02a/CompPhys_Lect02a_03_NumpyMethods_SOLUTION
     - file: 02a/CompPhys_Lect02a_04_NumpyMatrices
+    - file: 02a/CompPhys_Lect02a_04_NumpyMatrices_SOLUTION
     - file: 02a/CompPhys_Lect02a_05_NumpyPandasIO
+    - file: 02a/CompPhys_Lect02a_05_NumpyPandasIO_SOLUTION
     - file: 02a/CompPhys_Lect02a_06_Summary
+    - file: 02a/CompPhys_Lect02a_06_Summary_SOLUTION
 - file: 02b/overview
   sections:
     - file: 02b/CompPhys_Lect02b_01_Distributions
+    - file: 02b/CompPhys_Lect02b_01_Distributions_SOLUTIONS
     - file: 02b/CompPhys_Lect02b_02_MoreStatistics
+    - file: 02b/CompPhys_Lect02b_02_MoreStatistics_SOLUTIONS
     - file: 02b/CompPhys_Lect02b_03_Challenge
+    - file: 02b/CompPhys_Lect02b_03_Challenge_SOLUTIONS
 #- file: 03a/overview
 #  sections:
 #    - file: 03a/CompPhys_Lect03a_01_GeneratingData
