@@ -51,19 +51,26 @@ chapters:
 - file: 03a/overview
   sections:
     - file: 03a/CompPhys_Lect03a_01_GeneratingData
+    - file: 03a/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS
     - file: 03a/CompPhys_Lect03a_02_ComputingPi
+    - file: 03a/CompPhys_Lect03a_02_ComputingPi_SOLUTIONS
     - file: 03a/CompPhys_Lect03a_03_WhatIsNoise
+    - file: 03a/CompPhys_Lect03a_03_WhatIsNoise_SOLUTIONS
 - file: 03b/overview
   sections:
    - file: 03b/CompPhys_Lect03b_01_Introduction
    - file: 03b/CompPhys_Lect03b_02_Initializing_a_class
    - file: 03b/CompPhys_Lect03b_03_Initializing_a_class_exercise
+   - file: 03b/CompPhys_Lect03b_03_Initializing_a_class_exercise_SOLUTIONS
    - file: 03b/CompPhys_Lect03b_04_Optional_arguments
    - file: 03b/CompPhys_Lect03b_05_Class_defining_practice
+   - file: 03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS
    - file: 03b/CompPhys_Lect03b_06_Attributes_and_inheritance
    - file: 03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise
+   - file: 03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise_SOLUTIONS
    - file: 03b/CompPhys_Lect03b_08_Recap
    - file: 03b/CompPhys_Lect03b_09_Summary_exercises
+   - file: 03b/CompPhys_Lect03b_09_Summary_exercises_SOLUTIONS
    - file: 03b/CompPhys_Lect03b_10_Acknowledgements
 #- file: 04a/overview
 #  sections:
