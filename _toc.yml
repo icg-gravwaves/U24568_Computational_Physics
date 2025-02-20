@@ -102,20 +102,20 @@ chapters:
     - file: 04b/CompPhys_Lect04b_01_ModelFitting_Part1_SOLUTIONS
     - file: 04b/CompPhys_Lect04b_02_ModelFitting_Part2  
     - file: 04b/CompPhys_Lect04b_02_ModelFitting_Part2_SOLUTIONS
-#- file: 05a/overview
-#  sections:
-#    - file: 05a/CompPhys_Lect05a_01_EulerMethod
-#    - file: 05a/CompPhys_Lect05a_02_DecayingExponential
-#    - file: 05a/CompPhys_Lect05a_03_Sinusoid
-#    - file: 05a/CompPhys_Lect05a_04_CoupledEquations
-#    - file: 05a/CompPhys_Lect05a_05_NonlinearEquation
-#- file: 05b/overview    
-#  sections:
-#    - file: 05b/CompPhys_Lect05b_01_Gravity
-#    - file: 05b/CompPhys_Lect05b_02_Earth
-#    - file: 05b/CompPhys_Lect05b_03_MarsMission
-#    - file: 05b/CompPhys_Lect05b_04_BlackHoleMergers
-#    - file: 05b/CompPhys_Lect05b_05_Challenges
+- file: 05a/overview
+  sections:
+    - file: 05a/CompPhys_Lect05a_01_EulerMethod
+    - file: 05a/CompPhys_Lect05a_02_DecayingExponential
+    - file: 05a/CompPhys_Lect05a_03_Sinusoid
+    - file: 05a/CompPhys_Lect05a_04_CoupledEquations
+    - file: 05a/CompPhys_Lect05a_05_NonlinearEquation
+- file: 05b/overview    
+  sections:
+    - file: 05b/CompPhys_Lect05b_01_Gravity
+    - file: 05b/CompPhys_Lect05b_02_Earth
+    - file: 05b/CompPhys_Lect05b_03_MarsMission
+    - file: 05b/CompPhys_Lect05b_04_BlackHoleMergers
+    - file: 05b/CompPhys_Lect05b_05_Challenges
 #- file: 06a/overview    
 #  sections:
 #    - file: 06a/CompPhys_Lect06a_01_NBody
