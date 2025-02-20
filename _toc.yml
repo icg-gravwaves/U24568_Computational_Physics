@@ -77,22 +77,31 @@ chapters:
    - file: 04a/CompPhys_Lect04a_01_Introduction
    - file: 04a/CompPhys_Lect04a_02_List_comprehensions_overview
    - file: 04a/CompPhys_Lect04a_03_List_comprehensions_exercises1
+   - file: 04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION
    - file: 04a/CompPhys_Lect04a_04_List_comprehensions_conditionals
    - file: 04a/CompPhys_Lect04a_05_List_comprehensions_exercises2
+   - file: 04a/CompPhys_Lect04a_05_List_comprehensions_exercises2_SOLUTION
    - file: 04a/CompPhys_Lect04a_06_Set_dictionary_comprehensions
    - file: 04a/CompPhys_Lect04a_07_Generators_overview
    - file: 04a/CompPhys_Lect04a_08_Generators_exercises1
+   - file: 04a/CompPhys_Lect04a_08_Generators_exercises1_SOLUTION
    - file: 04a/CompPhys_Lect04a_09_Generators_more_detail
    - file: 04a/CompPhys_Lect04a_10_Generators_exercises2
+   - file: 04a/CompPhys_Lect04a_10_Generators_exercises2_SOLUTION
    - file: 04a/CompPhys_Lect04a_11_Recursion_overview
    - file: 04a/CompPhys_Lect04a_12_Recursion_exercises
+   - file: 04a/CompPhys_Lect04a_12_Recursion_exercises_SOLUTION
    - file: 04a/CompPhys_Lect04a_13_Lambda_overview
    - file: 04a/CompPhys_Lect04a_14_Lambda_exercises
+   - file: 04a/CompPhys_Lect04a_14_Lambda_exercises_SOLUTION
    - file: 04a/CompPhys_Lect04a_15_Summary_exercises
+   - file: 04a/CompPhys_Lect04a_15_Summary_exercises_SOLUTION
 - file: 04b/overview
   sections:
     - file: 04b/CompPhys_Lect04b_01_ModelFitting_Part1
+    - file: 04b/CompPhys_Lect04b_01_ModelFitting_Part1_SOLUTIONS
     - file: 04b/CompPhys_Lect04b_02_ModelFitting_Part2  
+    - file: 04b/CompPhys_Lect04b_02_ModelFitting_Part2_SOLUTIONS
 #- file: 05a/overview
 #  sections:
 #    - file: 05a/CompPhys_Lect05a_01_EulerMethod
