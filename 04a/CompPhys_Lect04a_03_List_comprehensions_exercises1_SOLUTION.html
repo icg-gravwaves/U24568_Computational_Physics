@@ -1,0 +1,2190 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>List comprehensions - Exercises 1 &#8212; Computational Physics U24568</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="List Comprehensions - Including conditionals" href="CompPhys_Lect04a_04_List_comprehensions_conditionals.html" />
+    <link rel="prev" title="List comprehensions - Exercises 1" href="CompPhys_Lect04a_03_List_comprehensions_exercises1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01a/overview.html">
+   Lecture 1a - Introduction and recap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html">
+     Expressions, data types and Errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html">
+     Expressions, data types and Errors - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals.html">
+     Loops, Lists and Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html">
+     Loops, Lists and Conditionals - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions.html">
+     Writing functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.html">
+     Writing functions - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.html">
+     Numpy - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting_SOLUTIONS.html">
+     Plotting - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01b/overview.html">
+   Lecture 1b - Problem solving (in python)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A.html">
+     Problem A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html">
+     Problem A - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B.html">
+     Problem B
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B_SOLUTIONS.html">
+     Problem B - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C.html">
+     Problem C
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html">
+     Problem C - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D.html">
+     Problem D - challenging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D_SOLUTIONS.html">
+     Problem D - challenging - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02a/overview.html">
+   Lecture 2a - Advanced Numpy and Data Manipulation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review.html">
+     Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review_SOLUTION.html">
+     Review - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing.html">
+     Boolean indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing_SOLUTION.html">
+     Boolean indexing - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods.html">
+     Methods of numpy arrays.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods_SOLUTION.html">
+     Methods of numpy arrays - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices.html">
+     Matrices in numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices_SOLUTION.html">
+     Matrices in numpy - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO.html">
+     Saving data in numpy/pandas - a recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO_SOLUTION.html">
+     Saving data in numpy/pandas - a recap - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary.html">
+     Final exercise and summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary_SOLUTION.html">
+     Final exercise and summary - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02b/overview.html">
+   Lecture 2b - Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions.html">
+     Statistical distributions and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions_SOLUTIONS.html">
+     Statistical distributions and python - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics.html">
+     Acronyms and more exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics_SOLUTIONS.html">
+     Acronyms and more exploration - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge.html">
+     Data challenge…
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge_SOLUTIONS.html">
+     Data challenge - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03a/overview.html">
+   Lecture 3a - Statistics II
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData.html">
+     Statistics II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS.html">
+     Statistics II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi_SOLUTIONS.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise.html">
+     What is noise?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise_SOLUTIONS.html">
+     What is noise?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03b/overview.html">
+   Lecture 3b: Class Conundrums
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_02_Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_03_Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_03_Initializing_a_class_exercise_SOLUTIONS.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_04_Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_06_Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise_SOLUTIONS.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_08_Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_09_Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_09_Summary_exercises_SOLUTIONS.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_10_Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_02_List_comprehensions_overview.html">
+     List comprehensions - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_03_List_comprehensions_exercises1.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_04_List_comprehensions_conditionals.html">
+     List Comprehensions - Including conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_05_List_comprehensions_exercises2.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_05_List_comprehensions_exercises2_SOLUTION.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_06_Set_dictionary_comprehensions.html">
+     Set and Dictionary Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_07_Generators_overview.html">
+     Generators - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_08_Generators_exercises1.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_08_Generators_exercises1_SOLUTION.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_09_Generators_more_detail.html">
+     Generators - A bit more complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_10_Generators_exercises2.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_10_Generators_exercises2_SOLUTION.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_11_Recursion_overview.html">
+     Recursion - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_12_Recursion_exercises.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_12_Recursion_exercises_SOLUTION.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_13_Lambda_overview.html">
+     Function as a value and the lambda operator - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_14_Lambda_exercises.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_14_Lambda_exercises_SOLUTION.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_15_Summary_exercises.html">
+     Summary Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect04a_15_Summary_exercises_SOLUTION.html">
+     Summary Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04b/overview.html">
+   Lecture 4a: Data Cleaning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1_SOLUTIONS.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2_SOLUTIONS.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05a/overview.html">
+   Lecture 5a: Ordinary differential equations I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_01_EulerMethod.html">
+     Lecture 5a - Ordinary Differental Equations 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_02_DecayingExponential.html">
+     The Decaying Exponential
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_03_Sinusoid.html">
+     The Sinusoid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_04_CoupledEquations.html">
+     Coupled Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_05_NonlinearEquation.html">
+     Nonlinear Equation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05b/overview.html">
+   Lecture 5b: Ordinary differential equations II
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_01_Gravity.html">
+     Gravity!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_02_Earth.html">
+     Earth’s Orbit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_03_MarsMission.html">
+     Mission to Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_04_BlackHoleMergers.html">
+     Merging black holes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_05_Challenges.html">
+     Challenges
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>List comprehensions - Exercises 1</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   Exercise 2
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="list-comprehensions-exercises-1">
+<h1>List comprehensions - Exercises 1<a class="headerlink" href="#list-comprehensions-exercises-1" title="Permalink to this headline">#</a></h1>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
+<p>Compute <span class="math notranslate nohighlight">\(x^{0.5}\)</span> for all integer values of <span class="math notranslate nohighlight">\(x\)</span> between 15 and 105 using a list comprehension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">105</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.872983346207417,
+ 4.0,
+ 4.123105625617661,
+ 4.242640687119285,
+ 4.358898943540674,
+ 4.47213595499958,
+ 4.58257569495584,
+ 4.69041575982343,
+ 4.795831523312719,
+ 4.898979485566356,
+ 5.0,
+ 5.0990195135927845,
+ 5.196152422706632,
+ 5.291502622129181,
+ 5.385164807134504,
+ 5.477225575051661,
+ 5.5677643628300215,
+ 5.656854249492381,
+ 5.744562646538029,
+ 5.830951894845301,
+ 5.916079783099616,
+ 6.0,
+ 6.082762530298219,
+ 6.164414002968976,
+ 6.244997998398398,
+ 6.324555320336759,
+ 6.4031242374328485,
+ 6.48074069840786,
+ 6.557438524302,
+ 6.6332495807108,
+ 6.708203932499369,
+ 6.782329983125268,
+ 6.855654600401044,
+ 6.928203230275509,
+ 7.0,
+ 7.0710678118654755,
+ 7.14142842854285,
+ 7.211102550927978,
+ 7.280109889280518,
+ 7.3484692283495345,
+ 7.416198487095663,
+ 7.483314773547883,
+ 7.54983443527075,
+ 7.615773105863909,
+ 7.681145747868608,
+ 7.745966692414834,
+ 7.810249675906654,
+ 7.874007874011811,
+ 7.937253933193772,
+ 8.0,
+ 8.06225774829855,
+ 8.12403840463596,
+ 8.18535277187245,
+ 8.246211251235321,
+ 8.306623862918075,
+ 8.366600265340756,
+ 8.426149773176359,
+ 8.48528137423857,
+ 8.54400374531753,
+ 8.602325267042627,
+ 8.660254037844387,
+ 8.717797887081348,
+ 8.774964387392123,
+ 8.831760866327848,
+ 8.888194417315589,
+ 8.94427190999916,
+ 9.0,
+ 9.055385138137417,
+ 9.1104335791443,
+ 9.16515138991168,
+ 9.219544457292887,
+ 9.273618495495704,
+ 9.327379053088816,
+ 9.38083151964686,
+ 9.433981132056603,
+ 9.486832980505138,
+ 9.539392014169456,
+ 9.591663046625438,
+ 9.643650760992955,
+ 9.695359714832659,
+ 9.746794344808963,
+ 9.797958971132712,
+ 9.848857801796104,
+ 9.899494936611665,
+ 9.9498743710662,
+ 10.0,
+ 10.04987562112089,
+ 10.099504938362077,
+ 10.14889156509222,
+ 10.198039027185569]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
+<p>Compute <span class="math notranslate nohighlight">\(\sin(x)^2 - \cos(x)^2\)</span> for 1000 values of x, uniformly distributed between 0 and <span class="math notranslate nohighlight">\(2 \pi\)</span> using a list comprehension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">linspace</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="p">[</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.0,
+ -0.9999208860571254,
+ -0.9996835567465339,
+ -0.9992880496203401,
+ -0.9987344272588007,
+ -0.9980227772604111,
+ -0.9971532122280463,
+ -0.9961258697511429,
+ -0.9949409123839288,
+ -0.9935985276197031,
+ -0.9920989278611684,
+ -0.9904423503868246,
+ -0.9886290573134228,
+ -0.9866593355544919,
+ -0.984533496774942,
+ -0.9822518773417481,
+ -0.9798148382707293,
+ -0.9772227651694255,
+ -0.9744760681760831,
+ -0.9715751818947601,
+ -0.96852056532656,
+ -0.9653127017970033,
+ -0.9619520988795548,
+ -0.9584392883153087,
+ -0.9547748259288535,
+ -0.9509592915403253,
+ -0.9469932888736633,
+ -0.9428774454610842,
+ -0.9386124125437894,
+ -0.9341988649689198,
+ -0.9296375010827772,
+ -0.9249290426203252,
+ -0.9200742345909914,
+ -0.915073845160786,
+ -0.9099286655307568,
+ -0.9046395098117981,
+ -0.8992072148958368,
+ -0.8936326403234122,
+ -0.887916668147673,
+ -0.8820602027948115,
+ -0.8760641709209581,
+ -0.8699295212655598,
+ -0.8636572245012606,
+ -0.8572482730803167,
+ -0.8507036810775614,
+ -0.8440244840299505,
+ -0.8372117387727107,
+ -0.8302665232721207,
+ -0.8231899364549452,
+ -0.8159830980345546,
+ -0.808647148333755,
+ -0.8011832481043574,
+ -0.7935925783435149,
+ -0.7858763401068549,
+ -0.7780357543184396,
+ -0.7700720615775812,
+ -0.7619865219625452,
+ -0.7537804148311696,
+ -0.7454550386184361,
+ -0.7370117106310213,
+ -0.7284517668388608,
+ -0.7197765616637635,
+ -0.7109874677651022,
+ -0.7020858758226227,
+ -0.6930731943163972,
+ -0.6839508493039657,
+ -0.6747202841946925,
+ -0.6653829595213794,
+ -0.6559403527091678,
+ -0.6463939578417693,
+ -0.6367452854250606,
+ -0.6269958621480785,
+ -0.6171472306414552,
+ -0.6072009492333318,
+ -0.5971585917027862,
+ -0.5870217470308187,
+ -0.5767920191489297,
+ -0.5664710266853339,
+ -0.5560604027088477,
+ -0.545561794470492,
+ -0.5349768631428518,
+ -0.5243072835572319,
+ -0.5135547439386516,
+ -0.5027209456387218,
+ -0.4918076028664419,
+ -0.48081644241696475,
+ -0.4697492033983709,
+ -0.45860763695649104,
+ -0.4473935059978268,
+ -0.4361085849106112,
+ -0.4247546592840478,
+ -0.4133335256257842,
+ -0.40184699107765126,
+ -0.39029687312972566,
+ -0.3786849993327502,
+ -0.36701320700896534,
+ -0.35528334296139374,
+ -0.34349726318162344,
+ -0.3316568325561391,
+ -0.31976392457124553,
+ -0.3078204210166281,
+ -0.2958282116876026,
+ -0.28378919408609693,
+ -0.2717052731204128,
+ -0.2595783608038158,
+ -0.24741037595200255,
+ -0.23520324387949015,
+ -0.22295889609497738,
+ -0.2106792699957264,
+ -0.19836630856101312,
+ -0.18602196004469224,
+ -0.17364817766693041,
+ -0.1612469193051524,
+ -0.14882014718424913,
+ -0.1363698275661,
+ -0.1238979304384552,
+ -0.11140642920322841,
+ -0.09889730036424982,
+ -0.08637252321452865,
+ -0.0738340795230722,
+ -0.0612839532213163,
+ -0.048724130089212336,
+ -0.036156597441019345,
+ -0.023583343810857083,
+ -0.011006358638064873,
+ 0.001572368047584538,
+ 0.014150845940761936,
+ 0.026727084775504728,
+ 0.03929909464013126,
+ 0.05186488629210084,
+ 0.06442247147276814,
+ 0.07696986322197935,
+ 0.08950507619246634,
+ 0.102026126963984,
+ 0.11453103435714085,
+ 0.1270178197468787,
+ 0.1394845073755454,
+ 0.15192912466551534,
+ 0.16434970253130587,
+ 0.17674427569114143,
+ 0.18911088297791623,
+ 0.201447567649505,
+ 0.21375237769837546,
+ 0.22602336616044905,
+ 0.2382585914231648,
+ 0.2504561175326984,
+ 0.262614014500282,
+ 0.2747303586075828,
+ 0.28680323271109004,
+ 0.2988307265454597,
+ 0.31081093702577106,
+ 0.322741968548649,
+ 0.33462193329220136,
+ 0.3464489515147234,
+ 0.35822115185212733,
+ 0.3699366716140429,
+ 0.38159365707854837,
+ 0.3931902637854788,
+ 0.4047246568282732,
+ 0.41619501114430757,
+ 0.4275995118036689,
+ 0.43893635429633016,
+ 0.45020374481767284,
+ 0.4613999005523169,
+ 0.47252304995621186,
+ 0.48357143303694416,
+ 0.49454330163221855,
+ 0.5054369196864643,
+ 0.5162505635255284,
+ 0.5269825221294092,
+ 0.5376310974029872,
+ 0.5481946044447097,
+ 0.5586713718131918,
+ 0.5690597417916835,
+ 0.5793580706503667,
+ 0.5895647289064392,
+ 0.5996781015819448,
+ 0.609696588459307,
+ 0.6196186043345286,
+ 0.6294425792680156,
+ 0.6391669588329847,
+ 0.648790204361417,
+ 0.6583107931875185,
+ 0.6677272188886483,
+ 0.6770379915236763,
+ 0.6862416378687335,
+ 0.6953367016503177,
+ 0.7043217437757161,
+ 0.7131953425607097,
+ 0.7219560939545245,
+ 0.7306026117619885,
+ 0.7391335278628709,
+ 0.7475474924283533,
+ 0.7558431741346119,
+ 0.764019260373469,
+ 0.7720744574600859,
+ 0.7800074908376582,
+ 0.7878171052790865,
+ 0.7955020650855898,
+ 0.8030611542822255,
+ 0.8104931768102919,
+ 0.8177969567165774,
+ 0.8249713383394303,
+ 0.8320151864916135,
+ 0.8389273866399272,
+ 0.8457068450815558,
+ 0.8523524891171237,
+ 0.8588632672204258,
+ 0.865238149204808,
+ 0.8714761263861723,
+ 0.8775762117425776,
+ 0.8835374400704151,
+ 0.88935886813713,
+ 0.8950395748304678,
+ 0.9005786613042182,
+ 0.9059752511204399,
+ 0.9112284903881356,
+ 0.9163375478983631,
+ 0.9213016152557538,
+ 0.9261199070064257,
+ 0.9307916607622619,
+ 0.9353161373215428,
+ 0.9396926207859083,
+ 0.943920418673633,
+ 0.9479988620291953,
+ 0.9519273055291265,
+ 0.9557051275841169,
+ 0.9593317304373701,
+ 0.9628065402591843,
+ 0.966129007237748,
+ 0.9692986056661353,
+ 0.9723148340254889,
+ 0.9751772150643722,
+ 0.9778852958742851,
+ 0.9804386479613267,
+ 0.9828368673139947,
+ 0.9850795744671114,
+ 0.9871664145618656,
+ 0.9890970574019613,
+ 0.9908711975058636,
+ 0.992488554155135,
+ 0.9939488714388521,
+ 0.9952519182940991,
+ 0.9963974885425263,
+ 0.9973854009229762,
+ 0.9982154991201607,
+ 0.9988876517893979,
+ 0.9994017525773913,
+ 0.9997577201390606,
+ 0.999955498150411,
+ 0.9999950553174459,
+ 0.9998763853811182,
+ 0.9995995071183217,
+ 0.9991644643389178,
+ 0.998571325878806,
+ 0.9978201855890306,
+ 0.996911162320932,
+ 0.9958443999073398,
+ 0.994620067139815,
+ 0.9932383577419429,
+ 0.9916994903386809,
+ 0.9900037084217638,
+ 0.9881512803111797,
+ 0.9861424991127116,
+ 0.9839776826715616,
+ 0.9816571735220582,
+ 0.979181338833458,
+ 0.9765505703518494,
+ 0.9737652843381668,
+ 0.9708259215023277,
+ 0.967732946933499,
+ 0.9644868500265072,
+ 0.9610881444044029,
+ 0.9575373678371909,
+ 0.9538350821567405,
+ 0.9499818731678871,
+ 0.9459783505557425,
+ 0.9418251477892251,
+ 0.9375229220208275,
+ 0.9330723539826373,
+ 0.9284741478786258,
+ 0.9237290312732228,
+ 0.9188377549761961,
+ 0.9138010929238535,
+ 0.9086198420565821,
+ 0.9032948221927525,
+ 0.8978268758989992,
+ 0.892216868356904,
+ 0.8864656872260988,
+ 0.880574242503815,
+ 0.8745434663808944,
+ 0.868374313094293,
+ 0.8620677587760917,
+ 0.8556248012990467,
+ 0.849046460118698,
+ 0.842333776112062,
+ 0.8354878114129366,
+ 0.8285096492438425,
+ 0.8214003937446254,
+ 0.8141611697977529,
+ 0.8067931228503245,
+ 0.7992974187328304,
+ 0.7916752434746858,
+ 0.7839278031165662,
+ 0.776056323519579,
+ 0.7680620501712998,
+ 0.7599462479886976,
+ 0.7517102011179936,
+ 0.7433552127314704,
+ 0.7348826048212763,
+ 0.7262937179902473,
+ 0.717589911239788,
+ 0.7087725617548386,
+ 0.6998430646859657,
+ 0.6908028329286112,
+ 0.6816532968995332,
+ 0.6723959043104728,
+ 0.6630321199390868,
+ 0.6535634253971796,
+ 0.6439913188962685,
+ 0.634317315010528,
+ 0.6245429444371394,
+ 0.6146697537540928,
+ 0.6046993051754759,
+ 0.594633176304287,
+ 0.5844729598828156,
+ 0.5742202635406244,
+ 0.5638767095401779,
+ 0.5534439345201585,
+ 0.5429235892364996,
+ 0.5323173383011923,
+ 0.521626859918898,
+ 0.510853845621409,
+ 0.5000000000000002,
+ 0.4890670404357172,
+ 0.4780566968276367,
+ 0.46697071131914847,
+ 0.4558108380223018,
+ 0.4445788427402535,
+ 0.43327650268786944,
+ 0.4219056062105195,
+ 0.41046795250111395,
+ 0.39896535131541655,
+ 0.3873996226856933,
+ 0.37577259663273266,
+ 0.36408611287628423,
+ 0.35234202054396485,
+ 0.3405421778786742,
+ 0.3286884519445694,
+ 0.3167827183316434,
+ 0.3048268608589541,
+ 0.2928227712765511,
+ 0.2807723489661493,
+ 0.26867750064059454,
+ 0.2565401400421652,
+ 0.24436218763976708,
+ 0.23214557032506195,
+ 0.2198922211075781,
+ 0.20760407880885579,
+ 0.1952830877556705,
+ 0.18293119747238729,
+ 0.17055036237249044,
+ 0.1581425414493416,
+ 0.14570969796621225,
+ 0.13325379914564056,
+ 0.12077681585816114,
+ 0.10828072231046182,
+ 0.0957674957330042,
+ 0.08323911606717299,
+ 0.07069756565199481,
+ 0.058144828910476176,
+ 0.04558289203561178,
+ 0.03301374267611412,
+ 0.020439369621912173,
+ 0.007861762489469015,
+ -0.004717088593031438,
+ -0.017295193300576495,
+ -0.029870561426252273,
+ -0.042441203196148136,
+ -0.05500512958419285,
+ -0.06756035262687815,
+ -0.08010488573780683,
+ -0.09263674402202698,
+ -0.10515394459009786,
+ -0.11765450687183815,
+ -0.13013645292970716,
+ -0.1425978077717701,
+ -0.15503659966419703,
+ -0.1674508604432453,
+ -0.17983862582667898,
+ -0.19219793572457183,
+ -0.2045268345494508,
+ -0.21682337152571896,
+ -0.22908560099832975,
+ -0.24131158274063907,
+ -0.25349938226140434,
+ -0.2656470711108757,
+ -0.27775272718593,
+ -0.2898144350342007,
+ -0.301830286157156,
+ -0.313798379312078,
+ -0.32571682081288983,
+ -0.33758372482979154,
+ -0.34939721368765003,
+ -0.36115541816310104,
+ -0.3728564777803085,
+ -0.38449854110534887,
+ -0.3960797660391564,
+ -0.40759832010899577,
+ -0.4190523807584094,
+ -0.4304401356355976,
+ -0.44175978288018247,
+ -0.45300953140831335,
+ -0.46418760119606545,
+ -0.47529222356108924,
+ -0.486321641442466,
+ -0.49727410967872326,
+ -0.508147895283969,
+ -0.5189412777220956,
+ -0.5296525491790204,
+ -0.5402800148329064,
+ -0.5508219931223337,
+ -0.5612768160123648,
+ -0.5716428292584783,
+ -0.5819183926683145,
+ -0.5921018803612006,
+ -0.6021916810254089,
+ -0.6121861981731128,
+ -0.6220838503929953,
+ -0.6318830716004719,
+ -0.6415823112854881,
+ -0.6511800347578556,
+ -0.660674723390081,
+ -0.670064874857657,
+ -0.6793490033767693,
+ -0.6885256399393918,
+ -0.6975933325457224,
+ -0.706550646433932,
+ -0.7153961643071813,
+ -0.7241284865578798,
+ -0.7327462314891391,
+ -0.7412480355333996,
+ -0.7496325534681825,
+ -0.7578984586289409,
+ -0.7660444431189778,
+ -0.7740692180163903,
+ -0.7819715135780128,
+ -0.7897500794403257,
+ -0.7974036848172987,
+ -0.8049311186951345,
+ -0.8123311900238855,
+ -0.819602727905911,
+ -0.8267445817811457,
+ -0.8337556216091512,
+ -0.8406347380479177,
+ -0.8473808426293961,
+ -0.8539928679317206,
+ -0.8604697677481076,
+ -0.8668105172523926,
+ -0.8730141131611879,
+ -0.8790795738926287,
+ -0.8850059397216872,
+ -0.8907922729320281,
+ -0.8964376579643815,
+ -0.9019412015614091,
+ -0.907302032909044,
+ -0.9125193037742757,
+ -0.9175921886393662,
+ -0.9225198848324686,
+ -0.9273016126546322,
+ -0.9319366155031739,
+ -0.9364241599913923,
+ -0.9407635360646108,
+ -0.9449540571125282,
+ -0.9489950600778586,
+ -0.9528859055612465,
+ -0.9566259779224375,
+ -0.9602146853776893,
+ -0.9636514600934084,
+ -0.966935758275998,
+ -0.9700670602579008,
+ -0.9730448705798239,
+ -0.9758687180691361,
+ -0.9785381559144196,
+ -0.9810527617361681,
+ -0.9834121376536188,
+ -0.9856159103477085,
+ -0.9876637311201433,
+ -0.9895552759485716,
+ -0.9912902455378554,
+ -0.9928683653674236,
+ -0.9942893857347128,
+ -0.9955530817946744,
+ -0.9966592535953528,
+ -0.9976077261095225,
+ -0.998398349262383,
+ -0.9990309979553045,
+ -0.9995055720856214,
+ -0.9998219965624731,
+ -0.9999802213186834,
+ -0.9999802213186834,
+ -0.9998219965624731,
+ -0.9995055720856215,
+ -0.9990309979553045,
+ -0.9983983492623832,
+ -0.9976077261095228,
+ -0.996659253595353,
+ -0.9955530817946747,
+ -0.9942893857347129,
+ -0.9928683653674236,
+ -0.9912902455378554,
+ -0.989555275948572,
+ -0.9876637311201433,
+ -0.9856159103477086,
+ -0.9834121376536189,
+ -0.9810527617361682,
+ -0.9785381559144197,
+ -0.9758687180691364,
+ -0.973044870579824,
+ -0.9700670602579009,
+ -0.9669357582759983,
+ -0.9636514600934087,
+ -0.9602146853776897,
+ -0.956625977922438,
+ -0.9528859055612469,
+ -0.948995060077859,
+ -0.9449540571125287,
+ -0.9407635360646113,
+ -0.9364241599913927,
+ -0.9319366155031743,
+ -0.9273016126546328,
+ -0.9225198848324692,
+ -0.9175921886393668,
+ -0.9125193037742761,
+ -0.9073020329090445,
+ -0.9019412015614099,
+ -0.896437657964382,
+ -0.8907922729320286,
+ -0.8850059397216876,
+ -0.8790795738926291,
+ -0.8730141131611887,
+ -0.8668105172523934,
+ -0.8604697677481081,
+ -0.8539928679317215,
+ -0.847380842629397,
+ -0.8406347380479183,
+ -0.8337556216091517,
+ -0.8267445817811466,
+ -0.8196027279059119,
+ -0.8123311900238863,
+ -0.8049311186951353,
+ -0.7974036848172995,
+ -0.7897500794403266,
+ -0.7819715135780135,
+ -0.7740692180163914,
+ -0.7660444431189787,
+ -0.7578984586289417,
+ -0.7496325534681827,
+ -0.7412480355334006,
+ -0.73274623148914,
+ -0.7241284865578805,
+ -0.7153961643071822,
+ -0.7065506464339328,
+ -0.6975933325457234,
+ -0.6885256399393928,
+ -0.6793490033767705,
+ -0.6700648748576581,
+ -0.6606747233900823,
+ -0.6511800347578567,
+ -0.6415823112854893,
+ -0.6318830716004723,
+ -0.6220838503929965,
+ -0.612186198173114,
+ -0.60219168102541,
+ -0.5921018803612017,
+ -0.5819183926683158,
+ -0.5716428292584794,
+ -0.5612768160123659,
+ -0.5508219931223348,
+ -0.5402800148329079,
+ -0.5296525491790213,
+ -0.5189412777220967,
+ -0.5081478952839702,
+ -0.4972741096787244,
+ -0.4863216414424671,
+ -0.47529222356109035,
+ -0.4641876011960667,
+ -0.45300953140831485,
+ -0.44175978288018375,
+ -0.4304401356355987,
+ -0.41905238075841067,
+ -0.40759832010899716,
+ -0.3960797660391578,
+ -0.38449854110535003,
+ -0.37285647778030967,
+ -0.3611554181631023,
+ -0.34939721368765125,
+ -0.3375837248297928,
+ -0.3257168208128911,
+ -0.3137983793120792,
+ -0.30183028615715735,
+ -0.289814435034202,
+ -0.27775272718593147,
+ -0.26564707111087715,
+ -0.25349938226140567,
+ -0.2413115827406404,
+ -0.22908560099833108,
+ -0.21682337152572034,
+ -0.2045268345494513,
+ -0.19219793572457317,
+ -0.1798386258266803,
+ -0.16745086044324692,
+ -0.15503659966419842,
+ -0.1425978077717716,
+ -0.13013645292970838,
+ -0.11765450687183943,
+ -0.10515394459009925,
+ -0.09263674402202837,
+ -0.08010488573780811,
+ -0.06756035262687943,
+ -0.05500512958419429,
+ -0.04244120319614869,
+ -0.029870561426253606,
+ -0.01729519330057805,
+ -0.0047170885930327144,
+ 0.007861762489467461,
+ 0.020439369621910786,
+ 0.033013742676112734,
+ 0.0455828920356105,
+ 0.05814482891047479,
+ 0.07069756565199353,
+ 0.08323911606717171,
+ 0.09576749573300275,
+ 0.10828072231046054,
+ 0.12077681585816064,
+ 0.13325379914563928,
+ 0.14570969796621086,
+ 0.1581425414493392,
+ 0.17055036237248905,
+ 0.18293119747238495,
+ 0.19528308775566922,
+ 0.20760407880885506,
+ 0.21989222110757678,
+ 0.23214557032506133,
+ 0.24436218763976575,
+ 0.2565401400421648,
+ 0.2686775006405933,
+ 0.2807723489661489,
+ 0.29282277127654904,
+ 0.30482686085895266,
+ 0.3167827183316413,
+ 0.3286884519445681,
+ 0.3405421778786721,
+ 0.3523420205439634,
+ 0.3640861128762837,
+ 0.37577259663273127,
+ 0.38739962268569283,
+ 0.3989653513154154,
+ 0.41046795250111345,
+ 0.4219056062105182,
+ 0.4332765026878681,
+ 0.44457884274025133,
+ 0.4558108380223007,
+ 0.4669707113191466,
+ 0.4780566968276354,
+ 0.4890670404357154,
+ 0.4999999999999991,
+ 0.5108538456214087,
+ 0.5216268599188968,
+ 0.5323173383011918,
+ 0.5429235892364983,
+ 0.5534439345201582,
+ 0.5638767095401767,
+ 0.574220263540623,
+ 0.5844729598828137,
+ 0.5946331763042861,
+ 0.604699305175474,
+ 0.6146697537540917,
+ 0.6245429444371375,
+ 0.6343173150105268,
+ 0.6439913188962683,
+ 0.6535634253971783,
+ 0.6630321199390865,
+ 0.6723959043104717,
+ 0.6816532968995326,
+ 0.6908028329286099,
+ 0.6998430646859648,
+ 0.7087725617548373,
+ 0.7175899112397874,
+ 0.7262937179902458,
+ 0.7348826048212752,
+ 0.7433552127314688,
+ 0.7517102011179927,
+ 0.7599462479886974,
+ 0.7680620501712989,
+ 0.7760563235195789,
+ 0.783927803116565,
+ 0.791675243474685,
+ 0.7992974187328293,
+ 0.8067931228503239,
+ 0.8141611697977518,
+ 0.8214003937446248,
+ 0.8285096492438412,
+ 0.835487811412936,
+ 0.8423337761120616,
+ 0.8490464601186972,
+ 0.8556248012990466,
+ 0.8620677587760908,
+ 0.8683743130942924,
+ 0.8745434663808935,
+ 0.8805742425038144,
+ 0.886465687226098,
+ 0.8922168683569035,
+ 0.8978268758989983,
+ 0.903294822192752,
+ 0.9086198420565812,
+ 0.9138010929238528,
+ 0.918837754976196,
+ 0.923729031273222,
+ 0.9284741478786257,
+ 0.9330723539826369,
+ 0.9375229220208273,
+ 0.9418251477892243,
+ 0.9459783505557422,
+ 0.9499818731678866,
+ 0.9538350821567402,
+ 0.9575373678371903,
+ 0.9610881444044026,
+ 0.9644868500265065,
+ 0.9677329469334985,
+ 0.9708259215023276,
+ 0.9737652843381667,
+ 0.9765505703518492,
+ 0.9791813388334577,
+ 0.9816571735220581,
+ 0.9839776826715612,
+ 0.9861424991127113,
+ 0.9881512803111794,
+ 0.9900037084217637,
+ 0.9916994903386804,
+ 0.9932383577419428,
+ 0.9946200671398147,
+ 0.9958443999073395,
+ 0.9969111623209319,
+ 0.9978201855890306,
+ 0.998571325878806,
+ 0.9991644643389176,
+ 0.9995995071183217,
+ 0.9998763853811182,
+ 0.9999950553174459,
+ 0.999955498150411,
+ 0.9997577201390606,
+ 0.9994017525773913,
+ 0.9988876517893979,
+ 0.998215499120161,
+ 0.9973854009229763,
+ 0.9963974885425265,
+ 0.9952519182940991,
+ 0.9939488714388521,
+ 0.9924885541551351,
+ 0.9908711975058636,
+ 0.9890970574019614,
+ 0.9871664145618659,
+ 0.9850795744671117,
+ 0.982836867313995,
+ 0.9804386479613271,
+ 0.9778852958742852,
+ 0.9751772150643726,
+ 0.9723148340254891,
+ 0.9692986056661356,
+ 0.9661290072377483,
+ 0.9628065402591843,
+ 0.9593317304373705,
+ 0.955705127584117,
+ 0.951927305529127,
+ 0.9479988620291957,
+ 0.9439204186736334,
+ 0.9396926207859086,
+ 0.9353161373215436,
+ 0.9307916607622624,
+ 0.9261199070064265,
+ 0.9213016152557546,
+ 0.9163375478983631,
+ 0.9112284903881364,
+ 0.90597525112044,
+ 0.900578661304219,
+ 0.8950395748304683,
+ 0.8893588681371309,
+ 0.8835374400704156,
+ 0.8775762117425785,
+ 0.8714761263861728,
+ 0.8652381492048092,
+ 0.8588632672204265,
+ 0.852352489117125,
+ 0.8457068450815566,
+ 0.8389273866399275,
+ 0.8320151864916143,
+ 0.8249713383394304,
+ 0.8177969567165786,
+ 0.8104931768102923,
+ 0.8030611542822267,
+ 0.7955020650855904,
+ 0.7878171052790879,
+ 0.7800074908376587,
+ 0.7720744574600874,
+ 0.76401926037347,
+ 0.7558431741346132,
+ 0.7475474924283544,
+ 0.7391335278628712,
+ 0.7306026117619896,
+ 0.7219560939545249,
+ 0.7131953425607113,
+ 0.7043217437757168,
+ 0.6953367016503191,
+ 0.686241637868734,
+ 0.6770379915236776,
+ 0.6677272188886492,
+ 0.6583107931875203,
+ 0.648790204361418,
+ 0.6391669588329864,
+ 0.6294425792680168,
+ 0.6196186043345291,
+ 0.609696588459308,
+ 0.5996781015819452,
+ 0.5895647289064405,
+ 0.5793580706503675,
+ 0.5690597417916851,
+ 0.5586713718131926,
+ 0.5481946044447112,
+ 0.5376310974029881,
+ 0.5269825221294112,
+ 0.5162505635255297,
+ 0.5054369196864663,
+ 0.49454330163221966,
+ 0.4835714330369447,
+ 0.472523049956213,
+ 0.46139990055231755,
+ 0.45020374481767467,
+ 0.4389363542963311,
+ 0.4275995118036706,
+ 0.4161950111443084,
+ 0.4047246568282751,
+ 0.3931902637854798,
+ 0.38159365707855014,
+ 0.36993667161404414,
+ 0.3582211518521277,
+ 0.34644895151472455,
+ 0.3346219332922018,
+ 0.3227419685486506,
+ 0.3108109370257717,
+ 0.2988307265454613,
+ 0.28680323271109087,
+ 0.27473035860758455,
+ 0.2626140145002827,
+ 0.25045611753270025,
+ 0.2382585914231659,
+ 0.22602336616045082,
+ 0.21375237769837685,
+ 0.20144756764950544,
+ 0.18911088297791745,
+ 0.17674427569114204,
+ 0.16434970253130748,
+ 0.15192912466551617,
+ 0.13948450737554718,
+ 0.12701781974687948,
+ 0.11453103435714262,
+ 0.102026126963985,
+ 0.08950507619246839,
+ 0.07696986322198046,
+ 0.06442247147277003,
+ 0.05186488629210212,
+ 0.03929909464013154,
+ 0.02672708477550606,
+ 0.014150845940762602,
+ 0.0015723680475859259,
+ -0.011006358638064095,
+ -0.02358334381085525,
+ -0.036156597441018345,
+ -0.048724130089210504,
+ -0.06128395322131541,
+ -0.07383407952307003,
+ -0.08637252321452737,
+ -0.09889730036424782,
+ -0.11140642920322702,
+ -0.12389793043845482,
+ -0.1363698275660984,
+ -0.14882014718424852,
+ -0.1612469193051509,
+ -0.17364817766692964,
+ -0.1860219600446904,
+ -0.19836630856101228,
+ -0.21067926999572462,
+ -0.22295889609497638,
+ -0.2352032438794882,
+ -0.24741037595200133,
+ -0.2595783608038136,
+ -0.2717052731204115,
+ -0.28378919408609654,
+ -0.29582821168760115,
+ -0.30782042101662727,
+ -0.31976392457124386,
+ -0.33165683255613837,
+ -0.34349726318162177,
+ -0.355283342961393,
+ -0.3670132070089637,
+ -0.37868499933274913,
+ -0.3902968731297238,
+ -0.4018469910776501,
+ -0.41333352562578196,
+ -0.4247546592840467,
+ -0.4361085849106106,
+ -0.4473935059978256,
+ -0.45860763695649026,
+ -0.4697492033983693,
+ -0.4808164424169642,
+ -0.4918076028664402,
+ -0.5027209456387209,
+ -0.5135547439386501,
+ -0.5243072835572309,
+ -0.53497686314285,
+ -0.5455617944704909,
+ -0.5560604027088458,
+ -0.5664710266853328,
+ -0.5767920191489293,
+ -0.5870217470308174,
+ -0.5971585917027858,
+ -0.6072009492333305,
+ -0.6171472306414546,
+ -0.6269958621480772,
+ -0.6367452854250599,
+ -0.6463939578417679,
+ -0.655940352709167,
+ -0.6653829595213778,
+ -0.6747202841946918,
+ -0.6839508493039641,
+ -0.693073194316396,
+ -0.7020858758226223,
+ -0.7109874677651014,
+ -0.719776561663763,
+ -0.7284517668388599,
+ -0.7370117106310207,
+ -0.7454550386184349,
+ -0.7537804148311689,
+ -0.7619865219625439,
+ -0.7700720615775806,
+ -0.7780357543184383,
+ -0.785876340106854,
+ -0.7935925783435137,
+ -0.8011832481043566,
+ -0.8086471483337546,
+ -0.8159830980345537,
+ -0.8231899364549448,
+ -0.8302665232721198,
+ -0.8372117387727103,
+ -0.8440244840299492,
+ -0.850703681077561,
+ -0.8572482730803157,
+ -0.8636572245012601,
+ -0.8699295212655588,
+ -0.8760641709209577,
+ -0.8820602027948111,
+ -0.8879166681476724,
+ -0.893632640323412,
+ -0.899207214895836,
+ -0.9046395098117977,
+ -0.909928665530756,
+ -0.9150738451607857,
+ -0.9200742345909907,
+ -0.9249290426203247,
+ -0.9296375010827764,
+ -0.9341988649689194,
+ -0.9386124125437886,
+ -0.9428774454610838,
+ -0.9469932888736631,
+ -0.9509592915403249,
+ -0.9547748259288534,
+ -0.9584392883153082,
+ -0.9619520988795546,
+ -0.9653127017970029,
+ -0.9685205653265596,
+ -0.9715751818947599,
+ -0.974476068176083,
+ -0.9772227651694251,
+ -0.9798148382707292,
+ -0.9822518773417477,
+ -0.9845334967749418,
+ -0.9866593355544919,
+ -0.9886290573134224,
+ -0.9904423503868246,
+ -0.9920989278611683,
+ -0.9935985276197028,
+ -0.9949409123839287,
+ -0.9961258697511428,
+ -0.9971532122280462,
+ -0.9980227772604111,
+ -0.9987344272588005,
+ -0.9992880496203401,
+ -0.9996835567465339,
+ -0.9999208860571254,
+ -1.0]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "icg-gravwaves/U24568_Computational_Physics",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect04a_03_List_comprehensions_exercises1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">List comprehensions - Exercises 1</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CompPhys_Lect04a_04_List_comprehensions_conditionals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">List Comprehensions - Including conditionals</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Becky Canning, Gareth Cabourn Davies, Ian Harry, Andrew Lundgren, Laura Nuttall and Samantha Penny<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
