@@ -124,12 +124,20 @@ chapters:
     - file: 05b/CompPhys_Lect05b_03_MarsMission_SOLUTION
     - file: 05b/CompPhys_Lect05b_04_BlackHoleMergers
     - file: 05b/CompPhys_Lect05b_05_Challenges
-#- file: 06a/overview    
-#  sections:
-#    - file: 06a/CompPhys_Lect06a_01_NBody
-#- file: 06b/overview
-#  sections:
-#    - file: 06b/CompPhys_Lect06b_01_PlottingPlotly
+- file: 06a/overview    
+  sections:
+    - file: 06a/CompPhys_Lect06a_01_Review
+    - file: 06a/CompPhys_Lect06a_02_Scatter
+    - file: 06a/CompPhys_Lect06a_03_Heatmaps
+    - file: 06a/CompPhys_Lect06a_04_Subplots
+- file: 06b/overview
+  sections:
+    - file: 06b/CompPhys_Lect06b_01_Review
+    - file: 06b/CompPhys_Lect06b_02_Review
+    - file: 06b/CompPhys_Lect06b_03_Review
+    - file: 06b/CompPhys_Lect06b_04_Review
+    - file: 06b/CompPhys_Lect06b_05_Review
+    - file: 06b/CompPhys_Lect06b_06_Review
 #- file: 07a/overview
 #  sections:
 #    - file: 07a/CompPhys_Lect07a_01_Review
