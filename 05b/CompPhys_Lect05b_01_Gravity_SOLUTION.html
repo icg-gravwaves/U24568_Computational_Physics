@@ -1,0 +1,1301 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Gravity! &#8212; Computational Physics U24568</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Earth’s Orbit" href="CompPhys_Lect05b_02_Earth.html" />
+    <link rel="prev" title="Gravity!" href="CompPhys_Lect05b_01_Gravity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01a/overview.html">
+   Lecture 1a - Introduction and recap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html">
+     Expressions, data types and Errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html">
+     Expressions, data types and Errors - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals.html">
+     Loops, Lists and Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html">
+     Loops, Lists and Conditionals - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions.html">
+     Writing functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.html">
+     Writing functions - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.html">
+     Numpy - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting_SOLUTIONS.html">
+     Plotting - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01b/overview.html">
+   Lecture 1b - Problem solving (in python)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A.html">
+     Problem A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html">
+     Problem A - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B.html">
+     Problem B
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B_SOLUTIONS.html">
+     Problem B - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C.html">
+     Problem C
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html">
+     Problem C - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D.html">
+     Problem D - challenging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D_SOLUTIONS.html">
+     Problem D - challenging - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02a/overview.html">
+   Lecture 2a - Advanced Numpy and Data Manipulation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review.html">
+     Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review_SOLUTION.html">
+     Review - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing.html">
+     Boolean indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing_SOLUTION.html">
+     Boolean indexing - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods.html">
+     Methods of numpy arrays.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods_SOLUTION.html">
+     Methods of numpy arrays - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices.html">
+     Matrices in numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices_SOLUTION.html">
+     Matrices in numpy - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO.html">
+     Saving data in numpy/pandas - a recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO_SOLUTION.html">
+     Saving data in numpy/pandas - a recap - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary.html">
+     Final exercise and summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary_SOLUTION.html">
+     Final exercise and summary - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02b/overview.html">
+   Lecture 2b - Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions.html">
+     Statistical distributions and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions_SOLUTIONS.html">
+     Statistical distributions and python - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics.html">
+     Acronyms and more exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics_SOLUTIONS.html">
+     Acronyms and more exploration - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge.html">
+     Data challenge…
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge_SOLUTIONS.html">
+     Data challenge - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03a/overview.html">
+   Lecture 3a - Statistics II
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData.html">
+     Statistics II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS.html">
+     Statistics II
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi_SOLUTIONS.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise.html">
+     What is noise?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise_SOLUTIONS.html">
+     What is noise?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03b/overview.html">
+   Lecture 3b: Class Conundrums
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_02_Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_03_Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_03_Initializing_a_class_exercise_SOLUTIONS.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_04_Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_06_Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise_SOLUTIONS.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_08_Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_09_Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_09_Summary_exercises_SOLUTIONS.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_10_Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04a/overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_02_List_comprehensions_overview.html">
+     List comprehensions - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_03_List_comprehensions_exercises1.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_04_List_comprehensions_conditionals.html">
+     List Comprehensions - Including conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_05_List_comprehensions_exercises2.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_05_List_comprehensions_exercises2_SOLUTION.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_06_Set_dictionary_comprehensions.html">
+     Set and Dictionary Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_07_Generators_overview.html">
+     Generators - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_08_Generators_exercises1.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_08_Generators_exercises1_SOLUTION.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_09_Generators_more_detail.html">
+     Generators - A bit more complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_10_Generators_exercises2.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_10_Generators_exercises2_SOLUTION.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_11_Recursion_overview.html">
+     Recursion - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_12_Recursion_exercises.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_12_Recursion_exercises_SOLUTION.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_13_Lambda_overview.html">
+     Function as a value and the lambda operator - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_14_Lambda_exercises.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_14_Lambda_exercises_SOLUTION.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_15_Summary_exercises.html">
+     Summary Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_15_Summary_exercises_SOLUTION.html">
+     Summary Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04b/overview.html">
+   Lecture 4a: Data Cleaning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1_SOLUTIONS.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2_SOLUTIONS.html">
+     Computational Physics U24568 2024-2025
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05a/overview.html">
+   Lecture 5a: Ordinary differential equations I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_01_EulerMethod.html">
+     Lecture 5a - Ordinary Differental Equations 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_01_EulerMethod_SOLUTIONS.html">
+     Lecture 5a - Ordinary Differental Equations 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_02_DecayingExponential.html">
+     The Decaying Exponential
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS.html">
+     The Decaying Exponential
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_03_Sinusoid.html">
+     The Sinusoid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_03_Sinusoid_SOLUTIONS.html">
+     The Sinusoid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_04_CoupledEquations.html">
+     Coupled Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_04_CoupledEquations_SOLUTIONS.html">
+     Coupled Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_05_NonlinearEquation.html">
+     Nonlinear Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_05_NonlinearEquation_SOLUTIONS.html">
+     Nonlinear Equation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Lecture 5b: Ordinary differential equations II
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect05b_01_Gravity.html">
+     Gravity!
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Gravity!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect05b_02_Earth.html">
+     Earth’s Orbit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect05b_02_Earth_SOLUTION.html">
+     Earth’s Orbit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect05b_03_MarsMission.html">
+     Mission to Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect05b_03_MarsMission_SOLUTION.html">
+     Mission to Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect05b_04_BlackHoleMergers.html">
+     Merging black holes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect05b_05_Challenges.html">
+     Challenges
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06a/overview.html">
+   Lecture 6a: Ordinary differential equations III - N-body simulations and more
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_01_NBody.html">
+     N-body Simulations and More
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06b/overview.html">
+   Lecture 6b: Advanced Plotting
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review.html">
+     Plotting: Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Scatter.html">
+     Advanced Plotting: Scatter plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Heatmaps.html">
+     Advanced Plotting: Heatmaps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Subplots.html">
+     Advanced plotting: subplots
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/05b/CompPhys_Lect05b_01_Gravity_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/05b/CompPhys_Lect05b_01_Gravity_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F05b/CompPhys_Lect05b_01_Gravity_SOLUTION.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/05b/CompPhys_Lect05b_01_Gravity_SOLUTION.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Gravity!</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="gravity">
+<h1>Gravity!<a class="headerlink" href="#gravity" title="Permalink to this headline">#</a></h1>
+<p>Continuing from the previous notebook, now we’re going to try a more difficult problem: gravity! We’ll do this in two dimensions for simplicity, though we could also do it in three dimensions. We’ve now got more variables than before. It’s still ordinary differential equations though. The only derivative is a time derivative.</p>
+<p>Now we want to solve a vector equation:</p>
+<div class="math notranslate nohighlight">
+\[\vec{F~} = - \frac{G~M~m}{r^2} \hat{r~}\]</div>
+<p>We’ll take this to be the force on <span class="math notranslate nohighlight">\(m\)</span>, so <span class="math notranslate nohighlight">\(F = m a\)</span>. In terms of the unnormalized vector <span class="math notranslate nohighlight">\(\vec{r~}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\vec{a~} = - \frac{G~M}{r^2} \frac{\vec{r~}}{r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> is the length of <span class="math notranslate nohighlight">\(\vec{r~}\)</span>.</p>
+<p>So how do we put this into the form scipy expects? We define the position of the little object by
+$<span class="math notranslate nohighlight">\(\vec{r~} = (x, y)\)</span><span class="math notranslate nohighlight">\(
+Then the length is
+\)</span><span class="math notranslate nohighlight">\(r = \sqrt{x^2 + y^2}\)</span><span class="math notranslate nohighlight">\(
+We have second-order differential equations for both \)</span>x<span class="math notranslate nohighlight">\( and \)</span>y<span class="math notranslate nohighlight">\(. We need four variables \)</span>x<span class="math notranslate nohighlight">\(, \)</span>y<span class="math notranslate nohighlight">\(, \)</span>v_x<span class="math notranslate nohighlight">\(, \)</span>v_y$.</p>
+<p>We also need to rescale our variables. Kilograms, meters, and seconds aren’t great for describing orbits. We’ll get a lot of huge numbers. Let’s define a rescaling:
+$<span class="math notranslate nohighlight">\(t = T~\tau\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(r = R~\rho\)</span><span class="math notranslate nohighlight">\(
+So the differential equation looks something like
+\)</span><span class="math notranslate nohighlight">\(\frac{d^2 r}{d t^2} = \frac{R}{T^2} \frac{d^2 \rho}{d \tau^2} = - \frac{G~M}{(R~\rho)^2}\)</span><span class="math notranslate nohighlight">\(
+or
+\)</span><span class="math notranslate nohighlight">\(\frac{d^2 \rho}{d \tau^2} = - \left( \frac{G~M~T^2}{R^3}\right) ~ \frac{1}{\rho^2}\)</span><span class="math notranslate nohighlight">\(
+All the units have been collected into one single factor. If we choose \)</span>R = 1~\mathrm{AU}<span class="math notranslate nohighlight">\( and \)</span>T = 1~\mathrm{yr}<span class="math notranslate nohighlight">\(, and set \)</span>M<span class="math notranslate nohighlight">\( to the mass of the Sun, this factor becomes a nice number close to \)</span>1$.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+
+<span class="c1"># In addition to the imports, we&#39;ll also import some constants</span>
+<span class="c1"># And also define our own</span>
+<span class="c1"># NOTE: All units in SI</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">gravitational_constant</span><span class="p">,</span> <span class="n">au</span>
+
+<span class="n">year</span> <span class="o">=</span> <span class="mf">365.25</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span> <span class="c1"># seconds</span>
+
+<span class="n">mass_sun</span> <span class="o">=</span> <span class="mf">1.989e30</span> <span class="c1"># kg</span>
+
+<span class="n">earth_distance</span> <span class="o">=</span> <span class="mf">1.496e11</span> <span class="c1"># meters</span>
+<span class="c1"># The Earth distance is also defined as 1 AU</span>
+<span class="n">mars_distance</span> <span class="o">=</span> <span class="mf">227.9</span><span class="o">*</span><span class="mf">1.e9</span> <span class="c1"># meters</span>
+<span class="n">jupiter_distance</span> <span class="o">=</span> <span class="mf">778.57</span><span class="o">*</span><span class="mf">1.e9</span> <span class="c1"># meters</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<p>We’ve just defined several useful constants. Use them to determine the constant <span class="math notranslate nohighlight">\(\frac{G~M~T^2}{R^3}\)</span>. Call the variable <code class="docutils literal notranslate"><span class="pre">scale_factor</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale_factor</span> <span class="o">=</span> <span class="n">gravitational_constant</span> <span class="o">*</span> <span class="n">mass_sun</span> <span class="o">*</span> <span class="n">year</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">au</span> <span class="o">**</span> <span class="mi">3</span>
+
+<span class="c1"># Note that the scale_factor is (2pi)^2</span>
+<span class="c1"># which is related to the circular motion</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">scale_factor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.283998929838098
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’re ready to define the gravitational acceleration and start some calculations. Read the explanation above carefully, then</p>
+</section>
+<section id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Complete the derivatives function below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gravitational acceleration in 2D</span>
+
+<span class="k">def</span> <span class="nf">grav_derivs</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="n">state</span>
+    
+    <span class="n">r</span> <span class="o">=</span>  <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="c1"># Calculate the distance from x and y</span>
+    <span class="n">acc</span> <span class="o">=</span>  <span class="o">-</span> <span class="n">scale_factor</span> <span class="o">/</span> <span class="n">r</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1"># Calculate the magnitude of the acceleration</span>
+    <span class="n">acc_x</span> <span class="o">=</span>  <span class="n">acc</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">r</span> <span class="c1"># Calculate the vector components of the acceleration</span>
+    <span class="n">acc_y</span> <span class="o">=</span>  <span class="n">acc</span> <span class="o">*</span> <span class="n">y</span> <span class="o">/</span> <span class="n">r</span> <span class="c1"># Calculate the vector components of the acceleration</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">acc_x</span><span class="p">,</span> <span class="n">acc_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>Read the two cells of code below. The equation is being solved. Answer the following questions:</p>
+<ol class="simple">
+<li><p>For what length of time is the orbit being solved?</p></li>
+<li><p>What is the starting position of the planet?</p></li>
+<li><p>What is the starting velocity?</p></li>
+<li><p>What kind of orbit do you expect?
+Write brief answers, then run the code and see if you’re correct. You may need to debug your derivatives function.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
+<span class="n">r_init</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Starting values at t = 0</span>
+<span class="n">rarr</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">grav_derivs</span><span class="p">,</span> <span class="n">r_init</span><span class="p">,</span> <span class="n">times</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Answers:</p>
+<ol class="simple">
+<li><p>The orbit is being calculated for 0.3 years, in steps of around 95 seconds</p></li>
+<li><p>The starting position of the planet is at x=1, y=0 (AU)</p></li>
+<li><p>The starting velocity is vx=0, vy=1 (AU / year)</p></li>
+<li><p>The velocity is less than 2 <span class="math notranslate nohighlight">\(\pi\)</span> AU / year, so I expect this to be an elliptical orbit. This could possibly be a plunge, however as we have not defined a collision criterion, so it would revert to being elliptical with a very close perihelion.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">rarr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">rarr</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;datalim&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/CompPhys_Lect05b_01_Gravity_SOLUTION_10_0.png" src="../_images/CompPhys_Lect05b_01_Gravity_SOLUTION_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "icg-gravwaves/U24568_Computational_Physics",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./05b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect05b_01_Gravity.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Gravity!</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CompPhys_Lect05b_02_Earth.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Earth’s Orbit</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Becky Canning, Gareth Cabourn Davies, Ian Harry, Andrew Lundgren, Laura Nuttall and Samantha Penny<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
