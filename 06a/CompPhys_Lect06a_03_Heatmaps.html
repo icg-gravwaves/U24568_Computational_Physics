@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>N-body Simulations and More &#8212; Computational Physics U24568</title>
+    <title>Advanced Plotting: Heatmaps &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lecture 6b: Advanced Plotting" href="../06b/overview.html" />
-    <link rel="prev" title="Lecture 6a: Ordinary differential equations III - N-body simulations and more" href="overview.html" />
+    <link rel="next" title="Advanced plotting: subplots" href="CompPhys_Lect06a_04_Subplots.html" />
+    <link rel="prev" title="Advanced Plotting: Scatter plots" href="CompPhys_Lect06a_02_Scatter.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -746,7 +744,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="overview.html">
-   Lecture 6a: Ordinary differential equations III - N-body simulations and more
+   Lecture 6a: Advanced Plotting
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -754,16 +752,31 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect06a_01_Review.html">
+     Plotting: Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect06a_02_Scatter.html">
+     Advanced Plotting: Scatter plots
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     N-body Simulations and More
+     Advanced Plotting: Heatmaps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect06a_04_Subplots.html">
+     Advanced plotting: subplots
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../06b/overview.html">
-   Lecture 6b: Advanced Plotting
+   Lecture 6b: Midpoint Review
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -773,22 +786,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review.html">
-     Plotting: Review
+     Review and example assessment questions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Scatter.html">
-     Advanced Plotting: Scatter plots
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Review.html">
+     Review and example assessment questions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Heatmaps.html">
-     Advanced Plotting: Heatmaps
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Review.html">
+     Review and example assessment questions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Subplots.html">
-     Advanced plotting: subplots
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Review.html">
+     Review and example assessment questions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_05_Review.html">
+     Review and example assessment questions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_06_Review.html">
+     Review and example assessment questions
     </a>
    </li>
   </ul>
@@ -852,7 +875,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/06a/CompPhys_Lect06a_01_NBody.ipynb"
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/06a/CompPhys_Lect06a_03_Heatmaps.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -870,7 +893,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/06a/CompPhys_Lect06a_01_NBody.ipynb"
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/06a/CompPhys_Lect06a_03_Heatmaps.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -948,7 +971,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F06a/CompPhys_Lect06a_01_NBody.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F06a/CompPhys_Lect06a_03_Heatmaps.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -976,7 +999,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/06a/CompPhys_Lect06a_01_NBody.ipynb"
+        <a href="../_sources/06a/CompPhys_Lect06a_03_Heatmaps.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1035,80 +1058,25 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-realistic-star-system">
-   A Realistic Star System
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Advanced Plotting: Heatmaps
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-class-to-simplify-the-analysis">
-   A class to simplify the analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
      Exercise
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-star-systems">
-   Binary Star Systems
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-pcolormesh-to-set-the-x-and-y-values">
+   Using pcolormesh to set the x and y values
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
      Exercise
     </a>
    </li>
@@ -1123,7 +1091,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>N-body Simulations and More</h1>
+                <h1>Advanced Plotting: Heatmaps</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1133,80 +1101,25 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-realistic-star-system">
-   A Realistic Star System
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Advanced Plotting: Heatmaps
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-class-to-simplify-the-analysis">
-   A class to simplify the analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
      Exercise
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-star-systems">
-   Binary Star Systems
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-pcolormesh-to-set-the-x-and-y-values">
+   Using pcolormesh to set the x and y values
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     Exercise
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
      Exercise
     </a>
    </li>
@@ -1222,316 +1135,125 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="n-body-simulations-and-more">
-<h1>N-body Simulations and More<a class="headerlink" href="#n-body-simulations-and-more" title="Permalink to this headline">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
-
-<span class="c1"># NOTE: All units in SI</span>
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">gravitational_constant</span><span class="p">,</span> <span class="n">au</span>
-
-<span class="n">year</span> <span class="o">=</span> <span class="mf">365.25</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span> <span class="c1"># seconds</span>
-
-<span class="n">mass_sun</span> <span class="o">=</span> <span class="mf">1.989e30</span> <span class="c1"># kg</span>
-<span class="n">mass_earth</span> <span class="o">=</span> <span class="mf">5.972e24</span> <span class="c1"># kg</span>
-<span class="n">mass_mars</span> <span class="o">=</span> <span class="mf">6.39e23</span> <span class="c1"># kg</span>
-<span class="n">mass_jupiter</span> <span class="o">=</span> <span class="mf">1.898e27</span> <span class="c1"># kg</span>
-
-<span class="n">earth_distance</span> <span class="o">=</span> <span class="mf">1.496e11</span> <span class="c1"># meters</span>
-<span class="n">mars_distance</span> <span class="o">=</span> <span class="mf">227.9</span><span class="o">*</span><span class="mf">1.e9</span> <span class="c1"># meters</span>
-<span class="n">jupiter_distance</span> <span class="o">=</span> <span class="mf">778.57</span><span class="o">*</span><span class="mf">1.e9</span> <span class="c1"># meters</span>
-
-<span class="n">scale_factor</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravitational_constant</span><span class="o">*</span><span class="n">mass_sun</span><span class="o">*</span><span class="n">year</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">earth_distance</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="c1"># Masses and distances in our nicely scaled units</span>
-<span class="n">mE</span> <span class="o">=</span> <span class="n">mass_earth</span><span class="o">/</span><span class="n">mass_sun</span>
-<span class="n">mM</span> <span class="o">=</span> <span class="n">mass_mars</span><span class="o">/</span><span class="n">mass_sun</span>
-<span class="n">mJ</span> <span class="o">=</span> <span class="n">mass_jupiter</span><span class="o">/</span><span class="n">mass_sun</span>
-
-<span class="n">rE</span> <span class="o">=</span> <span class="n">earth_distance</span> <span class="o">/</span> <span class="n">earth_distance</span>
-<span class="n">rM</span> <span class="o">=</span> <span class="n">mars_distance</span> <span class="o">/</span> <span class="n">earth_distance</span>
-<span class="n">rJ</span> <span class="o">=</span> <span class="n">jupiter_distance</span> <span class="o">/</span> <span class="n">earth_distance</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="a-realistic-star-system">
-<h2>A Realistic Star System<a class="headerlink" href="#a-realistic-star-system" title="Permalink to this headline">#</a></h2>
-<p>Let’s now simulate a realistic solar system. We’ll include the Sun and a few planets, and they will all have mass and interact.</p>
-<p>We’ll make this entirely general, so it can handle N different objects in 3D. Each object will have six variables associated with it - <span class="math notranslate nohighlight">\((x, y, z, v_x, v_y, v_z)\)</span>.</p>
-<p>Because of the way <code class="docutils literal notranslate"><span class="pre">odeint</span></code> works, we need to store all of the variables in a single 1D array that we’ll call <code class="docutils literal notranslate"><span class="pre">state</span></code>. We’ll store them in this order in <code class="docutils literal notranslate"><span class="pre">state</span></code>:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-plotting-heatmaps">
+<h1>Advanced Plotting: Heatmaps<a class="headerlink" href="#advanced-plotting-heatmaps" title="Permalink to this headline">#</a></h1>
+<p>We have seen in the scatter plotting examples that colour can be useful to convey information in plotting.
+Here we extend that thought so that we look at “heatmaps”, these are generally 2D images which are different colors depending on a third variable of information</p>
+<p>For example, you may use heatmaps to show:</p>
 <ul class="simple">
-<li><p>positions for object <code class="docutils literal notranslate"><span class="pre">i</span></code>: <code class="docutils literal notranslate"><span class="pre">6*i</span></code> to <code class="docutils literal notranslate"><span class="pre">6*i+3</span></code></p></li>
-<li><p>velocities for object <code class="docutils literal notranslate"><span class="pre">i</span></code>: <code class="docutils literal notranslate"><span class="pre">6*i+3</span></code> to <code class="docutils literal notranslate"><span class="pre">6*i+6</span></code></p></li>
+<li><p>Population density on a map (2D location, density colour)</p></li>
+<li><p>Confusion matrices to assess an analysis</p></li>
 </ul>
-<p>Writing these out every time they’re needed would make the code very hard to read and debug. So we’ll define some helper functions and a class to help process the data. This is the main point of the notebook - it’s not so much about solving the ODEs, it’s about being able to process the output.</p>
-<p>Let’s start by defining our derivatives function.</p>
+<p>Note that there are many different colormaps, and some may be better for displaying your data than others, see <a class="reference external" href="https://matplotlib.org/stable/gallery/color/colormap_reference.html">https://matplotlib.org/stable/gallery/color/colormap_reference.html</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">pos2</span><span class="o">-</span><span class="n">pos1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">deriv</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-    <span class="n">derivatives</span> <span class="o">=</span> <span class="mf">0.</span><span class="o">*</span><span class="n">state</span> <span class="c1"># make an empty array shaped like state</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mass</span><span class="p">)):</span>
-        <span class="n">pos1</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="p">:</span> <span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
-        <span class="n">acc</span> <span class="o">=</span> <span class="mf">0.</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mass</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span> <span class="c1"># Object doesn&#39;t interact with itself</span>
-                <span class="k">continue</span>
-
-            <span class="n">pos2</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">6</span><span class="o">*</span><span class="n">j</span><span class="p">:</span> <span class="mi">6</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
-
-            <span class="n">r</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">)</span>
-            <span class="n">vec</span> <span class="o">=</span> <span class="n">pos2</span> <span class="o">-</span> <span class="n">pos1</span>
-            <span class="n">acc</span> <span class="o">+=</span> <span class="n">scale_factor</span><span class="o">*</span><span class="n">mass</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">vec</span><span class="o">/</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span>
-
-        <span class="c1"># Derivative of position is velocity</span>
-        <span class="n">derivatives</span><span class="p">[</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="p">:</span> <span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">:</span> <span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">6</span><span class="p">]</span>
-        <span class="c1"># Derivative of velocity is acceleration</span>
-        <span class="n">derivatives</span><span class="p">[</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">:</span> <span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">acc</span>
-
-    <span class="k">return</span> <span class="n">derivatives</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
+<p>The most simple way to show heat maps is imshow, but it can be inflexible. Note how we do not provide X and Y values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1234dc760&gt;
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect06a_03_Heatmaps_3_1.png" src="../_images/CompPhys_Lect06a_03_Heatmaps_3_1.png" />
+</div>
+</div>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>Set up initial conditions for a solar system with the Sun, the Earth, and Jupiter. Remember that the velocity should be <span class="math notranslate nohighlight">\(2 \pi / \sqrt{r}\)</span> in our nicely scaled units. Solve this for 100 years. Then plot the <span class="math notranslate nohighlight">\(x, y\)</span> positions of the three objects over time. What is wrong with the solution?</p>
+<p>Annotate each square in the image with the x,y,z values</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="using-pcolormesh-to-set-the-x-and-y-values">
+<h1>Using pcolormesh to set the x and y values<a class="headerlink" href="#using-pcolormesh-to-set-the-x-and-y-values" title="Permalink to this headline">#</a></h1>
+<p>Using pcolormesh and numpy’s meshgrid, we can set x and y values for the heatmap, which do not have to be equally-spaced</p>
+<p>Note that where imshow had the y-axis increasing in value as you move down the image, pcolormesh uses standard plotting conventions.</p>
+<p>The size of each block in the mesh will be dependent on the spacing between datapoints. Each block will split halfway between the data points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mass</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="n">mE</span><span class="p">,</span> <span class="n">mJ</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">times</span> <span class="o">=</span> <span class="c1"># ??</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 
-<span class="n">ic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
-<span class="n">soln</span> <span class="o">=</span> <span class="n">odeint</span> <span class="c1">#??</span>
+<span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
-    <span class="n">times</span> <span class="o">=</span> <span class="c1"># ??</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x123608100&gt;
 </pre></div>
 </div>
+<img alt="../_images/CompPhys_Lect06a_03_Heatmaps_6_1.png" src="../_images/CompPhys_Lect06a_03_Heatmaps_6_1.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make the plot here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="id1">
 <h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>The centre of mass is not at rest by default (the total momentum is not zero). Fill in the functions below to calculate position and velocity of each object, then calculate the total momentum</p>
-<div class="math notranslate nohighlight">
-\[p_\mathrm{total} = \sum\limits_{i} ~ m_i \vec{v_i}\]</div>
-<p>Divide this by the total mass to get the velocity of the center of mass.</p>
+<p>You have been provided with the dataset <code class="docutils literal notranslate"><span class="pre">face.csv</span></code>. Plot the data as a heatmap:</p>
+<ul class="simple">
+<li><p>without any transformation using imshow</p></li>
+<li><p>without any transformation using pcolormesh</p></li>
+<li><p>Apply a shear transformation by changing the x coordinates</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;The position (3D) of object i&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="c1"># ??</span>
-
-<span class="k">def</span> <span class="nf">vel</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;The velocity (3D) of object i&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="c1"># ??</span>
-
-<span class="k">def</span> <span class="nf">total_momentum</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">mass</span><span class="p">):</span>
-    <span class="n">p_sum</span> <span class="o">=</span> <span class="mf">0.</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mass</span><span class="p">)):</span>
-        <span class="n">p_sum</span> <span class="o">+=</span>  <span class="c1"># ??</span>
-    <span class="k">return</span> <span class="n">p_sum</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This cell downloads face.csv. Please run it to get the file</span>
+<span class="o">!</span><span class="w"> </span>curl<span class="w"> </span>https://raw.githubusercontent.com/icg-gravwaves/U24568_Computational_Physics/refs/heads/main/06a/face.csv<span class="w"> </span>&gt;<span class="w"> </span>face.csv
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
-    <span class="n">p_sum</span> <span class="o">+=</span>  <span class="c1"># ??</span>
-              <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id2">
-<h2>Exercise<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<p>Now fill in the function to remove the center of mass motion, make and plot the new solution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_center_of_mass_motion</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
-    <span class="n">new_state</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Don&#39;t modify the state, create a new one</span>
-    
-    <span class="c1"># ??</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
 
-    <span class="k">return</span> <span class="n">new_state</span>
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0 1200k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 1200k  100 1200k    0     0  4295k      0 --:--:-- --:--:-- --:--:-- 4285k
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_ic</span> <span class="o">=</span> <span class="n">remove_center_of_mass_motion</span><span class="p">(</span><span class="n">ic</span><span class="p">)</span>
-<span class="n">new_ic</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">new_ic</span> <span class="o">=</span> <span class="n">remove_center_of_mass_motion</span><span class="p">(</span><span class="n">ic</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">new_ic</span>
-
-<span class="ne">NameError</span>: name &#39;ic&#39; is not defined
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">face</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;face.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make the plot here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="a-class-to-simplify-the-analysis">
-<h2>A class to simplify the analysis<a class="headerlink" href="#a-class-to-simplify-the-analysis" title="Permalink to this headline">#</a></h2>
-<p>Now we want to investigate things like energy conservation. We’ll build a class to store the result of the simulation, and add functions to it to calculate the total momentum, total kinetic energy, and total potential energy.</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{KE} = \sum\limits_{i} \frac{1}{2} m_i |\vec{v_i}|^2\]</div>
-<div class="math notranslate nohighlight">
-\[\mathrm{PE} = - \sum\limits_{i&lt;j} \frac{G m_i m_j}{r_{i,j}}\]</div>
-<p>The gravitational constant <span class="math notranslate nohighlight">\(G\)</span> can be replaced by <code class="docutils literal notranslate"><span class="pre">scale_factor</span></code> in the units we use in the code.</p>
-<p>When we write the code for these, we need to sum the <span class="math notranslate nohighlight">\(|\vec{v}_i|^2\)</span> over the three dimensions. But there is also a time dimension and we don’t want to sum over that. We can do this using the <code class="docutils literal notranslate"><span class="pre">axis</span></code> option in <code class="docutils literal notranslate"><span class="pre">np.sum</span></code>. If we do <code class="docutils literal notranslate"><span class="pre">np.sum(arr,</span> <span class="pre">axis=-1)</span></code>, it will only sum over the last dimension of the array, and leave the time dimension alone. It’s helpful to check the shapes of the inputs and outputs as you write the functions below.</p>
-<section id="id3">
-<h3>Exercise<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p>Fill in the class below with functions for total momentum, total kinetic, and total potential energies. Look at the derivatives function for inspiration. This is difficult, so take your time and test your output.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NBody</span><span class="p">():</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">soln</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">n_obj</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mass</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">soln</span> <span class="o">=</span> <span class="n">soln</span>
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">m_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mass</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">soln</span><span class="p">[:,</span> <span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="p">:</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
-    <span class="k">def</span> <span class="nf">vel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">soln</span><span class="p">[:,</span> <span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">6</span><span class="p">]</span>
-    <span class="k">def</span> <span class="nf">momentum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-        <span class="c1"># ??</span>
-    
-    <span class="k">def</span> <span class="nf">total_kinetic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># ??</span>
-    
-    <span class="k">def</span> <span class="nf">total_potential</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># ??</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
-    <span class="k">def</span> <span class="nf">total_kinetic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id4">
-<h3>Exercise<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p>Now load your simulation into the <code class="docutils literal notranslate"><span class="pre">NBody</span></code> class, calculate the total energy, and show that it is conserved. Is the conservation perfect? Does it oscillate?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nb</span> <span class="o">=</span> <span class="n">NBody</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">soln</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nb</span> <span class="o">=</span> <span class="n">NBody</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">soln</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;NBody&#39; is not defined
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Without any transformation using imshow</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ktot</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">total_kinetic</span><span class="p">()</span>
-<span class="n">Vtot</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">total_potential</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Ktot</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">total_kinetic</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">Vtot</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">total_potential</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;nb&#39; is not defined
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># without any transformation using pcolormesh</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="id5">
-<h3>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
-<p>Now see how long you can run the simulation for. How well is the energy conserved? This is an indication of how accurate the simulation is. Numerical errors will cause the total energy to change.</p>
-</section>
-<section id="id6">
-<h3>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p>Try decreasing the accuracy of the solver, using the options <code class="docutils literal notranslate"><span class="pre">rtol</span></code> and <code class="docutils literal notranslate"><span class="pre">atol</span></code>. Can you make the simulation run faster by decreasing these? Does using fewer output points in the <code class="docutils literal notranslate"><span class="pre">times</span></code> series make a difference? What’s the longest time you can simulate while keeping reasonable accuracy of the total energy?</p>
-</section>
-</section>
-<section id="binary-star-systems">
-<h2>Binary Star Systems<a class="headerlink" href="#binary-star-systems" title="Permalink to this headline">#</a></h2>
-<section id="id7">
-<h3>Exercise<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
-<p>Now simulate a binary star system. Start with equal-mass stars. You’ll need to change the <code class="docutils literal notranslate"><span class="pre">mass</span></code> array. It will be easy to get an elliptical orbit. You’ll be able to see that it’s elliptical because the kinetic and potential energies will oscillate (though the sum won’t).</p>
-</section>
-<section id="id8">
-<h3>Exercise<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p>Choose the initial velocities that make the orbits circular (meaning that the distance doesn’t change over time, or the KE and PE don’t oscillate). You can do this by numerically solving for a solution where the distance doesn’t vary, or do the calculation analytically. Either way, check your solution.</p>
-</section>
-<section id="id9">
-<h3>Exercise<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<p>Now create and test a binary with unequal masses. Start with a two-to-one ratio, but can you write a function to create the initial conditions for any masses, and any separation? Test that you have circular motion.</p>
-</section>
-<section id="id10">
-<h3>Exercise<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<p>Now try replacing the Sun with two stars of <span class="math notranslate nohighlight">\(0.5 M_\odot\)</span>, in an orbit much smaller than 1 AU. Is the solar system still stable?</p>
-</section>
-<section id="id11">
-<h3>Exercise<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
-<p>If you have extra time, try experimenting with trinary systems. Put two stars at the center, and one orbiting them both at a larger distance. What kind of solutions can you get?</p>
-<p>We will not provide a solution to this exercise</p>
-</section>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply a shear transformation by changing the x coordinates</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1562,17 +1284,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect06a_02_Scatter.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lecture 6a: Ordinary differential equations III - N-body simulations and more</p>
+            <p class="prev-next-title">Advanced Plotting: Scatter plots</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../06b/overview.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect06a_04_Subplots.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 6b: Advanced Plotting</p>
+        <p class="prev-next-title">Advanced plotting: subplots</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
