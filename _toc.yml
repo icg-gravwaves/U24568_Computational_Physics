@@ -130,9 +130,11 @@ chapters:
 - file: 06b/overview
   sections:
     - file: 06b/CompPhys_Lect06b_01_Review
-    - file: 06b/CompPhys_Lect06b_02_Scatter
-    - file: 06b/CompPhys_Lect06b_03_Heatmaps
-    - file: 06b/CompPhys_Lect06b_04_Subplots
+    - file: 06b/CompPhys_Lect06b_02_Review
+    - file: 06b/CompPhys_Lect06b_03_Review
+    - file: 06b/CompPhys_Lect06b_04_Review
+    - file: 06b/CompPhys_Lect06b_05_Review
+    - file: 06b/CompPhys_Lect06b_06_Review
 #- file: 07a/overview
 #  sections:
 #    - file: 07a/CompPhys_Lect07a_01_Review
