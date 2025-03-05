@@ -786,32 +786,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review.html">
-     Review and example assessment questions
+     Question 1
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Review.html">
-     Review and example assessment questions
+     Question 2
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Review.html">
-     Review and example assessment questions
+     Question 3
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Review.html">
-     Review and example assessment questions
+     Question 4
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_05_Review.html">
-     Review and example assessment questions
+     Question 5
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_06_Review.html">
-     Review and example assessment questions
+     Question 6
     </a>
    </li>
   </ul>
@@ -1058,29 +1058,20 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Advanced Plotting: Heatmaps
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-pcolormesh-to-set-the-x-and-y-values">
    Using pcolormesh to set the x and y values
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
  </li>
 </ul>
 
@@ -1101,29 +1092,20 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Advanced Plotting: Heatmaps
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-pcolormesh-to-set-the-x-and-y-values">
    Using pcolormesh to set the x and y values
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Exercise
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
  </li>
 </ul>
 
@@ -1163,7 +1145,7 @@ Here we extend that thought so that we look at “heatmaps”, these are general
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1234dc760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1245bc730&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect06a_03_Heatmaps_3_1.png" src="../_images/CompPhys_Lect06a_03_Heatmaps_3_1.png" />
@@ -1173,9 +1155,8 @@ Here we extend that thought so that we look at “heatmaps”, these are general
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>Annotate each square in the image with the x,y,z values</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="using-pcolormesh-to-set-the-x-and-y-values">
-<h1>Using pcolormesh to set the x and y values<a class="headerlink" href="#using-pcolormesh-to-set-the-x-and-y-values" title="Permalink to this headline">#</a></h1>
+<section id="using-pcolormesh-to-set-the-x-and-y-values">
+<h2>Using pcolormesh to set the x and y values<a class="headerlink" href="#using-pcolormesh-to-set-the-x-and-y-values" title="Permalink to this headline">#</a></h2>
 <p>Using pcolormesh and numpy’s meshgrid, we can set x and y values for the heatmap, which do not have to be equally-spaced</p>
 <p>Note that where imshow had the y-axis increasing in value as you move down the image, pcolormesh uses standard plotting conventions.</p>
 <p>The size of each block in the mesh will be dependent on the spacing between datapoints. Each block will split halfway between the data points.</p>
@@ -1190,12 +1171,13 @@ Here we extend that thought so that we look at “heatmaps”, these are general
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x123608100&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x124eb9670&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect06a_03_Heatmaps_6_1.png" src="../_images/CompPhys_Lect06a_03_Heatmaps_6_1.png" />
 </div>
 </div>
+</section>
 <section id="id1">
 <h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>You have been provided with the dataset <code class="docutils literal notranslate"><span class="pre">face.csv</span></code>. Plot the data as a heatmap:</p>
@@ -1218,10 +1200,7 @@ Here we extend that thought so that we look at “heatmaps”, these are general
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0 1200k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 1200k  100 1200k    0     0  4295k      0 --:--:-- --:--:-- --:--:-- 4285k
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 1200k  100 1200k    0     0  2544k      0 --:--:-- --:--:-- --:--:-- 2547k
 </pre></div>
 </div>
 </div>
