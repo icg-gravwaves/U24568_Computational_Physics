@@ -127,17 +127,27 @@ chapters:
 - file: 06a/overview    
   sections:
     - file: 06a/CompPhys_Lect06a_01_Review
+    - file: 06a/CompPhys_Lect06a_01_Review_Soln
     - file: 06a/CompPhys_Lect06a_02_Scatter
+    - file: 06a/CompPhys_Lect06a_02_Scatter_Soln
     - file: 06a/CompPhys_Lect06a_03_Heatmaps
+    - file: 06a/CompPhys_Lect06a_03_Heatmaps_Soln
     - file: 06a/CompPhys_Lect06a_04_Subplots
+    - file: 06a/CompPhys_Lect06a_04_Subplots_Soln
 - file: 06b/overview
   sections:
     - file: 06b/CompPhys_Lect06b_01_Review
+    - file: 06b/CompPhys_Lect06b_01_Review_SOLUTIONS
     - file: 06b/CompPhys_Lect06b_02_Review
+    - file: 06b/CompPhys_Lect06b_02_Review_SOLUTIONS
     - file: 06b/CompPhys_Lect06b_03_Review
+    - file: 06b/CompPhys_Lect06b_03_Review_SOLUTIONS
     - file: 06b/CompPhys_Lect06b_04_Review
+    - file: 06b/CompPhys_Lect06b_04_Review_SOLUTIONS
     - file: 06b/CompPhys_Lect06b_05_Review
+    - file: 06b/CompPhys_Lect06b_05_Review_SOLUTIONS
     - file: 06b/CompPhys_Lect06b_06_Review
+    - file: 06b/CompPhys_Lect06b_06_Review_SOLUTIONS
 #- file: 07a/overview
 #  sections:
 #    - file: 07a/CompPhys_Lect07a_01_Review
