@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 7b: LaTeX &#8212; Computational Physics U24568</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="N-body Simulations and More" href="../07a/CompPhys_Lect07a_01_NBody.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01a/overview.html">
+   Lecture 1a - Introduction and recap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html">
+     Expressions, data types and Errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html">
+     Expressions, data types and Errors - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals.html">
+     Loops, Lists and Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html">
+     Loops, Lists and Conditionals - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions.html">
+     Writing functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.html">
+     Writing functions - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.html">
+     Numpy - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting_SOLUTIONS.html">
+     Plotting - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01b/overview.html">
+   Lecture 1b - Problem solving (in python)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A.html">
+     Problem A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html">
+     Problem A - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B.html">
+     Problem B
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B_SOLUTIONS.html">
+     Problem B - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C.html">
+     Problem C
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html">
+     Problem C - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D.html">
+     Problem D - challenging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D_SOLUTIONS.html">
+     Problem D - challenging - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02a/overview.html">
+   Lecture 2a - Advanced Numpy and Data Manipulation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review.html">
+     Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review_SOLUTION.html">
+     Review - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing.html">
+     Boolean indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing_SOLUTION.html">
+     Boolean indexing - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods.html">
+     Methods of numpy arrays.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods_SOLUTION.html">
+     Methods of numpy arrays - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices.html">
+     Matrices in numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices_SOLUTION.html">
+     Matrices in numpy - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO.html">
+     Saving data in numpy/pandas - a recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO_SOLUTION.html">
+     Saving data in numpy/pandas - a recap - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary.html">
+     Final exercise and summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary_SOLUTION.html">
+     Final exercise and summary - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02b/overview.html">
+   Lecture 2b - Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions.html">
+     Statistical distributions and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions_SOLUTIONS.html">
+     Statistical distributions and python - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics.html">
+     Acronyms and more exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics_SOLUTIONS.html">
+     Acronyms and more exploration - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge.html">
+     Data challenge…
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge_SOLUTIONS.html">
+     Data challenge - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03a/overview.html">
+   Lecture 3a - Statistics II
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData.html">
+     Generating mock data by drawing from distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS.html">
+     Generating mock data by drawing from distributions - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi_SOLUTIONS.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise.html">
+     What is noise?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise_SOLUTIONS.html">
+     What is noise? - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03b/overview.html">
+   Lecture 3b: Class Conundrums
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_02_Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_03_Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_03_Initializing_a_class_exercise_SOLUTIONS.html">
+     EXERCISE - Initializing a class - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_04_Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.html">
+     EXERCISES - Practicing defining classes - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_06_Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise_SOLUTIONS.html">
+     EXERCISE: Class attributes and inheritence - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_08_Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_09_Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_09_Summary_exercises_SOLUTIONS.html">
+     SUMMARY EXERCISES - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03b/CompPhys_Lect03b_10_Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04a/overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_02_List_comprehensions_overview.html">
+     List comprehensions - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_03_List_comprehensions_exercises1.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION.html">
+     List comprehensions - Exercises 1 - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_04_List_comprehensions_conditionals.html">
+     List Comprehensions - Including conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_05_List_comprehensions_exercises2.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_05_List_comprehensions_exercises2_SOLUTION.html">
+     List Comprehensions - Exercises 2 - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_06_Set_dictionary_comprehensions.html">
+     Set and Dictionary Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_07_Generators_overview.html">
+     Generators - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_08_Generators_exercises1.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_08_Generators_exercises1_SOLUTION.html">
+     Generators - Exercises 1 - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_09_Generators_more_detail.html">
+     Generators - A bit more complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_10_Generators_exercises2.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_10_Generators_exercises2_SOLUTION.html">
+     Generators - Exercises 2 - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_11_Recursion_overview.html">
+     Recursion - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_12_Recursion_exercises.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_12_Recursion_exercises_SOLUTION.html">
+     Recursion - Exercises - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_13_Lambda_overview.html">
+     Function as a value and the lambda operator - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_14_Lambda_exercises.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_14_Lambda_exercises_SOLUTION.html">
+     Function as a value and the lambda operator - Exercise - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_15_Summary_exercises.html">
+     Summary Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_15_Summary_exercises_SOLUTION.html">
+     Summary Exercises - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04b/overview.html">
+   Lecture 4b: Data Cleaning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1.html">
+     Determining the Hubble Constant
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1_SOLUTIONS.html">
+     Determining the Hubble Constant - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2.html">
+     Data from a Periodic Star
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2_SOLUTIONS.html">
+     Data from a Periodic Star - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05a/overview.html">
+   Lecture 5a: Ordinary differential equations I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_01_EulerMethod.html">
+     The Euler Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_01_EulerMethod_SOLUTIONS.html">
+     The Euler Method - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_02_DecayingExponential.html">
+     The Decaying Exponential
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS.html">
+     The Decaying Exponential - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_03_Sinusoid.html">
+     The Sinusoid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_03_Sinusoid_SOLUTIONS.html">
+     The Sinusoid - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_04_CoupledEquations.html">
+     Coupled Equations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_04_CoupledEquations_SOLUTIONS.html">
+     Coupled Equations - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_05_NonlinearEquation.html">
+     Nonlinear Equation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05a/CompPhys_Lect05a_05_NonlinearEquation_SOLUTIONS.html">
+     Nonlinear Equation - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05b/overview.html">
+   Lecture 5b: Ordinary differential equations II
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_01_Gravity.html">
+     Gravity!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_01_Gravity_SOLUTION.html">
+     Gravity! - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_02_Earth.html">
+     Earth’s Orbit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_02_Earth_SOLUTION.html">
+     Earth’s Orbit - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_03_MarsMission.html">
+     Mission to Mars
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_03_MarsMission_SOLUTION.html">
+     Mission to Mars - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_04_BlackHoleMergers.html">
+     Merging black holes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05b/CompPhys_Lect05b_05_Challenges.html">
+     Challenges
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06a/overview.html">
+   Lecture 6a: Advanced Plotting
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_01_Review.html">
+     Plotting: Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_01_Review_Soln.html">
+     Plotting: Review - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_02_Scatter.html">
+     Advanced Plotting: Scatter plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_02_Scatter_Soln.html">
+     Advanced Plotting: Scatter plots - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_03_Heatmaps.html">
+     Advanced Plotting: Heatmaps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_03_Heatmaps_Soln.html">
+     Advanced Plotting: Heatmaps - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_04_Subplots.html">
+     Advanced plotting: subplots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06a/CompPhys_Lect06a_04_Subplots_Soln.html">
+     Advanced plotting: subplots - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06b/overview.html">
+   Lecture 6b: Midpoint Review
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review.html">
+     Question 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review_SOLUTIONS.html">
+     Question 1 - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Review.html">
+     Question 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Review_SOLUTIONS.html">
+     Question 2 - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Review.html">
+     Question 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Review_SOLUTIONS.html">
+     Question 3 - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Review.html">
+     Question 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Review_SOLUTIONS.html">
+     Question 4 - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_05_Review.html">
+     Question 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_05_Review_SOLUTIONS.html">
+     Question 5 - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_06_Review.html">
+     Question 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06b/CompPhys_Lect06b_06_Review_SOLUTIONS.html">
+     Question 6 - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07a/overview.html">
+   Lecture 7a: Ordinary differential equations III - N-body simulations and more
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody.html">
+     N-body Simulations and More
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 7b: LaTeX
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F07b/overview.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/07b/overview.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lecture 7b: LaTeX</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-7b-latex">
+<h1>Lecture 7b: LaTeX<a class="headerlink" href="#lecture-7b-latex" title="Permalink to this headline">#</a></h1>
+<p>In this lecture we will learn how to use LaTeX to write documents. LaTeX is a typesetting system that is widely used in academia and industry to write scientific documents. It is particularly useful for writing documents that contain mathematical equations, tables, and figures. LaTeX is a markup language, which means that you write your document using plain text and then use special commands to format the text. This makes it easy to write documents that are well-structured and easy to read.</p>
+<p>Coursework 2 will <strong>require</strong> you to write a report using LaTeX.</p>
+<p>Content for this lecture is on Moodle. Please go to Moodle and look at the LaTeX session. Laura will explain all of this at the start of today’s lab session.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "icg-gravwaves/U24568_Computational_Physics",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./07b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../07a/CompPhys_Lect07a_01_NBody.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">N-body Simulations and More</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Becky Canning, Gareth Cabourn Davies, Ian Harry, Andrew Lundgren, Laura Nuttall and Samantha Penny<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
