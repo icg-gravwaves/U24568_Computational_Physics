@@ -148,10 +148,10 @@ chapters:
     - file: 06b/CompPhys_Lect06b_05_Review_SOLUTIONS
     - file: 06b/CompPhys_Lect06b_06_Review
     - file: 06b/CompPhys_Lect06b_06_Review_SOLUTIONS
-#- file: 07a/overview
-#  sections:
-#    - file: 07a/CompPhys_Lect07a_01_Review
-#- file: 07b/overview
+- file: 07a/overview
+  sections:
+    - file: 07a/CompPhys_Lect07a_01_NBody
+- file: 07b/overview
 #- file: 08a/overview
 #  sections:
 #   - file: 08a/DFT_overview
