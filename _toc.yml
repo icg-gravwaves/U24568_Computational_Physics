@@ -151,25 +151,26 @@ chapters:
 - file: 07a/overview
   sections:
     - file: 07a/CompPhys_Lect07a_01_NBody
+    - file: 07a/CompPhys_Lect07a_01_NBody_SOLUTION
 - file: 07b/overview
-#- file: 08a/overview
-#  sections:
-#   - file: 08a/DFT_overview
-#   - file: 08a/DFT_coding_help
-#   - file: 08a/DFT_Coding_Easy
-#   - file: 08a/DFT_coding_hard
-#   - file: 08a/DFT_more_exercises
-#   - file: 08a/DFT_summary
-#   - file: 08a/Aliasing_introduction
-#   - file: 08a/Aliasing_exercises
-#   - file: 08a/Aliasing_summary
-#- file: 08b/overview
-#  sections:
-#    - file: 08b/CompPhys_Lect08b_01_NaiveHighPassFilter
-#    - file: 08b/CompPhys_Lect08b_02_BetterHighPassFilter
-#    - file: 08b/CompPhys_Lect08b_03_LongConvolutionExample
-#    - file: 08b/CompPhys_Lect08b_04_Scipy
-#    - file: 08b/CompPhys_Lect08b_05_Exercises
+- file: 08a/overview
+  sections:
+    - file: 08a/CompPhys_Lect08a_01_DFT_overview
+    - file: 08a/CompPhys_Lect08a_02_DFT_coding_help
+    - file: 08a/CompPhys_Lect08a_03_DFT_coding_hard
+    - file: 08a/CompPhys_Lect08a_04_DFT_coding_easy
+    - file: 08a/CompPhys_Lect08a_05_DFT_more_exercises
+    - file: 08a/CompPhys_Lect08a_06_DFT_summary
+    - file: 08a/CompPhys_Lect08a_07_Aliasing_introduction
+    - file: 08a/CompPhys_Lect08a_08_Aliasing_exercises
+    - file: 08a/CompPhys_Lect08a_09_Aliasing_summary
+- file: 08b/overview
+  sections:
+    - file: 08b/CompPhys_Lect08b_01_NaiveHighPassFilter
+    - file: 08b/CompPhys_Lect08b_02_BetterHighPassFilter
+    - file: 08b/CompPhys_Lect08b_03_LongConvolutionExample
+    - file: 08b/CompPhys_Lect08b_04_Scipy
+    - file: 08b/CompPhys_Lect08b_05_Exercises
 #- file: 09a/overview
 #  sections:
 #    - file: 09a/CompPhys_Lect09a_01_CrossCorrelation1
