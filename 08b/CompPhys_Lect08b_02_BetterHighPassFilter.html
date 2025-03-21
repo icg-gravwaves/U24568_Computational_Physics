@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 7a: Ordinary differential equations III - N-body simulations and more &#8212; Computational Physics U24568</title>
+    <title>An improved implementation of a high-pass filter - SOLUTION &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="N-body Simulations and More" href="CompPhys_Lect07a_01_NBody.html" />
-    <link rel="prev" title="Question 6 - SOLVED" href="../06b/CompPhys_Lect06b_06_Review_SOLUTIONS.html" />
+    <link rel="next" title="A long example of applying a high-pass filter through convolution" href="CompPhys_Lect08b_03_LongConvolutionExample.html" />
+    <link rel="prev" title="A naive implementation of a high-pass filter" href="CompPhys_Lect08b_01_NaiveHighPassFilter.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -866,23 +866,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07a/overview.html">
    Lecture 7a: Ordinary differential equations III - N-body simulations and more
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect07a_01_NBody.html">
+    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody.html">
      N-body Simulations and More
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect07a_01_NBody_SOLUTION.html">
+    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody_SOLUTION.html">
      N-body Simulations and More
     </a>
    </li>
@@ -950,38 +950,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../08b/overview.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
    Lecture 8b: Signal processing 2, Manipulating data in the frequency domain
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_01_NaiveHighPassFilter.html">
+    <a class="reference internal" href="CompPhys_Lect08b_01_NaiveHighPassFilter.html">
      A naive implementation of a high-pass filter
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_02_BetterHighPassFilter.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      An improved implementation of a high-pass filter - SOLUTION
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_03_LongConvolutionExample.html">
+    <a class="reference internal" href="CompPhys_Lect08b_03_LongConvolutionExample.html">
      A long example of applying a high-pass filter through convolution
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_04_Scipy.html">
+    <a class="reference internal" href="CompPhys_Lect08b_04_Scipy.html">
      High pass filtering with scipy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_05_Exercises.html">
+    <a class="reference internal" href="CompPhys_Lect08b_05_Exercises.html">
      Exercises
     </a>
    </li>
@@ -1038,6 +1038,71 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/08b/CompPhys_Lect08b_02_BetterHighPassFilter.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/08b/CompPhys_Lect08b_02_BetterHighPassFilter.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -1077,7 +1142,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F07a/overview.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F08b/CompPhys_Lect08b_02_BetterHighPassFilter.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1105,7 +1170,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/07a/overview.md"
+        <a href="../_sources/08b/CompPhys_Lect08b_02_BetterHighPassFilter.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1116,7 +1181,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -1142,23 +1207,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#huh">
+   Huh?!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-exercise">
+   Optional Exercise
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lecture 7a: Ordinary differential equations III - N-body simulations and more</h1>
+                <h1>An improved implementation of a high-pass filter - SOLUTION</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#huh">
+   Huh?!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optional-exercise">
+   Optional Exercise
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -1166,15 +1298,240 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-7a-ordinary-differential-equations-iii-n-body-simulations-and-more">
-<h1>Lecture 7a: Ordinary differential equations III - N-body simulations and more<a class="headerlink" href="#lecture-7a-ordinary-differential-equations-iii-n-body-simulations-and-more" title="Permalink to this headline">#</a></h1>
-<p>This lecture goes even deeper into ODEs; simulating multiple bodies in the solar system.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="CompPhys_Lect07a_01_NBody.html">N-body Simulations and More</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CompPhys_Lect07a_01_NBody_SOLUTION.html">N-body Simulations and More</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="an-improved-implementation-of-a-high-pass-filter-solution">
+<h1>An improved implementation of a high-pass filter - SOLUTION<a class="headerlink" href="#an-improved-implementation-of-a-high-pass-filter-solution" title="Permalink to this headline">#</a></h1>
+<p>Let’s begin by exploring what was wrong with our naïve implementation. To illustrate this let’s modify our example. We’ll generate a similar dataset, but instead of generating our low frequency noise at regular frequencies, we will generate them at random. This means that they may live in-between the frequency bins of our discrete Fourier transform, and we will see the effect that has.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.signal</span>
+</pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Choose data length and sampling rate</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">data_length</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">sample_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_length</span> <span class="o">*</span> <span class="n">sample_rate</span><span class="p">)</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">sample_points</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample_rate</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">sample_points</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sample_rate</span><span class="o">/</span><span class="n">sample_points</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data_time_domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">sample_points</span><span class="p">)</span>
+<span class="c1"># Add low frequency noise: No components above 1Hz</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="n">data_length</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># We generate a random number between 0 and 1 for the frequency,</span>
+    <span class="c1"># This means it won&#39;t line up perfectly with the</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="c1"># randomly set the phase, so that it isn&#39;t all in the</span>
+    <span class="c1"># imaginary frequency component!</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">data_time_domain</span> <span class="o">+=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">+</span> <span class="n">phase</span><span class="p">)</span>
+
+<span class="c1"># Add in a single 4Hz sine wave - random phase again</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">4.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">+</span> <span class="n">phase</span><span class="p">)</span>
+<span class="n">data_time_domain</span> <span class="o">+=</span> <span class="n">signal</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<p>As in part 1, plot this data in the Fourier domain, and transform back to the time domain.</p>
+<p>Then, as before, transform the data to the Fourier domain, perform a basic high-pass filter, as we did previously, and plot the data again.</p>
+<p>Can you see the sine wave on any of this data? (The answer now should be “no”)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bring in FT functions from previous work</span>
+
+<span class="k">def</span> <span class="nf">compute_fourier_transform</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">):</span>
+    <span class="k">return</span> 
+
+
+<span class="k">def</span> <span class="nf">compute_inverse_fourier_transform</span><span class="p">(</span><span class="n">data_frequency_domain</span><span class="p">):</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="huh">
+<h2>Huh?!<a class="headerlink" href="#huh" title="Permalink to this headline">#</a></h2>
+<p>We did the same process as in the previous step, where we <em>did</em> manage to extract the signal. So what’s the difference here? Why can we not recover the signal in this case?</p>
+<p>To answer this we need to think about the theory of Fourier transforms: As we said previously, any discrete time series can be represented as a frequency series by a Fourier transform. However, <strong>this assumes that the data is cyclical</strong>, this means that the data should repeat itself. So in the time domain, we consider that when we reach the end of the dataset we start again at the beginning.</p>
+<p>This was not a problem in our first example, because we generated the noise such that the end was smoothly connected to the start. We can see this by repeating the dataset and examining the “join”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate the data so that the noise is all perfectly cyclical</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data_time_domain_clean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">sample_points</span><span class="p">)</span>
+<span class="c1"># Add low frequency noise: No components above 1Hz</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="n">data_length</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">data_length</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">data_time_domain_clean</span> <span class="o">+=</span> <span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">+</span> <span class="n">phase</span><span class="p">)</span>
+
+<span class="c1"># Add in a single 4Hz sine wave</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">4.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">data_time_domain_clean</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span>
+
+<span class="n">times_TWICE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">times</span> <span class="o">+</span> <span class="n">data_length</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here I am talking the data, and then *repeating* it; the first</span>
+<span class="c1"># half is identical to the second half</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times_TWICE</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_time_domain_clean</span><span class="p">,</span> <span class="n">data_time_domain_clean</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;A smooth join&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times_TWICE</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_time_domain_clean</span><span class="p">,</span> <span class="n">data_time_domain_clean</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">data_length</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">data_length</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Amplitude&#39;)
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_9_1.png" src="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_9_1.png" />
+<img alt="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_9_2.png" src="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_9_2.png" />
+</div>
+</div>
+<p>In this case we can see that the data is repeating and the “join” is smooth. In contrast, for our new dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">times_TWICE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">times</span> <span class="o">+</span> <span class="n">data_length</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times_TWICE</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">,</span> <span class="n">data_time_domain</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;A not-smooth join&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times_TWICE</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">,</span> <span class="n">data_time_domain</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">data_length</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">data_length</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Amplitude&#39;)
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_11_1.png" src="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_11_1.png" />
+<img alt="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_11_2.png" src="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_11_2.png" />
+</div>
+</div>
+<p>We can see above that the transition here is <em>not</em> smooth (run the code with a different seed and generate the plot again if this is not so clear). Joining these two datasets introduces a delta-function in the data. As we saw earlier a discontinuity, or delta-function, produces broad frequency content in the Fourier transform. The high-pass filter removes a lot of this content, but cannot remove the content above 1Hz.</p>
+<p>Unfortunately, most real examples will look like the case above, and not the simple case.</p>
+<p>So how do we deal with this? In short, we have to remove this discontinuity!</p>
+<p>Let’s first deal with the case that I am <em>only</em> concerned about my 8s data set for now. If I want to get rid of the delta-function. I can “window” the data. This means that data at the edges is set to 0, by multiplying by some sort of smooth curve between 0 and 1 (called a window function). Let’s show a quick example of this and then explain a bit more:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># IMPORTANT TO USE COPY HERE SO WE DON&#39;T EDIT BOTH ARRAYS!!</span>
+<span class="n">data_time_domain_windowed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="c1"># We are going to apply the window to the first and last 1/8th of the data</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">data_time_domain_windowed</span><span class="p">)</span>
+<span class="c1"># apply the window to the first 1/8th of the data</span>
+<span class="n">npoints</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">window</span><span class="p">[:</span><span class="n">npoints</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span><span class="p">[:</span><span class="n">npoints</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">data_length</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">window</span><span class="p">[</span><span class="o">-</span><span class="n">npoints</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span><span class="p">[:</span><span class="n">npoints</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">data_length</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)</span>
+
+<span class="n">data_time_domain_windowed</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data_time_domain_windowed</span> <span class="o">*</span> <span class="n">window</span>
+<span class="p">)</span>
+    
+<span class="c1"># NOTE: times[:npoints] goes from 0 to (almost) 1, so the factor on the right above here is a cosine</span>
+<span class="c1"># transitioning from 0 to 1 (or vice versa)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_windowed</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Amplitude&#39;)
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_13_1.png" src="../_images/CompPhys_Lect08b_02_BetterHighPassFilter_13_1.png" />
+</div>
+</div>
+<p>What we have done here is taper the data to 0 at both ends. This will remove some actual content from the data, but will ensure that the data meets (mostly) smoothly at the ends (the second derivative is not continuous at this point, so it is not truly smooth with the window I chose!) We can, however, see that this data joins up much better in the middle.</p>
+</section>
+<section id="id1">
+<h2>Exercise<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Show that the data is now smooth if we join the start of the data to the end (by making the same plot as we made above over 16 seconds). Then Fourier transform this data again, and see if we can see the signal now. Also use our basic high-pass filter on this windowed data and see if we can extract the signal in the time domain.
+Plot the signal we are trying to extract to see how close we are now</p>
+<p>HINT: Try removing data up to 3Hz to improve ability to extract the signal!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show that the data is now smooth at the edges</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Same as before, let&#39;s do a high-pass filter. </span>
+<span class="c1"># We&#39;ll remove all content below 3Hz </span>
+<span class="c1"># (and the corresponding high-frequency values)</span>
+
+<span class="c1"># plot the unwindowed, windowed and windowed+filtered data</span>
+<span class="c1"># in the frequency domain</span>
+
+<span class="c1"># Convert the windowed+filtered data back into the time domain</span>
+
+
+<span class="c1"># Plot what we have recovered after the high-pass filter</span>
+<span class="c1"># in the time domain</span>
+
+<span class="c1"># Compare this to what the extracted cosine wave should be</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, we should be able to see a spike in the Fourier domain data at 4Hz, but the windowing itself introduces some noise at all frequencies, and we do not perfectly recover the sine wave. But it is much better than the un-windowed case.</p>
+<p>This is the general real-world example! This could be improved by (for example) using a different windowing function. For example we could have windowed more data, smoothing out the noise introduced by the window, but removing more of the data. There’s also a variety of possible ways to smoothly bring data to 0:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Window_function">https://en.wikipedia.org/wiki/Window_function</a></p>
+<p>Some of which may perform better than our (Tukey) window in this instance.</p>
+</section>
+<section id="optional-exercise">
+<h2>Optional Exercise<a class="headerlink" href="#optional-exercise" title="Permalink to this headline">#</a></h2>
+<p>Investigate if you can better recover the signal in this dataset by using different windowing filters, or different filter lengths.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># No solution will be provided here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1190,7 +1547,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./07a"
+            path: "./08b"
         },
         predefinedOutput: true
     }
@@ -1204,17 +1561,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../06b/CompPhys_Lect06b_06_Review_SOLUTIONS.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect08b_01_NaiveHighPassFilter.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Question 6 - SOLVED</p>
+            <p class="prev-next-title">A naive implementation of a high-pass filter</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect07a_01_NBody.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect08b_03_LongConvolutionExample.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">N-body Simulations and More</p>
+        <p class="prev-next-title">A long example of applying a high-pass filter through convolution</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

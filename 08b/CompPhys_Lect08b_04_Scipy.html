@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 7a: Ordinary differential equations III - N-body simulations and more &#8212; Computational Physics U24568</title>
+    <title>High pass filtering with scipy &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="N-body Simulations and More" href="CompPhys_Lect07a_01_NBody.html" />
-    <link rel="prev" title="Question 6 - SOLVED" href="../06b/CompPhys_Lect06b_06_Review_SOLUTIONS.html" />
+    <link rel="next" title="Exercises" href="CompPhys_Lect08b_05_Exercises.html" />
+    <link rel="prev" title="A long example of applying a high-pass filter through convolution" href="CompPhys_Lect08b_03_LongConvolutionExample.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -866,23 +866,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07a/overview.html">
    Lecture 7a: Ordinary differential equations III - N-body simulations and more
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect07a_01_NBody.html">
+    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody.html">
      N-body Simulations and More
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect07a_01_NBody_SOLUTION.html">
+    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody_SOLUTION.html">
      N-body Simulations and More
     </a>
    </li>
@@ -950,38 +950,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../08b/overview.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
    Lecture 8b: Signal processing 2, Manipulating data in the frequency domain
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_01_NaiveHighPassFilter.html">
+    <a class="reference internal" href="CompPhys_Lect08b_01_NaiveHighPassFilter.html">
      A naive implementation of a high-pass filter
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_02_BetterHighPassFilter.html">
+    <a class="reference internal" href="CompPhys_Lect08b_02_BetterHighPassFilter.html">
      An improved implementation of a high-pass filter - SOLUTION
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_03_LongConvolutionExample.html">
+    <a class="reference internal" href="CompPhys_Lect08b_03_LongConvolutionExample.html">
      A long example of applying a high-pass filter through convolution
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_04_Scipy.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      High pass filtering with scipy
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_05_Exercises.html">
+    <a class="reference internal" href="CompPhys_Lect08b_05_Exercises.html">
      Exercises
     </a>
    </li>
@@ -1038,6 +1038,71 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/08b/CompPhys_Lect08b_04_Scipy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/08b/CompPhys_Lect08b_04_Scipy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -1077,7 +1142,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F07a/overview.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F08b/CompPhys_Lect08b_04_Scipy.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1105,7 +1170,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/07a/overview.md"
+        <a href="../_sources/08b/CompPhys_Lect08b_04_Scipy.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1116,7 +1181,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -1154,7 +1219,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lecture 7a: Ordinary differential equations III - N-body simulations and more</h1>
+                <h1>High pass filtering with scipy</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1166,14 +1231,176 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-7a-ordinary-differential-equations-iii-n-body-simulations-and-more">
-<h1>Lecture 7a: Ordinary differential equations III - N-body simulations and more<a class="headerlink" href="#lecture-7a-ordinary-differential-equations-iii-n-body-simulations-and-more" title="Permalink to this headline">#</a></h1>
-<p>This lecture goes even deeper into ODEs; simulating multiple bodies in the solar system.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="CompPhys_Lect07a_01_NBody.html">N-body Simulations and More</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CompPhys_Lect07a_01_NBody_SOLUTION.html">N-body Simulations and More</a></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="high-pass-filtering-with-scipy">
+<h1>High pass filtering with scipy<a class="headerlink" href="#high-pass-filtering-with-scipy" title="Permalink to this headline">#</a></h1>
+<p>Okay, let’s revisit the same problem as before, but now we’ll attempt to solve this using routines in scipy. The fundamentals, and internals, of what scipy is doing is the same as what we’ve just covered, but it will do it better (and probably faster). However, it is important that you are not only able to run libraries like numpy/scipy but also have some understanding of what they’re doing (and why).</p>
+<p>Let’s begin by once again creating the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.signal</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sorry, this won&#39;t work for you! Please replace with the functions you wrote last week!</span>
+
+<span class="kn">from</span> <span class="nn">fourier_transform</span> <span class="kn">import</span> <span class="n">compute_fourier_transform</span><span class="p">,</span> <span class="n">compute_inverse_fourier_transform</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Choose data length and sampling rate</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">data_length</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="n">sample_rate</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">sample_points</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_length</span> <span class="o">*</span> <span class="n">sample_rate</span><span class="p">)</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">sample_points</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample_rate</span>
+<span class="n">frequencies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">sample_points</span><span class="p">)</span> <span class="o">/</span> <span class="n">data_length</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data_time_domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">sample_points</span><span class="p">)</span>
+<span class="c1"># Add low frequency noise: No components above 1Hz</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="n">data_length</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># We generate a random number between 0 and 1 for the frequency,</span>
+    <span class="c1"># This means it won&#39;t line up perfectly with the</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="c1"># randomly set the phase, so that it isn&#39;t all in the</span>
+    <span class="c1"># imaginary frequency component!</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">data_time_domain</span> <span class="o">+=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">+</span> <span class="n">phase</span><span class="p">)</span>
+
+<span class="c1"># Add in a single 4Hz sine wave - random phase again</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="mf">4.</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">+</span> <span class="n">phase</span><span class="p">)</span>
+<span class="n">data_time_domain</span> <span class="o">+=</span> <span class="n">signal</span>
+
+<span class="n">data_length_short</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">data_time_domain_CUT</span> <span class="o">=</span> <span class="n">data_time_domain</span><span class="p">[</span><span class="mi">504</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">:(</span><span class="mi">504</span><span class="o">+</span><span class="n">data_length_short</span><span class="p">)</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">]</span>
+<span class="n">frequencies_cut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data_length_short</span> <span class="o">*</span> <span class="n">sample_rate</span><span class="p">)</span> <span class="o">/</span> <span class="n">data_length_short</span>
+<span class="n">times_cut</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data_length_short</span> <span class="o">*</span> <span class="n">sample_rate</span><span class="p">)</span> <span class="o">/</span> <span class="n">sample_rate</span>
+<span class="n">signal_CUT</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="mi">504</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">:(</span><span class="mi">504</span><span class="o">+</span><span class="n">data_length_short</span><span class="p">)</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an example of using scipy to perform a high-pass filter of this data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.signal</span>
+<span class="c1"># As with many things in python, good examples always exist on places like stackoverflow. It is not wrong to use</span>
+<span class="c1"># these, but you should credit where they come from.</span>
+
+<span class="c1"># https://dsp.stackexchange.com/questions/41184/high-pass-filter-in-python-scipy</span>
+<span class="k">def</span> <span class="nf">highpass_filter_scipy</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">sample_rate</span><span class="p">):</span>
+    <span class="c1"># As we saw above, our filter cannot be an abrupt cut off. Here we say that no frequency content below 1Hz will</span>
+    <span class="c1"># be passed, and all frequency content above 1.5Hz will be passed. Between there some content will be passed.</span>
+    <span class="n">filter_stop_freq</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Hz</span>
+    <span class="n">filter_pass_freq</span> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1"># Hz</span>
+    <span class="c1"># The filter order is how long (in samples) the filter will be. We used 256 before, so use it again here.</span>
+    <span class="c1"># However, due to symmetry, we enter (256 / 2) + 1</span>
+    <span class="n">filter_order</span> <span class="o">=</span> <span class="mi">129</span>
+
+    <span class="c1"># High-pass filter</span>
+    <span class="n">nyquist_rate</span> <span class="o">=</span> <span class="n">sample_rate</span> <span class="o">/</span> <span class="mf">2.</span>
+    <span class="n">desired</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">bands</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">filter_stop_freq</span><span class="p">,</span> <span class="n">filter_pass_freq</span><span class="p">,</span> <span class="n">nyquist_rate</span><span class="p">)</span>
+    <span class="n">filter_coefs</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">firls</span><span class="p">(</span><span class="n">filter_order</span><span class="p">,</span> <span class="n">bands</span><span class="p">,</span> <span class="n">desired</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">nyquist_rate</span>  <span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Apply high-pass filter</span>
+    <span class="n">filtered_data</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">signal</span><span class="o">.</span><span class="n">filtfilt</span><span class="p">(</span><span class="n">filter_coefs</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered_data</span>
+
+<span class="c1"># Use scipy to high-pass filter the data</span>
+<span class="n">data_time_domain_scipy_passed</span> <span class="o">=</span> <span class="n">highpass_filter_scipy</span><span class="p">(</span><span class="n">data_time_domain</span><span class="p">,</span> <span class="n">sample_rate</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_scipy_passed</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Times (s)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Times (s)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08b_04_Scipy_5_1.png" src="../_images/CompPhys_Lect08b_04_Scipy_5_1.png" />
+</div>
+</div>
+<p>WAIT!! That looks rubbish. The high-pass filter will “corrupt” data at the start and the end. This corruption corresponds to the length of the filter in the time-domain. This was present in the previous notebook as well, after applying the convolution the data length was <em>shorter</em> by 16 seconds. We could have produced this corrupted region if we wanted to. We do need to remove this corrupted region.</p>
+<p>We specified the length (read the comments) of the scipy filter in the function above, so we remove 8 seconds at the start and end to correct for this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s zoom in on the start/end of the processed data to begin with</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_scipy_passed</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">data_time_domain_scipy_passed</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">1013</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Times (s)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Times (s)&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/CompPhys_Lect08b_04_Scipy_7_0.png" src="../_images/CompPhys_Lect08b_04_Scipy_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_time_domain_scipy_passed_lop</span> <span class="o">=</span> <span class="n">data_time_domain_scipy_passed</span><span class="p">[</span><span class="mi">8</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">:</span><span class="o">-</span><span class="p">(</span><span class="n">sample_rate</span><span class="o">*</span><span class="mi">8</span><span class="p">)]</span>
+<span class="c1"># And a representative 8s chunk</span>
+<span class="n">data_time_domain_scipy_passed_CUT</span> <span class="o">=</span> <span class="n">data_time_domain_scipy_passed_lop</span><span class="p">[</span><span class="mi">504</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">:</span><span class="mi">504</span><span class="o">*</span><span class="n">sample_rate</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">times_cut</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">[</span><span class="mi">8</span><span class="o">*</span><span class="n">sample_rate</span><span class="p">:</span><span class="o">-</span><span class="p">(</span><span class="n">sample_rate</span><span class="o">*</span><span class="mi">8</span><span class="p">)],</span> <span class="n">data_time_domain_scipy_passed_lop</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Times (s)&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times_cut</span><span class="p">,</span> <span class="n">data_time_domain_scipy_passed_CUT</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Filtered&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times_cut</span><span class="p">,</span> <span class="n">signal_CUT</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;signal&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Times (s)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13f05fcd0&gt;
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08b_04_Scipy_8_1.png" src="../_images/CompPhys_Lect08b_04_Scipy_8_1.png" />
+<img alt="../_images/CompPhys_Lect08b_04_Scipy_8_2.png" src="../_images/CompPhys_Lect08b_04_Scipy_8_2.png" />
+</div>
+</div>
+<p>And then plotted in the frequency domain, this looks great!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This second one looks great</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">data_frequency_domain</span> <span class="o">=</span> <span class="n">compute_fourier_transform</span><span class="p">(</span><span class="n">data_time_domain_scipy_passed_CUT</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequencies_cut</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">data_frequency_domain</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fourier Transform&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Amplitude&#39;)
+</pre></div>
+</div>
+<img alt="../_images/CompPhys_Lect08b_04_Scipy_10_1.png" src="../_images/CompPhys_Lect08b_04_Scipy_10_1.png" />
+</div>
 </div>
 </section>
 
@@ -1190,7 +1417,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./07a"
+            path: "./08b"
         },
         predefinedOutput: true
     }
@@ -1204,17 +1431,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../06b/CompPhys_Lect06b_06_Review_SOLUTIONS.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect08b_03_LongConvolutionExample.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Question 6 - SOLVED</p>
+            <p class="prev-next-title">A long example of applying a high-pass filter through convolution</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect07a_01_NBody.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect08b_05_Exercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">N-body Simulations and More</p>
+        <p class="prev-next-title">Exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
