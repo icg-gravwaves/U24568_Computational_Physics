@@ -885,7 +885,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody_SOLUTION.html">
-     N-body Simulations and More
+     N-body Simulations and More - SOLUTIONS
     </a>
    </li>
   </ul>
@@ -927,7 +927,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08a/CompPhys_Lect08a_05_DFT_more_exercises.html">
-     Discrete Fourier Transforms - Further Exercises - SOLUTION
+     Discrete Fourier Transforms - Further Exercises
     </a>
    </li>
    <li class="toctree-l2">
@@ -969,7 +969,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08b/CompPhys_Lect08b_02_BetterHighPassFilter.html">
-     An improved implementation of a high-pass filter - SOLUTION
+     An improved implementation of a high-pass filter
     </a>
    </li>
    <li class="toctree-l2">
@@ -1322,18 +1322,22 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="the-sinusoid">
 <h1>The Sinusoid<a class="headerlink" href="#the-sinusoid" title="Permalink to this headline">#</a></h1>
-<p>Now let’s try to get a sinusoid. We can’t do that with a single derivative – we need a second-order equation. It looks like
-$<span class="math notranslate nohighlight">\( \frac{d^2 y}{d t^2} = - \omega^2 y\)</span>$
-But <code class="docutils literal notranslate"><span class="pre">odeint</span></code> doesn’t say anything about second derivatives. How are we supposed to solve this?</p>
-<p>The trick is, we’re allowed to have many variables. So let’s define a new variable
-$<span class="math notranslate nohighlight">\(v_y = \frac{d y}{d t}\)</span>$</p>
-<p>If we take another derivative, we get:
-$<span class="math notranslate nohighlight">\(\frac{d v_y}{d t} = \frac{d^2 y}{d t}\)</span>$</p>
-<p>Now we can re-write the above equation as two pieces:
-$<span class="math notranslate nohighlight">\(\begin{align}
+<p>Now let’s try to get a sinusoid. We can’t do that with a single derivative – we need a second-order equation. It looks like</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d^2 y}{d t^2} = - \omega^2 y\]</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">odeint</span></code> doesn’t say anything about second derivatives. How are we supposed to solve this?</p>
+<p>The trick is, we’re allowed to have many variables. So let’s define a new variable</p>
+<div class="math notranslate nohighlight">
+\[v_y = \frac{d y}{d t}\]</div>
+<p>If we take another derivative, we get:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d v_y}{d t} = \frac{d^2 y}{d t}\]</div>
+<p>Now we can re-write the above equation as two pieces:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
 \frac{d v_y}{d t} &amp;= -\omega^2 y \\
 \frac{d y}{d t} &amp;= v_y
-\end{align}\)</span>$</p>
+\end{align}\end{split}\]</div>
 <p>This trick is used <em>very</em> often, anytime there are second derivatives (or higher). We’ve gone from one second-order equation to two first-order equations. Our new variable is the velocity.</p>
 <p>The main change is in the derivative function. The first argument is now an array of <code class="docutils literal notranslate"><span class="pre">[y,</span> <span class="pre">v_y]</span></code>. You can think of this array as ‘the state of the world’. It’s not just the position, but also the velocity. The function needs to look at that state, and calculate the derivative of each thing. The derivative of <span class="math notranslate nohighlight">\(y\)</span> is <span class="math notranslate nohighlight">\(v_y\)</span> by definition.</p>
 <div class="cell docutils container">

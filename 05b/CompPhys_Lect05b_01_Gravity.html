@@ -885,7 +885,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody_SOLUTION.html">
-     N-body Simulations and More
+     N-body Simulations and More - SOLUTIONS
     </a>
    </li>
   </ul>
@@ -927,7 +927,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08a/CompPhys_Lect08a_05_DFT_more_exercises.html">
-     Discrete Fourier Transforms - Further Exercises - SOLUTION
+     Discrete Fourier Transforms - Further Exercises
     </a>
    </li>
    <li class="toctree-l2">
@@ -969,7 +969,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08b/CompPhys_Lect08b_02_BetterHighPassFilter.html">
-     An improved implementation of a high-pass filter - SOLUTION
+     An improved implementation of a high-pass filter
     </a>
    </li>
    <li class="toctree-l2">
@@ -1300,19 +1300,25 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\vec{a~} = - \frac{G~M}{r^2} \frac{\vec{r~}}{r}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r\)</span> is the length of <span class="math notranslate nohighlight">\(\vec{r~}\)</span>.</p>
-<p>So how do we put this into the form scipy expects? We define the position of the little object by
-$<span class="math notranslate nohighlight">\(\vec{r~} = (x, y)\)</span><span class="math notranslate nohighlight">\(
-Then the length is
-\)</span><span class="math notranslate nohighlight">\(r = \sqrt{x^2 + y^2}\)</span><span class="math notranslate nohighlight">\(
-We have second-order differential equations for both \)</span>x<span class="math notranslate nohighlight">\( and \)</span>y<span class="math notranslate nohighlight">\(. We need four variables \)</span>x<span class="math notranslate nohighlight">\(, \)</span>y<span class="math notranslate nohighlight">\(, \)</span>v_x<span class="math notranslate nohighlight">\(, \)</span>v_y$.</p>
-<p>We also need to rescale our variables. Kilograms, meters, and seconds aren’t great for describing orbits. We’ll get a lot of huge numbers. Let’s define a rescaling:
-$<span class="math notranslate nohighlight">\(t = T~\tau\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(r = R~\rho\)</span><span class="math notranslate nohighlight">\(
-So the differential equation looks something like
-\)</span><span class="math notranslate nohighlight">\(\frac{d^2 r}{d t^2} = \frac{R}{T^2} \frac{d^2 \rho}{d \tau^2} = - \frac{G~M}{(R~\rho)^2}\)</span><span class="math notranslate nohighlight">\(
-or
-\)</span><span class="math notranslate nohighlight">\(\frac{d^2 \rho}{d \tau^2} = - \left( \frac{G~M~T^2}{R^3}\right) ~ \frac{1}{\rho^2}\)</span><span class="math notranslate nohighlight">\(
-All the units have been collected into one single factor. If we choose \)</span>R = 1~\mathrm{AU}<span class="math notranslate nohighlight">\( and \)</span>T = 1~\mathrm{yr}<span class="math notranslate nohighlight">\(, and set \)</span>M<span class="math notranslate nohighlight">\( to the mass of the Sun, this factor becomes a nice number close to \)</span>1$.</p>
+<p>So how do we put this into the form scipy expects? We define the position of the little object by</p>
+<div class="math notranslate nohighlight">
+\[\vec{r~} = (x, y)\]</div>
+<p>Then the length is</p>
+<div class="math notranslate nohighlight">
+\[r = \sqrt{x^2 + y^2}\]</div>
+<p>We have second-order differential equations for both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. We need four variables <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(v_x\)</span>, <span class="math notranslate nohighlight">\(v_y\)</span>.</p>
+<p>We also need to rescale our variables. Kilograms, meters, and seconds aren’t great for describing orbits. We’ll get a lot of huge numbers. Let’s define a rescaling:</p>
+<div class="math notranslate nohighlight">
+\[t = T~\tau\]</div>
+<div class="math notranslate nohighlight">
+\[r = R~\rho\]</div>
+<p>So the differential equation looks something like</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 r}{d t^2} = \frac{R}{T^2} \frac{d^2 \rho}{d \tau^2} = - \frac{G~M}{(R~\rho)^2}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2 \rho}{d \tau^2} = - \left( \frac{G~M~T^2}{R^3}\right) ~ \frac{1}{\rho^2}\]</div>
+<p>All the units have been collected into one single factor. If we choose <span class="math notranslate nohighlight">\(R = 1~\mathrm{AU}\)</span> and <span class="math notranslate nohighlight">\(T = 1~\mathrm{yr}\)</span>, and set <span class="math notranslate nohighlight">\(M\)</span> to the mass of the Sun, this factor becomes a nice number close to <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
