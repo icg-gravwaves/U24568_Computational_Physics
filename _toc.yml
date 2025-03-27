@@ -178,23 +178,24 @@ chapters:
     - file: 08b/CompPhys_Lect08b_04_Scipy
     - file: 08b/CompPhys_Lect08b_05_Exercises
     - file: 08b/CompPhys_Lect08b_05_Exercises_SOLUTION
-#- file: 09a/overview
-#  sections:
-#    - file: 09a/CompPhys_Lect09a_01_CrossCorrelation1
-#    - file: 09a/CompPhys_Lect09a_02_CrossCorrelationExercises
-#    - file: 09a/CompPhys_Lect09a_03_FreqDomainCrossCorrelation
-#    - file: 09a/CompPhys_Lect09a_04_SignalExercises
-#- file: 09b/overview
-#  sections:
-#   - file: 09b/introduction
-#   - file: 09b/installing_profilers
-#   - file: 09b/optimization_example
-#   - file: 09b/optimization_exercises
-#   - file: 09b/square_digits_opt
-#   - file: 09b/using_the_right_tool
-#   - file: 09b/sort_function
-#   - file: 09b/example_sort_functions
-#   - file: 09b/acknowledgements
+- file: 09a/overview
+  sections:
+    - file: 09a/CompPhys_Lect09a_01_CrossCorrelation1
+    - file: 09a/CompPhys_Lect09a_02_CrossCorrelationExercises
+    - file: 09a/CompPhys_Lect09a_03_FreqDomainCrossCorrelation
+    - file: 09a/CompPhys_Lect09a_04_SignalExercises
+- file: 09b/overview
+  sections:
+    - file: 09b/CompPhys_Lect09b_01_Introduction
+    - file: 09b/CompPhys_Lect09b_02_InstallingProfilers
+    - file: 09b/CompPhys_Lect09b_03_OptimizationExample
+    - file: 09b/CompPhys_Lect09b_04_OptimizationExercises
+    - file: 09b/CompPhys_Lect09b_05_SquareDigitsOpt
+    - file: 09b/CompPhys_Lect09b_06_UsingTheRightTool
+    - file: 09b/CompPhys_Lect09b_07_SortFunction
+    - file: 09b/CompPhys_Lect09b_08_ExampleSortFunctions
+    - file: 09b/CompPhys_Lect09b_09_Acknowledgements
+
 #- file: 10a/overview    
 #  sections:
 #    - file: 10a/CompPhys_Lect10a_01_CalculatingG
