@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Some code optimization exercises - Removing for loops!" href="CompPhys_Lect09b_04_OptimizationExercises.html" />
-    <link rel="prev" title="Importing necessary backends" href="CompPhys_Lect09b_02_InstallingProfilers.html" />
+    <link rel="next" title="Optimization exercises - Removing for loops!" href="CompPhys_Lect09b_04_OptimizationExercises.html" />
+    <link rel="prev" title="Importing needed profilers" href="CompPhys_Lect09b_02_InstallingProfilers.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -1068,12 +1068,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_01_Introduction.html">
-     Techniques to profile and optimise python code - I
+     Introduction to optimization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing necessary backends
+     Importing needed profilers
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -1083,7 +1083,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_04_OptimizationExercises.html">
-     Some code optimization exercises - Removing for loops!
+     Optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2">
@@ -1540,7 +1540,7 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.15 s ± 21 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.11 s ± 18.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1564,22 +1564,22 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         2999721 function calls in 1.219 seconds
+         2999721 function calls in 1.211 seconds
 
    Ordered by: internal time
    List reduced from 14 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.354    0.354    0.354    0.354 3642284310.py:27(compute_seriesproduct)
-        1    0.325    0.325    0.408    0.408 3642284310.py:9(compute_cosx)
-        1    0.291    0.291    0.293    0.293 3642284310.py:18(compute_invx)
-        1    0.160    0.160    0.160    0.160 3642284310.py:39(compute_seriessum)
-  2999700    0.082    0.000    0.082    0.000 {built-in method math.cos}
-        3    0.003    0.001    0.003    0.001 {built-in method numpy.zeros}
-        1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
+        1    0.326    0.326    0.415    0.415 3642284310.py:9(compute_cosx)
+        1    0.323    0.323    0.323    0.323 3642284310.py:27(compute_seriesproduct)
+        1    0.300    0.300    0.301    0.301 3642284310.py:18(compute_invx)
+        1    0.168    0.168    0.168    0.168 3642284310.py:39(compute_seriessum)
+  2999700    0.088    0.000    0.088    0.000 {built-in method math.cos}
+        3    0.002    0.001    0.002    0.001 {built-in method numpy.zeros}
         1    0.002    0.002    0.003    0.003 3642284310.py:61(__init__)
-        1    0.001    0.001    1.219    1.219 3642284310.py:74(main_function)
-        1    0.000    0.000    1.219    1.219 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.001    0.001    0.001    0.001 {built-in method numpy.arange}
+        1    0.001    0.001    1.211    1.211 3642284310.py:74(main_function)
+        1    0.000    0.000    1.211    1.211 &lt;string&gt;:1(&lt;module&gt;)
 </pre></div>
 </div>
 </div>
@@ -1607,21 +1607,21 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 1.78149 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_9172/3642284310.py
+Total time: 1.82091 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_13633/3642284310.py
 Function: main_function at line 74
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
     74                                           def main_function():
-    75         1    2893000.0 2893000.0      0.2      intgr = Integrator(1, 10000, 1./300.)
-    76         1 1778595000.0 1778595000.0     99.8      return intgr.generate_integral()
+    75         1    3516000.0 3516000.0      0.2      intgr = Integrator(1, 10000, 1./300.)
+    76         1 1817398000.0 1817398000.0     99.8      return intgr.generate_integral()
 
 *** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 0.021805 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_9172/3642284310.py
+Total time: 0.021084 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_13633/3642284310.py
 Function: compute_cosx at line 9
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
@@ -1630,10 +1630,10 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     10                                               &quot;&quot;&quot;
     11                                               Computes cos(t) for all values in tseries
     12                                               &quot;&quot;&quot;
-    13         1      46000.0  46000.0      0.2      cosx = numpy.zeros(len(tseries))
-    14     99900    7383000.0     73.9     33.9      for idx, tval in enumerate(tseries):
-    15     99900   14376000.0    143.9     65.9          cosx[idx] = math.cos(tseries[idx])
-    16         1          0.0      0.0      0.0      return cosx
+    13         1      16000.0  16000.0      0.1      cosx = numpy.zeros(len(tseries))
+    14     99900    7127000.0     71.3     33.8      for idx, tval in enumerate(tseries):
+    15     99900   13940000.0    139.5     66.1          cosx[idx] = math.cos(tseries[idx])
+    16         1       1000.0   1000.0      0.0      return cosx
 </pre></div>
 </div>
 </div>
@@ -1708,22 +1708,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         19 function calls in 0.811 seconds
+         19 function calls in 0.793 seconds
 
    Ordered by: internal time
    List reduced from 13 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.345    0.345    0.345    0.345 3642284310.py:27(compute_seriesproduct)
-        1    0.290    0.290    0.291    0.291 3642284310.py:18(compute_invx)
-        1    0.162    0.162    0.162    0.162 3642284310.py:39(compute_seriessum)
+        1    0.322    0.322    0.322    0.322 3642284310.py:27(compute_seriesproduct)
+        1    0.294    0.294    0.296    0.296 3642284310.py:18(compute_invx)
+        1    0.163    0.163    0.163    0.163 3642284310.py:39(compute_seriessum)
         1    0.007    0.007    0.007    0.007 1481541755.py:1(compute_cosx)
         1    0.002    0.002    0.004    0.004 3642284310.py:61(__init__)
         1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
         2    0.001    0.001    0.001    0.001 {built-in method numpy.zeros}
-        1    0.001    0.001    0.810    0.810 3642284310.py:74(main_function)
-        1    0.000    0.000    0.811    0.811 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.000    0.000    0.806    0.806 3642284310.py:50(generate_integral)
+        1    0.001    0.001    0.793    0.793 3642284310.py:74(main_function)
+        1    0.000    0.000    0.793    0.793 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000    0.788    0.788 3642284310.py:50(generate_integral)
 </pre></div>
 </div>
 </div>
@@ -1761,22 +1761,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         16 function calls in 0.014 seconds
+         16 function calls in 0.015 seconds
 
    Ordered by: internal time
    List reduced from 15 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.007    0.007    0.007    0.007 1481541755.py:1(compute_cosx)
-        1    0.002    0.002    0.003    0.003 3642284310.py:61(__init__)
         1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
+        1    0.002    0.002    0.005    0.005 3642284310.py:61(__init__)
         1    0.002    0.002    0.002    0.002 1855454630.py:1(compute_invx)
         1    0.001    0.001    0.001    0.001 1855454630.py:7(compute_seriesproduct)
-        1    0.001    0.001    0.014    0.014 3642284310.py:74(main_function)
+        1    0.001    0.001    0.015    0.015 3642284310.py:74(main_function)
         1    0.000    0.000    0.000    0.000 {method &#39;reduce&#39; of &#39;numpy.ufunc&#39; objects}
-        1    0.000    0.000    0.014    0.014 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.000    0.000    0.014    0.014 {built-in method builtins.exec}
-        1    0.000    0.000    0.010    0.010 3642284310.py:50(generate_integral)
+        1    0.000    0.000    0.015    0.015 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000    0.015    0.015 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {method &#39;sum&#39; of &#39;numpy.ndarray&#39; objects}
 </pre></div>
 </div>
 </div>
@@ -1793,7 +1793,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.7 ms ± 188 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.9 ms ± 126 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -1832,13 +1832,13 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Importing necessary backends</p>
+            <p class="prev-next-title">Importing needed profilers</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="CompPhys_Lect09b_04_OptimizationExercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Some code optimization exercises - Removing for loops!</p>
+        <p class="prev-next-title">Optimization exercises - Removing for loops!</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

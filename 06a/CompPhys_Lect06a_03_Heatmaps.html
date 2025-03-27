@@ -1066,12 +1066,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09b/CompPhys_Lect09b_01_Introduction.html">
-     Techniques to profile and optimise python code - I
+     Introduction to optimization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09b/CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing necessary backends
+     Importing needed profilers
     </a>
    </li>
    <li class="toctree-l2">
@@ -1081,7 +1081,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09b/CompPhys_Lect09b_04_OptimizationExercises.html">
-     Some code optimization exercises - Removing for loops!
+     Optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2">
@@ -1440,7 +1440,7 @@ Here we extend that thought so that we look at “heatmaps”, these are general
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1185bc760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1171b0760&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect06a_03_Heatmaps_3_1.png" src="../_images/CompPhys_Lect06a_03_Heatmaps_3_1.png" />
@@ -1466,7 +1466,7 @@ Here we extend that thought so that we look at “heatmaps”, these are general
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x11f8ae100&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x1172a2100&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect06a_03_Heatmaps_6_1.png" src="../_images/CompPhys_Lect06a_03_Heatmaps_6_1.png" />
@@ -1492,10 +1492,7 @@ Here we extend that thought so that we look at “heatmaps”, these are general
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 1200k  100 1200k    0     0  3989k      0 --:--:-- --:--:-- --:--:-- 4000k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: raw.githubusercontent.com
 </pre></div>
 </div>
 </div>
@@ -1503,6 +1500,12 @@ Here we extend that thought so that we look at “heatmaps”, these are general
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">face</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;face.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_13336/3655157432.py:1: UserWarning: genfromtxt: Empty input file: &quot;face.csv&quot;
+  face = np.genfromtxt(&quot;face.csv&quot;)
 </pre></div>
 </div>
 </div>

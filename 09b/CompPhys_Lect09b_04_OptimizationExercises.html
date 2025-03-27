@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Some code optimization exercises - Removing for loops! &#8212; Computational Physics U24568</title>
+    <title>Optimization exercises - Removing for loops! &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -1066,12 +1066,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_01_Introduction.html">
-     Techniques to profile and optimise python code - I
+     Introduction to optimization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing necessary backends
+     Importing needed profilers
     </a>
    </li>
    <li class="toctree-l2">
@@ -1081,7 +1081,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Some code optimization exercises - Removing for loops!
+     Optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2">
@@ -1353,29 +1353,22 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Some code optimization exercises - Removing for loops!
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-1">
+   EXERCISE 1.1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-1">
-     EXERCISE 1.1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-2">
-     EXERCISE 1.2
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-2">
+   EXERCISE 1.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-1-3">
    EXERCISE 1.3
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-1-4">
    EXERCISE 1.4
   </a>
@@ -1389,7 +1382,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Some code optimization exercises - Removing for loops!</h1>
+                <h1>Optimization exercises - Removing for loops!</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1399,29 +1392,22 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Some code optimization exercises - Removing for loops!
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-1">
+   EXERCISE 1.1
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-1">
-     EXERCISE 1.1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-2">
-     EXERCISE 1.2
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-2">
+   EXERCISE 1.2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-1-3">
    EXERCISE 1.3
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercise-1-4">
    EXERCISE 1.4
   </a>
@@ -1436,8 +1422,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="some-code-optimization-exercises-removing-for-loops">
-<h1>Some code optimization exercises - Removing for loops!<a class="headerlink" href="#some-code-optimization-exercises-removing-for-loops" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="optimization-exercises-removing-for-loops">
+<h1>Optimization exercises - Removing for loops!<a class="headerlink" href="#optimization-exercises-removing-for-loops" title="Permalink to this headline">#</a></h1>
 <p>The following cells contain examples of python code that are written using explicit for loops. Time these functions (using <code class="docutils literal notranslate"><span class="pre">timeit</span></code>) and rewrite the for loop using numpy calls. After rewriting, time the functions again.</p>
 <section id="exercise-1-1">
 <h2>EXERCISE 1.1<a class="headerlink" href="#exercise-1-1" title="Permalink to this headline">#</a></h2>
@@ -1485,9 +1471,8 @@ Numpy is really inefficient when running on scalar values.</p>
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercise-1-3">
-<h1>EXERCISE 1.3<a class="headerlink" href="#exercise-1-3" title="Permalink to this headline">#</a></h1>
+<section id="exercise-1-3">
+<h2>EXERCISE 1.3<a class="headerlink" href="#exercise-1-3" title="Permalink to this headline">#</a></h2>
 <p>As before: optimize and show how much faster you can make this!</p>
 <p>Note that there are two for loops here. It is possible to collapse into one single vectorized call, but simply removing one of the for loops will make the code both readable and reasonably optimized. Feel free to try this for yourself, but it is <em>not at all</em> trivial</p>
 <div class="cell docutils container">
@@ -1534,15 +1519,15 @@ Numpy is really inefficient when running on scalar values.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 6.  8.  4. 46.]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1003.37392559  990.7170088  1003.17093489 ...  998.39140984  982.88666249
-  998.44142444]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 991.12740506 1002.43552831  998.41081361 ...  988.62447826 1017.94089771
+  997.30188229]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercise-1-4">
-<h1>EXERCISE 1.4<a class="headerlink" href="#exercise-1-4" title="Permalink to this headline">#</a></h1>
+<section id="exercise-1-4">
+<h2>EXERCISE 1.4<a class="headerlink" href="#exercise-1-4" title="Permalink to this headline">#</a></h2>
 <p>This example performs a cross-correlation (hmm, now where have we seen that before? Does this feel like something that would be <strong>very, very important</strong> for the coursework??. Of course the unoptimized code below would work …. I just think it would take about 2 hours <em>per run</em> on the coursework data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1559,6 +1544,7 @@ Numpy is really inefficient when running on scalar values.</p>
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -1068,12 +1068,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_01_Introduction.html">
-     Techniques to profile and optimise python code - I
+     Introduction to optimization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing necessary backends
+     Importing needed profilers
     </a>
    </li>
    <li class="toctree-l2">
@@ -1083,7 +1083,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_04_OptimizationExercises.html">
-     Some code optimization exercises - Removing for loops!
+     Optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2">
@@ -1360,10 +1360,10 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="identifying-common-elements-in-two-large-lists">
 <h1>Identifying common elements in two large lists<a class="headerlink" href="#identifying-common-elements-in-two-large-lists" title="Permalink to this headline">#</a></h1>
 <p>This interactive example demonstrates that is often important to use the right tool, or computational method, for the task at hand.</p>
-<p>An example of this is the problem I set the first years earlier this year:</p>
+<p>An example of this is the problem I set you last year:</p>
 <p>Write a function numpy_nested_sum, which takes as input two 1D numpy arrays (x and y) with lengths N and M respectively and computes the following sum:</p>
 <p><span class="math notranslate nohighlight">\(\sum_{i=0}^{N-1} \sum_{j=0}^{M-1} \left(x[i]^2 + y[j]^2 \right)\)</span></p>
-<p>Many of the students tried something like</p>
+<p>Many of you tried something like</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_sum</span><span class="p">(</span><span class="n">arrx</span><span class="p">,</span> <span class="n">arry</span><span class="p">):</span>
@@ -1376,7 +1376,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>This directly implements the question as written, but didn’t pass the longest test case (due to timeout). Those students that remembered that they were also highly trained mathemeticians did some algebraic reordering and realised that this was equal to:</p>
+<p>This directly implements the question as written, but didn’t pass the longest test case (due to timeout). Those of you who remembered that you are also highly trained mathemeticians did some algebraic reordering and realised that this was equal to:</p>
 <p><span class="math notranslate nohighlight">\(\sum_{i=0}^{N-1} (M * x[i]^2) +  \sum_{j=0}^{M-1} ( N * y[j]^2)\)</span></p>
 <p>This is then coded as</p>
 <div class="cell docutils container">
@@ -1493,7 +1493,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.11 ms ± 9.65 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.13 ms ± 5.01 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>

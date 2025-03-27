@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Identifying common elements in two large lists" href="CompPhys_Lect09b_06_UsingTheRightTool.html" />
-    <link rel="prev" title="Some code optimization exercises - Removing for loops!" href="CompPhys_Lect09b_04_OptimizationExercises.html" />
+    <link rel="prev" title="Optimization exercises - Removing for loops!" href="CompPhys_Lect09b_04_OptimizationExercises.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -1066,12 +1066,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_01_Introduction.html">
-     Techniques to profile and optimise python code - I
+     Introduction to optimization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing necessary backends
+     Importing needed profilers
     </a>
    </li>
    <li class="toctree-l2">
@@ -1081,7 +1081,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_04_OptimizationExercises.html">
-     Some code optimization exercises - Removing for loops!
+     Optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -1398,7 +1398,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Consider a sequence of numbers a0, a1, …, an, in which an element is equal to the sum of squared digits of the previous element. The sequence ends once an element that has already been in the sequence appears again. So that an = a0. Given the first element a0, find the length of the sequence.</p></li>
 </ul>
-<p>So for example if a0 = 16. <code class="docutils literal notranslate"><span class="pre">1**2</span> <span class="pre">+</span> <span class="pre">6**2</span> <span class="pre">=</span> <span class="pre">37</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">3**2</span> <span class="pre">+</span> <span class="pre">7**2</span> <span class="pre">=</span> <span class="pre">58</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">5**2</span> <span class="pre">+</span> <span class="pre">8**2</span> <span class="pre">=</span> <span class="pre">89</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">8**2</span> <span class="pre">+</span> <span class="pre">9**2</span> <span class="pre">=</span> <span class="pre">145</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1**2</span> <span class="pre">+</span> <span class="pre">4**2</span> <span class="pre">+</span> <span class="pre">5**2</span> <span class="pre">=</span> <span class="pre">42</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">4**2</span> <span class="pre">+</span> <span class="pre">2**2</span> <span class="pre">=</span> <span class="pre">20</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2**2</span> <span class="pre">+</span> <span class="pre">0**2</span> <span class="pre">=</span> <span class="pre">4</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">4**2</span> <span class="pre">=</span> <span class="pre">16</span></code> We’ve already seen 16 so we stop here. The sequence is <code class="docutils literal notranslate"><span class="pre">[16,37,58,89,145,42,20,4,16]</span></code> which has a length of 9, return 9.</p>
+<p>So for example if a0 = 16. <code class="docutils literal notranslate"><span class="pre">1**2</span> <span class="pre">+</span> <span class="pre">6**2</span> <span class="pre">=</span> <span class="pre">37</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">3**2</span> <span class="pre">+</span> <span class="pre">7**2</span> <span class="pre">=</span> <span class="pre">58</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">5**2</span> <span class="pre">+</span> <span class="pre">8**2</span> <span class="pre">=</span> <span class="pre">89</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">8**2</span> <span class="pre">+</span> <span class="pre">9**2</span> <span class="pre">=</span> <span class="pre">145</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1**2</span> <span class="pre">+</span> <span class="pre">4**2</span> <span class="pre">+</span> <span class="pre">5**2</span> <span class="pre">=</span> <span class="pre">42</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">4**2</span> <span class="pre">+</span> <span class="pre">2**2</span> <span class="pre">=</span> <span class="pre">20</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2**2</span> <span class="pre">+</span> <span class="pre">0**2</span> <span class="pre">=</span> <span class="pre">4</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">4**2</span> <span class="pre">=</span> <span class="pre">16</span></code> We’ve already seen 16 so we stop here. The sequence is <code class="docutils literal notranslate"><span class="pre">[16,37,58,89,145,42,20,4,16]</span></code> which has a length of 9.</p>
 <p>The code that we used had some optimisations, but was not particularly clear. To try to understand it better let’s write this out in a code that approaches the problem in a different way, with comments etc. to try to make it clearer what is going on</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1432,6 +1432,11 @@ title="Print to PDF"
             <span class="n">output_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">digit_squared_sum</span><span class="p">)</span>
             <span class="n">last_number</span> <span class="o">=</span> <span class="n">digit_squared_sum</span>
 
+    <span class="c1"># Uncomment the line below if you want to see the full list. The logging module would be better for this</span>
+    <span class="c1"># in &quot;production&quot; code, but as an example print is fine!</span>
+    <span class="c1">#</span>
+    <span class="c1"># print(output_list)</span>
+    
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">output_list</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;square_digits(103) gives:&quot;</span><span class="p">,</span><span class="n">square_digits</span><span class="p">(</span><span class="mi">103</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Should be 4&quot;</span><span class="p">)</span>
@@ -1551,7 +1556,7 @@ square_digits(612) gives: 16
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Some code optimization exercises - Removing for loops!</p>
+            <p class="prev-next-title">Optimization exercises - Removing for loops!</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="CompPhys_Lect09b_06_UsingTheRightTool.html" title="next page">

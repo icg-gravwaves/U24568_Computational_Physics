@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Techniques to profile and optimise python code - I &#8212; Computational Physics U24568</title>
+    <title>Introduction to optimization &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Importing necessary backends" href="CompPhys_Lect09b_02_InstallingProfilers.html" />
+    <link rel="next" title="Importing needed profilers" href="CompPhys_Lect09b_02_InstallingProfilers.html" />
     <link rel="prev" title="Lecture 9b: Code Optimization in Python (I)" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -1066,12 +1066,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Techniques to profile and optimise python code - I
+     Introduction to optimization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing necessary backends
+     Importing needed profilers
     </a>
    </li>
    <li class="toctree-l2">
@@ -1081,7 +1081,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09b_04_OptimizationExercises.html">
-     Some code optimization exercises - Removing for loops!
+     Optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2">
@@ -1343,7 +1343,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Techniques to profile and optimise python code - I</h1>
+                <h1>Introduction to optimization</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1355,8 +1355,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="techniques-to-profile-and-optimise-python-code-i">
-<h1>Techniques to profile and optimise python code - I<a class="headerlink" href="#techniques-to-profile-and-optimise-python-code-i" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-optimization">
+<h1>Introduction to optimization<a class="headerlink" href="#introduction-to-optimization" title="Permalink to this headline">#</a></h1>
 <p>A common complaint about python is that “it’s not as fast as C/C++/fortran/…”. For example this recent article from Simon Portegies Zwart (<a class="reference external" href="https://arxiv.org/pdf/2009.11295.pdf">https://arxiv.org/pdf/2009.11295.pdf</a>) claims that one should not use python because it is inefficient, and therefore more environmentally harmful.</p>
 <p>However, this statement was demonstrated to be untrue by Pierre Augier (see links from <a class="reference external" href="https://physicsworld.com/a/the-huge-carbon-footprint-of-large-scale-computing/">https://physicsworld.com/a/the-huge-carbon-footprint-of-large-scale-computing/</a>). Augier argues that while python will be slower than other languages if one does not consider optimization (often not needed if you just want to test something, or do something quickly), for large-scale simulations it can be made to be faster than the implementations of Portegies Zwart’s code in C/C++/fortran (<a class="reference external" href="https://github.com/paugier/nbabel">https://github.com/paugier/nbabel</a>).</p>
 <p>So how do we do this? It is normally possible to write python code that is just as fast as code written in a “fast” (compiled) language such as C. After all, python is written in C and contains a wealth of libraries, such as numpy, that actually use compiled C (and even fortran) code in some of the most time-sensitive places.</p>
@@ -1405,7 +1405,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="CompPhys_Lect09b_02_InstallingProfilers.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Importing necessary backends</p>
+        <p class="prev-next-title">Importing needed profilers</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

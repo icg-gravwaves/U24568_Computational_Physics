@@ -1066,12 +1066,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../09b/CompPhys_Lect09b_01_Introduction.html">
-     Techniques to profile and optimise python code - I
+     Introduction to optimization
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09b/CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing necessary backends
+     Importing needed profilers
     </a>
    </li>
    <li class="toctree-l2">
@@ -1081,7 +1081,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09b/CompPhys_Lect09b_04_OptimizationExercises.html">
-     Some code optimization exercises - Removing for loops!
+     Optimization exercises - Removing for loops!
     </a>
    </li>
    <li class="toctree-l2">
@@ -1534,7 +1534,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x163f4b790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13f34e760&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_6_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_6_1.png" />
@@ -1572,7 +1572,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16416dbb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13f573b80&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_7_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_7_1.png" />
@@ -1610,7 +1610,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16432bbb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14e958b80&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_8_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_8_1.png" />
@@ -1658,7 +1658,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1645301c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14eb5e1c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_9_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_9_1.png" />
@@ -1723,7 +1723,7 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.9490476190475143 1.8369350649350293 1.7668398268398295
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1646c1a30&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14eb44100&gt;]
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_12_2.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_12_2.png" />
@@ -1781,7 +1781,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16460b3d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14ec37310&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_15_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_15_1.png" />
@@ -1819,17 +1819,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slowest run took 6.51 times longer than the fastest. This could mean that an intermediate result is being cached.
-17.8 µs ± 13 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
-The slowest run took 4.90 times longer than the fastest. This could mean that an intermediate result is being cached.
-22.6 µs ± 14.9 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
-4.74 µs ± 927 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-4.73 µs ± 667 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-5.65 µs ± 646 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-7.33 µs ± 604 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-13.6 µs ± 4.19 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
-10.4 µs ± 271 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-11.8 µs ± 2.88 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.4 µs ± 2.8 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
+3.29 µs ± 833 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+4.41 µs ± 739 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+5.04 µs ± 542 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+6.18 µs ± 656 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+7.27 µs ± 583 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+13.2 µs ± 5.44 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
+9.2 µs ± 552 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+10.6 µs ± 677 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
 </pre></div>
 </div>
 </div>
@@ -1851,7 +1849,7 @@ The slowest run took 4.90 times longer than the fastest. This could mean that an
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16429f310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14e9c0400&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_18_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_18_1.png" />
