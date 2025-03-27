@@ -1,16 +1,16 @@
-         16 function calls in 0.014 seconds
+         16 function calls in 0.015 seconds
 
    Ordered by: internal time
    List reduced from 15 to 10 due to restriction <10>
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.007    0.007    0.007    0.007 1481541755.py:1(compute_cosx)
-        1    0.002    0.002    0.003    0.003 3642284310.py:61(__init__)
         1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
+        1    0.002    0.002    0.005    0.005 3642284310.py:61(__init__)
         1    0.002    0.002    0.002    0.002 1855454630.py:1(compute_invx)
         1    0.001    0.001    0.001    0.001 1855454630.py:7(compute_seriesproduct)
-        1    0.001    0.001    0.014    0.014 3642284310.py:74(main_function)
+        1    0.001    0.001    0.015    0.015 3642284310.py:74(main_function)
         1    0.000    0.000    0.000    0.000 {method 'reduce' of 'numpy.ufunc' objects}
-        1    0.000    0.000    0.014    0.014 <string>:1(<module>)
-        1    0.000    0.000    0.014    0.014 {built-in method builtins.exec}
-        1    0.000    0.000    0.010    0.010 3642284310.py:50(generate_integral)
+        1    0.000    0.000    0.015    0.015 <string>:1(<module>)
+        1    0.000    0.000    0.015    0.015 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {method 'sum' of 'numpy.ndarray' objects}

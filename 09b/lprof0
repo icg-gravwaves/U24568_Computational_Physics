@@ -1,7 +1,7 @@
 Timer unit: 1e-09 s
 
-Total time: 0.021805 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_9172/3642284310.py
+Total time: 0.021084 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_13633/3642284310.py
 Function: compute_cosx at line 9
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
@@ -10,7 +10,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     10                                               """
     11                                               Computes cos(t) for all values in tseries
     12                                               """
-    13         1      46000.0  46000.0      0.2      cosx = numpy.zeros(len(tseries))
-    14     99900    7383000.0     73.9     33.9      for idx, tval in enumerate(tseries):
-    15     99900   14376000.0    143.9     65.9          cosx[idx] = math.cos(tseries[idx])
-    16         1          0.0      0.0      0.0      return cosx
+    13         1      16000.0  16000.0      0.1      cosx = numpy.zeros(len(tseries))
+    14     99900    7127000.0     71.3     33.8      for idx, tval in enumerate(tseries):
+    15     99900   13940000.0    139.5     66.1          cosx[idx] = math.cos(tseries[idx])
+    16         1       1000.0   1000.0      0.0      return cosx
