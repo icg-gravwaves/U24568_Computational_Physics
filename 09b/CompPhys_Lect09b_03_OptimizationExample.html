@@ -1451,57 +1451,56 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">math</span>
 
-<span class="k">def</span> <span class="nf">compute_cosx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Computes cos(t) for all values in tseries</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">cosx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tseries</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tval</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
-        <span class="n">cosx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">tseries</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">cosx</span>
-
-<span class="k">def</span> <span class="nf">compute_invx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Computes 1/x for all values in tseries</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">invx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tseries</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tval</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
-        <span class="n">invx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">tseries</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">invx</span>
-
-<span class="k">def</span> <span class="nf">compute_seriesproduct</span><span class="p">(</span><span class="n">series1</span><span class="p">,</span> <span class="n">series2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Multiplies each element in series1 with the corresponding element in series2.</span>
-<span class="sd">    This returns an array of the multiplied elements.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Ensure the two arrays are the same length</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">series2</span><span class="p">))</span>
-    <span class="n">seriessum</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)):</span>
-        <span class="n">seriessum</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">series1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">*</span> <span class="n">series2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">seriessum</span>
-
-<span class="k">def</span> <span class="nf">compute_seriessum</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Computes the sum of all values in series</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">sumvals</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)):</span>
-        <span class="n">sumvals</span> <span class="o">=</span> <span class="n">sumvals</span> <span class="o">+</span> <span class="n">series</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">sumvals</span>
-
 
 <span class="k">class</span> <span class="nc">Integrator</span><span class="p">():</span>  
+    <span class="k">def</span> <span class="nf">compute_cosx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tseries</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes cos(t) for all values in tseries</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cosx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tseries</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tval</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+            <span class="n">cosx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">tseries</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">cosx</span>
+
+    <span class="k">def</span> <span class="nf">compute_invx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tseries</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes 1/x for all values in tseries</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">invx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tseries</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">tval</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
+            <span class="n">invx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">tseries</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">invx</span>
+
+    <span class="k">def</span> <span class="nf">compute_seriesproduct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">series1</span><span class="p">,</span> <span class="n">series2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Multiplies each element in series1 with the corresponding element in series2.</span>
+<span class="sd">        This returns an array of the multiplied elements.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure the two arrays are the same length</span>
+        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">series2</span><span class="p">))</span>
+        <span class="n">seriessum</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)):</span>
+            <span class="n">seriessum</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">series1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">*</span> <span class="n">series2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">seriessum</span>
+
+    <span class="k">def</span> <span class="nf">compute_seriessum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">series</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the sum of all values in series</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sumvals</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)):</span>
+            <span class="n">sumvals</span> <span class="o">=</span> <span class="n">sumvals</span> <span class="o">+</span> <span class="n">series</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">sumvals</span>
+    
     <span class="k">def</span> <span class="nf">generate_integral</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Integral function goes here</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">cosx</span> <span class="o">=</span> <span class="n">compute_cosx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tseries</span><span class="p">)</span>
-        <span class="n">invx</span> <span class="o">=</span> <span class="n">compute_invx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tseries</span><span class="p">)</span>
-        <span class="n">prod</span> <span class="o">=</span> <span class="n">compute_seriesproduct</span><span class="p">(</span><span class="n">cosx</span><span class="p">,</span> <span class="n">invx</span><span class="p">)</span>
-        <span class="n">summed_prod</span> <span class="o">=</span> <span class="n">compute_seriessum</span><span class="p">(</span><span class="n">prod</span><span class="p">)</span>
+        <span class="n">cosx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_cosx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tseries</span><span class="p">)</span>
+        <span class="n">invx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_invx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tseries</span><span class="p">)</span>
+        <span class="n">prod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_seriesproduct</span><span class="p">(</span><span class="n">cosx</span><span class="p">,</span> <span class="n">invx</span><span class="p">)</span>
+        <span class="n">summed_prod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_seriessum</span><span class="p">(</span><span class="n">prod</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">summed_prod</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_t</span>
-
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1516,8 +1515,8 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
         <span class="bp">self</span><span class="o">.</span><span class="n">tseries</span> <span class="o">=</span> <span class="n">tseries</span>
 
 
-<span class="k">def</span> <span class="nf">main_function</span><span class="p">():</span>
-    <span class="n">intgr</span> <span class="o">=</span> <span class="n">Integrator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">300.</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main_function</span><span class="p">(</span><span class="n">class_type</span><span class="o">=</span><span class="n">Integrator</span><span class="p">):</span>
+    <span class="n">intgr</span> <span class="o">=</span> <span class="n">class_type</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">300.</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">intgr</span><span class="o">.</span><span class="n">generate_integral</span><span class="p">()</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="n">main_function</span><span class="p">())</span>
@@ -1540,7 +1539,7 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.11 s ± 18.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.11 s ± 23.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1564,22 +1563,22 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         2999721 function calls in 1.211 seconds
+         2999721 function calls in 1.194 seconds
 
    Ordered by: internal time
    List reduced from 14 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.326    0.326    0.415    0.415 3642284310.py:9(compute_cosx)
-        1    0.323    0.323    0.323    0.323 3642284310.py:27(compute_seriesproduct)
-        1    0.300    0.300    0.301    0.301 3642284310.py:18(compute_invx)
-        1    0.168    0.168    0.168    0.168 3642284310.py:39(compute_seriessum)
-  2999700    0.088    0.000    0.088    0.000 {built-in method math.cos}
-        3    0.002    0.001    0.002    0.001 {built-in method numpy.zeros}
-        1    0.002    0.002    0.003    0.003 3642284310.py:61(__init__)
+        1    0.333    0.333    0.419    0.419 106604330.py:11(compute_cosx)
+        1    0.319    0.319    0.319    0.319 106604330.py:29(compute_seriesproduct)
+        1    0.289    0.289    0.291    0.291 106604330.py:20(compute_invx)
+        1    0.161    0.161    0.161    0.161 106604330.py:41(compute_seriessum)
+  2999700    0.086    0.000    0.086    0.000 {built-in method math.cos}
+        3    0.003    0.001    0.003    0.001 {built-in method numpy.zeros}
+        1    0.002    0.002    0.003    0.003 106604330.py:60(__init__)
         1    0.001    0.001    0.001    0.001 {built-in method numpy.arange}
-        1    0.001    0.001    1.211    1.211 3642284310.py:74(main_function)
-        1    0.000    0.000    1.211    1.211 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.001    0.001    1.193    1.193 106604330.py:73(main_function)
+        1    0.000    0.000    1.194    1.194 &lt;string&gt;:1(&lt;module&gt;)
 </pre></div>
 </div>
 </div>
@@ -1594,10 +1593,31 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <span class="o">%</span><span class="k">lprun</span> -T lprof0 -f main_function main_function()
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lprof0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Profile printout saved to text file &#39;lprof0&#39;. 
+Timer unit: 1e-09 s
 
-<span class="c1"># And we can also profile the sub-functions, such as compute_cosx</span>
+Total time: 1.75284 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_67670/106604330.py
+Function: main_function at line 73
 
-<span class="o">%</span><span class="k">lprun</span> -T lprof0 -f compute_cosx compute_cosx(timeseries)
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    73                                           def main_function(class_type=Integrator):
+    74         1    3418000.0 3418000.0      0.2      intgr = class_type(1, 10000, 1./300.)
+    75         1 1749422000.0 1749422000.0     99.8      return intgr.generate_integral()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># And we can also profile the sub-functions, such as compute_cosx</span>
+<span class="n">intgr</span> <span class="o">=</span> <span class="n">Integrator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">300.</span><span class="p">)</span>
+<span class="o">%</span><span class="k">lprun</span> -T lprof0 -f intgr.compute_cosx intgr.compute_cosx(intgr.tseries)
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lprof0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
@@ -1607,33 +1627,20 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 1.82091 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_13633/3642284310.py
-Function: main_function at line 74
+Total time: 0.668243 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_67670/106604330.py
+Function: compute_cosx at line 11
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
-    74                                           def main_function():
-    75         1    3516000.0 3516000.0      0.2      intgr = Integrator(1, 10000, 1./300.)
-    76         1 1817398000.0 1817398000.0     99.8      return intgr.generate_integral()
-
-*** Profile printout saved to text file &#39;lprof0&#39;. 
-Timer unit: 1e-09 s
-
-Total time: 0.021084 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_13633/3642284310.py
-Function: compute_cosx at line 9
-
-Line #      Hits         Time  Per Hit   % Time  Line Contents
-==============================================================
-     9                                           def compute_cosx(tseries):
-    10                                               &quot;&quot;&quot;
-    11                                               Computes cos(t) for all values in tseries
-    12                                               &quot;&quot;&quot;
-    13         1      16000.0  16000.0      0.1      cosx = numpy.zeros(len(tseries))
-    14     99900    7127000.0     71.3     33.8      for idx, tval in enumerate(tseries):
-    15     99900   13940000.0    139.5     66.1          cosx[idx] = math.cos(tseries[idx])
-    16         1       1000.0   1000.0      0.0      return cosx
+    11                                               def compute_cosx(self, tseries):
+    12                                                   &quot;&quot;&quot;
+    13                                                   Computes cos(t) for all values in tseries
+    14                                                   &quot;&quot;&quot;
+    15         1     883000.0 883000.0      0.1          cosx = numpy.zeros(len(tseries))
+    16   2999700  230144000.0     76.7     34.4          for idx, tval in enumerate(tseries):
+    17   2999700  437215000.0    145.8     65.4              cosx[idx] = math.cos(tseries[idx])
+    18         1       1000.0   1000.0      0.0          return cosx
 </pre></div>
 </div>
 </div>
@@ -1687,11 +1694,13 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <p>So we can replace our <code class="docutils literal notranslate"><span class="pre">compute_cosx</span></code> function with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_cosx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Computes cos(t) for all values in tseries</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">tseries</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">IntegratorMk2</span><span class="p">(</span><span class="n">Integrator</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">compute_cosx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tseries</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes cos(t) for all values in tseries</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">tseries</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1699,7 +1708,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <p>Note that running this <em>after</em> the block above just replaces this function, so we can just run our profiler again:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">prun</span> -l 10 -q -T prun0 main_function()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">prun</span> -l 10 -q -T prun0 main_function(class_type=IntegratorMk2)
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prun0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
@@ -1708,22 +1717,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         19 function calls in 0.793 seconds
+         19 function calls in 0.786 seconds
 
    Ordered by: internal time
    List reduced from 13 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.322    0.322    0.322    0.322 3642284310.py:27(compute_seriesproduct)
-        1    0.294    0.294    0.296    0.296 3642284310.py:18(compute_invx)
-        1    0.163    0.163    0.163    0.163 3642284310.py:39(compute_seriessum)
-        1    0.007    0.007    0.007    0.007 1481541755.py:1(compute_cosx)
-        1    0.002    0.002    0.004    0.004 3642284310.py:61(__init__)
+        1    0.324    0.324    0.324    0.324 106604330.py:29(compute_seriesproduct)
+        1    0.294    0.294    0.294    0.294 106604330.py:20(compute_invx)
+        1    0.156    0.156    0.156    0.156 106604330.py:41(compute_seriessum)
+        1    0.007    0.007    0.007    0.007 2339633129.py:3(compute_cosx)
+        1    0.002    0.002    0.003    0.003 106604330.py:60(__init__)
         1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
-        2    0.001    0.001    0.001    0.001 {built-in method numpy.zeros}
-        1    0.001    0.001    0.793    0.793 3642284310.py:74(main_function)
-        1    0.000    0.000    0.793    0.793 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.000    0.000    0.788    0.788 3642284310.py:50(generate_integral)
+        1    0.001    0.001    0.786    0.786 106604330.py:73(main_function)
+        1    0.000    0.000    0.786    0.786 &lt;string&gt;:1(&lt;module&gt;)
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
+        1    0.000    0.000    0.786    0.786 {built-in method builtins.exec}
 </pre></div>
 </div>
 </div>
@@ -1731,28 +1740,31 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <p>Now we can see that quite a bit of time is being spent in the remaining 3 <code class="docutils literal notranslate"><span class="pre">compute_x</span></code> functions. Let’s try optimizing these as well by replacing the for loops with numpy vectorized calls</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_invx</span><span class="p">(</span><span class="n">tseries</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Computes 1/x for all values in tseries</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">tseries</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">IntegratorMk3</span><span class="p">(</span><span class="n">IntegratorMk2</span><span class="p">):</span>
 
-<span class="k">def</span> <span class="nf">compute_seriesproduct</span><span class="p">(</span><span class="n">series1</span><span class="p">,</span> <span class="n">series2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Multiplies each element in series1 with the corresponding element in series2.</span>
-<span class="sd">    This returns an array of the multiplied elements.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Ensure the two arrays are the same length</span>
-    <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">series2</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">series1</span> <span class="o">*</span> <span class="n">series2</span>
 
-<span class="k">def</span> <span class="nf">compute_seriessum</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Computes the sum of all values in series</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">compute_invx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tseries</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes 1/x for all values in tseries</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">tseries</span>
 
-<span class="o">%</span><span class="k">prun</span> -l 10 -q -T prun0 main_function()
+    <span class="k">def</span> <span class="nf">compute_seriesproduct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">series1</span><span class="p">,</span> <span class="n">series2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Multiplies each element in series1 with the corresponding element in series2.</span>
+<span class="sd">        This returns an array of the multiplied elements.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Ensure the two arrays are the same length</span>
+        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">series1</span><span class="p">)</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">series2</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">series1</span> <span class="o">*</span> <span class="n">series2</span>
+
+    <span class="k">def</span> <span class="nf">compute_seriessum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">series</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the sum of all values in series</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="o">%</span><span class="k">prun</span> -l 10 -q -T prun0 main_function(class_type=IntegratorMk3)
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prun0&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
@@ -1761,22 +1773,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         16 function calls in 0.015 seconds
+         16 function calls in 0.014 seconds
 
    Ordered by: internal time
    List reduced from 15 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.007    0.007    0.007    0.007 1481541755.py:1(compute_cosx)
-        1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
-        1    0.002    0.002    0.005    0.005 3642284310.py:61(__init__)
-        1    0.002    0.002    0.002    0.002 1855454630.py:1(compute_invx)
-        1    0.001    0.001    0.001    0.001 1855454630.py:7(compute_seriesproduct)
-        1    0.001    0.001    0.015    0.015 3642284310.py:74(main_function)
+        1    0.007    0.007    0.007    0.007 2339633129.py:3(compute_cosx)
+        1    0.002    0.002    0.003    0.003 106604330.py:60(__init__)
+        1    0.002    0.002    0.002    0.002 2631616634.py:4(compute_invx)
+        1    0.001    0.001    0.001    0.001 {built-in method numpy.arange}
+        1    0.001    0.001    0.001    0.001 2631616634.py:10(compute_seriesproduct)
+        1    0.001    0.001    0.013    0.013 106604330.py:73(main_function)
         1    0.000    0.000    0.000    0.000 {method &#39;reduce&#39; of &#39;numpy.ufunc&#39; objects}
-        1    0.000    0.000    0.015    0.015 &lt;string&gt;:1(&lt;module&gt;)
-        1    0.000    0.000    0.015    0.015 {built-in method builtins.exec}
-        1    0.000    0.000    0.000    0.000 {method &#39;sum&#39; of &#39;numpy.ndarray&#39; objects}
+        1    0.000    0.000    0.014    0.014 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.000    0.000    0.014    0.014 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 2631616634.py:19(compute_seriessum)
 </pre></div>
 </div>
 </div>
@@ -1788,12 +1800,28 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <span class="c1"># That is a very different machine to the standard Colab/SciServer virtualmachines you will be running on.</span>
 <span class="c1"># Expect my macbook to be faster, and to perhaps have different performance gains!!</span>
 
-<span class="o">%</span><span class="k">timeit</span> main_function()
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;With original code&quot;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> main_function(class_type=Integrator)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;With vectorized cosine function&quot;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> main_function(class_type=IntegratorMk2)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;With vectorized product, inverse and sum functions&quot;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> main_function(class_type=IntegratorMk3)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.9 ms ± 126 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>With original code
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.09 s ± 6.67 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+With vectorized cosine function
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>765 ms ± 20.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+With vectorized product, inverse and sum functions
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.8 ms ± 35.5 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>

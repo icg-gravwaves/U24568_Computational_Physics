@@ -1487,7 +1487,6 @@ title="Print to PDF"
 <span class="n">sample_rate</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mf">16.</span>
 <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">*</span> <span class="n">sample_rate</span>
 
-<span class="n">data_time_domain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span>
 <span class="n">data_time_domain_CASE_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span>
 
 <span class="n">data_time_domain_CASE_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span> <span class="o">*</span> <span class="n">omega</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="n">omega</span><span class="p">)</span>
@@ -1534,7 +1533,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13f34e760&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x129b36790&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_6_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_6_1.png" />
@@ -1572,7 +1571,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x13f573b80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x129d5abb0&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_7_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_7_1.png" />
@@ -1583,7 +1582,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CASE 3: White noise in time-domain = white-noise in frequency domain</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">data_time_domain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span><span class="n">data_time_domain_CASE_3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
 
@@ -1610,7 +1609,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14e958b80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12f117d60&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_8_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_8_1.png" />
@@ -1658,7 +1657,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14eb5e1c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12f30cb20&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_9_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_9_1.png" />
@@ -1723,7 +1722,7 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.9490476190475143 1.8369350649350293 1.7668398268398295
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14eb44100&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x12f4a76a0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_12_2.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_12_2.png" />
@@ -1781,7 +1780,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14ec37310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12f4e4910&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_15_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_15_1.png" />
@@ -1819,15 +1818,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.4 µs ± 2.8 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
-3.29 µs ± 833 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-4.41 µs ± 739 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-5.04 µs ± 542 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-6.18 µs ± 656 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-7.27 µs ± 583 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-13.2 µs ± 5.44 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
-9.2 µs ± 552 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
-10.6 µs ± 677 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.8 µs ± 5.12 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
+12.5 µs ± 6.25 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
+4.03 µs ± 719 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+5.1 µs ± 646 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+5.56 µs ± 562 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+6.58 µs ± 521 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+The slowest run took 27.06 times longer than the fastest. This could mean that an intermediate result is being cached.
+96.5 µs ± 89.6 µs per loop (mean ± std. dev. of 2 runs, 2 loops each)
+8.13 µs ± 521 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
+9.6 µs ± 604 ns per loop (mean ± std. dev. of 2 runs, 2 loops each)
 </pre></div>
 </div>
 </div>
@@ -1849,7 +1849,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14e9c0400&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12f16b520&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_18_1.png" src="../_images/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION_18_1.png" />
