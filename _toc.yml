@@ -195,16 +195,17 @@ chapters:
     - file: 09b/CompPhys_Lect09b_07_SortFunction
     - file: 09b/CompPhys_Lect09b_08_ExampleSortFunctions
     - file: 09b/CompPhys_Lect09b_09_Acknowledgements
-
-#- file: 10a/overview    
-#  sections:
-#    - file: 10a/CompPhys_Lect10a_01_CalculatingG
-#    - file: 10a/CompPhys_Lect10a_02_BeatTheCasino
-#    - file: 10a/CompPhys_Lect10a_03_ParameterUncertainties
-#- file: 10b/overview
-#  sections:
-#    - file: 10b/CompPhys_Lect10b_1_ExerciseOne
-#    - file: 10b/CompPhys_Lect10b_2_ExerciseTwo    
+- file: 10a/overview    
+  sections:
+    - file: 10a/CompPhys_Lect10a_01_CalculatingG
+    - file: 10a/CompPhys_Lect10a_02_BeatTheCasino
+    - file: 10a/CompPhys_Lect10a_03_ParameterUncertainties
+- file: 10b/overview
+  sections:
+    - file: 10b/CompPhys_Lect10b_01_Introduction
+    - file: 10b/CompPhys_Lect10b_02_Demonstration_of_FAR
+    - file: 10b/CompPhys_Lect10b_03_differing_signals
+    - file: 10b/CompPhys_Lect10b_04_extrapolating
 #- file: 11a/overview
 #  sections:
 #    - file: 11a/CompPhys_Lect11a_1_TheGoldfishBowl
