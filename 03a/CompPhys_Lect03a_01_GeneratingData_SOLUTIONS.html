@@ -1113,6 +1113,65 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10a/overview.html">
+   Lecture 10a: Monte Carlo Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10a/CompPhys_Lect10a_01_CalculatingG.html">
+     Calculating g with errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10a/CompPhys_Lect10a_02_BeatTheCasino.html">
+     Beat the casino!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10a/CompPhys_Lect10a_03_ParameterUncertainties.html">
+     Parameter Uncertainty
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10b/overview.html">
+   Lecture 10b: Significance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_01_Introduction.html">
+     Significance - why does it matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_02_Demonstration_of_FAR.html">
+     Computing the significance of a weak signal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_03_differing_signals.html">
+     Computing significance for different signals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_04_extrapolating.html">
+     Assessing significance of very loud signals
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -1596,9 +1655,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([14, 11,  7,  6, 12, 17,  9, 11,  4,  9]), array([1.05396848, 1.94302257, 2.83207666, 3.72113075, 4.61018484,
-       5.49923893, 6.38829301, 7.2773471 , 8.16640119, 9.05545528,
-       9.94450937]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 8, 13, 12,  8, 14,  7,  2, 10, 13, 13]), array([1.0622677 , 1.9493006 , 2.8363335 , 3.7233664 , 4.61039931,
+       5.49743221, 6.38446511, 7.27149801, 8.15853091, 9.04556382,
+       9.93259672]))
 </pre></div>
 </div>
 </div>
@@ -1656,7 +1715,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13ff72400&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11f8fb460&gt;]
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_10_1.png" src="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_10_1.png" />
@@ -1686,7 +1745,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14c2dcfa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x174877460&gt;]
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_12_1.png" src="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_12_1.png" />
@@ -1705,7 +1764,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8.42607685]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[13.43094049]
 </pre></div>
 </div>
 </div>
@@ -1725,7 +1784,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The max y-value of the plot above is 0.1329807601338109
-[0.06935028]
+[0.08429952]
 </pre></div>
 </div>
 </div>
@@ -1747,7 +1806,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>accept
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>reject
 </pre></div>
 </div>
 </div>
@@ -1786,7 +1845,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14c23de50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x174851b50&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_22_1.png" src="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_22_1.png" />
@@ -1804,10 +1863,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 4.,  9., 36., 76., 86., 71., 43., 17., 10.,  1.]),
- array([ 1.00389916,  2.89294115,  4.78198313,  6.67102512,  8.5600671 ,
-        10.44910908, 12.33815107, 14.22719305, 16.11623504, 18.00527702,
-        19.89431901]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 4.,  8., 35., 62., 75., 74., 48., 21.,  5.,  6.]),
+ array([ 1.13541966,  2.98653826,  4.83765686,  6.68877547,  8.53989407,
+        10.39101268, 12.24213128, 14.09324989, 15.94436849, 17.7954871 ,
+        19.6466057 ]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -1834,10 +1893,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([13., 19., 37., 76., 77., 75., 50., 16.,  4.,  3.]),
- array([ 2.45287459,  4.13072227,  5.80856994,  7.48641762,  9.16426529,
-        10.84211297, 12.51996064, 14.19780832, 15.875656  , 17.55350367,
-        19.23135135]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 7., 14., 27., 45., 66., 57., 60., 45., 22.,  7.]),
+ array([ 2.42776684,  3.85449252,  5.2812182 ,  6.70794388,  8.13466956,
+         9.56139524, 10.98812092, 12.4148466 , 13.84157228, 15.26829796,
+        16.69502364]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -1888,11 +1947,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit mean:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10.107107411348965
-fit sigma: 2.9703877413903723
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit mean: 10.07566899330846
+fit sigma: -3.1319479893926085
 </pre></div>
 </div>
 </div>
