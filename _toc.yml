@@ -206,13 +206,16 @@ chapters:
     - file: 10b/CompPhys_Lect10b_02_Demonstration_of_FAR
     - file: 10b/CompPhys_Lect10b_03_differing_signals
     - file: 10b/CompPhys_Lect10b_04_extrapolating
-#- file: 11a/overview
-#  sections:
-#    - file: 11a/CompPhys_Lect11a_1_TheGoldfishBowl
-#    - file: 11a/CompPhys_Lect11a_2_NoisyDataFittingRevisited
-#- file: 11b/overview
-#  sections:
-#    - file: 11b/CompPhys_Lect11b_1_CythonDemonstration
-#    - file: 11b/CompPhys_Lect11b_2_CythonDemonstration2
-#    - file: 11b/CompPhys_Lect11b_3_Examples1
-#    - file: 11b/CompPhys_Lect11b_4_Examples2
+- file: 11a/overview
+  sections:
+    - file: 11a/CompPhys_Lect11a_01_TheGoldfishBowlDescription
+    - file: 11a/CompPhys_Lect11a_02_TheGoldfishBowlDemonstration
+    - file: 11a/CompPhys_Lect11a_03_BayesTheorem
+    - file: 11a/CompPhys_Lect11a_04_NoisyDataFittingRevisited
+    - file: 11a/CompPhys_Lect11a_05_FittingSignals
+- file: 11b/overview
+  sections:
+    - file: 11b/CompPhys_Lect11b_1_CythonDemonstration
+    - file: 11b/CompPhys_Lect11b_2_CythonDemonstration2
+    - file: 11b/CompPhys_Lect11b_3_Examples1
+    - file: 11b/CompPhys_Lect11b_4_Examples2
