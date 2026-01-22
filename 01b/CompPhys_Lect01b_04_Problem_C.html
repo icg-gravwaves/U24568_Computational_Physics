@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Problem D - challenging" href="CompPhys_Lect01b_05_Problem_D.html" />
+    <link rel="next" title="Problem D - Challenging" href="CompPhys_Lect01b_05_Problem_D.html" />
     <link rel="prev" title="Problem B" href="CompPhys_Lect01b_03_Problem_B.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect01b_05_Problem_D.html">
-     Problem D - challenging
+     Problem D - Challenging
     </a>
    </li>
   </ul>
@@ -507,31 +507,31 @@ DORMITORY - DIRTY ROOM
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Becky&#39;s solution for (method 3) using the itertools module</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Laura&#39;s solution for (method 3) using the itertools module</span>
 <span class="c1"># itertools.permutations will return a list of all the possible permutations of the input list.</span>
 <span class="c1"># See for example the printed outputs for the input [&#39;d&#39;,&#39;o&#39;,&#39;g&#39;]. Coding up a function to do this would</span>
-<span class="c1"># itself by a great example problem for this notebook!</span>
+<span class="c1"># itself be a great example problem for this notebook!</span>
 
 <span class="k">def</span> <span class="nf">anagramSolution3</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">itertools</span>
-    
+    <span class="kn">import</span> <span class="nn">itertools</span><span class="o">,</span> <span class="nn">math</span>
+
     <span class="n">alist1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
     <span class="n">alist2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
-    
+
     <span class="c1">#convert letetrs to numbers and write factorial</span>
-    <span class="n">no_of_ways</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alist1</span><span class="p">))</span>
+    <span class="n">no_of_ways</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alist1</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no. of solutions :&#39;</span><span class="p">,</span> <span class="n">no_of_ways</span><span class="p">)</span>
     <span class="n">permutations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">alist1</span><span class="p">))</span>
-    
+
     <span class="n">matches</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">alist2</span><span class="p">:</span>
             <span class="n">matches</span> <span class="o">=</span> <span class="kc">True</span>
             <span class="k">return</span> <span class="n">matches</span>
-    
+
     <span class="k">return</span> <span class="n">matches</span>
-    
+
 <span class="nb">print</span><span class="p">(</span><span class="n">anagramSolution3</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">))</span>
 
 
@@ -561,9 +561,9 @@ False
 </div>
 </div>
 <p>We tend to consider the number of calculations or steps in your code as a mark of its efficiency. We use the ‘order of magnitude’ notation big ‘O’ to report this.</p>
-<p>In these cases above you worked out roughly how many calculations were done. In big O notation we would conclude this:</p>
+<p>In these cases above, you worked out roughly how many calculations were done. In big O notation we would conclude this:</p>
 <ol class="simple">
-<li><p>Two nested for lops are required e.g. for i in word 1 then loop through word 2 - so this is a O(n<span class="math notranslate nohighlight">\({^2}\)</span>) algorithm</p></li>
+<li><p>Two nested for loops are required e.g. for i in word 1 then loop through word 2 - so this is an O(n<span class="math notranslate nohighlight">\({^2}\)</span>) algorithm</p></li>
 <li><p>The comparison is quick O(n) but the sort is again a two nested for loop operation (if using a bubble sort) so this dominates the process and it is again an O(n<span class="math notranslate nohighlight">\(^{2}\)</span>) algorithm</p></li>
 <li><p>Search for each possible string combination requires n*(n-1)<em>(n-2)</em>(n-3)*…*1 operations which is n!. n! is <em>way</em> larger than n<span class="math notranslate nohighlight">\({^2}\)</span> for big n  (O(n!)). This is not efficient for us though this approach might be the most familiar to humans as we try to make words from anagrams.</p></li>
 <li><p>There are 26 letters in the alphabet so this algorithm only required that we go through one for loop and simply add a number when a letter turns up so this operation is actually linear O(n). This may not be the first thing you would have thought of but it is the most efficient process. (Of course, you may not be using the Roman alphabet, or want to consider spaces and punctuation (or not), but all this could be included while still being O(n)).</p></li>
@@ -614,7 +614,7 @@ False
     <a class='right-next' id="next-link" href="CompPhys_Lect01b_05_Problem_D.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem D - challenging</p>
+        <p class="prev-next-title">Problem D - Challenging</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

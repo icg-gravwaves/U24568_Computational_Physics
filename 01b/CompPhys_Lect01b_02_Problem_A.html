@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect01b_05_Problem_D.html">
-     Problem D - challenging
+     Problem D - Challenging
     </a>
    </li>
   </ul>
@@ -486,7 +486,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="problem-a">
 <h1>Problem A<a class="headerlink" href="#problem-a" title="Permalink to this headline">#</a></h1>
-<p>For our first problem we will think about how to sort an array. This seems easy but is actually a fundamental and difficult coding problem with many solutions. We will try today to think of as many solutions as we can. Sure, many of these solutions are available to you (e.g. the built-in function <code class="docutils literal notranslate"><span class="pre">sorted</span></code>), but someone had to code that up, and there are some cases where it may not be the “optimal” solution …. Sorting arrays is also a <em>really</em> common coding interview question so it’s good to try coding sorting algorithms and will get us back into the practice of coding problem solving</p>
+<p>For our first problem we will think about how to sort an array. This seems easy but is actually a fundamental and difficult coding problem with many solutions. We will try today to think of as many solutions as we can. Sure, many of these solutions are available to you (e.g. the built-in function <code class="docutils literal notranslate"><span class="pre">sorted</span></code>), but someone had to code that up, and there are some cases where it may not be the “optimal” solution …. Sorting arrays are also a <em>really</em> common coding interview question so it’s good to try coding sorting algorithms and will get us back into the practice of coding problem solving</p>
 <p><strong>PLEASE NOTE: We are well aware that you can copy and paste a sorting algorithm from the internet. You will not learn anything from doing so (and it will not help you in the assessments that will follow). Although a professional coder will use the internet often, they do so from having a lot of experience and can quickly understand and discard “bad” options. Please turn off the ChatGPTs/Colab-AI and avoid the search bar for this problem … It <em>will</em> help you more.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,21 +572,8 @@ if i is greater than j
     swap the elements
 </pre></div>
 </div>
-<p>I (Becky Canning) like to indent in my pseudocode as it is clearer to me - but you might not. It is entirely up to you. (Ian adds to this: I personally do not use pseudocode, but making it “closer” to the language you are writing in, e.g. using python’s indentation as Becky does, makes it easier to translate than the instructions we started with).</p>
+<p>I (Laura) like to indent in my pseudocode as it is clearer to me - but you might not. It is entirely up to you. (Ian adds to this: I personally do not use pseudocode, but making it “closer” to the language you are writing in, e.g. using python’s indentation as Laura does, makes it easier to translate than the instructions we started with).</p>
 <p><strong>EXERCISE</strong></p>
-<p>Write out the algorithm above for sorting an array in your own pseudocode. Begin by writing the algorithm for a 3-element array as we illustrated.</p>
-<p><em>HOWEVER</em> your algorithm must work for any size array. Consider the array:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[ 4 2 3 1 ]
-</pre></div>
-</div>
-<p>Think about how the steps above might apply to this array. It might help to write it out in the same way as I did above. The code below will help you start to write this - turn it to markdown to make the colours appear.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your pseudocode in here</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Let’s make this more interesting: Adapt your pseudocode so that it would work for <em>any</em> size array. Begin by considering the array:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[ 4 2 3 1 ]
 </pre></div>
@@ -607,19 +594,33 @@ if i is greater than j
 <p>[ 1 2 3 4 ]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write pseudocode for sorting an array of *any* length below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write out the steps for doing this (maybe convert to a markdown cell for this)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write pseudocode for sorting an array of *any* length below (again maybe convert to a markdown cell)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>For an array with 5 elements ([5,4,3,2,1]) how many times did you need to compare numbers to get the array to be sorted?</p>
-<p>Now convert your pseudocode into python and write our your sorting algorithm.  Print the array at each step in your sorting algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now convert your pseudocode into python and write out your sorting algorithm.  Print the array at each step in your sorting algorithm.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array1a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial array :&quot;</span><span class="p">,</span> <span class="n">array1a</span><span class="p">)</span>
 
-<span class="c1"># Answer here </span>
+<span class="c1"># Answer here</span>
 </pre></div>
 </div>
 </div>
@@ -635,7 +636,7 @@ if i is greater than j
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array1a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial array :&quot;</span><span class="p">,</span> <span class="n">array1a</span><span class="p">)</span>
 
-<span class="c1"># Answer here </span>
+<span class="c1"># Answer here</span>
 </pre></div>
 </div>
 </div>

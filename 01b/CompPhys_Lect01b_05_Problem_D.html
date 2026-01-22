@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem D - challenging &#8212; Computational Physics U24568</title>
+    <title>Problem D - Challenging &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -177,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Problem D - challenging
+     Problem D - Challenging
     </a>
    </li>
   </ul>
@@ -414,7 +414,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Problem D - challenging</h1>
+                <h1>Problem D - Challenging</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -427,12 +427,12 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="problem-d-challenging">
-<h1>Problem D - challenging<a class="headerlink" href="#problem-d-challenging" title="Permalink to this headline">#</a></h1>
+<h1>Problem D - Challenging<a class="headerlink" href="#problem-d-challenging" title="Permalink to this headline">#</a></h1>
 <p>For our final problem you have a grid of numbers. You must find the largest product that can be made by any four numbers in a line. (The product is the multiplication of all 4 numbers).</p>
 <p>The line of numbers could be a vertical, horizontal or diagonal line (same rules as a wordsearch).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here I am generating a 10 by 10 grid. You will search this grid for the answer. </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here I am generating a 10 by 10 grid. You will search this grid for the answer.</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">grid</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -470,6 +470,13 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hint 1</span>
 
 <span class="c1"># One method would be to treat each sequence separately and then loop over elements.</span>
@@ -484,18 +491,18 @@ title="Print to PDF"
 
 <span class="c1"># max results array is same size as grid</span>
 <span class="c1"># max method array is same size as grid</span>
-<span class="c1"># number your methods for string in the method array </span>
+<span class="c1"># number your methods for string in the method array</span>
 <span class="c1"># 1. horizontal right, 2. horizontal left</span>
 <span class="c1"># 3. vertical top, 4. vertical bottom</span>
 <span class="c1"># 5. 45 degrees, 6. 135 degrees, 7. 225 degrees, 8. 315 degrees</span>
-<span class="c1"># pad array with 3 extra rows and columns of zeros in each direction </span>
+<span class="c1"># pad array with 3 extra rows and columns of zeros in each direction</span>
 <span class="c1"># for each x element in array from 4 to :-4</span>
 <span class="c1">#   for each y element in array from 4 to :-4</span>
 <span class="c1">#       calculate the product for each method</span>
 <span class="c1">#       store the maximum product and it&#39;s corresponding method in the results and method grid</span>
 <span class="c1"># find max of results grid and report index</span>
 <span class="c1"># find this index in method grid</span>
-<span class="c1"># woop!</span>
+<span class="c1"># woo!</span>
 </pre></div>
 </div>
 </div>
