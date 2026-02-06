@@ -4,7 +4,7 @@ This is the second of a two-part series introducing statistics in Python.
 
 In this notebook we will use the distributions we learned about in notebook 2b to gnerate mock data and we'll go further and fit an analytical solution to that data. 
 
-Additionally we'll introduce Monte Carlo methods and use them to calculate the value of pi.
+Additionally we'll introduce Monte Carlo methods and use them to calculate the value of $\pi$.
 
 ## From stats I you should be familiar with:
 
@@ -21,10 +21,10 @@ Additionally we'll introduce Monte Carlo methods and use them to calculate the v
 
 ## If you are not familiar with anything above please ask for a brief explanation in class!
 
-
 ## Learning objectives for today:
 
 Today we will be using random-ness to solve problems.
+
 1. Using `numpy.histogram` to save histogram data to an array
 2. Use a PDF (probability density function) to draw random data 
     * creating mock data is a useful tool to test out a scientific hypothesis
@@ -32,7 +32,6 @@ Today we will be using random-ness to solve problems.
 4. Use multiple random draws to estimate the value of $\pi$.
     * using multiple draws in this way is called 'monte-carlo' - it is a very useful technique in many situations including fitting data and finding uncertainties on results - we WILL come back to this later in term so become familiar with it now!
 5. Understanding what 'noise' is
-
 
 ## Weekly tasks
 

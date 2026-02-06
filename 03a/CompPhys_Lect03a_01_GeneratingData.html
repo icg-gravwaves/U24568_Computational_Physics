@@ -50,11 +50,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Generating mock data by drawing from distributions - SOLUTIONS" href="CompPhys_Lect03a_01_GeneratingData_SOLUTIONS.html" />
+    <link rel="next" title="Calculating \(\pi\) by Monte Carlo" href="CompPhys_Lect03a_02_ComputingPi.html" />
     <link rel="prev" title="Lecture 3a - Statistics II" href="overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -195,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html">
-     Problem A - SOLUTIONS
+     Problem A - Solutions
     </a>
    </li>
    <li class="toctree-l2">
@@ -205,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B_SOLUTIONS.html">
-     Problem B - SOLUTIONS
+     Problem B - Solutions
     </a>
    </li>
    <li class="toctree-l2">
@@ -215,17 +213,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html">
-     Problem C - SOLUTIONS
+     Problem C - Solutions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D.html">
-     Problem D - challenging
+     Problem D - Challenging
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D_SOLUTIONS.html">
-     Problem D - challenging - SOLUTIONS
+     Problem D - SOLUTIONS
     </a>
    </li>
   </ul>
@@ -360,11 +358,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect03a_01_GeneratingData_SOLUTIONS.html">
-     Generating mock data by drawing from distributions - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect03a_02_ComputingPi.html">
      Calculating
      <span class="math notranslate nohighlight">
@@ -374,22 +367,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect03a_02_ComputingPi_SOLUTIONS.html">
-     Calculating
-     <span class="math notranslate nohighlight">
-      \(\pi\)
-     </span>
-     by Monte Carlo - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect03a_03_WhatIsNoise.html">
      What is noise?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CompPhys_Lect03a_03_WhatIsNoise_SOLUTIONS.html">
-     What is noise? - SOLUTIONS
     </a>
    </li>
   </ul>
@@ -420,11 +399,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03b/CompPhys_Lect03b_03_Initializing_a_class_exercise_SOLUTIONS.html">
-     EXERCISE - Initializing a class - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../03b/CompPhys_Lect03b_04_Optional_arguments.html">
      Optional arguments
     </a>
@@ -432,11 +406,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice.html">
      EXERCISES - Practicing defining classes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.html">
-     EXERCISES - Practicing defining classes - SOLUTIONS
     </a>
    </li>
    <li class="toctree-l2">
@@ -450,11 +419,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03b/CompPhys_Lect03b_07_Attributes_and_inheritance_exercise_SOLUTIONS.html">
-     EXERCISE: Class attributes and inheritence - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../03b/CompPhys_Lect03b_08_Recap.html">
      Recap
     </a>
@@ -465,778 +429,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03b/CompPhys_Lect03b_09_Summary_exercises_SOLUTIONS.html">
-     SUMMARY EXERCISES - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../03b/CompPhys_Lect03b_10_Acknowledgements.html">
      Acknowledgements
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04a/overview.html">
-   Lecture 4a: Advanced Techniques
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_01_Introduction.html">
-     Introduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_02_List_comprehensions_overview.html">
-     List comprehensions - Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_03_List_comprehensions_exercises1.html">
-     List comprehensions - Exercises 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_03_List_comprehensions_exercises1_SOLUTION.html">
-     List comprehensions - Exercises 1 - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_04_List_comprehensions_conditionals.html">
-     List Comprehensions - Including conditionals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_05_List_comprehensions_exercises2.html">
-     List Comprehensions - Exercises 2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_05_List_comprehensions_exercises2_SOLUTION.html">
-     List Comprehensions - Exercises 2 - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_06_Set_dictionary_comprehensions.html">
-     Set and Dictionary Comprehensions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_07_Generators_overview.html">
-     Generators - Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_08_Generators_exercises1.html">
-     Generators - Exercises 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_08_Generators_exercises1_SOLUTION.html">
-     Generators - Exercises 1 - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_09_Generators_more_detail.html">
-     Generators - A bit more complexity
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_10_Generators_exercises2.html">
-     Generators - Exercises 2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_10_Generators_exercises2_SOLUTION.html">
-     Generators - Exercises 2 - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_11_Recursion_overview.html">
-     Recursion - Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_12_Recursion_exercises.html">
-     Recursion - Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_12_Recursion_exercises_SOLUTION.html">
-     Recursion - Exercises - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_13_Lambda_overview.html">
-     Function as a value and the lambda operator - Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_14_Lambda_exercises.html">
-     Function as a value and the lambda operator - Exercise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_14_Lambda_exercises_SOLUTION.html">
-     Function as a value and the lambda operator - Exercise - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_15_Summary_exercises.html">
-     Summary Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04a/CompPhys_Lect04a_15_Summary_exercises_SOLUTION.html">
-     Summary Exercises - SOLUTIONS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04b/overview.html">
-   Lecture 4b: Data Cleaning
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1.html">
-     Determining the Hubble Constant
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part1_SOLUTIONS.html">
-     Determining the Hubble Constant - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2.html">
-     Data from a Periodic Star
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04b/CompPhys_Lect04b_2024_2025_ModelFitting_Part2_SOLUTIONS.html">
-     Data from a Periodic Star - SOLUTIONS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05a/overview.html">
-   Lecture 5a: Ordinary differential equations I
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_01_EulerMethod.html">
-     The Euler Method
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_01_EulerMethod_SOLUTIONS.html">
-     The Euler Method - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_02_DecayingExponential.html">
-     The Decaying Exponential
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS.html">
-     The Decaying Exponential - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_03_Sinusoid.html">
-     The Sinusoid
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_03_Sinusoid_SOLUTIONS.html">
-     The Sinusoid - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_04_CoupledEquations.html">
-     Coupled Equations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_04_CoupledEquations_SOLUTIONS.html">
-     Coupled Equations - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_05_NonlinearEquation.html">
-     Nonlinear Equation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05a/CompPhys_Lect05a_05_NonlinearEquation_SOLUTIONS.html">
-     Nonlinear Equation - SOLUTIONS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05b/overview.html">
-   Lecture 5b: Ordinary differential equations II
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_01_Gravity.html">
-     Gravity!
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_01_Gravity_SOLUTION.html">
-     Gravity! - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_02_Earth.html">
-     Earth’s Orbit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_02_Earth_SOLUTION.html">
-     Earth’s Orbit - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_03_MarsMission.html">
-     Mission to Mars
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_03_MarsMission_SOLUTION.html">
-     Mission to Mars - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_04_BlackHoleMergers.html">
-     Merging black holes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05b/CompPhys_Lect05b_05_Challenges.html">
-     Challenges
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06a/overview.html">
-   Lecture 6a: Advanced Plotting
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_01_Review.html">
-     Plotting: Review
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_01_Review_Soln.html">
-     Plotting: Review - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_02_Scatter.html">
-     Advanced Plotting: Scatter plots
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_02_Scatter_Soln.html">
-     Advanced Plotting: Scatter plots - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_03_Heatmaps.html">
-     Advanced Plotting: Heatmaps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_03_Heatmaps_Soln.html">
-     Advanced Plotting: Heatmaps - SOLUTIONS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_04_Subplots.html">
-     Advanced plotting: subplots
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06a/CompPhys_Lect06a_04_Subplots_Soln.html">
-     Advanced plotting: subplots - SOLUTIONS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06b/overview.html">
-   Lecture 6b: Midpoint Review
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review.html">
-     Question 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review_SOLUTIONS.html">
-     Question 1 - SOLVED
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Review.html">
-     Question 2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Review_SOLUTIONS.html">
-     Question 2 - SOLVED
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Review.html">
-     Question 3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Review_SOLUTIONS.html">
-     Question 3 - SOLVED
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Review.html">
-     Question 4
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Review_SOLUTIONS.html">
-     Question 4 - SOLVED
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_05_Review.html">
-     Question 5
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_05_Review_SOLUTIONS.html">
-     Question 5 - SOLVED
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_06_Review.html">
-     Question 6
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06b/CompPhys_Lect06b_06_Review_SOLUTIONS.html">
-     Question 6 - SOLVED
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../07a/overview.html">
-   Lecture 7a: Ordinary differential equations III - N-body simulations and more
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody.html">
-     N-body Simulations and More
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody_SOLUTION.html">
-     N-body Simulations and More - SOLUTIONS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../07b/overview.html">
-   Lecture 7b: LaTeX
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../08a/overview.html">
-   Lecture 8a: Signal processing 1, Discrete Fourier Transforms
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_01_DFT_overview.html">
-     Discrete Fourier Transforms - What is a Fourier transform?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_02_DFT_coding_help.html">
-     Discrete Fourier Transforms - What we need to remember for coding
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_03_DFT_coding_hard.html">
-     Coding up a Fourier transform - HARD VERSION
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_03_DFT_coding_hard_SOLUTION.html">
-     Coding up a Fourier transform - HARD VERSION - SOLUTION
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_04_DFT_coding_easy.html">
-     Coding up a Fourier transform - EASY(IER) VERSION
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_04_DFT_coding_easy_SOLUTION.html">
-     Coding up a Fourier transform - EASY(IER) VERSION - SOLUTION
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_05_DFT_more_exercises.html">
-     Discrete Fourier Transforms - Further Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_05_DFT_more_exercises_SOLUTION.html">
-     Discrete Fourier Transforms - Further Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_06_DFT_summary.html">
-     Discrete Fourier Transforms - SUMMARY
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_07_Aliasing_introduction.html">
-     Aliasing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_08_Aliasing_exercises.html">
-     Aliasing exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_08_Aliasing_exercises_SOLUTION.html">
-     Aliasing exercises - SOLUTION
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08a/CompPhys_Lect08a_09_Aliasing_summary.html">
-     Aliasing Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../08b/overview.html">
-   Lecture 8b: Signal processing 2, Manipulating data in the frequency domain
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_01_NaiveHighPassFilter.html">
-     A naive implementation of a high-pass filter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_01_NaiveHighPassFilter_SOLUTION.html">
-     A naive implementation of a high-pass filter - SOLUTION
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_02_BetterHighPassFilter.html">
-     An improved implementation of a high-pass filter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_02_BetterHighPassFilter_SOLUTION.html">
-     An improved implementation of a high-pass filter - SOLUTION
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_03_LongConvolutionExample.html">
-     A long example of applying a high-pass filter through convolution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_04_Scipy.html">
-     High pass filtering with scipy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_05_Exercises.html">
-     Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08b/CompPhys_Lect08b_05_Exercises_SOLUTION.html">
-     Exercises - SOLUTIONS
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../09a/overview.html">
-   Lecture 9a: Signal processing 3, Cross-correlation, convolution and matched-filtering
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09a/CompPhys_Lect09a_01_CrossCorrelation1.html">
-     Cross-correlation to find a known signal in noise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09a/CompPhys_Lect09a_02_CrossCorrelationExercises.html">
-     Cross correlation exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09a/CompPhys_Lect09a_03_FreqDomainCrossCorrelation.html">
-     Using Fourier transforms to do cross-correlation quicker (convolution)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09a/CompPhys_Lect09a_04_SignalExercises.html">
-     Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../09b/overview.html">
-   Lecture 9b: Code Optimization in Python (I)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_01_Introduction.html">
-     Introduction to optimization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_02_InstallingProfilers.html">
-     Importing needed profilers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_03_OptimizationExample.html">
-     A long(ish) example showing how to optimize a numerical integration code
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_04_OptimizationExercises.html">
-     Optimization exercises - Removing for loops!
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_05_SquareDigitsOpt.html">
-     Interactive example of non numpy-able code optimization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_06_UsingTheRightTool.html">
-     Identifying common elements in two large lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_07_SortFunction.html">
-     Writing a function to sort an array
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_08_ExampleSortFunctions.html">
-     Some sort methods to compare against
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09b/CompPhys_Lect09b_09_Acknowledgements.html">
-     Acknowledgements
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../10a/overview.html">
-   Lecture 10a: Monte Carlo Techniques
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10a/CompPhys_Lect10a_01_CalculatingG.html">
-     Calculating g with errors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10a/CompPhys_Lect10a_02_BeatTheCasino.html">
-     Beat the casino!
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10a/CompPhys_Lect10a_03_ParameterUncertainties.html">
-     Parameter Uncertainty
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../10b/overview.html">
-   Lecture 10b: Significance
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-  <label for="toctree-checkbox-19">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10b/CompPhys_Lect10b_01_Introduction.html">
-     Significance - why does it matter?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10b/CompPhys_Lect10b_02_Demonstration_of_FAR.html">
-     Computing the significance of a weak signal
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10b/CompPhys_Lect10b_03_differing_signals.html">
-     Computing significance for different signals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10b/CompPhys_Lect10b_04_extrapolating.html">
-     Assessing significance of very loud signals
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../11a/overview.html">
-   Lecture 11a: Markov Chain Monte Carlo
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-  <label for="toctree-checkbox-20">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11a/CompPhys_Lect11a_01_TheGoldfishBowlDescription.html">
-     The Goldfish Bowl - Description
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11a/CompPhys_Lect11a_02_TheGoldfishBowlDemonstration.html">
-     The Goldfish Bowl - Interactive Demonstration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11a/CompPhys_Lect11a_03_BayesTheorem.html">
-     Bayes Theorem
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11a/CompPhys_Lect11a_04_NoisyDataFittingRevisited.html">
-     Fitting noisy data revisited
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11a/CompPhys_Lect11a_05_FittingSignals.html">
-     Finding parameters of signals in noise - CHALLENGING
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../11b/overview.html">
-   Lecture 11b: Using Cython to get the speed of C in Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-  <label for="toctree-checkbox-21">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11b/CompPhys_Lect11b_1_CythonDemonstration.html">
-     Cython demonstrated
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11b/CompPhys_Lect11b_2_CythonDemonstration2.html">
-     A longer Cython example
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11b/CompPhys_Lect11b_3_Examples1.html">
-     Exercise Set 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11b/CompPhys_Lect11b_4_Examples2.html">
-     Exercise Set 2
     </a>
    </li>
   </ul>
@@ -1484,22 +678,12 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview-of-lecture-03a">
-   Overview of Lecture 03a
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives-for-today">
-   Learning objectives for today:
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Generating mock data by drawing from distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
    Exercise:
   </a>
  </li>
@@ -1540,7 +724,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   Exercise:
+   Exercise
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1550,11 +734,6 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id11">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
    Exercise
   </a>
  </li>
@@ -1578,22 +757,12 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview-of-lecture-03a">
-   Overview of Lecture 03a
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives-for-today">
-   Learning objectives for today:
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Generating mock data by drawing from distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
    Exercise:
   </a>
  </li>
@@ -1634,7 +803,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   Exercise:
+   Exercise
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1644,11 +813,6 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id11">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
    Exercise
   </a>
  </li>
@@ -1664,41 +828,6 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="generating-mock-data-by-drawing-from-distributions">
 <h1>Generating mock data by drawing from distributions<a class="headerlink" href="#generating-mock-data-by-drawing-from-distributions" title="Permalink to this headline">#</a></h1>
-<section id="overview-of-lecture-03a">
-<h2>Overview of Lecture 03a<a class="headerlink" href="#overview-of-lecture-03a" title="Permalink to this headline">#</a></h2>
-<p>In the next 3 notebooks we will use the distributions we learned about in the 2a notebooks to generate mock data and we’ll go further and fit an analytical solution to that data.</p>
-<p>Additionally we’ll introduce Monte Carlo methods and use them to calculate the value of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
-<p>From stats you should be familiar with:</p>
-<ol class="simple">
-<li><p>Generating ‘random’ data from an analyitical distibution using both <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> packages</p></li>
-<li><p>Finding ‘summary statistics’ such as ‘moments’ of a distribution of data using for example</p></li>
-</ol>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy.mean</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy.std</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scipy.stats.kurtosis</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scipy.stats.skew</span></code></p></li>
-</ul>
-<ol class="simple">
-<li><p>Generating a model distribution using <code class="docutils literal notranslate"><span class="pre">scipy.stats.pdf</span></code> (a probability density function) - for example this is a function that our random data could be drawn from</p></li>
-<li><p>Understanding that we could compare ‘summary statistics’ or ‘moments’ of a distribution to give us an idea as to whether our data is adequately represented by that distribution.</p></li>
-<li><p>Plotting using <code class="docutils literal notranslate"><span class="pre">matplotlib.hist</span></code></p></li>
-<li><p>Additionally you should be familiar with reading help pages and finding useful information on them, e.g. ‘inputs’, ‘outputs’, ‘functions’ within a ‘class’, and examples on how to use that function/class.</p></li>
-</ol>
-</section>
-<section id="learning-objectives-for-today">
-<h2>Learning objectives for today:<a class="headerlink" href="#learning-objectives-for-today" title="Permalink to this headline">#</a></h2>
-<p>Today we will be using random-ness to solve problems.</p>
-<ol class="simple">
-<li><p>Using <code class="docutils literal notranslate"><span class="pre">numpy.histogram</span></code> to save histogram data to an array</p></li>
-<li><p>Use a PDF (probability density function) to draw random data. Creating mock data is a useful tool to test out a scientific hypothesis</p></li>
-<li><p>Fit a model to this random data</p></li>
-<li><p>Use multiple random draws to estimate the value of <span class="math notranslate nohighlight">\(\pi\)</span>. Using multiple draws in this way is called ‘monte-carlo’ - it is a very useful technique in many situations including fitting data and finding uncertainties on results - we WILL come back to this later in term so become familiar with it now!</p></li>
-<li><p>Understanding what ‘noise’ is</p></li>
-</ol>
-</section>
-<section id="id1">
-<h2>Generating mock data by drawing from distributions<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Last time we saw that a valuble way to plot distributions was to histogram them using matplotlib’s <code class="docutils literal notranslate"><span class="pre">.hist</span></code> function.</p>
 <p>Numpy also has a histogram function which can allow you to recover histograms of the data:</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.histogram</span></code> : <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.histogram.html">https://numpy.org/doc/stable/reference/generated/numpy.histogram.html</a></p>
@@ -1724,9 +853,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 9,  5, 13, 12,  9, 12, 11,  9, 14,  6]), array([1.01765302, 1.9155182 , 2.81338337, 3.71124855, 4.60911372,
-       5.5069789 , 6.40484407, 7.30270925, 8.20057442, 9.0984396 ,
-       9.99630477]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([15, 10, 11, 15,  9,  6, 10,  8,  8,  8]), array([1.04330087, 1.92812538, 2.81294988, 3.69777439, 4.58259889,
+       5.4674234 , 6.3522479 , 7.23707241, 8.12189691, 9.00672142,
+       9.89154592]))
 </pre></div>
 </div>
 </div>
@@ -1740,7 +869,6 @@ title="Print to PDF"
 </div>
 </div>
 <p>You’ll notice I wrote ‘bin_edges’ not ‘bin_centers’ - you might want to verify these are bin_edges by printing the size of the two arrays. In the exercise below you will be asked to plot the bin_centers against the number.</p>
-</section>
 <section id="exercise">
 <h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
 <p>Plot a histogram using <code class="docutils literal notranslate"><span class="pre">plt.bar</span></code> with the bin_centers plotted on the x-axis and the count in each bin on the y.</p>
@@ -1752,8 +880,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id2">
-<h2>Exercise:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h2>Exercise:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>An object emits photons which we detect as a Guassian shaped emission line. The emission line has a wavelength of 20 cm, a standard deviation of 1cm and a flux (total integrated emission under the gaussian) of 100 (in arbitrary flux units).</p>
 <ol class="simple">
 <li><p>Use your knowledge of generating random data from a gaussian distribution to generate 1000 photons</p></li>
@@ -1772,12 +900,12 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>define our model</p></li>
 <li><p>draw a data point</p></li>
-<li><p>choose whether to acept or reject this data point</p></li>
+<li><p>choose whether to accept or reject this data point</p></li>
 <li><p>loop back to the top and draw again</p></li>
 </ol>
 </section>
-<section id="id3">
-<h2>Exercise:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h2>Exercise:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Build a model gaussian pdf with a mean of 10 and a std of 3 and plot it</p></li>
 </ol>
@@ -1789,9 +917,20 @@ title="Print to PDF"
 </div>
 </div>
 </section>
+<section id="id3">
+<h2>Exercise:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>2a. Use a function to draw a single random data point on the x axis from 0 to 20. Print it to verify it is between 0 and 20.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="id4">
 <h2>Exercise:<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
-<p>2a. Use a function to draw a single random data point on the x axis from 0 to 20. Print it to verify it is between 0 and 20.</p>
+<p>2b. Use a function to draw a single random data point on the y axis. Use your plot above to decide what range to draw y from and print it to make sure it is within your chosen limits.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
@@ -1802,17 +941,6 @@ title="Print to PDF"
 </section>
 <section id="id5">
 <h2>Exercise:<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
-<p>2b. Use a function to draw a single random data point on the y axis. Use your plot above to decide what range to draw y from and print it to make sure it is within your chosen limits.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id6">
-<h2>Exercise:<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Write an if statement to choose whether to accept or reject your data point and print ‘accept’ or ‘reject’. In this case you would like to keep values which are less than the model and reject those which are greater.</p></li>
 </ol>
@@ -1824,8 +952,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id7">
-<h2>Exercise:<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h2>Exercise:<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Now take the steps above and put them in a loop - draw 1000 data points. Store the accepted values by appending them to a list.</p></li>
 </ol>
@@ -1837,8 +965,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id8">
-<h2>Exercise:<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<section id="id7">
+<h2>Exercise:<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Plot the model and the accepted x and y values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1848,8 +976,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id9">
-<h2>Exercise:<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h2>Exercise:<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Now plot your accepted data points as a histogram. Think carefully about how to do this. There are many ways, one you have seen is very quick.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1859,8 +987,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id10">
-<h2>Exercise<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id9">
+<h2>Exercise<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>Can you think of a way to generate this data without using a loop (Hint: do you have to generate only one x and y at a time?)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1884,8 +1012,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id11">
-<h2>Exercise<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<section id="id10">
+<h2>Exercise<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Using your Gaussian data from the previous exercise, histogram your data using <code class="docutils literal notranslate"><span class="pre">np.histogram</span></code> and calculate the bin centres.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1900,7 +1028,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here we fit the data with curve_fit</span>
 <span class="n">parameters</span><span class="p">,</span> <span class="n">covariance</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">Gauss</span><span class="p">,</span> <span class="n">bin_centers</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 
-<span class="c1"># Here we report the paraameters - do you know why they are in this order?</span>
+<span class="c1"># Here we report the parameters - do you know why they are in this order?</span>
 <span class="n">amp</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">mean</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -1915,7 +1043,7 @@ title="Print to PDF"
 <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Here we fit the data with curve_fit</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">covariance</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">Gauss</span><span class="p">,</span> <span class="n">bin_centers</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Here we report the paraameters - do you know why they are in this order?</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Here we report the parameters - do you know why they are in this order?</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">amp</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">NameError</span>: name &#39;bin_centers&#39; is not defined
@@ -1924,8 +1052,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="id12">
-<h2>Exercise<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<section id="id11">
+<h2>Exercise<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Put the parameters you have just determined into your model to calculate a curve which describes the data well.</p>
 <p>Plot this curve along with the original data</p>
 <p><strong>Hint:</strong> Use plt.bar to plot the original data</p>
@@ -1973,10 +1101,10 @@ title="Print to PDF"
             <p class="prev-next-title">Lecture 3a - Statistics II</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="CompPhys_Lect03a_01_GeneratingData_SOLUTIONS.html" title="next page">
+    <a class='right-next' id="next-link" href="CompPhys_Lect03a_02_ComputingPi.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Generating mock data by drawing from distributions - SOLUTIONS</p>
+        <p class="prev-next-title">Calculating <span class="math notranslate nohighlight">\(\pi\)</span> by Monte Carlo</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
