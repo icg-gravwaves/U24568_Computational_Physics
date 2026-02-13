@@ -92,7 +92,7 @@ chapters:
 - file: 04b/overview
   sections:
     - file: 04b/CompPhys_Lect04b_01_ModelFitting_Part1
-    - file: 04b/CompPhys_Lect04b_02_ModelFitting_Part1  
+    - file: 04b/CompPhys_Lect04b_02_ModelFitting_Part2  
 #- file: 05a/overview
 #  sections:
 #    - file: 05a/CompPhys_Lect05a_01_EulerMethod
