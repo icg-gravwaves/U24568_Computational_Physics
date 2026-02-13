@@ -1,0 +1,1187 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>EXERCISES - Practicing defining classes &#8212; Computational Physics U24568</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class attributes and inheritence" href="CompPhys_Lect03b_06_Attributes_and_inheritance.html" />
+    <link rel="prev" title="EXERCISES - Practicing defining classes" href="CompPhys_Lect03b_05_Class_defining_practice.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Computational Physics U24568</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01a/overview.html">
+   Lecture 1a - Introduction and recap
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors.html">
+     Expressions, data types and Errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_02_Expressions_Datatypes_Errors_SOLUTIONS.html">
+     Expressions, data types and Errors - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals.html">
+     Loops, Lists and Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_03_Loops_Conditionals_SOLUTIONS.html">
+     Loops, Lists and Conditionals - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions.html">
+     Writing functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_04_Functions_SOLUTIONS.html">
+     Writing functions - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy.html">
+     Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_05_Numpy_SOLUTIONS.html">
+     Numpy - SOLUTIONS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01a/CompPhys_Lect01a_06_Plotting_SOLUTIONS.html">
+     Plotting - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01b/overview.html">
+   Lecture 1b - Problem solving (in python)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A.html">
+     Problem A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_02_Problem_A_SOLUTIONS.html">
+     Problem A - Solutions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B.html">
+     Problem B
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_03_Problem_B_SOLUTIONS.html">
+     Problem B - Solutions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C.html">
+     Problem C
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_04_Problem_C_SOLUTIONS.html">
+     Problem C - Solutions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D.html">
+     Problem D - Challenging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01b/CompPhys_Lect01b_05_Problem_D_SOLUTIONS.html">
+     Problem D - SOLUTIONS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02a/overview.html">
+   Lecture 2a - Advanced Numpy and Data Manipulation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review.html">
+     Review
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_01_Review_SOLUTION.html">
+     Review - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing.html">
+     Boolean indexing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_02_BooleanIndexing_SOLUTION.html">
+     Boolean indexing - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods.html">
+     Methods of numpy arrays.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_03_NumpyMethods_SOLUTION.html">
+     Methods of numpy arrays - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices.html">
+     Matrices in numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_04_NumpyMatrices_SOLUTION.html">
+     Matrices in numpy - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO.html">
+     Saving data in numpy/pandas - a recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_05_NumpyPandasIO_SOLUTION.html">
+     Saving data in numpy/pandas - a recap - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary.html">
+     Final exercise and summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02a/CompPhys_Lect02a_06_Summary_SOLUTION.html">
+     Final exercise and summary - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02b/overview.html">
+   Lecture 2b - Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions.html">
+     Statistical distributions and python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_01_Distributions_SOLUTIONS.html">
+     Statistical distributions and python - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics.html">
+     Acronyms and more exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_02_MoreStatistics_SOLUTIONS.html">
+     Acronyms and more exploration - SOLVED
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge.html">
+     Data challenge…
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02b/CompPhys_Lect02b_03_Challenge_SOLUTIONS.html">
+     Data challenge - SOLVED
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03a/overview.html">
+   Lecture 3a - Statistics II
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData.html">
+     Generating mock data by drawing from distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS.html">
+     Generating mock data by drawing from distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_02_ComputingPi_SOLUTIONS.html">
+     Calculating
+     <span class="math notranslate nohighlight">
+      \(\pi\)
+     </span>
+     by Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise.html">
+     What is noise?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03a/CompPhys_Lect03a_03_WhatIsNoise_SOLUTIONS.html">
+     What is noise?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview.html">
+   Lecture 3b: Class Conundrums
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_02_Initializing_a_class.html">
+     Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_03_Initializing_a_class_exercise.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_03_Initializing_a_class_exercise_SOLUTIONS.html">
+     EXERCISE - Initializing a class
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_04_Optional_arguments.html">
+     Optional arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_05_Class_defining_practice.html">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     EXERCISES - Practicing defining classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_06_Attributes_and_inheritance.html">
+     Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_07_Attributes_and_inheritance_exercise.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_07_Attributes_and_inheritance_exercise_SOLUTIONS.html">
+     EXERCISE: Class attributes and inheritence
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_08_Recap.html">
+     Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_09_Summary_exercises.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_09_Summary_exercises_SOLUTIONS.html">
+     SUMMARY EXERCISES
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect03b_10_Acknowledgements.html">
+     Acknowledgements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04a/overview.html">
+   Lecture 4a: Advanced Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_01_Introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_02_List_comprehensions_overview.html">
+     List comprehensions - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_03_List_comprehensions_exercises1.html">
+     List comprehensions - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_04_List_comprehensions_conditionals.html">
+     List Comprehensions - Including conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_05_List_comprehensions_exercises2.html">
+     List Comprehensions - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_06_Set_dictionary_comprehensions.html">
+     Set and Dictionary Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_07_Generators_overview.html">
+     Generators - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_08_Generators_exercises1.html">
+     Generators - Exercises 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_09_Generators_more_detail.html">
+     Generators - A bit more complexity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_10_Generators_exercises2.html">
+     Generators - Exercises 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_11_Recursion_overview.html">
+     Recursion - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_12_Recursion_exercises.html">
+     Recursion - Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_13_Lambda_overview.html">
+     Function as a value and the lambda operator - Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_14_Lambda_exercises.html">
+     Function as a value and the lambda operator - Exercise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04a/CompPhys_Lect04a_15_Summary_exercises.html">
+     Summary Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04b/overview.html">
+   Lecture 4b: Data Cleaning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_01_ModelFitting_Part1.html">
+     Determining the Hubble Constant
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04b/CompPhys_Lect04b_02_ModelFitting_Part2.html">
+     Data from a Periodic Star
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/icg-gravwaves/U24568_Computational_Physics/main?urlpath=lab/tree/03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/icg-gravwaves/U24568_Computational_Physics/blob/main/03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/icg-gravwaves/U24568_Computational_Physics/issues/new?title=Issue%20on%20page%20%2F03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/03b/CompPhys_Lect03b_05_Class_defining_practice_SOLUTIONS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   EXERCISE 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   EXERCISE 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3">
+   EXERCISE 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   EXERCISE 4
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>EXERCISES - Practicing defining classes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   EXERCISE 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   EXERCISE 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3">
+   EXERCISE 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   EXERCISE 4
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="exercises-practicing-defining-classes">
+<h1>EXERCISES - Practicing defining classes<a class="headerlink" href="#exercises-practicing-defining-classes" title="Permalink to this headline">#</a></h1>
+<p>Here are some exercises to practice how to define and initialize a class</p>
+<section id="exercise-1">
+<h2>EXERCISE 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
+<p>I want to know how many people have passed my course in the last 5 years. I know that <span class="math notranslate nohighlight">\(N\)</span> people passed my course in years 1 - 4, and I have a list <span class="math notranslate nohighlight">\(mark\_list\)</span> of marks for the students in year 5. A mark of 40 or larger is pass. Implement a class below so that the code fragment below will tell me how many students have passed my course in the last 5 years.</p>
+<p>The class should have the following:</p>
+<ul class="simple">
+<li><p>It should be called <code class="docutils literal notranslate"><span class="pre">MarkTracker</span></code></p></li>
+<li><p>It should have an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function/method, which takes one input (in addition to <code class="docutils literal notranslate"><span class="pre">self</span></code>). This input is a number N, denoting the number of people who passed the course in the first 4 years. This number should be stored to an attribute of the class called <code class="docutils literal notranslate"><span class="pre">num_passes</span></code>.</p></li>
+<li><p>It should have a <code class="docutils literal notranslate"><span class="pre">add_passes_from_grades</span></code> function/method. This takes one input (in addition to <code class="docutils literal notranslate"><span class="pre">self</span></code>). That input is a list of the marks for the students in year 5. The function should identify how many of these students have passed (40 or larger is a pass), and then add that number to the current value of <code class="docutils literal notranslate"><span class="pre">num_passes</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MarkTracker</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_passes</span> <span class="o">=</span> <span class="n">N</span>
+        
+    <span class="k">def</span> <span class="nf">add_passes_from_grades</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">mark</span> <span class="ow">in</span> <span class="n">marks</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mark</span> <span class="o">&gt;=</span> <span class="mi">40</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">num_passes</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="c1"># DO NOT CHANGE CODE BELOW! It checks if your solution is correct!</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">52</span>
+<span class="n">mark_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">96</span><span class="p">]</span>
+<span class="n">mark_tracker</span> <span class="o">=</span> <span class="n">MarkTracker</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">mark_tracker</span><span class="o">.</span><span class="n">add_passes_from_grades</span><span class="p">(</span><span class="n">mark_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mark_tracker</span><span class="o">.</span><span class="n">num_passes</span><span class="p">,</span> <span class="s2">&quot;Should say 57&quot;</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">mark_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">38</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">45</span><span class="p">]</span>
+<span class="n">mark_tracker</span> <span class="o">=</span> <span class="n">MarkTracker</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">mark_tracker</span><span class="o">.</span><span class="n">add_passes_from_grades</span><span class="p">(</span><span class="n">mark_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mark_tracker</span><span class="o">.</span><span class="n">num_passes</span><span class="p">,</span> <span class="s2">&quot;Should say 10&quot;</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">101</span>
+<span class="n">mark_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">68</span><span class="p">]</span>
+<span class="n">mark_tracker</span> <span class="o">=</span> <span class="n">MarkTracker</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">mark_tracker</span><span class="o">.</span><span class="n">add_passes_from_grades</span><span class="p">(</span><span class="n">mark_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mark_tracker</span><span class="o">.</span><span class="n">num_passes</span><span class="p">,</span> <span class="s2">&quot;Should say 106&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57 Should say 57
+10 Should say 10
+106 Should say 106
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2">
+<h2>EXERCISE 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
+<p>I want to write a class that will compute the area of a rectangle and print it in a nice way. I have implemented part of the solution already. Please fill in the missing method of the class! Note that in this exercise I am defining a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method. This method is called when I run the builtin <code class="docutils literal notranslate"><span class="pre">str</span></code> function on the class instance. I can overwrite <em>any</em> operation in python in this way. I can use <code class="docutils literal notranslate"><span class="pre">__mul__</span></code> to define what to do if I multiply this object with something else, or <code class="docutils literal notranslate"><span class="pre">__geq__</span></code> to define what to do if using the <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> operator or …. (there’s a lot of these “magic methods” <a class="reference external" href="https://rszalski.github.io/magicmethods/">https://rszalski.github.io/magicmethods/</a>)</p>
+<ul class="simple">
+<li><p>To solve this you will need to add a compute_area method of this class, which uses the height and width attributes, already defined within the class instance to compute an area. Therefore <code class="docutils literal notranslate"><span class="pre">compute_area</span></code> takes no inputs (other than self) and returns an area, using height and width already defined in the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;AREA = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">compute_area</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">def</span> <span class="nf">compute_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+
+
+<span class="c1"># Test if your class works</span>
+<span class="n">height</span><span class="o">=</span><span class="mi">30</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="n">rectangle_instance</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rectangle_instance</span><span class="p">),</span> <span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="o">*</span><span class="mi">21</span><span class="p">)</span>
+
+<span class="n">height</span><span class="o">=</span> <span class="mi">0</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">rectangle_instance</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rectangle_instance</span><span class="p">),</span> <span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">height</span><span class="o">=</span> <span class="mf">12.3</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">13.4</span>
+<span class="n">rectangle_instance</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rectangle_instance</span><span class="p">),</span> <span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mf">12.3</span> <span class="o">*</span> <span class="mf">13.4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AREA = 30 x 21 = 630 Should be 630
+AREA = 0 x 12 = 0 Should be 0
+AREA = 12.3 x 13.4 = 164.82000000000002 Should be 164.82000000000002
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3">
+<h2>EXERCISE 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
+<p>Now take the above example and add an additional method such that when I run <code class="docutils literal notranslate"><span class="pre">str</span></code> on the class instance it prints both the area <em>and</em> the perimeter.</p>
+<ul class="simple">
+<li><p>HINT: To do this I would write a <code class="docutils literal notranslate"><span class="pre">compute_perimeter</span></code> method, similar to <code class="docutils literal notranslate"><span class="pre">compute_area</span></code>. Then the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method needs to be edited to return a string that prints both the area and perimeter!</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;AREA = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="si">}</span><span class="s1"> x </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">compute_area</span><span class="p">()</span><span class="si">}</span><span class="s1"> PERIMETER = 2*</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="si">}</span><span class="s1"> + 2*</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">compute_perimeter</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">def</span> <span class="nf">compute_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+    
+    <span class="k">def</span> <span class="nf">compute_perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+
+
+
+<span class="c1"># Test if your class works</span>
+<span class="n">height</span><span class="o">=</span><span class="mi">30</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="n">rectangle_instance</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rectangle_instance</span><span class="p">),</span> <span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="o">*</span><span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">30</span><span class="o">+</span><span class="mi">21</span><span class="p">))</span>
+
+<span class="n">height</span><span class="o">=</span> <span class="mi">0</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">rectangle_instance</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rectangle_instance</span><span class="p">),</span> <span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;and ... what should the perimeter be in this case??&quot;</span><span class="p">)</span>
+
+<span class="n">height</span><span class="o">=</span> <span class="mf">12.3</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">13.4</span>
+<span class="n">rectangle_instance</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rectangle_instance</span><span class="p">),</span> <span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mf">12.3</span> <span class="o">*</span> <span class="mf">13.4</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mf">12.3</span> <span class="o">+</span> <span class="mf">13.4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AREA = 30 x 21 = 630 PERIMETER = 2*30 + 2*21 = 102 Should be 630 and 102
+AREA = 0 x 12 = 0 PERIMETER = 2*0 + 2*12 = 24 Should be 0 and ... what should the perimeter be in this case??
+AREA = 12.3 x 13.4 = 164.82000000000002 PERIMETER = 2*12.3 + 2*13.4 = 51.400000000000006 Should be 164.82000000000002 and 51.400000000000006
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4">
+<h2>EXERCISE 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
+<p>In a similar vein write a Triangle class. This should be able to print the perimeter, and area, of a triangle. It should be initialized by taking the 3 lengths of the sides of the triangle.</p>
+<ul class="simple">
+<li><p>HINT: Here you have some more freedome to define how to do this, but your Triangle class must be called <code class="docutils literal notranslate"><span class="pre">Triangle</span></code>, must have an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method taking the 3 lengths as input, and define a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method similar to the case above.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">side1</span><span class="p">,</span> <span class="n">side2</span><span class="p">,</span> <span class="n">side3</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">side1</span> <span class="o">=</span> <span class="n">side1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">side2</span> <span class="o">=</span> <span class="n">side2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">side3</span> <span class="o">=</span> <span class="n">side3</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;AREA = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">compute_area</span><span class="p">()</span><span class="si">}</span><span class="s1">; PERIMETER = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">compute_perimeter</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">def</span> <span class="nf">compute_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Google &quot;Heron&#39;s formula&quot;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_perimeter</span><span class="p">()</span> <span class="o">/</span> <span class="mf">2.</span>
+        <span class="k">return</span> <span class="p">(</span> <span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">side1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">side2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">side3</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    
+    <span class="k">def</span> <span class="nf">compute_perimeter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">side1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">side2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">side3</span>
+
+
+<span class="c1"># Test if your class works</span>
+<span class="n">side1_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">side2_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">side3_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">triangle_instance</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">side1_length</span><span class="p">,</span> <span class="n">side2_length</span><span class="p">,</span> <span class="n">side3_length</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">triangle_instance</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mi">1875</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">side1_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">side2_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">side3_length</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">triangle_instance</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">side1_length</span><span class="p">,</span> <span class="n">side2_length</span><span class="p">,</span> <span class="n">side3_length</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">triangle_instance</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mf">49.607837082461074</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">side1_length</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">side2_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">side3_length</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="n">triangle_instance</span> <span class="o">=</span> <span class="n">Triangle</span><span class="p">(</span><span class="n">side1_length</span><span class="p">,</span> <span class="n">side2_length</span><span class="p">,</span> <span class="n">side3_length</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">triangle_instance</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Should be&quot;</span><span class="p">,</span> <span class="mf">54.49713295211043</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="mi">61</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AREA = 43.30127018922193; PERIMETER = 30
+Should be 43.30127018922193 and 30
+
+AREA = 49.607837082461074; PERIMETER = 35
+Should be 49.607837082461074 and 35
+
+AREA = 54.49713295211043; PERIMETER = 61
+Should be 54.49713295211043 and 61
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "icg-gravwaves/U24568_Computational_Physics",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="CompPhys_Lect03b_05_Class_defining_practice.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EXERCISES - Practicing defining classes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CompPhys_Lect03b_06_Attributes_and_inheritance.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class attributes and inheritence</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Becky Canning, Gareth Cabourn Davies, Ian Harry, Andrew Lundgren, Laura Nuttall and Samantha Penny<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
