@@ -945,7 +945,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><strong>Exercise:</strong> Let’s add some noise to each dataset. Create two normal distributions with a mean of zero and standard deviation of 3. Then add this noise to each dataset.</p>
+<p><strong>Exercise:</strong> Let’s add some noise to each dataset. Create one normal distribution with a mean of zero and standard deviation of 3. Then add this noise to the distance dataset. Then create one more normal distribution with a mean of zero and standard deviation of <span class="math notranslate nohighlight">\(3\times10^{-4}\)</span>. Then add this noise to the redshift dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
@@ -972,7 +972,7 @@ title="Print to PDF"
 <p>Given the problem above we can guess that a simple linear curve of the form <span class="math notranslate nohighlight">\(y = mx + c\)</span> (where <span class="math notranslate nohighlight">\(m\)</span> = gradient and <span class="math notranslate nohighlight">\(c\)</span> = intercept) should describe this data well.</p>
 <p>See the introductory slides for a discussion of this, but the relevant equations you need are:</p>
 <p><span class="math notranslate nohighlight">\(m = \frac{N \sum_i(x_i y_i) - \sum_i (x_i) \sum_i (y_i)}{N \sum_i (x_i^2) - \left(\sum_i (x_i)\right)^2}\)</span></p>
-<p><span class="math notranslate nohighlight">\(c = \frac{\sum_i(y) + m \sum_i(x)}{N}\)</span></p>
+<p><span class="math notranslate nohighlight">\(c = \frac{\sum_i(y) - m \sum_i(x)}{N}\)</span></p>
 <p><strong>Exercise</strong>: Determine the gradient</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1005,14 +1005,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><strong>Exercise:</strong> : Estimate an error on the Hubble constant. HINT: <a class="reference external" href="https://www.statology.org/standard-error-of-regression-slope/">https://www.statology.org/standard-error-of-regression-slope/</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="residuals-and-coefficient-of-determination">
@@ -1021,6 +1013,7 @@ title="Print to PDF"
 <p>R<span class="math notranslate nohighlight">\(^2\)</span> is defined as:</p>
 <p><span class="math notranslate nohighlight">\(R^2 = 1 - \frac{SS_{res}}{SS_{tot}}\)</span>,</p>
 <p>where <span class="math notranslate nohighlight">\(SS_{res} = \sum(y_i-f_i)^2\)</span> and <span class="math notranslate nohighlight">\(SS_{tot} = \sum(y - \bar{y})^2\)</span> for a data set y and model f.</p>
+<p>NOTE: <span class="math notranslate nohighlight">\(f_i\)</span> can be obtained by taking the <span class="math notranslate nohighlight">\(x_i\)</span> values and finding what <span class="math notranslate nohighlight">\(y\)</span> values the model predicts at those values of <span class="math notranslate nohighlight">\(x\)</span>. (So just do y = m * x + c in this case using the m and x you obtained). <span class="math notranslate nohighlight">\(\bar{y}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span> over the full dataset.</p>
 <p><strong>Exercise:</strong> Calculate the R<span class="math notranslate nohighlight">\(^2\)</span> value for your model. Do you think the model fits the data well?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1093,7 +1086,7 @@ title="Print to PDF"
 <span class="n">y_value_model</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Exercise</strong>: Determine the gradient and intercept of your new model using the <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> function.</p>
+<p><strong>Exercise</strong>: Determine the gradient and intercept of a new degree=1 model using the <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
@@ -1117,7 +1110,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><strong>Exercise:</strong> Does a seocnd order polynomial fit better than a linear fit (according to <code class="docutils literal notranslate"><span class="pre">polyfit</span></code>)?</p>
+<p><strong>Exercise:</strong> Does a second order polynomial fit better than a linear fit (according to <code class="docutils literal notranslate"><span class="pre">polyfit</span></code>)?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer here</span>
