@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>The Decaying Exponential &#8212; Computational Physics U24568</title>
+    <title>SOLUTIONS: The Decaying Exponential &#8212; Computational Physics U24568</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -647,7 +647,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect05a_01_EulerMethod_SOLUTIONS.html">
-     Lecture 5a - Ordinary Differental Equations 1
+     SOLUTIONS: The Euler Method
     </a>
    </li>
    <li class="toctree-l2">
@@ -657,7 +657,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     The Decaying Exponential
+     SOLUTIONS: The Decaying Exponential
     </a>
    </li>
    <li class="toctree-l2">
@@ -667,7 +667,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect05a_03_Sinusoid_SOLUTIONS.html">
-     The Sinusoid
+     SOLUTIONS: The Sinusoid
     </a>
    </li>
    <li class="toctree-l2">
@@ -677,7 +677,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect05a_04_CoupledEquations_SOLUTIONS.html">
-     Coupled Equations
+     SOLUTIONS: Coupled Equations
     </a>
    </li>
    <li class="toctree-l2">
@@ -687,7 +687,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect05a_05_NonlinearEquation_SOLUTIONS.html">
-     Nonlinear Equation
+     SOLUTIONS: Nonlinear Equation
     </a>
    </li>
   </ul>
@@ -709,7 +709,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05b/CompPhys_Lect05b_01_Gravity_SOLUTION.html">
-     Gravity! - SOLUTIONS
+     SOLUTIONS: Gravity!
     </a>
    </li>
    <li class="toctree-l2">
@@ -719,7 +719,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05b/CompPhys_Lect05b_02_Earth_SOLUTION.html">
-     Earth’s Orbit - SOLUTIONS
+     SOLUTIONS: Earth’s Orbit
     </a>
    </li>
    <li class="toctree-l2">
@@ -729,7 +729,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05b/CompPhys_Lect05b_03_MarsMission_SOLUTION.html">
-     Mission to Mars - SOLUTIONS
+     SOLUTIONS: Mission to Mars
     </a>
    </li>
    <li class="toctree-l2">
@@ -788,32 +788,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_01_Review.html">
-     Review and example assessment questions
+     Question 1
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_02_Review.html">
-     Review and example assessment questions
+     Question 2
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_03_Review.html">
-     Review and example assessment questions
+     Question 3
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_04_Review.html">
-     Review and example assessment questions
+     Question 4
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_05_Review.html">
-     Review and example assessment questions
+     Question 5
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06b/CompPhys_Lect06b_06_Review.html">
-     Review and example assessment questions
+     Question 6
     </a>
    </li>
   </ul>
@@ -1084,7 +1084,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>The Decaying Exponential</h1>
+                <h1>SOLUTIONS: The Decaying Exponential</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1119,8 +1119,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="the-decaying-exponential">
-<h1>The Decaying Exponential<a class="headerlink" href="#the-decaying-exponential" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="solutions-the-decaying-exponential">
+<h1>SOLUTIONS: The Decaying Exponential<a class="headerlink" href="#solutions-the-decaying-exponential" title="Permalink to this headline">#</a></h1>
 <p>Now let’s start to use scipy’s <code class="docutils literal notranslate"><span class="pre">odeint</span></code> to solve some differential equations with nice sophisticated integrators. We’ll continue to solve</p>
 <div class="math notranslate nohighlight">
 \[\frac{d y}{dt} = - y\]</div>
@@ -1192,7 +1192,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x168e9de20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12e733f10&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS_7_1.png" src="../_images/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS_7_1.png" />
@@ -1221,7 +1221,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x169094c40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12e8fecd0&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS_10_1.png" src="../_images/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS_10_1.png" />
@@ -1254,7 +1254,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16913aa00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12e9f3a60&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS_13_1.png" src="../_images/CompPhys_Lect05a_02_DecayingExponential_SOLUTIONS_13_1.png" />
