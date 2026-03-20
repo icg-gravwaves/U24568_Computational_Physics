@@ -881,12 +881,111 @@ const thebe_selector_output = ".output, .cell_output"
      N-body Simulations and More
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07a/CompPhys_Lect07a_01_NBody_SOLUTIONS.html">
+     N-body Simulations and More - SOLUTIONS
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../07b/overview.html">
    Lecture 7b: LaTeX
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08a/overview.html">
+   Lecture 8a: Signal processing 1, Discrete Fourier Transforms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_01_DFT_overview.html">
+     Discrete Fourier Transforms - What is a Fourier transform?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_02_DFT_coding_help.html">
+     Discrete Fourier Transforms - What we need to remember for coding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_03_DFT_coding_hard.html">
+     Coding up a Fourier transform - HARD VERSION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_04_DFT_coding_easy.html">
+     Coding up a Fourier transform - EASY(IER) VERSION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_05_DFT_more_exercises.html">
+     Discrete Fourier Transforms - Further Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_06_DFT_summary.html">
+     Discrete Fourier Transforms - SUMMARY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_07_Aliasing_introduction.html">
+     Aliasing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_08_Aliasing_exercises.html">
+     Aliasing exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08a/CompPhys_Lect08a_09_Aliasing_summary.html">
+     Aliasing Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08b/overview.html">
+   Lecture 8b: Signal processing 2, Manipulating data in the frequency domain
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08b/CompPhys_Lect08b_01_NaiveHighPassFilter.html">
+     A naive implementation of a high-pass filter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08b/CompPhys_Lect08b_02_BetterHighPassFilter.html">
+     An improved implementation of a high-pass filter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08b/CompPhys_Lect08b_03_LongConvolutionExample.html">
+     A long example of applying a high-pass filter through convolution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08b/CompPhys_Lect08b_04_Scipy.html">
+     High pass filtering with scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08b/CompPhys_Lect08b_05_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1306,9 +1405,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([10,  9, 15, 10,  9,  7, 16,  8,  8,  8]), array([1.19667742, 2.06555923, 2.93444103, 3.80332284, 4.67220464,
-       5.54108645, 6.40996825, 7.27885006, 8.14773186, 9.01661367,
-       9.88549548]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([12, 10,  5, 11, 10,  5, 12, 10,  8, 17]), array([1.09311266, 1.97236049, 2.85160833, 3.73085617, 4.61010401,
+       5.48935185, 6.36859969, 7.24784753, 8.12709537, 9.00634321,
+       9.88559104]))
 </pre></div>
 </div>
 </div>
@@ -1365,7 +1464,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112450df0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1073dec40&gt;]
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_9_1.png" src="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_9_1.png" />
@@ -1395,7 +1494,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x155e29970&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x13f4d6b80&gt;]
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_11_1.png" src="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_11_1.png" />
@@ -1414,7 +1513,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.1084861]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.95076791]
 </pre></div>
 </div>
 </div>
@@ -1434,7 +1533,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The max y-value of the plot above is 0.1329807601338109
-[0.07797854]
+[0.07349883]
 </pre></div>
 </div>
 </div>
@@ -1495,7 +1594,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x155e54790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13f681df0&gt;
 </pre></div>
 </div>
 <img alt="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_21_1.png" src="../_images/CompPhys_Lect03a_01_GeneratingData_SOLUTIONS_21_1.png" />
@@ -1513,10 +1612,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 7., 11., 19., 46., 52., 78., 63., 48., 21., 10.]),
- array([ 1.84073828,  3.33155882,  4.82237936,  6.31319989,  7.80402043,
-         9.29484097, 10.78566151, 12.27648205, 13.76730259, 15.25812312,
-        16.74894366]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 5., 18., 49., 65., 93., 69., 41., 15.,  2.,  1.]),
+ array([ 1.67789125,  3.50950831,  5.34112538,  7.17274244,  9.00435951,
+        10.83597657, 12.66759364, 14.4992107 , 16.33082776, 18.16244483,
+        19.99406189]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -1543,10 +1642,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 2.,  8., 29., 66., 72., 75., 72., 31., 13.,  3.]),
- array([ 0.89402264,  2.66011583,  4.42620901,  6.19230219,  7.95839537,
-         9.72448855, 11.49058173, 13.25667492, 15.0227681 , 16.78886128,
-        18.55495446]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 4., 19., 36., 67., 67., 67., 59., 23., 13.,  5.]),
+ array([ 1.90667223,  3.57509248,  5.24351272,  6.91193297,  8.58035321,
+        10.24877345, 11.9171937 , 13.58561394, 15.25403419, 16.92245443,
+        18.59087467]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -1597,8 +1696,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit mean: 9.895823496368447
-fit sigma: 3.2517193373410573
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fit mean: 9.889427756091596
+fit sigma: 3.3018382537401307
 </pre></div>
 </div>
 </div>
