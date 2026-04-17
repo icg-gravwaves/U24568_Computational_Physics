@@ -1,4 +1,4 @@
-# Lecture 9a: Signal processing 3, Cross-correlation, convolution and matched-filtering 
+# Lecture 9b: Signal processing 3, Cross-correlation, convolution and matched-filtering 
 
 In this lecture we want to explore the problem of identifying the presence of a known signal in well-understood noise. This problem has had applications in many areas of science (starting with radio communications) for a long time.
 
