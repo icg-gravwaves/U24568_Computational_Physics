@@ -184,10 +184,15 @@ chapters:
     - file: 09a/CompPhys_Lect09a_02_InstallingProfilers
     - file: 09a/CompPhys_Lect09a_03_OptimizationExample
     - file: 09a/CompPhys_Lect09a_04_OptimizationExercises
+    - file: 09a/CompPhys_Lect09a_04_OptimizationExercises_SOLUTIONS
     - file: 09a/CompPhys_Lect09a_05_SquareDigitsOpt
+    - file: 09a/CompPhys_Lect09a_05_SquareDigitsOpt_SOLUTIONS
     - file: 09a/CompPhys_Lect09a_06_UsingTheRightTool
+    - file: 09a/CompPhys_Lect09a_06_UsingTheRightTool_SOLUTIONS
     - file: 09a/CompPhys_Lect09a_07_SortFunction
+    - file: 09a/CompPhys_Lect09a_07_SortFunction_SOLUTIONS
     - file: 09a/CompPhys_Lect09a_08_ExampleSortFunctions
+    - file: 09a/CompPhys_Lect09a_08_ExampleSortFunctions_SOLUTIONS
     - file: 09a/CompPhys_Lect09a_09_Acknowledgements
 - file: 09b/overview
   sections:
