@@ -1026,7 +1026,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="overview.html">
-   Lecture 9b: Code Optimization in Python (I)
+   Lecture 9a: Code Optimization in Python (I)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
@@ -1055,7 +1055,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect09a_04_OptimizationExercises_SOLUTIONS.html">
+     Optimization exercises - Removing for loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09a_05_SquareDigitsOpt.html">
+     Interactive example of non numpy-able code optimization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect09a_05_SquareDigitsOpt_SOLUTIONS.html">
      Interactive example of non numpy-able code optimization
     </a>
    </li>
@@ -1065,12 +1075,27 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect09a_06_UsingTheRightTool_SOLUTIONS.html">
+     Identifying common elements in two large lists
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09a_07_SortFunction.html">
      Writing a function to sort an array
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect09a_07_SortFunction_SOLUTIONS.html">
+     Writing a function to sort an array
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="CompPhys_Lect09a_08_ExampleSortFunctions.html">
+     Some sort methods to compare against
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CompPhys_Lect09a_08_ExampleSortFunctions_SOLUTIONS.html">
      Some sort methods to compare against
     </a>
    </li>
@@ -1083,7 +1108,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../09b/overview.html">
-   Lecture 9a: Signal processing 3, Cross-correlation, convolution and matched-filtering
+   Lecture 9b: Signal processing 3, Cross-correlation, convolution and matched-filtering
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
   <label for="toctree-checkbox-17">
@@ -1109,6 +1134,65 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../09b/CompPhys_Lect09b_04_SignalExercises.html">
      Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10a/overview.html">
+   Lecture 10a: Monte Carlo Techniques
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10a/CompPhys_Lect10a_01_CalculatingG.html">
+     Calculating g with errors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10a/CompPhys_Lect10a_02_BeatTheCasino.html">
+     Beat the casino!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10a/CompPhys_Lect10a_03_ParameterUncertainties.html">
+     Parameter Uncertainty
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10b/overview.html">
+   Lecture 10b: Significance
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_01_Introduction.html">
+     Significance - why does it matter?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_02_Demonstration_of_FAR.html">
+     Computing the significance of a weak signal
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_03_differing_signals.html">
+     Computing significance for different signals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10b/CompPhys_Lect10b_04_extrapolating.html">
+     Assessing significance of very loud signals
     </a>
    </li>
   </ul>
@@ -1432,7 +1516,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: memory_profiler in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (0.61.0)
-Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (from memory_profiler) (5.9.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (from memory_profiler) (5.9.4)
 </pre></div>
 </div>
 </div>
@@ -1539,7 +1625,7 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.12 s ± 24.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.12 s ± 25.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -1563,22 +1649,22 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         2999721 function calls in 1.237 seconds
+         2999721 function calls in 1.197 seconds
 
    Ordered by: internal time
    List reduced from 14 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.338    0.338    0.428    0.428 937512555.py:11(compute_cosx)
-        1    0.332    0.332    0.332    0.332 937512555.py:29(compute_seriesproduct)
-        1    0.301    0.301    0.302    0.302 937512555.py:20(compute_invx)
-        1    0.171    0.171    0.171    0.171 937512555.py:41(compute_seriessum)
-  2999700    0.089    0.000    0.089    0.000 {built-in method math.cos}
-        3    0.002    0.001    0.002    0.001 {built-in method numpy.zeros}
-        1    0.002    0.002    0.003    0.003 937512555.py:60(__init__)
+        1    0.327    0.327    0.327    0.327 937512555.py:29(compute_seriesproduct)
+        1    0.325    0.325    0.410    0.410 937512555.py:11(compute_cosx)
+        1    0.296    0.296    0.298    0.298 937512555.py:20(compute_invx)
+        1    0.158    0.158    0.158    0.158 937512555.py:41(compute_seriessum)
+  2999700    0.085    0.000    0.085    0.000 {built-in method math.cos}
+        3    0.003    0.001    0.003    0.001 {built-in method numpy.zeros}
+        1    0.001    0.001    0.003    0.003 937512555.py:60(__init__)
         1    0.001    0.001    0.001    0.001 {built-in method numpy.arange}
-        1    0.001    0.001    1.237    1.237 937512555.py:73(main_function)
-        1    0.000    0.000    1.237    1.237 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.001    0.001    1.197    1.197 937512555.py:73(main_function)
+        1    0.000    0.000    1.197    1.197 &lt;string&gt;:1(&lt;module&gt;)
 </pre></div>
 </div>
 </div>
@@ -1600,15 +1686,15 @@ Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/e
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 1.77622 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_95849/937512555.py
+Total time: 1.77021 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_61844/937512555.py
 Function: main_function at line 73
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
     73                                           def main_function(class_type=Integrator):
-    74         1    3744000.0 3744000.0      0.2      intgr = class_type(1, 10000, 1./300.)
-    75         1 1772473000.0 1772473000.0     99.8      return intgr.generate_integral()
+    74         1    3056000.0 3056000.0      0.2      intgr = class_type(1, 10000, 1./300.)
+    75         1 1767158000.0 1767158000.0     99.8      return intgr.generate_integral()
 </pre></div>
 </div>
 </div>
@@ -1627,8 +1713,8 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 0.675041 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_95849/937512555.py
+Total time: 0.671095 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_61844/937512555.py
 Function: compute_cosx at line 11
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
@@ -1637,10 +1723,10 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
     12                                                   &quot;&quot;&quot;
     13                                                   Computes cos(t) for all values in tseries
     14                                                   &quot;&quot;&quot;
-    15         1     907000.0 907000.0      0.1          cosx = numpy.zeros(len(tseries))
-    16   2999700  230354000.0     76.8     34.1          for idx, tval in enumerate(tseries):
-    17   2999700  443779000.0    147.9     65.7              cosx[idx] = math.cos(tseries[idx])
-    18         1       1000.0   1000.0      0.0          return cosx
+    15         1    1019000.0 1019000.0      0.2          cosx = numpy.zeros(len(tseries))
+    16   2999700  227668000.0     75.9     33.9          for idx, tval in enumerate(tseries):
+    17   2999700  442408000.0    147.5     65.9              cosx[idx] = math.cos(tseries[idx])
+    18         1          0.0      0.0      0.0          return cosx
 </pre></div>
 </div>
 </div>
@@ -1717,22 +1803,22 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
 *** Profile printout saved to text file &#39;prun0&#39;.
-         19 function calls in 0.791 seconds
+         19 function calls in 0.821 seconds
 
    Ordered by: internal time
    List reduced from 13 to 10 due to restriction &lt;10&gt;
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-        1    0.332    0.332    0.332    0.332 937512555.py:29(compute_seriesproduct)
-        1    0.291    0.291    0.291    0.291 937512555.py:20(compute_invx)
-        1    0.156    0.156    0.156    0.156 937512555.py:41(compute_seriessum)
+        1    0.342    0.342    0.342    0.342 937512555.py:29(compute_seriesproduct)
+        1    0.292    0.292    0.292    0.292 937512555.py:20(compute_invx)
+        1    0.175    0.175    0.175    0.175 937512555.py:41(compute_seriessum)
         1    0.007    0.007    0.007    0.007 2339633129.py:3(compute_cosx)
-        1    0.002    0.002    0.004    0.004 937512555.py:60(__init__)
         1    0.002    0.002    0.002    0.002 {built-in method numpy.arange}
-        1    0.001    0.001    0.791    0.791 937512555.py:73(main_function)
-        1    0.000    0.000    0.791    0.791 &lt;string&gt;:1(&lt;module&gt;)
+        1    0.002    0.002    0.004    0.004 937512555.py:60(__init__)
+        1    0.001    0.001    0.821    0.821 937512555.py:73(main_function)
+        1    0.000    0.000    0.821    0.821 &lt;string&gt;:1(&lt;module&gt;)
         2    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
-        1    0.000    0.000    0.787    0.787 937512555.py:50(generate_integral)
+        1    0.000    0.000    0.817    0.817 937512555.py:50(generate_integral)
 </pre></div>
 </div>
 </div>
@@ -1780,8 +1866,8 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
         1    0.007    0.007    0.007    0.007 2339633129.py:3(compute_cosx)
-        1    0.002    0.002    0.004    0.004 937512555.py:60(__init__)
-        1    0.001    0.001    0.001    0.001 2631616634.py:4(compute_invx)
+        1    0.002    0.002    0.003    0.003 937512555.py:60(__init__)
+        1    0.002    0.002    0.002    0.002 2631616634.py:4(compute_invx)
         1    0.001    0.001    0.001    0.001 {built-in method numpy.arange}
         1    0.001    0.001    0.001    0.001 2631616634.py:10(compute_seriesproduct)
         1    0.001    0.001    0.014    0.014 937512555.py:73(main_function)
@@ -1813,15 +1899,15 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>With original code
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.11 s ± 16.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.13 s ± 41.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 With vectorized cosine function
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>779 ms ± 11 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>802 ms ± 16.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 With vectorized product, inverse and sum functions
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.1 ms ± 116 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.6 ms ± 283 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
