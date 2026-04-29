@@ -1527,9 +1527,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: memory_profiler in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (0.61.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (from memory_profiler) (5.9.4)
+Requirement already satisfied: psutil in /opt/homebrew/Caskroom/miniconda/base/envs/pycbc_test/lib/python3.9/site-packages (from memory_profiler) (5.9.4)
 </pre></div>
 </div>
 </div>
@@ -1545,25 +1543,25 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.08 s ± 3.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.08 s ± 5.95 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 1.09244 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_62066/1847287517.py
+Total time: 1.08707 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_46025/1847287517.py
 Function: identify_common_elements at line 2
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
      2                                           def identify_common_elements(list_1, list_2):
-     3         1          0.0      0.0      0.0      common_elements = []
+     3         1       1000.0   1000.0      0.0      common_elements = []
      4                                               # Let&#39;s just write a for loop, and for every element check if it&#39;s in list_2
-     5    100000   11173000.0    111.7      1.0      for elem in list_1:
-     6     99027 1081093000.0  10917.2     99.0          if elem in list_2:
-     7       973     170000.0    174.7      0.0              common_elements.append(elem)
-     8         1       1000.0   1000.0      0.0      return common_elements
+     5    100000   11096000.0    111.0      1.0      for elem in list_1:
+     6     99014 1075830000.0  10865.4     99.0          if elem in list_2:
+     7       986     146000.0    148.1      0.0              common_elements.append(elem)
+     8         1          0.0      0.0      0.0      return common_elements
 </pre></div>
 </div>
 </div>
@@ -1600,25 +1598,25 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.55 ms ± 91.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.41 ms ± 88.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
 *** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 0.017271 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_62066/1767385033.py
+Total time: 0.017893 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_46025/1767385033.py
 Function: identify_common_elements_with_a_set at line 2
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
      2                                           def identify_common_elements_with_a_set(list_1, list_2):
      3                                               # ALL I DO IS ADD THE FOLLOWING 1 LINE
-     4         1    3867000.0 3867000.0     22.4      list_2 = set(list_2)
-     5         1          0.0      0.0      0.0      common_elements = []
+     4         1    3901000.0 3901000.0     21.8      list_2 = set(list_2)
+     5         1       1000.0   1000.0      0.0      common_elements = []
      6                                               # Let&#39;s just write a for loop, and for every element check if it&#39;s in list_2
-     7    100000    6693000.0     66.9     38.8      for elem in list_1:
-     8     99027    6587000.0     66.5     38.1          if elem in list_2:
-     9       973     124000.0    127.4      0.7              common_elements.append(elem)
+     7    100000    6902000.0     69.0     38.6      for elem in list_1:
+     8     99014    6957000.0     70.3     38.9          if elem in list_2:
+     9       986     132000.0    133.9      0.7              common_elements.append(elem)
     10         1          0.0      0.0      0.0      return common_elements
 </pre></div>
 </div>
@@ -1649,21 +1647,21 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.3 ms ± 189 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.1 ms ± 304 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
 *** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 0.009203 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_62066/3890345461.py
+Total time: 0.009233 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_46025/3890345461.py
 Function: identify_common_elements_with_two_sets at line 2
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
      2                                           def identify_common_elements_with_two_sets(list_1, list_2):
-     3         1    3937000.0 3937000.0     42.8      list_1 = set(list_1)
-     4         1    4125000.0 4125000.0     44.8      list_2 = set(list_2)
-     5         1    1141000.0 1141000.0     12.4      return list(list_1 &amp; list_2)
+     3         1    3973000.0 3973000.0     43.0      list_1 = set(list_1)
+     4         1    4041000.0 4041000.0     43.8      list_2 = set(list_2)
+     5         1    1219000.0 1219000.0     13.2      return list(list_1 &amp; list_2)
 </pre></div>
 </div>
 </div>
@@ -1678,7 +1676,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.12 ms ± 12.1 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.13 ms ± 9.36 µs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1734,48 +1732,48 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44.3 ms ± 313 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.5 ms ± 1.36 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 
 *** Profile printout saved to text file &#39;lprof0&#39;. 
 Timer unit: 1e-09 s
 
-Total time: 0.096566 s
-File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_62066/3271903851.py
+Total time: 0.09528 s
+File: /var/folders/1q/fnnzxxtd1wl4p1pzvyvl_wpm0000gq/T/ipykernel_46025/3271903851.py
 Function: identify_common_elements_with_a_walk at line 2
 
 Line #      Hits         Time  Per Hit   % Time  Line Contents
 ==============================================================
      2                                           def identify_common_elements_with_a_walk(list_1, list_2):
-     3         1   16836000.0 16836000.0     17.4      list_1 = sorted(list_1)
-     4         1   16745000.0 16745000.0     17.3      list_2 = sorted(list_2)
+     3         1   16907000.0 16907000.0     17.7      list_1 = sorted(list_1)
+     4         1   17142000.0 17142000.0     18.0      list_2 = sorted(list_2)
      5         1          0.0      0.0      0.0      idx_1 = 0
      6         1          0.0      0.0      0.0      idx_2 = 0
-     7         1          0.0      0.0      0.0      l1 = len(list_1)
+     7         1       1000.0   1000.0      0.0      l1 = len(list_1)
      8         1          0.0      0.0      0.0      l2 = len(list_2)
      9         1          0.0      0.0      0.0      common_elements = []
-    10         1          0.0      0.0      0.0      curr_1 = list_1[idx_1]
+    10         1       1000.0   1000.0      0.0      curr_1 = list_1[idx_1]
     11         1          0.0      0.0      0.0      curr_2 = list_2[idx_2]
     12                                               while 1:
-    13    198053   14803000.0     74.7     15.3          if curr_1 == curr_2:
-    14       973     115000.0    118.2      0.1              common_elements.append(curr_1)
-    15       973      96000.0     98.7      0.1              idx_1 += 1
-    16       973      74000.0     76.1      0.1              if idx_1 == l1:
+    13    198030   14410000.0     72.8     15.1          if curr_1 == curr_2:
+    14       982     142000.0    144.6      0.1              common_elements.append(curr_1)
+    15       982      83000.0     84.5      0.1              idx_1 += 1
+    16       982      69000.0     70.3      0.1              if idx_1 == l1:
     17                                                           break
-    18       973      64000.0     65.8      0.1              curr_1 = list_1[idx_1]
-    19       973      78000.0     80.2      0.1              idx_2 += 1
-    20       973      68000.0     69.9      0.1              if idx_2 == l2:
+    18       982      63000.0     64.2      0.1              curr_1 = list_1[idx_1]
+    19       982      76000.0     77.4      0.1              idx_2 += 1
+    20       982      44000.0     44.8      0.0              if idx_2 == l2:
     21                                                           break
-    22       973      69000.0     70.9      0.1              curr_2 = list_2[idx_2]
-    23     99027    6570000.0     66.3      6.8          elif curr_1 &lt; curr_2:
-    24     99027    7276000.0     73.5      7.5              idx_1 += 1
-    25     99026    6361000.0     64.2      6.6              if idx_1 == l1:
-    26         1          0.0      0.0      0.0                  break
-    27     99026    6689000.0     67.5      6.9              curr_1 = list_1[idx_1]
+    22       982      65000.0     66.2      0.1              curr_2 = list_2[idx_2]
+    23     99018    6666000.0     67.3      7.0          elif curr_1 &lt; curr_2:
+    24     99012    6996000.0     70.7      7.3              idx_1 += 1
+    25     99012    6135000.0     62.0      6.4              if idx_1 == l1:
+    26                                                           break
+    27     99012    6436000.0     65.0      6.8              curr_1 = list_1[idx_1]
     28                                                   else:
-    29     99026    7306000.0     73.8      7.6              idx_2 += 1
-    30     99026    6662000.0     67.3      6.9              if idx_2 == l2:
-    31                                                           break
-    32     99026    6754000.0     68.2      7.0              curr_2 = list_2[idx_2]
+    29     99018    7117000.0     71.9      7.5              idx_2 += 1
+    30     99017    6342000.0     64.0      6.7              if idx_2 == l2:
+    31         1          0.0      0.0      0.0                  break
+    32     99017    6585000.0     66.5      6.9              curr_2 = list_2[idx_2]
     33         1          0.0      0.0      0.0      return common_elements
 </pre></div>
 </div>
