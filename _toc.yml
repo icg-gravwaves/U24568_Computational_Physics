@@ -203,8 +203,11 @@ chapters:
 - file: 10a/overview    
   sections:
     - file: 10a/CompPhys_Lect10a_01_CalculatingG
+    - file: 10a/CompPhys_Lect10a_01_CalculatingG_SOLUTIONS
     - file: 10a/CompPhys_Lect10a_02_BeatTheCasino
+    - file: 10a/CompPhys_Lect10a_02_BeatTheCasino_SOLUTIONS
     - file: 10a/CompPhys_Lect10a_03_ParameterUncertainties
+    - file: 10a/CompPhys_Lect10a_03_ParameterUncertainties_SOLUTIONS
 - file: 10b/overview
   sections:
     - file: 10b/CompPhys_Lect10b_01_Introduction
